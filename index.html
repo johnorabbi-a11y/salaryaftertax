@@ -283,7 +283,8 @@ function calculate(){
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
     el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
   } else {
-    const r = usEstimate(gross, filing);
+    const state = el("state").value;
+const r = usEstimate(gross, filing, state);
     el("netYear").textContent = fmtMoney(r.net, ccy);
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
     el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
