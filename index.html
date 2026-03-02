@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Salary After Tax Calculator (UK & US)</title>
   <meta name="description" content="Estimate take-home pay after tax in the UK and US. Simple salary after tax calculator with yearly and monthly net pay." />
-  <style>
+  <style> 
+    <link rel="canonical" href="https://johnorabbi-a11y.github.io/salaryaftertax/" />
+    <link rel="canonical" href="https://johnorabbi-a11y.github.io/salaryaftertax/" />
     :root { color-scheme: light; }
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 22px; max-width: 920px; }
     h1 { margin: 0 0 8px; font-size: 28px; }
@@ -137,6 +139,34 @@
 
 <script>
 // (JS unchanged — your existing calculator logic remains exactly the same)
+</script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is this take-home pay exact?",
+      "acceptedAnswer":{"@type":"Answer","text":"No — it’s an estimate. Real take-home pay depends on deductions like pensions or 401(k), benefits, student loans, bonuses, and in the US, state and local taxes."}
+    },
+    {
+      "@type":"Question",
+      "name":"Does the US result include state tax?",
+      "acceptedAnswer":{"@type":"Answer","text":"No. The US estimate includes federal tax and FICA only. State tax can significantly change take-home pay."}
+    },
+    {
+      "@type":"Question",
+      "name":"Which UK tax rules are used?",
+      "acceptedAnswer":{"@type":"Answer","text":"The calculator uses a simplified UK estimate based on standard income tax bands and National Insurance assumptions for England, Wales and Northern Ireland."}
+    },
+    {
+      "@type":"Question",
+      "name":"Can I include pension or 401(k) contributions?",
+      "acceptedAnswer":{"@type":"Answer","text":"You can enter a pension percentage for UK salaries. US 401(k) deductions are not included yet but may be added in future versions."}
+    }
+  ]
+}
 </script>
 </body>
 </html>
