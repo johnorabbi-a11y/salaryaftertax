@@ -156,6 +156,142 @@
 <script>
 // (JS unchanged — your existing calculator logic remains exactly the same)
 </script>
+  <script>
+function isNum(x){ return typeof x === "number" && isFinite(x); }
+function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
+
+function fmtMoney(n, ccy){
+  if (!isNum(n)) return "—";
+  const sym = ccy === "GBP" ? "£" : ccy === "USD" ? "$" : "";
+  return sym + Math.round(n).toLocaleString();
+}
+
+function pickCurrency(country, selection){
+  if (selection && selection !== "auto") return selection;
+  return country === "uk" ? "GBP" : "USD";
+}
+
+function taxOnBrackets(taxable, brackets){
+  let remaining = Math.max(0, taxable);
+  let prev = 0;
+  let tax = 0;
+  for (const b of brackets){
+    const top = b.upTo;
+    const width = (top === Infinity) ? remaining : Math.max(0, Math.min(remaining, top - prev));
+    tax += width * b.rate;
+    remaining -= width;
+    prev = top;
+    if (remaining <= 0) break;
+  }
+  return tax;
+}
+
+function ukEstimate(gross, pensionPct){
+  const allowance = 12570;
+  const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
+  const adjustedGross = Math.max(0, gross - pension);
+  const taxable = Math.max(0, adjustedGross - allowance);
+
+  const incomeTax = taxOnBrackets(taxable, [
+    { upTo: (50270 - allowance), rate: 0.20 },
+    { upTo: (125140 - allowance), rate: 0.40 },
+    { upTo: Infinity, rate: 0.45 }
+  ]);
+
+  const niMainRate = 0.08;
+  const niUpperRate = 0.02;
+  const niMainUpper = 50270;
+
+  let ni = 0;
+  const niBand1 = Math.max(0, Math.min(adjustedGross, niMainUpper) - allowance);
+  ni += niBand1 * niMainRate;
+  const niBand2 = Math.max(0, adjustedGross - niMainUpper);
+  ni += niBand2 * niUpperRate;
+
+  const totalDeductions = incomeTax + ni + pension;
+  const net = Math.max(0, gross - totalDeductions);
+
+  return { gross, pension, adjustedGross, taxable, incomeTax, ni, totalDeductions, net };
+}
+
+function usEstimate(gross, filing){
+  const standardDeduction = (filing === "mfj") ? 29200 : 14600;
+  const taxable = Math.max(0, gross - standardDeduction);
+
+  const bracketsSingle = [
+    { upTo: 11600, rate: 0.10 },
+    { upTo: 47150, rate: 0.12 },
+    { upTo: 100525, rate: 0.22 },
+    { upTo: 191950, rate: 0.24 },
+    { upTo: 243725, rate: 0.32 },
+    { upTo: 609350, rate: 0.35 },
+    { upTo: Infinity, rate: 0.37 }
+  ];
+
+  const bracketsMFJ = [
+    { upTo: 23200, rate: 0.10 },
+    { upTo: 94300, rate: 0.12 },
+    { upTo: 201050, rate: 0.22 },
+    { upTo: 383900, rate: 0.24 },
+    { upTo: 487450, rate: 0.32 },
+    { upTo: 731200, rate: 0.35 },
+    { upTo: Infinity, rate: 0.37 }
+  ];
+
+  const incomeTax = taxOnBrackets(taxable, filing === "mfj" ? bracketsMFJ : bracketsSingle);
+
+  const ssRate = 0.062;
+  const medicareRate = 0.0145;
+  const ssWageBase = 168600;
+  const addMedicareRate = 0.009;
+  const addMedicareThreshold = (filing === "mfj") ? 250000 : 200000;
+
+  const ss = Math.min(gross, ssWageBase) * ssRate;
+  const medicare = gross * medicareRate;
+  const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
+
+  const fica = ss + medicare + addMedicare;
+  const totalDeductions = incomeTax + fica;
+  const net = Math.max(0, gross - totalDeductions);
+
+  return { gross, taxable, standardDeduction, incomeTax, fica, ss, medicare, addMedicare, totalDeductions, net };
+}
+
+const el = (id) => document.getElementById(id);
+
+function calculate(){
+  const country = el("country").value;
+  const gross = Number(el("salary").value);
+  const filing = el("filing").value;
+  const state = el("state") ? el("state").value : "none";
+  const pensionPctRaw = el("pension").value.trim();
+  const pensionPct = pensionPctRaw === "" ? 0 : Number(pensionPctRaw);
+  const ccy = pickCurrency(country, el("currency").value);
+
+  if (!isNum(gross) || gross <= 0){
+    el("netYear").textContent = "—";
+    el("netMonth").textContent = "—";
+    el("taxYear").textContent = "—";
+    el("breakdown").textContent = "Please enter a positive annual salary.";
+    el("assumptions").textContent = "";
+    return;
+  }
+
+  if (country === "uk"){
+    const r = ukEstimate(gross, pensionPct);
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+  } else {
+    const r = usEstimate(gross, filing);
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+  }
+}
+
+el("calcBtn").addEventListener("click", calculate);
+</script>
   <script type="application/ld+json">
 {
   "@context":"https://schema.org",
