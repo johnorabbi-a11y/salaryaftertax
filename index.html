@@ -214,8 +214,26 @@ function ukEstimate(gross, pensionPct){
   return { gross, pension, adjustedGross, taxable, incomeTax, ni, totalDeductions, net };
 }
 
-function usEstimate(gross, filing){
+function usEstimate(gross, filing, state){
   const standardDeduction = (filing === "mfj") ? 29200 : 14600;
+  // Simple estimated state tax rates (rough averages)
+const stateRates = {
+  CA: 0.06,
+  NY: 0.06,
+  NJ: 0.05,
+  MA: 0.05,
+  IL: 0.05,
+  PA: 0.03,
+  GA: 0.04,
+  NC: 0.045,
+  TX: 0.0,
+  FL: 0.0,
+  WA: 0.0,
+  none: 0.0
+};
+
+const stateRate = stateRates[state] ?? 0;
+const stateTax = gross * stateRate;
   const taxable = Math.max(0, gross - standardDeduction);
 
   const bracketsSingle = [
@@ -251,10 +269,10 @@ function usEstimate(gross, filing){
   const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
 
   const fica = ss + medicare + addMedicare;
-  const totalDeductions = incomeTax + fica;
+  const totalDeductions = incomeTax + fica + stateTax;
   const net = Math.max(0, gross - totalDeductions);
 
-  return { gross, taxable, standardDeduction, incomeTax, fica, ss, medicare, addMedicare, totalDeductions, net };
+  return { gross, taxable, standardDeduction, incomeTax, fica, stateTax, ss, medicare, addMedicare, totalDeductions, net };
 }
 
 const el = (id) => document.getElementById(id);
