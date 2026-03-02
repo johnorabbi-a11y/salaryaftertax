@@ -296,31 +296,50 @@ function calculate(){
   }
 
   if (country === "uk"){
-  const r = ukEstimate(gross, pensionPct);
+    const r = ukEstimate(gross, pensionPct);
 
-  el("netYear").textContent = fmtMoney(r.net, ccy);
-  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
 
-  el("breakdown").innerHTML =
-    `<b>UK estimate</b><br>
-     Gross salary: ${fmtMoney(r.gross, ccy)}<br>
-     Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
-     Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
-     National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
-     <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+    el("breakdown").innerHTML =
+      `<b>UK estimate</b><br>
+       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
+       Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+       National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
+       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
 
-  el("assumptions").innerHTML =
-    `<b>Assumptions (UK):</b> Standard personal allowance used, typical banded income tax approach, and a simplified employee NI model.
-     No student loan, no salary sacrifice schemes (other than the optional pension %), no bonuses/benefits, and not tailored to Scotland-specific rates.`;
-} else {
-  const state = el("state").value;
-  const r = usEstimate(gross, filing, state);
+    el("assumptions").innerHTML =
+      `<b>Assumptions (UK):</b> Standard personal allowance used, typical banded income tax approach, and a simplified employee NI model.
+       No student loan, no bonuses/benefits, and not tailored to Scotland-specific rates.`;
+  } else {
+    const r = usEstimate(gross, filing, state);
 
-  el("netYear").textContent = fmtMoney(r.net, ccy);
-  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
 
+    const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
+    const stateName = (el("state") && el("state").selectedOptions && el("state").selectedOptions[0])
+      ? el("state").selectedOptions[0].textContent
+      : "Selected state";
+
+    el("breakdown").innerHTML =
+      `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
+       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
+       Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+       FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
+       State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
+       <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
+       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+
+    el("assumptions").innerHTML =
+      `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
+       Local taxes are not included. No 401(k), health insurance, or other payroll deductions included.`;
+  }
+}
   const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
   const stateName = (el("state").selectedOptions && el("state").selectedOptions[0])
     ? el("state").selectedOptions[0].textContent
