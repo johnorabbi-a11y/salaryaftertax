@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://johnorabbi-a11y.github.io/salaryaftertax/sitemap.xml
