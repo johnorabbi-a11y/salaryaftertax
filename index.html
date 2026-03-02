@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Salary After Tax Calculator (UK & US)</title>
+  <meta name="description" content="Estimate take-home pay after tax in the UK and US. Simple salary after tax calculator with yearly and monthly net pay." />
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 22px; max-width: 920px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .sub { color: #444; margin-bottom: 14px; }
+    .card { border: 1px solid #ddd; border-radius: 14px; padding: 16px; margin: 14px 0; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px){ .row { grid-template-columns: 1fr; } }
+    label { display:block; font-weight: 650; margin-top: 10px; }
+    input, select { width: 100%; padding: 10px; border-radius: 12px; border: 1px solid #cfcfcf; margin-top: 6px; font-size: 16px; }
+    button { width:100%; padding: 12px; border-radius: 12px; border: 1px solid #111; background:#111; color:#fff; font-weight:800; cursor:pointer; }
+    button:active { transform: translateY(1px); }
+    .results { font-size: 18px; line-height: 1.6; }
+    .muted { color: #555; font-size: 14px; line-height: 1.5; }
+    .pill { display:inline-block; padding: 2px 10px; border:1px solid #ddd; border-radius: 999px; font-size: 12px; margin-left: 8px; }
+    .warn { background: #fff8e1; border-color: #f0d27b; }
+    .good { background: #ecfff0; border-color: #b9efc2; }
+    .tiny { font-size: 12px; color:#666; }
+    .grid3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    @media (max-width: 700px){ .grid3 { grid-template-columns: 1fr; } }
+    .box { border: 1px solid #e2e2e2; border-radius: 12px; padding: 12px; }
+    .box h3 { margin: 0 0 6px; font-size: 14px; color:#333; }
+    .box .big { font-size: 20px; font-weight: 850; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <h1>Salary After Tax Calculator</h1>
+  <div class="sub">
+    Estimate your take-home pay in the <b>UK</b> or <b>US</b> in plain English.
+    <span class="pill warn">Estimates</span>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label for="country">Country</label>
+        <select id="country">
+          <option value="uk">UK (England/Wales/NI estimate)</option>
+          <option value="us">US (Federal + FICA estimate)</option>
+        </select>
+      </div>
+      <div>
+        <label for="salary">Annual gross salary</label>
+        <input id="salary" type="number" inputmode="decimal" placeholder="e.g. 40000" min="0" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="filing">US filing status (only used for US)</label>
+        <select id="filing">
+          <option value="single">Single</option>
+          <option value="mfj">Married filing jointly</option>
+        </select>
+      </div>
+      <div>
+        <label for="currency">Display currency</label>
+        <select id="currency">
+          <option value="auto">Auto</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="USD">USD ($)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="pension">Pension % (UK optional)</label>
+        <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
+        <div class="tiny">Leave blank for 0%. (Simple estimate: pension reduces taxable pay.)</div>
+      </div>
+      <div>
+        <label>&nbsp;</label>
+        <button id="calcBtn">Calculate</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid3">
+      <div class="box">
+        <h3>Estimated take-home (year)</h3>
+        <div class="big" id="netYear">—</div>
+      </div>
+      <div class="box">
+        <h3>Estimated take-home (month)</h3>
+        <div class="big" id="netMonth">—</div>
+      </div>
+      <div class="box">
+        <h3>Total tax & deductions (year)</h3>
+        <div class="big" id="taxYear">—</div>
+      </div>
+    </div>
+
+    <div class="results" id="breakdown" style="margin-top:12px;">Enter a salary and hit Calculate.</div>
+    <div class="muted" id="assumptions" style="margin-top:10px;"></div>
+  </div>
+
+  <div class="card">
+    <div class="muted">
+      <b>Disclaimer:</b> This calculator provides <b>estimates</b>, not financial/tax advice.
+      Real take-home pay can differ due to tax year changes, pension rules, bonuses, student loans, benefits,
+      state taxes (US), local taxes, and personal circumstances.
+    </div>
+  </div>
+
+<script>
+/* ---------------- Helpers ---------------- */
+function isNum(x){ return typeof x === "number" && isFinite(x); }
+function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
+
+function fmtMoney(n, ccy){
+  if (!isNum(n)) return "—";
+  const sym = ccy === "GBP" ? "£" : ccy === "USD" ? "$" : "";
+  return sym + Math.round(n).toLocaleString();
+}
+
+function pickCurrency(country, selection){
+  if (selection && selection !== "auto") return selection;
+  return country === "uk" ? "GBP" : "USD";
+}
+
+function taxOnBrackets(taxable, brackets){
+  // brackets = [{upTo, rate}] where upTo is the upper bound for that rate (absolute taxable level)
+  // last bracket can have upTo = Infinity
+  let remaining = Math.max(0, taxable);
+  let prev = 0;
+  let tax = 0;
+
+  for (const b of brackets){
+    const top = b.upTo;
+    const width = (top === Infinity) ? remaining : Math.max(0, Math.min(remaining, top - prev));
+    tax += width * b.rate;
+    remaining -= width;
+    prev = top;
+    if (remaining <= 0) break;
+  }
+  return tax;
+}
+
+/* ---------------- UK estimate ----------------
+   Plain, typical structure (England/Wales/NI style):
+   - Personal allowance (default 12,570)
+   - Income tax bands (20% / 40% / 45%)
+   - Employee NI: simplified 8% (mid band) and 2% above
+   Notes:
+   - This is an estimate and may not match current tax year exactly.
+   - NI thresholds can differ from income tax bands; we keep it simple on purpose.
+*/
+function ukEstimate(gross, pensionPct){
+  const allowance = 12570;
+
+  const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
+  const adjustedGross = Math.max(0, gross - pension);
+
+  const taxable = Math.max(0, adjustedGross - allowance);
+
+  const incomeTax = taxOnBrackets(taxable, [
+    { upTo: (50270 - allowance), rate: 0.20 }, // basic rate on taxable slice up to basic limit
+    { upTo: (125140 - allowance), rate: 0.40 }, // higher rate
+    { upTo: Infinity, rate: 0.45 } // additional rate
+  ]);
+
+  // Simplified employee NI:
+  // 0% up to allowance-ish, 8% up to ~50,270, then 2% above
+  // (This is deliberately simplified to keep the tool free and easy.)
+  const niMainRate = 0.08;
+  const niUpperRate = 0.02;
+  const niMainUpper = 50270;
+
+  let ni = 0;
+  const niBand1 = Math.max(0, Math.min(adjustedGross, niMainUpper) - allowance);
+  ni += niBand1 * niMainRate;
+  const niBand2 = Math.max(0, adjustedGross - niMainUpper);
+  ni += niBand2 * niUpperRate;
+
+  const totalDeductions = incomeTax + ni + pension;
+  const net = Math.max(0, gross - totalDeductions);
+
+  return {
+    gross,
+    pension,
+    adjustedGross,
+    taxable,
+    incomeTax,
+    ni,
+    totalDeductions,
+    net
+  };
+}
+
+/* ---------------- US estimate ----------------
+   Includes:
+   - Federal income tax using typical recent brackets
+   - Standard deduction (Single / MFJ)
+   - FICA: Social Security + Medicare (and additional Medicare above 200k)
+   Does NOT include:
+   - State income tax / local tax
+   - 401(k) and other deductions unless you build it in later
+*/
+function usEstimate(gross, filing){
+  const standardDeduction = (filing === "mfj") ? 29200 : 14600; // typical recent values
+  const taxable = Math.max(0, gross - standardDeduction);
+
+  const bracketsSingle = [
+    { upTo: 11600, rate: 0.10 },
+    { upTo: 47150, rate: 0.12 },
+    { upTo: 100525, rate: 0.22 },
+    { upTo: 191950, rate: 0.24 },
+    { upTo: 243725, rate: 0.32 },
+    { upTo: 609350, rate: 0.35 },
+    { upTo: Infinity, rate: 0.37 }
+  ];
+
+  const bracketsMFJ = [
+    { upTo: 23200, rate: 0.10 },
+    { upTo: 94300, rate: 0.12 },
+    { upTo: 201050, rate: 0.22 },
+    { upTo: 383900, rate: 0.24 },
+    { upTo: 487450, rate: 0.32 },
+    { upTo: 731200, rate: 0.35 },
+    { upTo: Infinity, rate: 0.37 }
+  ];
+
+  const incomeTax = taxOnBrackets(taxable, filing === "mfj" ? bracketsMFJ : bracketsSingle);
+
+  // FICA (employee):
+  // Social Security 6.2% up to wage base
+  // Medicare 1.45% all wages
+  // Additional Medicare 0.9% above 200k (single) / 250k (mfj) - simplified thresholds
+  const ssRate = 0.062;
+  const medicareRate = 0.0145;
+  const ssWageBase = 168600; // typical recent
+  const addMedicareRate = 0.009;
+  const addMedicareThreshold = (filing === "mfj") ? 250000 : 200000;
+
+  const ss = Math.min(gross, ssWageBase) * ssRate;
+  const medicare = gross * medicareRate;
+  const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
+
+  const fica = ss + medicare + addMedicare;
+
+  const totalDeductions = incomeTax + fica;
+  const net = Math.max(0, gross - totalDeductions);
+
+  return {
+    gross,
+    taxable,
+    standardDeduction,
+    incomeTax,
+    fica,
+    ss,
+    medicare,
+    addMedicare,
+    totalDeductions,
+    net
+  };
+}
+
+/* ---------------- UI wiring ---------------- */
+const el = (id) => document.getElementById(id);
+
+function calculate(){
+  const country = el("country").value;
+  const gross = Number(el("salary").value);
+  const filing = el("filing").value;
+  const pensionPctRaw = el("pension").value.trim();
+  const pensionPct = pensionPctRaw === "" ? 0 : Number(pensionPctRaw);
+  const ccy = pickCurrency(country, el("currency").value);
+
+  if (!isNum(gross) || gross <= 0){
+    el("netYear").textContent = "—";
+    el("netMonth").textContent = "—";
+    el("taxYear").textContent = "—";
+    el("breakdown").textContent = "Please enter a positive annual salary.";
+    el("assumptions").textContent = "";
+    return;
+  }
+
+  if (country === "uk"){
+    const r = ukEstimate(gross, pensionPct);
+
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+
+    el("breakdown").innerHTML =
+      `<b>UK estimate</b><br>
+       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
+       Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+       National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
+       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+
+    el("assumptions").innerHTML =
+      `<b>Assumptions (UK):</b> Standard personal allowance used, typical banded income tax approach, and a simplified employee NI model.
+       No student loan, no salary sacrifice schemes (other than the optional pension %), no bonuses/benefits, and not tailored to Scotland-specific rates.`;
+  } else {
+    const r = usEstimate(gross, filing);
+
+    el("netYear").textContent = fmtMoney(r.net, ccy);
+    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+
+    const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
+
+    el("breakdown").innerHTML =
+      `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
+       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
+       Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+       FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
+       <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
+       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+
+    el("assumptions").innerHTML =
+      `<b>Assumptions (US):</b> Federal income tax + FICA only, using typical recent bracket structure and standard deduction.
+       <b>State and local taxes are NOT included</b> (they can change take-home a lot). No 401(k), health insurance, or other payroll deductions included.`;
+  }
+}
+
+el("calcBtn").addEventListener("click", calculate);
+el("country").addEventListener("change", calculate);
+el("filing").addEventListener("change", calculate);
+el("currency").addEventListener("change", calculate);
+el("salary").addEventListener("input", () => {
+  // Light auto-calc without being annoying
+  if (el("salary").value.trim().length >= 4) calculate();
+});
+</script>
+</body>
+</html>
