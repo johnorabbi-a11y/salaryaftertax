@@ -290,11 +290,22 @@ function ukEstimate(gross, pensionPct, loanPlan){
   const adjustedGross = Math.max(0, gross - pension);
   const taxable = Math.max(0, adjustedGross - allowance);
 
-  const incomeTax = taxOnBrackets(taxable, [
-    { upTo: (50270 - allowance), rate: 0.20 },
-    { upTo: (125140 - allowance), rate: 0.40 },
-    { upTo: Infinity, rate: 0.45 }
-  ]);
+  const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
+
+const incomeTax = isScotland
+  ? taxOnBrackets(taxable, [
+      { upTo: (14876 - allowance), rate: 0.19 },
+      { upTo: (26561 - allowance), rate: 0.20 },
+      { upTo: (43662 - allowance), rate: 0.21 },
+      { upTo: (75000 - allowance), rate: 0.42 },
+      { upTo: (125140 - allowance), rate: 0.45 },
+      { upTo: Infinity, rate: 0.48 }
+    ])
+  : taxOnBrackets(taxable, [
+      { upTo: (50270 - allowance), rate: 0.20 },
+      { upTo: (125140 - allowance), rate: 0.40 },
+      { upTo: Infinity, rate: 0.45 }
+    ]);
 
   const niMainRate = 0.08;
   const niUpperRate = 0.02;
