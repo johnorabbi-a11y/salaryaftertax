@@ -390,7 +390,7 @@ const totalGross = gross
   }
 
   if (country === "uk"){
-    const r = ukEstimate(totalGross, pensionPct);
+    const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value);
 
     el("netYear").textContent = fmtMoney(r.net, ccy);
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -398,15 +398,17 @@ const totalGross = gross
 
     el("breakdown").innerHTML =
       `<b>UK estimate</b><br>
-       Overtime added (estimated): ${fmtMoney(overtimePay, ccy)}<br> ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
-       Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
-       Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
-       National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
-       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
+Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
+Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
+Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
+Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
+<b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
 
-    el("assumptions").innerHTML =
-      `<b>Assumptions (UK):</b> Standard personal allowance used, typical banded income tax approach, and a simplified employee NI model.
-       No student loan, no bonuses/benefits, and not tailored to Scotland-specific rates.`;
+      el("assumptions").innerHTML =
+  `<b>Assumptions (UK):</b> Standard personal allowance used, typical banded income tax approach, and a simplified employee NI model.
+   Student loan applied if selected. Not tailored to Scotland-specific income tax rates.`;
 
     el("comparison").style.display = "none";
   } else {
