@@ -61,6 +61,18 @@
         <label for="bonus">Annual bonus (optional)</label>
 <input id="bonus" type="number" inputmode="decimal" placeholder="e.g. 5000" min="0" />
 <div class="tiny">Bonus is added to salary before tax (estimate).</div>
+        <label for="otHours">Overtime hours per week (optional)</label>
+<input id="otHours" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" />
+
+<label for="otRate">Overtime rate (multiplier)</label>
+<select id="otRate">
+  <option value="1.5">Time and a half (1.5x)</option>
+  <option value="2.0">Double time (2.0x)</option>
+  <option value="1.25">1.25x</option>
+  <option value="1.0">Straight time (1.0x)</option>
+</select>
+
+<div class="tiny">Estimate: overtime pay is based on your salary-derived hourly rate.</div>
       </div>
     </div>
 
