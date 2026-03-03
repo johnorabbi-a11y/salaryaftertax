@@ -80,8 +80,9 @@
 
     <div class="row">
       <div>
-        <h2 style="margin:18px 0 6px;">US options</h2>
+      <h2 id="usOptionsTitle" style="margin:18px 0 6px;">US options</h2>
 <div class="muted" style="margin:0 0 10px;">Used only when Country is set to US.</div>
+        <div id="usOptions">
         <label for="filing">US filing status (only used for US)</label>
         <select id="filing">
           <option value="single">Single</option>
@@ -104,6 +105,7 @@
           <option value="NC">North Carolina</option>
         </select>
         <div class="tiny">State tax is an estimate and may not include local taxes.</div>
+          </div>
       </div>
 
       <div>
@@ -115,8 +117,9 @@
           <option value="GBP">GBP (£)</option>
           <option value="USD">USD ($)</option>
         </select>
-<h2 style="margin:18px 0 6px;">UK options</h2>
+<h2 id="ukOptionsTitle" style="margin:18px 0 6px;">UK options</h2>
 <div class="muted" style="margin:0 0 10px;">Used only when Country is set to UK.</div>
+        <div id="ukOptions">
         <label for="pension">Pension % (UK optional)</label>
         <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
         <div class="tiny">Leave blank for 0%. (Simple estimate: pension reduces taxable pay.)</div>
@@ -129,6 +132,7 @@
   <option value="pgl">Postgraduate Loan</option>
 </select>
 <div class="tiny">Estimate: student loan repayments are based on annual income above the plan threshold.</div>
+          </div>
         <label>&nbsp;</label>
         <button id="calcBtn">Calculate</button>
       </div>
@@ -322,8 +326,15 @@ function usEstimate(gross, filing, state){
 }
 
 const el = (id) => document.getElementById(id);
-
+function toggleCountrySections(){
+  const country = el("country").value;
+  const us = el("usOptions");
+  const uk = el("ukOptions");
+  if (us) us.style.display = (country === "us") ? "" : "none";
+  if (uk) uk.style.display = (country === "uk") ? "" : "none";
+}
 function calculate(){
+    toggleCountrySections();
   const country = el("country").value;
   const gross = Number(el("salary").value);
   const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
@@ -415,6 +426,7 @@ const totalGross = gross
 
 el("calcBtn").addEventListener("click", calculate);
 el("country").addEventListener("change", calculate);
+  toggleCountrySections();
 el("filing").addEventListener("change", calculate);
 el("state").addEventListener("change", calculate);
 el("currency").addEventListener("change", calculate);
