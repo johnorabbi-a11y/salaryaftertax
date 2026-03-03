@@ -313,7 +313,18 @@ function calculate(){
   const gross = Number(el("salary").value);
   const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
 const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
-const totalGross = gross + (isNum(bonus) ? Math.max(0, bonus) : 0);
+// Overtime estimate (weekly hours * hourly rate * multiplier * 52)
+const otHoursRaw = el("otHours") ? el("otHours").value.trim() : "";
+const otHours = otHoursRaw === "" ? 0 : Number(otHoursRaw);
+const otMult = Number(el("otRate") ? el("otRate").value : 1.5);
+
+// hourly rate derived from base salary (not including bonus)
+const hourly = gross / (52 * 40);
+const overtimePay = (isNum(otHours) ? Math.max(0, otHours) : 0) * hourly * (isNum(otMult) ? otMult : 1.5) * 52;
+
+const totalGross = gross
+  + (isNum(bonus) ? Math.max(0, bonus) : 0)
+  + (isNum(overtimePay) ? Math.max(0, overtimePay) : 0);
   const filing = el("filing").value;
   const state = el("state").value;
   const pensionPctRaw = el("pension").value.trim();
@@ -339,7 +350,7 @@ const totalGross = gross + (isNum(bonus) ? Math.max(0, bonus) : 0);
 
     el("breakdown").innerHTML =
       `<b>UK estimate</b><br>
-       Gross salary + bonus: ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
+       Overtime added (estimated): ${fmtMoney(overtimePay, ccy)}<br> ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
        Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
        Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
        National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
@@ -362,7 +373,7 @@ const totalGross = gross + (isNum(bonus) ? Math.max(0, bonus) : 0);
 
     el("breakdown").innerHTML =
       `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
-       Gross salary + bonus: ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
+       Overtime added (estimated): ${fmtMoney(overtimePay, ccy)}<br> ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
        Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
        Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
        FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
