@@ -219,6 +219,27 @@
   </div>
 
 <script>
+  // =============================
+// UK Student Loan (2025/26)
+// =============================
+const UK_STUDENT_LOAN = {
+  plan1: { threshold: 26065, rate: 0.09 },
+  plan2: { threshold: 28470, rate: 0.09 },
+  plan4: { threshold: 32745, rate: 0.09 },
+  plan5: { threshold: 25000, rate: 0.09 },
+  pgl:   { threshold: 21000, rate: 0.06 }
+};
+
+function calculateUkStudentLoan(planKey, grossForLoan) {
+  if (!planKey || planKey === "none") return 0;
+  if (!isFinite(grossForLoan)) return 0;
+
+  const config = UK_STUDENT_LOAN[planKey];
+  if (!config) return 0;
+
+  const repayable = Math.max(0, grossForLoan - config.threshold);
+  return repayable * config.rate;
+}
 function isNum(x){ return typeof x === "number" && isFinite(x); }
 function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
 
