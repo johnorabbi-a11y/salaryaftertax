@@ -269,7 +269,7 @@ function taxOnBrackets(taxable, brackets){
   return tax;
 }
 
-function ukEstimate(gross, pensionPct){
+function ukEstimate(gross, pensionPct, loanPlan){
   const allowance = 12570;
   const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
   const adjustedGross = Math.max(0, gross - pension);
@@ -291,10 +291,10 @@ function ukEstimate(gross, pensionPct){
   const niBand2 = Math.max(0, adjustedGross - niMainUpper);
   ni += niBand2 * niUpperRate;
 
-  const totalDeductions = incomeTax + ni + pension;
+  const studentLoan = calculateUkStudentLoan(loanPlan, adjustedGross); const totalDeductions = incomeTax + ni + pension + studentLoan;
   const net = Math.max(0, gross - totalDeductions);
 
-  return { gross, pension, adjustedGross, taxable, incomeTax, ni, totalDeductions, net };
+  return { gross, pension, adjustedGross, taxable, incomeTax, ni, studentLoan, totalDeductions, net };
 }
 
 function usEstimate(gross, filing, state){
