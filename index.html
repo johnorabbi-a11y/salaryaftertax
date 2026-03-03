@@ -131,6 +131,10 @@
   <option value="plan4">Plan 4 (Scotland)</option>
   <option value="plan5">Plan 5</option>
   <option value="pgl">Postgraduate Loan</option>
+  <option value="plan1+pgl">Plan 1 + Postgraduate</option>
+<option value="plan2+pgl">Plan 2 + Postgraduate</option>
+<option value="plan4+pgl">Plan 4 + Postgraduate</option>
+<option value="plan5+pgl">Plan 5 + Postgraduate</option>
 </select>
 <div class="tiny">Estimate: student loan repayments are based on annual income above the plan threshold.</div>
           </div>
@@ -234,11 +238,22 @@ function calculateUkStudentLoan(planKey, grossForLoan) {
   if (!planKey || planKey === "none") return 0;
   if (!isFinite(grossForLoan)) return 0;
 
-  const config = UK_STUDENT_LOAN[planKey];
-  if (!config) return 0;
+  // Support combos like "plan2+pgl"
+  const plans = planKey.includes("+")
+    ? planKey.split("+").map(s => s.trim()).filter(Boolean)
+    : [planKey];
 
-  const repayable = Math.max(0, grossForLoan - config.threshold);
-  return repayable * config.rate;
+  let total = 0;
+
+  for (const p of plans) {
+    const config = UK_STUDENT_LOAN[p];
+    if (!config) continue;
+
+    const repayable = Math.max(0, grossForLoan - config.threshold);
+    total += repayable * config.rate;
+  }
+
+  return total;
 }
 function isNum(x){ return typeof x === "number" && isFinite(x); }
 function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
