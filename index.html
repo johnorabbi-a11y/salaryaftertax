@@ -299,13 +299,16 @@ const el = (id) => document.getElementById(id);
 function calculate(){
   const country = el("country").value;
   const gross = Number(el("salary").value);
+  const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
+const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
+const totalGross = gross + (isNum(bonus) ? Math.max(0, bonus) : 0);
   const filing = el("filing").value;
   const state = el("state").value;
   const pensionPctRaw = el("pension").value.trim();
   const pensionPct = pensionPctRaw === "" ? 0 : Number(pensionPctRaw);
   const ccy = pickCurrency(country, el("currency").value);
 
-  if (!isNum(gross) || gross <= 0){
+  if (!isNum(totalGross) || totalGross <= 0){
     el("netYear").textContent = "—";
     el("netMonth").textContent = "—";
     el("taxYear").textContent = "—";
@@ -316,7 +319,7 @@ function calculate(){
   }
 
   if (country === "uk"){
-    const r = ukEstimate(gross, pensionPct);
+    const r = ukEstimate(totalGross, pensionPct);
 
     el("netYear").textContent = fmtMoney(r.net, ccy);
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -324,7 +327,7 @@ function calculate(){
 
     el("breakdown").innerHTML =
       `<b>UK estimate</b><br>
-       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Gross salary + bonus: ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
        Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
        Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
        National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
@@ -336,7 +339,7 @@ function calculate(){
 
     el("comparison").style.display = "none";
   } else {
-    const r = usEstimate(gross, filing, state);
+    const r = usEstimate(totalGross, filing, state);
 
     el("netYear").textContent = fmtMoney(r.net, ccy);
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -347,7 +350,7 @@ function calculate(){
 
     el("breakdown").innerHTML =
       `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
-       Gross salary: ${fmtMoney(r.gross, ccy)}<br>
+       Gross salary + bonus: ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
        Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
        Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
        FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
