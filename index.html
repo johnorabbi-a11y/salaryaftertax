@@ -120,6 +120,12 @@
 <h2 id="ukOptionsTitle" style="margin:18px 0 6px;">UK options</h2>
 <div class="muted" style="margin:0 0 10px;">Used only when Country is set to UK.</div>
         <div id="ukOptions">
+          <label for="ukYear">UK tax year</label>
+<select id="ukYear">
+  <option value="2025-26" selected>2025/26 (6 Apr 2025 – 5 Apr 2026)</option>
+  <option value="2024-25">2024/25</option>
+</select>
+<div class="tiny">Used for UK income tax, NI, and student loan thresholds.</div>
         <label for="pension">Pension % (UK optional)</label>
         <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
         <div class="tiny">Leave blank for 0%. (Simple estimate: pension reduces taxable pay.)</div>
