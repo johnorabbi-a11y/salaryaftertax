@@ -113,7 +113,15 @@
         <label for="pension">Pension % (UK optional)</label>
         <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
         <div class="tiny">Leave blank for 0%. (Simple estimate: pension reduces taxable pay.)</div>
-
+<label for="ukLoan">UK student loan (optional)</label>
+<select id="ukLoan">
+  <option value="none">None</option>
+  <option value="plan1">Plan 1</option>
+  <option value="plan2">Plan 2</option>
+  <option value="plan4">Plan 4 (Scotland)</option>
+  <option value="pgl">Postgraduate Loan</option>
+</select>
+<div class="tiny">Estimate: student loan repayments are based on annual income above the plan threshold.</div>
         <label>&nbsp;</label>
         <button id="calcBtn">Calculate</button>
       </div>
