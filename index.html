@@ -435,16 +435,15 @@ const totalGross = gross
     el("comparison").style.display = "none";
     return;
   }
+if (country === "uk"){
+  const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value, el("ukYear").value);
 
-  if (country === "uk"){
-    const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value, el("ukYear").value);
+  el("netYear").textContent = fmtMoney(r.net, ccy);
+  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
 
-    el("netYear").textContent = fmtMoney(r.net, ccy);
-    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
-
-    el("breakdown").innerHTML =
-      `<b>UK estimate</b><br>
+  el("breakdown").innerHTML =
+    `<b>UK estimate</b><br>
 Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
 Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
 Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
@@ -453,42 +452,49 @@ National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
 Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
 <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
 
+  const loanPlan = el("ukLoan").value;
+  const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
 
-    const r = usEstimate(totalGross, filing, state);
+  el("assumptions").innerHTML =
+    `<b>Assumptions (UK):</b> Standard personal allowance used, banded income tax, and a simplified employee NI model.
+Student loan applied if selected. ${isScotland ? "Scottish income tax bands applied." : "England/Wales/NI income tax bands applied."}`;
 
-    el("netYear").textContent = fmtMoney(r.net, ccy);
-    el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-    el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+  el("comparison").style.display = "none";
+} else {
+  const r = usEstimate(totalGross, filing, state);
 
-    const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
-    const stateName = el("state").selectedOptions[0].textContent;
+  el("netYear").textContent = fmtMoney(r.net, ccy);
+  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
 
-    el("breakdown").innerHTML =
-      `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
-       Overtime added (estimated): ${fmtMoney(overtimePay, ccy)}<br> ${fmtMoney(totalGross, ccy)}<br> ${fmtMoney(r.gross, ccy)}<br>
-       Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
-       Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
-       FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
-       State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
-       <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
-       <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+  const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
+  const stateName = el("state").selectedOptions[0].textContent;
 
-    el("assumptions").innerHTML =
-      `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
-       Local taxes are not included. No 401(k), health insurance, or other payroll deductions included.`;
+  el("breakdown").innerHTML =
+    `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
+Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
+Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
+Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
+Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
+State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
+<span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
+<b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
 
-    // Engagement: quick comparison vs Texas
-    const tx = usEstimate(gross, filing, "TX");
-    const diff = Math.round(tx.net - r.net);
-    if (state !== "TX" && state !== "none") {
-      el("comparisonText").innerHTML =
-        `On <b>${fmtMoney(gross, ccy)}</b> in <b>${stateName}</b>, you take home about <b>${fmtMoney(r.net, ccy)}</b> — roughly <b>${fmtMoney(diff, ccy)}</b> less than Texas (estimate).`;
-      el("comparison").style.display = "block";
-    } else {
-      el("comparison").style.display = "none";
-    }
+  el("assumptions").innerHTML =
+    `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
+Local taxes are not included. No 401(k), health insurance, or other payroll deductions included.`;
+
+  // Engagement: quick comparison vs Texas
+  const tx = usEstimate(gross, filing, "TX");
+  const diff = Math.round(tx.net - r.net);
+  if (state !== "TX" && state !== "none") {
+    el("comparisonText").innerHTML =
+      `On <b>${fmtMoney(gross, ccy)}</b> in <b>${stateName}</b>, you take home about <b>${fmtMoney(r.net, ccy)}</b> — roughly <b>${fmtMoney(diff, ccy)}</b> less than Texas (estimate).`;
+    el("comparison").style.display = "block";
+  } else {
+    el("comparison").style.display = "none";
   }
-}
 
 el("calcBtn").addEventListener("click", calculate);
 el("country").addEventListener("change", calculate);
