@@ -315,8 +315,8 @@ function ukEstimate(gross, pensionPct, loanPlan, ukYear){
 
 const incomeTax = isScotland
   ? taxOnBrackets(taxable, [
-      { upTo: (15397 - allowance), rate: 0.19 },
-      { upTo: (27491 - allowance), rate: 0.20 },
+     { upTo: (((ukYear === "2024-25") ? 14876 : 15397) - allowance), rate: 0.19 },
+{ upTo: (((ukYear === "2024-25") ? 26561 : 27491) - allowance), rate: 0.20 },
       { upTo: (43662 - allowance), rate: 0.21 },
       { upTo: (75000 - allowance), rate: 0.42 },
       { upTo: (125140 - allowance), rate: 0.45 },
@@ -504,6 +504,12 @@ el("country").addEventListener("change", calculate);
 el("filing").addEventListener("change", calculate);
 el("state").addEventListener("change", calculate);
 el("currency").addEventListener("change", calculate);
+  el("ukYear").addEventListener("change", calculate);
+el("ukLoan").addEventListener("change", calculate);
+el("pension").addEventListener("input", calculate);
+  el("bonus").addEventListener("input", calculate);
+el("otHours").addEventListener("input", calculate);
+el("otRate").addEventListener("change", calculate);
 el("salary").addEventListener("input", () => {
   if (el("salary").value.trim().length >= 4) calculate();
 });
