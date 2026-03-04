@@ -464,7 +464,21 @@ Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
   el("assumptions").innerHTML =
     `<b>Assumptions (UK):</b> Standard personal allowance used, banded income tax, and a simplified employee NI model.
 Student loan applied if selected. ${isScotland ? "Scottish income tax bands applied." : "England/Wales/NI income tax bands applied."}`;
+// Quick compare vs no-income-tax states (estimate)
+const tx = usEstimate(totalGross, filing, "TX", k401Pct);
+const fl = usEstimate(totalGross, filing, "FL", k401Pct);
+const wa = usEstimate(totalGross, filing, "WA", k401Pct);
 
+const stateNameShort = el("state").selectedOptions[0].textContent;
+
+el("comparisonText").innerHTML =
+  `<b>Quick comparison (estimate):</b><br>
+  ${state !== "TX" ? `Texas: ${fmtMoney(tx.net, ccy)} (diff ${fmtMoney(tx.net - r.net, ccy)})<br>` : `Texas: ${fmtMoney(tx.net, ccy)}<br>`}
+  ${state !== "FL" ? `Florida: ${fmtMoney(fl.net, ccy)} (diff ${fmtMoney(fl.net - r.net, ccy)})<br>` : `Florida: ${fmtMoney(fl.net, ccy)}<br>`}
+  ${state !== "WA" ? `Washington: ${fmtMoney(wa.net, ccy)} (diff ${fmtMoney(wa.net - r.net, ccy)})<br>` : `Washington: ${fmtMoney(wa.net, ccy)}<br>`}
+  <span class="tiny">Compared to your selected state (${stateNameShort}).</span>`;
+
+el("comparison").style.display = (state !== "none") ? "block" : "none";
   el("comparison").style.display = "none";
 } else {
   const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
@@ -492,16 +506,6 @@ State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
   `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
 Local taxes are not included. ${clamp(k401Pct,0,80) > 0 ? "401(k) included as a pre-tax deduction for income tax (FICA still applies)." : "No 401(k), health insurance, or other payroll deductions included."}`;
 
-  // Engagement: quick comparison vs Texas
-  const tx = usEstimate(totalGross, filing, "TX", k401Pct);
-  const diff = Math.round(tx.net - r.net);
-  if (state !== "TX" && state !== "none") {
-    el("comparisonText").innerHTML =
-      `On <b>${fmtMoney(gross, ccy)}</b> in <b>${stateName}</b>, you take home about <b>${fmtMoney(r.net, ccy)}</b> — roughly <b>${fmtMoney(diff, ccy)}</b> less than Texas (estimate).`;
-    el("comparison").style.display = "block";
-   } else {
-    el("comparison").style.display = "none";
-  }
 }
 }
 
