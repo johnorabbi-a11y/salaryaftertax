@@ -88,7 +88,9 @@
           <option value="single">Single</option>
           <option value="mfj">Married filing jointly</option>
         </select>
-
+<label for="k401">401(k) % (pre-tax, optional)</label>
+<input id="k401" type="number" inputmode="decimal" placeholder="e.g. 6" min="0" max="80" />
+<div class="tiny">Simple estimate: 401(k) reduces taxable wages for federal + most state income tax (FICA still applies).</div>
         <label for="state">US state (estimate)</label>
         <select id="state">
           <option value="none">Select a state (or leave blank)</option>
@@ -344,7 +346,7 @@ const incomeTax = isScotland
   return { gross, pension, adjustedGross, taxable, incomeTax, ni, studentLoan, totalDeductions, net };
 }
 
-function usEstimate(gross, filing, state){
+function usEstimate(gross, filing, state, k401Pct){
   const standardDeduction = (filing === "mfj") ? 29200 : 14600;
 
   const stateRates = {
