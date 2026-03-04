@@ -488,7 +488,10 @@ const wa = usEstimate(totalGross, filing, "WA", k401Pct);
 
 const stateNameShort = el("state").selectedOptions[0].textContent;
 
-// Quick compare vs no-income-tax states (estimate)
+
+} else {
+  const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
+  // Quick compare vs no-income-tax states (estimate)
 const tx = usEstimate(totalGross, filing, "TX", k401Pct);
 const fl = usEstimate(totalGross, filing, "FL", k401Pct);
 const wa = usEstimate(totalGross, filing, "WA", k401Pct);
@@ -506,8 +509,6 @@ el("cmp3Net").textContent = fmtMoney(wa.net, ccy);
 el("cmp3Diff").textContent = `Diff vs ${state}: ${fmtMoney(wa.net - r.net, ccy)}`;
 
 el("comparison").style.display = (state !== "none") ? "block" : "none";
-} else {
-  const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
 
   el("netYear").textContent = fmtMoney(r.net, ccy);
   el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -540,7 +541,6 @@ el("country").addEventListener("change", calculate);
   toggleCountrySections();
 el("filing").addEventListener("change", calculate);
 el("state").addEventListener("change", calculate);
-  el("k401").addEventListener("input", calculate);
 el("k401").addEventListener("change", calculate);
 el("currency").addEventListener("change", calculate);
   el("ukYear").addEventListener("change", calculate);
