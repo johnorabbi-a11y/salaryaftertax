@@ -240,9 +240,11 @@ const UK_STUDENT_LOAN = {
   pgl:   { threshold: 21000, rate: 0.06 }
 };
 
-function calculateUkStudentLoan(planKey, grossForLoan) {
+function calculateUkStudentLoan(planKey, grossForLoan, ukYear) {
   if (!planKey || planKey === "none") return 0;
   if (!isFinite(grossForLoan)) return 0;
+
+  const table = pickUkStudentLoanTable(ukYear);
 
   // Support combos like "plan2+pgl"
   const plans = planKey.includes("+")
@@ -252,7 +254,7 @@ function calculateUkStudentLoan(planKey, grossForLoan) {
   let total = 0;
 
   for (const p of plans) {
-    const config = UK_STUDENT_LOAN[p];
+    const config = table[p];
     if (!config) continue;
 
     const repayable = Math.max(0, grossForLoan - config.threshold);
@@ -261,6 +263,7 @@ function calculateUkStudentLoan(planKey, grossForLoan) {
 
   return total;
 }
+
 function isNum(x){ return typeof x === "number" && isFinite(x); }
 function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
 
@@ -290,7 +293,7 @@ function taxOnBrackets(taxable, brackets){
   return tax;
 }
 
-function ukEstimate(gross, pensionPct, loanPlan){
+function ukEstimate(gross, pensionPct, loanPlan, ukYear){
   const allowance = 12570;
   const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
   const adjustedGross = Math.max(0, gross - pension);
@@ -323,7 +326,7 @@ const incomeTax = isScotland
   const niBand2 = Math.max(0, adjustedGross - niMainUpper);
   ni += niBand2 * niUpperRate;
 
-  const studentLoan = calculateUkStudentLoan(loanPlan, adjustedGross); const totalDeductions = incomeTax + ni + pension + studentLoan;
+  const studentLoan = calculateUkStudentLoan(loanPlan, adjustedGross, ukYear); const totalDeductions = incomeTax + ni + pension + studentLoan;
   const net = Math.max(0, gross - totalDeductions);
 
   return { gross, pension, adjustedGross, taxable, incomeTax, ni, studentLoan, totalDeductions, net };
@@ -422,7 +425,7 @@ const totalGross = gross
   }
 
   if (country === "uk"){
-    const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value);
+    const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value, el("ukYear").value);
 
     el("netYear").textContent = fmtMoney(r.net, ccy);
     el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -441,12 +444,23 @@ Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
       const loanPlan = el("ukLoan").value;
 const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
 
-el("assumptions").innerHTML =
-  `<b>Assumptions (UK):</b> Standard personal allowance used, banded income tax, and a simplified employee NI model.
-   Student loan applied if selected. ${isScotland ? "Scottish income tax bands applied." : "England/Wales/NI income tax bands applied."}`;
+const scotStarterEnd = (ukYear === "2024-25") ? 14876 : 15397;
+const scotBasicEnd   = (ukYear === "2024-25") ? 26561 : 27491;
 
-    el("comparison").style.display = "none";
-  } else {
+const incomeTax = isScotland
+  ? taxOnBrackets(taxable, [
+      { upTo: (scotStarterEnd - allowance), rate: 0.19 },
+      { upTo: (scotBasicEnd - allowance), rate: 0.20 },
+      { upTo: (43662 - allowance), rate: 0.21 },
+      { upTo: (75000 - allowance), rate: 0.42 },
+      { upTo: (125140 - allowance), rate: 0.45 },
+      { upTo: Infinity, rate: 0.48 }
+    ])
+  : taxOnBrackets(taxable, [
+      { upTo: (50270 - allowance), rate: 0.20 },
+      { upTo: (125140 - allowance), rate: 0.40 },
+      { upTo: Infinity, rate: 0.45 }
+    ]);
     const r = usEstimate(totalGross, filing, state);
 
     el("netYear").textContent = fmtMoney(r.net, ccy);
