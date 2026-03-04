@@ -175,8 +175,25 @@
   <!-- Future AdSense code will go here -->
 </div>
     <div class="card" id="comparison" style="display:none;">
-      <div class="muted" id="comparisonText"></div>
+  <div class="muted" style="margin:0 0 10px;"><b>Quick comparison (estimate)</b></div>
+  <div class="grid3">
+    <div class="box">
+      <h3 id="cmp1Label">—</h3>
+      <div class="big" id="cmp1Net">—</div>
+      <div class="tiny" id="cmp1Diff">—</div>
     </div>
+    <div class="box">
+      <h3 id="cmp2Label">—</h3>
+      <div class="big" id="cmp2Net">—</div>
+      <div class="tiny" id="cmp2Diff">—</div>
+    </div>
+    <div class="box">
+      <h3 id="cmp3Label">—</h3>
+      <div class="big" id="cmp3Net">—</div>
+      <div class="tiny" id="cmp3Diff">—</div>
+    </div>
+  </div>
+</div>
   </div>
 <div class="card">
   <h2>UK Take-Home Pay Explained</h2>
@@ -471,15 +488,24 @@ const wa = usEstimate(totalGross, filing, "WA", k401Pct);
 
 const stateNameShort = el("state").selectedOptions[0].textContent;
 
-el("comparisonText").innerHTML =
-  `<b>Quick comparison (estimate):</b><br>
-  ${state !== "TX" ? `Texas: ${fmtMoney(tx.net, ccy)} (diff ${fmtMoney(tx.net - r.net, ccy)})<br>` : `Texas: ${fmtMoney(tx.net, ccy)}<br>`}
-  ${state !== "FL" ? `Florida: ${fmtMoney(fl.net, ccy)} (diff ${fmtMoney(fl.net - r.net, ccy)})<br>` : `Florida: ${fmtMoney(fl.net, ccy)}<br>`}
-  ${state !== "WA" ? `Washington: ${fmtMoney(wa.net, ccy)} (diff ${fmtMoney(wa.net - r.net, ccy)})<br>` : `Washington: ${fmtMoney(wa.net, ccy)}<br>`}
-  <span class="tiny">Compared to your selected state (${stateNameShort}).</span>`;
+// Quick compare vs no-income-tax states (estimate)
+const tx = usEstimate(totalGross, filing, "TX", k401Pct);
+const fl = usEstimate(totalGross, filing, "FL", k401Pct);
+const wa = usEstimate(totalGross, filing, "WA", k401Pct);
+
+el("cmp1Label").textContent = "Texas";
+el("cmp1Net").textContent = fmtMoney(tx.net, ccy);
+el("cmp1Diff").textContent = `Diff vs ${state}: ${fmtMoney(tx.net - r.net, ccy)}`;
+
+el("cmp2Label").textContent = "Florida";
+el("cmp2Net").textContent = fmtMoney(fl.net, ccy);
+el("cmp2Diff").textContent = `Diff vs ${state}: ${fmtMoney(fl.net - r.net, ccy)}`;
+
+el("cmp3Label").textContent = "Washington";
+el("cmp3Net").textContent = fmtMoney(wa.net, ccy);
+el("cmp3Diff").textContent = `Diff vs ${state}: ${fmtMoney(wa.net - r.net, ccy)}`;
 
 el("comparison").style.display = (state !== "none") ? "block" : "none";
-  el("comparison").style.display = "none";
 } else {
   const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
 
