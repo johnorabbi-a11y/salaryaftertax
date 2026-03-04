@@ -356,7 +356,7 @@ function usEstimate(gross, filing, state, k401Pct){
   const stateRate = stateRates[state] ?? 0;
   const k401 = gross * (clamp(k401Pct || 0, 0, 80) / 100);  // Income-tax wages (federal + most states): gross minus 401(k) const wageForIncomeTax = Math.max(0, gross - k401);  const stateTax = wageForIncomeTax * stateRate;
 
-  const taxable = Math.max(0, gross - standardDeduction);
+  const taxable = Math.max(0, wageForIncomeTax - standardDeduction);
 
   const bracketsSingle = [
     { upTo: 11600, rate: 0.10 },
@@ -390,10 +390,10 @@ function usEstimate(gross, filing, state, k401Pct){
   const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
 
   const fica = ss + medicare + addMedicare;
-  const totalDeductions = incomeTax + fica + stateTax;
+  const totalDeductions = incomeTax + fica + stateTax + k401;
   const net = Math.max(0, gross - totalDeductions);
 
-  return { gross, taxable, standardDeduction, incomeTax, fica, stateTax, ss, medicare, addMedicare, totalDeductions, net };
+  return { gross, k401, wageForIncomeTax, taxable, standardDeduction, incomeTax, fica, stateTax, ss, medicare, addMedicare, totalDeductions, net };
 }
 
 const el = (id) => document.getElementById(id);
@@ -463,7 +463,7 @@ Student loan applied if selected. ${isScotland ? "Scottish income tax bands appl
 
   el("comparison").style.display = "none";
 } else {
-  const r = usEstimate(totalGross, filing, state);
+  const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
 
   el("netYear").textContent = fmtMoney(r.net, ccy);
   el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
@@ -476,6 +476,7 @@ Student loan applied if selected. ${isScotland ? "Scottish income tax bands appl
     `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
 Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
 Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
+401(k) (assumed ${clamp(k401Pct,0,80)}%): ${fmtMoney(r.k401, ccy)}<br>
 Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
 Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
 FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
