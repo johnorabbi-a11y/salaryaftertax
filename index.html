@@ -492,9 +492,11 @@ Local taxes are not included. No 401(k), health insurance, or other payroll dedu
     el("comparisonText").innerHTML =
       `On <b>${fmtMoney(gross, ccy)}</b> in <b>${stateName}</b>, you take home about <b>${fmtMoney(r.net, ccy)}</b> — roughly <b>${fmtMoney(diff, ccy)}</b> less than Texas (estimate).`;
     el("comparison").style.display = "block";
-  } else {
+   } else {
     el("comparison").style.display = "none";
   }
+}
+}
 
 el("calcBtn").addEventListener("click", calculate);
 el("country").addEventListener("change", calculate);
