@@ -59,8 +59,13 @@
       <div>
         <h2 style="margin:0 0 6px;">Earnings</h2>
 <div class="muted" style="margin:0 0 10px;">Enter your base salary, then add bonus/overtime if you want.</div>
-        <label for="salary">Annual gross salary</label>
-        <input id="salary" type="number" inputmode="decimal" placeholder="e.g. 40000" min="0" />
+<label for="hourly">Hourly wage</label>
+<input id="hourly" type="number" inputmode="decimal" placeholder="e.g. 20" min="0" />
+
+<label for="hours">Hours per week</label>
+<input id="hours" type="number" inputmode="decimal" placeholder="e.g. 40" min="0" />
+
+<div class="tiny">Annual salary is estimated from hourly wage × hours per week × 52 weeks.</div>
         <label for="bonus">Annual bonus (optional)</label>
 <input id="bonus" type="number" inputmode="decimal" placeholder="e.g. 5000" min="0" />
 <div class="tiny">Bonus is added to salary before tax (estimate).</div>
@@ -429,7 +434,7 @@ function toggleCountrySections(){
 function calculate(){
     toggleCountrySections();
   const country = el("country").value;
-  const gross = Number(el("salary").value);
+  const hourly = Number(el("hourly").value); const hours = Number(el("hours").value); const gross = hourly * hours * 52;
   const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
 const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
 // Overtime estimate (weekly hours * hourly rate * multiplier * 52)
@@ -551,9 +556,8 @@ el("pension").addEventListener("input", calculate);
 el("otHours").addEventListener("input", calculate);
 el("otRate").addEventListener("change", calculate);
   el("k401").addEventListener("input", calculate);
-el("salary").addEventListener("input", () => {
-  if (el("salary").value.trim().length >= 4) calculate();
-});
+el("hourly").addEventListener("input", calculate);
+el("hours").addEventListener("input", calculate);
 </script>
 
 <script type="application/ld+json">
