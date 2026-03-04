@@ -354,8 +354,12 @@ function usEstimate(gross, filing, state, k401Pct){
     PA: 0.03, GA: 0.04, NC: 0.045, TX: 0.0, FL: 0.0, WA: 0.0, none: 0.0
   };
   const stateRate = stateRates[state] ?? 0;
-  const k401 = gross * (clamp(k401Pct || 0, 0, 80) / 100);  // Income-tax wages (federal + most states): gross minus 401(k) const wageForIncomeTax = Math.max(0, gross - k401);  const stateTax = wageForIncomeTax * stateRate;
+const k401 = gross * (clamp(k401Pct || 0, 0, 80) / 100);
 
+// Income-tax wages (federal + most states): gross minus 401(k)
+const wageForIncomeTax = Math.max(0, gross - k401);
+
+const stateTax = wageForIncomeTax * stateRate;
   const taxable = Math.max(0, wageForIncomeTax - standardDeduction);
 
   const bracketsSingle = [
@@ -489,7 +493,7 @@ State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
 Local taxes are not included. No 401(k), health insurance, or other payroll deductions included.`;
 
   // Engagement: quick comparison vs Texas
-  const tx = usEstimate(gross, filing, "TX");
+  const tx = usEstimate(totalGross, filing, "TX", k401Pct);
   const diff = Math.round(tx.net - r.net);
   if (state !== "TX" && state !== "none") {
     el("comparisonText").innerHTML =
