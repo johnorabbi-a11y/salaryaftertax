@@ -517,6 +517,7 @@ el("pension").addEventListener("input", calculate);
   el("bonus").addEventListener("input", calculate);
 el("otHours").addEventListener("input", calculate);
 el("otRate").addEventListener("change", calculate);
+  el("k401").addEventListener("input", calculate);
 el("salary").addEventListener("input", () => {
   if (el("salary").value.trim().length >= 4) calculate();
 });
