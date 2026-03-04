@@ -489,8 +489,8 @@ State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
 <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
 
   el("assumptions").innerHTML =
-    `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
-Local taxes are not included. No 401(k), health insurance, or other payroll deductions included.`;
+  `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
+Local taxes are not included. ${clamp(k401Pct,0,80) > 0 ? "401(k) included as a pre-tax deduction for income tax (FICA still applies)." : "No 401(k), health insurance, or other payroll deductions included."}`;
 
   // Engagement: quick comparison vs Texas
   const tx = usEstimate(totalGross, filing, "TX", k401Pct);
