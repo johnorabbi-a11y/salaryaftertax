@@ -80,7 +80,7 @@
   <option value="1.0">Straight time (1.0x)</option>
 </select>
 
-<div class="tiny">Estimate: overtime pay is based on your salary-derived hourly rate.</div>
+<div class="tiny">Estimate: overtime pay is based on the hourly wage you enter.</div>
       </div>
     </div>
 
@@ -442,8 +442,6 @@ const otHoursRaw = el("otHours") ? el("otHours").value.trim() : "";
 const otHours = otHoursRaw === "" ? 0 : Number(otHoursRaw);
 const otMult = Number(el("otRate") ? el("otRate").value : 1.5);
 
-// hourly rate derived from base salary (not including bonus)
-const hourly = gross / (52 * 40);
 // overtime based on the hourly wage entered
 const overtimePay =
   (isNum(otHours) ? Math.max(0, otHours) : 0) *
