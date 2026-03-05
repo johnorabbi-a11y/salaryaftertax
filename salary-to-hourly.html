@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salary to Hourly Wage Calculator (UK & US)</title>
+
+<meta name="description" content="Convert an annual salary into hourly pay. Works for UK and US salaries with simple assumptions.">
+
+<link rel="canonical" href="https://www.aftertaxtool.com/salary-to-hourly.html">
+
+<style>
+body{
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+max-width:900px;
+margin:auto;
+padding:22px;
+}
+
+.card{
+border:1px solid #ddd;
+border-radius:14px;
+padding:18px;
+margin-top:18px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:6px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+margin-top:14px;
+padding:12px;
+width:100%;
+border-radius:10px;
+border:0;
+background:#111;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+
+.result{
+font-size:24px;
+font-weight:800;
+margin-top:12px;
+}
+
+.nav{
+margin-bottom:20px;
+font-size:14px;
+}
+
+.nav a{
+color:#333;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+<a href="/">Home</a> / Salary to Hourly
+</div>
+
+<h1>Salary to Hourly Wage Calculator</h1>
+
+<p>Convert an annual salary into hourly pay. Useful for comparing jobs or understanding your real hourly wage.</p>
+
+<div class="card">
+
+<label>Annual salary</label>
+<input id="salary" type="number" placeholder="e.g. 50000">
+
+<label>Hours per week</label>
+<input id="hours" type="number" placeholder="e.g. 40">
+
+<button onclick="calc()">Calculate</button>
+
+<div class="result" id="result">—</div>
+
+</div>
+
+<div class="card">
+
+<h2>How salary converts to hourly pay</h2>
+
+<p>
+To convert salary into hourly pay, divide annual income by total hours worked in a year.
+A typical full-time schedule is <b>40 hours per week × 52 weeks</b>.
+</p>
+
+</div>
+
+<script>
+
+function calc(){
+
+const salary=parseFloat(document.getElementById("salary").value);
+const hours=parseFloat(document.getElementById("hours").value);
+
+if(!salary||!hours){
+
+document.getElementById("result").innerText="Enter salary and hours";
+
+return;
+
+}
+
+const hourly=salary/(hours*52);
+
+document.getElementById("result").innerText=
+"≈ "+hourly.toFixed(2)+" per hour";
+
+}
+
+</script>
+
+</body>
+</html>
