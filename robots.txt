@@ -1,4 +1,5 @@
+
 User-agent: *
 Allow: /
 
-Sitemap: https://johnorabbi-a11y.github.io/salaryaftertax/sitemap.xml
+Sitemap: https://aftertaxtool.com/sitemap.xml
