@@ -4,70 +4,118 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Salary After Tax Calculator (UK & US) – Take-Home Pay + State Estimate</title>
-  <p>
-AfterTaxTool helps you estimate take-home pay in the UK and US. Use our calculators to convert hourly wages to salaries, calculate salary after tax, and compare common UK salary levels.
-</p>
   <meta name="description" content="Estimate take-home pay after tax in the UK and US. Includes a simple US state tax estimate and clear breakdown." />
-  <link rel="canonical" href="https://johnorabbi-a11y.github.io/salaryaftertax/" />
+  <link rel="canonical" href="https://aftertaxtool.com/" />
   <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo" />
+
   <style>
     :root { color-scheme: light; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 22px; max-width: 920px; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0 auto;
+      padding: 22px;
+      max-width: 920px;
+    }
     h1 { margin: 0 0 8px; font-size: 28px; }
+    h2 { margin-top: 0; }
     .sub { color: #444; margin-bottom: 14px; }
     .card { border: 1px solid #ddd; border-radius: 14px; padding: 16px; margin: 14px 0; }
     .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (max-width: 700px){ .row { grid-template-columns: 1fr; } }
-    label { display:block; font-weight: 650; margin-top: 10px; }
-    input, select { width: 100%; padding: 10px; border-radius: 12px; border: 1px solid #cfcfcf; margin-top: 6px; font-size: 16px; }
-    button { width:100%; padding: 12px; border-radius: 12px; border: 1px solid #111; background:#111; color:#fff; font-weight:800; cursor:pointer; }
+    @media (max-width: 700px) { .row { grid-template-columns: 1fr; } }
+
+    label { display: block; font-weight: 650; margin-top: 10px; }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid #cfcfcf;
+      margin-top: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
     .results { font-size: 18px; line-height: 1.6; }
     .muted { color: #555; font-size: 14px; line-height: 1.5; }
-    .pill { display:inline-block; padding: 2px 10px; border:1px solid #ddd; border-radius: 999px; font-size: 12px; margin-left: 8px; }
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
     .warn { background: #fff8e1; border-color: #f0d27b; }
     .good { background: #ecfff0; border-color: #b9efc2; }
-    .tiny { font-size: 12px; color:#666; }
-    .grid3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-    @media (max-width: 700px){ .grid3 { grid-template-columns: 1fr; } }
+    .tiny { font-size: 12px; color: #666; line-height: 1.5; }
+
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    @media (max-width: 700px) { .grid3 { grid-template-columns: 1fr; } }
+
     .box { border: 1px solid #e2e2e2; border-radius: 12px; padding: 12px; }
-    .box h3 { margin: 0 0 6px; font-size: 14px; color:#333; }
+    .box h3 { margin: 0 0 6px; font-size: 14px; color: #333; }
     .box .big { font-size: 20px; font-weight: 850; }
+
     .nav {
-  display:flex;
-  gap:14px;
-  align-items:center;
-  margin: 0 0 14px;
-  padding: 10px 12px;
-  border: 1px solid #e2e2e2;
-  border-radius: 14px;
-}
-.nav a { text-decoration:none; font-weight:700; }
-.nav a:hover { text-decoration:underline; }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin: 0 0 14px;
+      padding: 10px 12px;
+      border: 1px solid #e2e2e2;
+      border-radius: 14px;
+    }
+    .nav a { text-decoration: none; font-weight: 700; }
+    .nav a:hover { text-decoration: underline; }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    .salary-guides {
+      margin: 18px 0 0;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+    }
   </style>
+
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GNPTB0CMD0');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GNPTB0CMD0');
+  </script>
 </head>
 <body>
   <nav class="nav" aria-label="Primary">
-  <a href="/">Home</a>
-  <a href="/hourly-to-salary.html">Hourly → Salary</a>
-    <div class="tiny">
-<div class="tiny">
-Convert annual salary to hourly pay → 
-<a href="/salary-to-hourly.html">Salary to Hourly Calculator</a>
-</div>
-</nav>
+    <a href="/">Home</a>
+    <a href="/hourly-to-salary.html">Hourly → Salary</a>
+    <a href="/salary-to-hourly.html">Salary → Hourly</a>
+    <a href="/salary-guides.html">Salary Guides</a>
+  </nav>
+
   <h1>Salary After Tax Calculator (UK & US) – See Your Take-Home Pay</h1>
   <div class="sub">
     Estimate your take-home pay in the <b>UK</b> or <b>US</b> in plain English.
     <span class="pill warn">Estimates</span>
   </div>
+
+  <p class="muted">
+    AfterTaxTool helps you estimate take-home pay in the UK and US. Use our calculators to convert hourly wages to salaries, calculate salary after tax, and compare common UK salary levels.
+  </p>
 
   <div class="card">
     <div class="row">
@@ -78,97 +126,110 @@ Convert annual salary to hourly pay →
           <option value="us">US (Federal + FICA estimate)</option>
         </select>
       </div>
+
       <div>
         <h2 style="margin:0 0 6px;">Earnings</h2>
-<div class="muted" style="margin:0 0 10px;">Enter your base salary, then add bonus/overtime if you want.</div>
+        <div class="muted" style="margin:0 0 10px;">Enter your base salary, then add bonus or overtime if you want.</div>
+
         <label for="salary">Annual gross salary</label>
         <input id="salary" type="number" inputmode="decimal" placeholder="e.g. 40000" min="0" />
+
         <label for="bonus">Annual bonus (optional)</label>
-<input id="bonus" type="number" inputmode="decimal" placeholder="e.g. 5000" min="0" />
-<div class="tiny">Bonus is added to salary before tax (estimate).</div>
+        <input id="bonus" type="number" inputmode="decimal" placeholder="e.g. 5000" min="0" />
+        <div class="tiny">Bonus is added to salary before tax as an estimate.</div>
+
         <label for="otHours">Overtime hours per week (optional)</label>
-<input id="otHours" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" />
+        <input id="otHours" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" />
 
-<label for="otRate">Overtime rate (multiplier)</label>
-<select id="otRate">
-  <option value="1.5">Time and a half (1.5x)</option>
-  <option value="2.0">Double time (2.0x)</option>
-  <option value="1.25">1.25x</option>
-  <option value="1.0">Straight time (1.0x)</option>
-</select>
+        <label for="otRate">Overtime rate (multiplier)</label>
+        <select id="otRate">
+          <option value="1.5">Time and a half (1.5x)</option>
+          <option value="2.0">Double time (2.0x)</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.0">Straight time (1.0x)</option>
+        </select>
 
-<div class="tiny">Estimate: overtime pay is based on your salary-derived hourly rate.</div>
+        <div class="tiny">Estimate: overtime pay is based on your salary-derived hourly rate.</div>
       </div>
     </div>
 
     <div class="row">
       <div>
-      <h2 id="usOptionsTitle" style="margin:18px 0 6px;">US options</h2>
-<div class="muted" style="margin:0 0 10px;">Used only when Country is set to US.</div>
+        <h2 id="usOptionsTitle" style="margin:18px 0 6px;">US options</h2>
+        <div class="muted" style="margin:0 0 10px;">Used only when Country is set to US.</div>
+
         <div id="usOptions">
-        <label for="filing">US filing status (only used for US)</label>
-        <select id="filing">
-          <option value="single">Single</option>
-          <option value="mfj">Married filing jointly</option>
-        </select>
-<label for="k401">401(k) % (pre-tax, optional)</label>
-<input id="k401" type="number" inputmode="decimal" placeholder="e.g. 6" min="0" max="80" />
-<div class="tiny">Simple estimate: 401(k) reduces taxable wages for federal + most state income tax (FICA still applies).</div>
-        <label for="state">US state (estimate)</label>
-        <select id="state">
-          <option value="none">Select a state (or leave blank)</option>
-          <option value="CA">California</option>
-          <option value="NY">New York</option>
-          <option value="TX">Texas</option>
-          <option value="FL">Florida</option>
-          <option value="NJ">New Jersey</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="IL">Illinois</option>
-          <option value="MA">Massachusetts</option>
-          <option value="WA">Washington</option>
-          <option value="GA">Georgia</option>
-          <option value="NC">North Carolina</option>
-        </select>
-        <div class="tiny">State tax is an estimate and may not include local taxes.</div>
-          </div>
+          <label for="filing">US filing status</label>
+          <select id="filing">
+            <option value="single">Single</option>
+            <option value="mfj">Married filing jointly</option>
+          </select>
+
+          <label for="k401">401(k) % (pre-tax, optional)</label>
+          <input id="k401" type="number" inputmode="decimal" placeholder="e.g. 6" min="0" max="80" />
+          <div class="tiny">Simple estimate: 401(k) reduces taxable wages for federal and most state income tax. FICA still applies.</div>
+
+          <label for="state">US state (estimate)</label>
+          <select id="state">
+            <option value="none">Select a state (or leave blank)</option>
+            <option value="CA">California</option>
+            <option value="NY">New York</option>
+            <option value="TX">Texas</option>
+            <option value="FL">Florida</option>
+            <option value="NJ">New Jersey</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="IL">Illinois</option>
+            <option value="MA">Massachusetts</option>
+            <option value="WA">Washington</option>
+            <option value="GA">Georgia</option>
+            <option value="NC">North Carolina</option>
+          </select>
+          <div class="tiny">State tax is an estimate and may not include local taxes.</div>
+        </div>
       </div>
 
       <div>
         <h2 style="margin:18px 0 6px;">Display</h2>
-<div class="muted" style="margin:0 0 10px;">Choose how amounts are shown.</div>
+        <div class="muted" style="margin:0 0 10px;">Choose how amounts are shown.</div>
+
         <label for="currency">Display currency</label>
         <select id="currency">
           <option value="auto">Auto</option>
           <option value="GBP">GBP (£)</option>
           <option value="USD">USD ($)</option>
         </select>
-<h2 id="ukOptionsTitle" style="margin:18px 0 6px;">UK options</h2>
-<div class="muted" style="margin:0 0 10px;">Used only when Country is set to UK.</div>
+
+        <h2 id="ukOptionsTitle" style="margin:18px 0 6px;">UK options</h2>
+        <div class="muted" style="margin:0 0 10px;">Used only when Country is set to UK.</div>
+
         <div id="ukOptions">
           <label for="ukYear">UK tax year</label>
-<select id="ukYear">
-  <option value="2025-26" selected>2025/26 (6 Apr 2025 – 5 Apr 2026)</option>
-  <option value="2024-25">2024/25</option>
-</select>
-<div class="tiny">Used for UK income tax, NI, and student loan thresholds.</div>
-        <label for="pension">Pension % (UK optional)</label>
-        <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
-        <div class="tiny">Leave blank for 0%. (Simple estimate: pension reduces taxable pay.)</div>
-<label for="ukLoan">UK student loan (optional)</label>
-<select id="ukLoan">
-  <option value="none">None</option>
-  <option value="plan1">Plan 1</option>
-  <option value="plan2">Plan 2</option>
-  <option value="plan4">Plan 4 (Scotland)</option>
-  <option value="plan5">Plan 5</option>
-  <option value="pgl">Postgraduate Loan</option>
-  <option value="plan1+pgl">Plan 1 + Postgraduate</option>
-<option value="plan2+pgl">Plan 2 + Postgraduate</option>
-<option value="plan4+pgl">Plan 4 + Postgraduate</option>
-<option value="plan5+pgl">Plan 5 + Postgraduate</option>
-</select>
-<div class="tiny">Estimate: student loan repayments are based on annual income above the plan threshold.</div>
-          </div>
+          <select id="ukYear">
+            <option value="2025-26" selected>2025/26 (6 Apr 2025 – 5 Apr 2026)</option>
+            <option value="2024-25">2024/25</option>
+          </select>
+          <div class="tiny">Used for UK income tax, NI and student loan thresholds.</div>
+
+          <label for="pension">Pension % (UK optional)</label>
+          <input id="pension" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" max="40" />
+          <div class="tiny">Leave blank for 0%. Simple estimate: pension reduces taxable pay.</div>
+
+          <label for="ukLoan">UK student loan (optional)</label>
+          <select id="ukLoan">
+            <option value="none">None</option>
+            <option value="plan1">Plan 1</option>
+            <option value="plan2">Plan 2</option>
+            <option value="plan4">Plan 4 (Scotland)</option>
+            <option value="plan5">Plan 5</option>
+            <option value="pgl">Postgraduate Loan</option>
+            <option value="plan1+pgl">Plan 1 + Postgraduate</option>
+            <option value="plan2+pgl">Plan 2 + Postgraduate</option>
+            <option value="plan4+pgl">Plan 4 + Postgraduate</option>
+            <option value="plan5+pgl">Plan 5 + Postgraduate</option>
+          </select>
+          <div class="tiny">Estimate: student loan repayments are based on annual income above the plan threshold.</div>
+        </div>
+
         <label>&nbsp;</label>
         <button id="calcBtn">Calculate</button>
       </div>
@@ -193,431 +254,483 @@ Convert annual salary to hourly pay →
 
     <div class="results" id="breakdown" style="margin-top:12px;">Enter a salary and hit Calculate.</div>
     <div class="muted" id="assumptions" style="margin-top:10px;"></div>
-<div class="card" id="ad-slot" style="text-align:center; font-size:14px; color:#777;">
-  <em>Advertisement</em>
-  <!-- Future AdSense code will go here -->
-</div>
+
+    <div class="card" id="ad-slot" style="text-align:center; font-size:14px; color:#777;">
+      <em>Advertisement</em>
+      <!-- Future AdSense code will go here -->
+    </div>
+
     <div class="card" id="comparison" style="display:none;">
-  <div class="muted" style="margin:0 0 10px;"><b>Quick comparison (estimate)</b></div>
-  <div class="grid3">
-    <div class="box">
-      <h3 id="cmp1Label">—</h3>
-      <div class="big" id="cmp1Net">—</div>
-      <div class="tiny" id="cmp1Diff">—</div>
-    </div>
-    <div class="box">
-      <h3 id="cmp2Label">—</h3>
-      <div class="big" id="cmp2Net">—</div>
-      <div class="tiny" id="cmp2Diff">—</div>
-    </div>
-    <div class="box">
-      <h3 id="cmp3Label">—</h3>
-      <div class="big" id="cmp3Net">—</div>
-      <div class="tiny" id="cmp3Diff">—</div>
+      <div class="muted" style="margin:0 0 10px;"><b>Quick comparison (estimate)</b></div>
+      <div class="grid3">
+        <div class="box">
+          <h3 id="cmp1Label">—</h3>
+          <div class="big" id="cmp1Net">—</div>
+          <div class="tiny" id="cmp1Diff">—</div>
+        </div>
+        <div class="box">
+          <h3 id="cmp2Label">—</h3>
+          <div class="big" id="cmp2Net">—</div>
+          <div class="tiny" id="cmp2Diff">—</div>
+        </div>
+        <div class="box">
+          <h3 id="cmp3Label">—</h3>
+          <div class="big" id="cmp3Net">—</div>
+          <div class="tiny" id="cmp3Diff">—</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-  </div>
-<div class="card">
-  <h2>UK Take-Home Pay Explained</h2>
-  <p class="muted">
-    Take-home pay in the UK depends on income tax bands, National Insurance, and pension contributions.
-    This calculator uses a simplified model to estimate net salary after standard deductions for England,
-    Wales and Northern Ireland. Actual take-home pay can vary due to student loans, salary sacrifice schemes,
-    bonuses, and benefit deductions.
-  </p>
-</div>
 
-<div class="card">
-  <h2>US Salary After Tax by State</h2>
-  <p class="muted">
-    Take-home pay in the US varies significantly depending on the state you live in. States like Texas and
-    Florida have no state income tax, while states like California and New York can reduce net salary more
-    due to higher state taxes. This calculator provides a simplified estimate including federal tax, FICA,
-    and an approximate state tax adjustment.
-  </p>
-</div>
-
-<div class="card">
-  <h2>Why Take-Home Pay Differs Between States</h2>
-  <p class="muted">
-    Two people earning the same salary can take home very different amounts depending on where they live.
-    Differences in state income tax, local taxes, and deductions can significantly change net pay. That is
-    why comparing take-home salary between states can give a clearer picture than looking at gross salary alone.
-  </p>
-</div>
   <div class="card">
-<h2>Related Salary Tools</h2>
-<p class="muted">Helpful calculators related to salary and take-home pay.</p>
+    <h2>UK Take-Home Pay Explained</h2>
+    <p class="muted">
+      Take-home pay in the UK depends on income tax bands, National Insurance and pension contributions.
+      This calculator uses a simplified model to estimate net salary after standard deductions for England,
+      Wales and Northern Ireland. Actual take-home pay can vary due to student loans, salary sacrifice schemes,
+      bonuses and benefit deductions.
+    </p>
+  </div>
 
-<ul>
-<li><a href="/hourly-to-salary.html">Hourly Wage to Salary Calculator</a></li>
-</ul>
+  <div class="card">
+    <h2>US Salary After Tax by State</h2>
+    <p class="muted">
+      Take-home pay in the US varies significantly depending on the state you live in. States like Texas and
+      Florida have no state income tax, while states like California and New York can reduce net salary more
+      due to higher state taxes. This calculator provides a simplified estimate including federal tax, FICA
+      and an approximate state tax adjustment.
+    </p>
+  </div>
 
-</div>
+  <div class="card">
+    <h2>Why Take-Home Pay Differs Between States</h2>
+    <p class="muted">
+      Two people earning the same salary can take home very different amounts depending on where they live.
+      Differences in state income tax, local taxes and deductions can significantly change net pay. That is
+      why comparing take-home salary between states can give a clearer picture than looking at gross salary alone.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Related Salary Tools</h2>
+    <p class="muted">Helpful calculators related to salary and take-home pay.</p>
+    <ul>
+      <li><a href="/hourly-to-salary.html">Hourly Wage to Salary Calculator</a></li>
+      <li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
+      <li><a href="/salary-guides.html">UK Salary Guides</a></li>
+    </ul>
+  </div>
+
   <div class="card" id="faq">
     <h2 style="margin:0 0 8px;">FAQ</h2>
+
     <h3 style="margin:12px 0 6px;">Is this take-home pay exact?</h3>
     <p class="muted" style="margin:0;">
-      No — it’s an estimate. Real take-home pay depends on deductions like pensions/401(k), benefits, student loans, bonuses, and (in the US) state and local taxes.
+      No — it’s an estimate. Real take-home pay depends on deductions like pensions, 401(k), benefits, student loans, bonuses and, in the US, state and local taxes.
     </p>
+
     <h3 style="margin:12px 0 6px;">Does the US result include state tax?</h3>
     <p class="muted" style="margin:0;">
-      Yes — a simple estimate for selected states. Local taxes aren’t included.
+      Yes — a simple estimate for selected states. Local taxes are not included.
     </p>
+
     <h3 style="margin:12px 0 6px;">Which UK tax rules are used?</h3>
     <p class="muted" style="margin:0;">
-      A simplified UK estimate (England/Wales/NI style) using standard income tax bands and a simplified National Insurance model.
+      A simplified UK estimate for England, Wales and Northern Ireland using standard income tax bands and a simplified National Insurance model.
     </p>
   </div>
 
   <div class="card">
     <div class="muted">
-      <b>Disclaimer:</b> This calculator provides <b>estimates</b>, not financial/tax advice.
+      <b>Disclaimer:</b> This calculator provides <b>estimates</b>, not financial or tax advice.
       Real take-home pay can differ due to tax year changes, pension rules, bonuses, student loans, benefits,
-      state taxes (US), local taxes, and personal circumstances.
+      state taxes, local taxes and personal circumstances.
     </div>
   </div>
 
-<script>
-  // =============================
-// UK Student Loan (2025/26)
-// =============================
-const UK_STUDENT_LOAN = {
-  plan1: { threshold: 26065, rate: 0.09 },
-  plan2: { threshold: 28470, rate: 0.09 },
-  plan4: { threshold: 32745, rate: 0.09 },
-  plan5: { threshold: 25000, rate: 0.09 },
-  pgl:   { threshold: 21000, rate: 0.06 }
-};
-// UK Student Loan (2024/25)
-const UK_STUDENT_LOAN_2024_25 = {
-  plan1: { threshold: 24990, rate: 0.09 },
-  plan2: { threshold: 27295, rate: 0.09 },
-  plan4: { threshold: 31395, rate: 0.09 },
-  // Plan 5 repayments begin from 6 Apr 2026 under PAYE
-  plan5: { threshold: 25000, rate: 0.09 },
-  pgl:   { threshold: 21000, rate: 0.06 }
-};
-
-function pickUkStudentLoanTable(ukYear) {
-  return ukYear === "2024-25" ? UK_STUDENT_LOAN_2024_25 : UK_STUDENT_LOAN;
-}
-function calculateUkStudentLoan(planKey, grossForLoan, ukYear) {
-  if (!planKey || planKey === "none") return 0;
-  if (!isFinite(grossForLoan)) return 0;
-
-  const table = pickUkStudentLoanTable(ukYear);
-
-  // Support combos like "plan2+pgl"
-  const plans = planKey.includes("+")
-    ? planKey.split("+").map(s => s.trim()).filter(Boolean)
-    : [planKey];
-
-  let total = 0;
-
-  for (const p of plans) {
-    const config = table[p];
-    if (!config) continue;
-
-    const repayable = Math.max(0, grossForLoan - config.threshold);
-    total += repayable * config.rate;
-  }
-
-  return total;
-}
-
-function isNum(x){ return typeof x === "number" && isFinite(x); }
-function clamp(n, min, max){ return Math.min(Math.max(n, min), max); }
-
-function fmtMoney(n, ccy){
-  if (!isNum(n)) return "—";
-  const sym = ccy === "GBP" ? "£" : ccy === "USD" ? "$" : "";
-  return sym + Math.round(n).toLocaleString();
-}
-
-function pickCurrency(country, selection){
-  if (selection && selection !== "auto") return selection;
-  return country === "uk" ? "GBP" : "USD";
-}
-
-function taxOnBrackets(taxable, brackets){
-  let remaining = Math.max(0, taxable);
-  let prev = 0;
-  let tax = 0;
-  for (const b of brackets){
-    const top = b.upTo;
-    const width = (top === Infinity) ? remaining : Math.max(0, Math.min(remaining, top - prev));
-    tax += width * b.rate;
-    remaining -= width;
-    prev = top;
-    if (remaining <= 0) break;
-  }
-  return tax;
-}
-
-function ukEstimate(gross, pensionPct, loanPlan, ukYear){
-  const allowance = 12570;
-  const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
-  const adjustedGross = Math.max(0, gross - pension);
-  const taxable = Math.max(0, adjustedGross - allowance);
-
-  const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
-
-const incomeTax = isScotland
-  ? taxOnBrackets(taxable, [
-     { upTo: (((ukYear === "2024-25") ? 14876 : 15397) - allowance), rate: 0.19 },
-{ upTo: (((ukYear === "2024-25") ? 26561 : 27491) - allowance), rate: 0.20 },
-      { upTo: (43662 - allowance), rate: 0.21 },
-      { upTo: (75000 - allowance), rate: 0.42 },
-      { upTo: (125140 - allowance), rate: 0.45 },
-      { upTo: Infinity, rate: 0.48 }
-    ])
-  : taxOnBrackets(taxable, [
-      { upTo: (50270 - allowance), rate: 0.20 },
-      { upTo: (125140 - allowance), rate: 0.40 },
-      { upTo: Infinity, rate: 0.45 }
-    ]);
-
-  const niMainRate = 0.08;
-  const niUpperRate = 0.02;
-  const niMainUpper = 50270;
-
-  let ni = 0;
-  const niBand1 = Math.max(0, Math.min(adjustedGross, niMainUpper) - allowance);
-  ni += niBand1 * niMainRate;
-  const niBand2 = Math.max(0, adjustedGross - niMainUpper);
-  ni += niBand2 * niUpperRate;
-
-  const studentLoan = calculateUkStudentLoan(loanPlan, adjustedGross, ukYear); const totalDeductions = incomeTax + ni + pension + studentLoan;
-  const net = Math.max(0, gross - totalDeductions);
-
-  return { gross, pension, adjustedGross, taxable, incomeTax, ni, studentLoan, totalDeductions, net };
-}
-
-function usEstimate(gross, filing, state, k401Pct){
-  const standardDeduction = (filing === "mfj") ? 29200 : 14600;
-
-  const stateRates = {
-    CA: 0.06, NY: 0.06, NJ: 0.05, MA: 0.05, IL: 0.05,
-    PA: 0.03, GA: 0.04, NC: 0.045, TX: 0.0, FL: 0.0, WA: 0.0, none: 0.0
-  };
-  const stateRate = stateRates[state] ?? 0;
-const k401 = gross * (clamp(k401Pct || 0, 0, 80) / 100);
-
-// Income-tax wages (federal + most states): gross minus 401(k)
-const wageForIncomeTax = Math.max(0, gross - k401);
-
-const stateTax = wageForIncomeTax * stateRate;
-  const taxable = Math.max(0, wageForIncomeTax - standardDeduction);
-
-  const bracketsSingle = [
-    { upTo: 11600, rate: 0.10 },
-    { upTo: 47150, rate: 0.12 },
-    { upTo: 100525, rate: 0.22 },
-    { upTo: 191950, rate: 0.24 },
-    { upTo: 243725, rate: 0.32 },
-    { upTo: 609350, rate: 0.35 },
-    { upTo: Infinity, rate: 0.37 }
-  ];
-  const bracketsMFJ = [
-    { upTo: 23200, rate: 0.10 },
-    { upTo: 94300, rate: 0.12 },
-    { upTo: 201050, rate: 0.22 },
-    { upTo: 383900, rate: 0.24 },
-    { upTo: 487450, rate: 0.32 },
-    { upTo: 731200, rate: 0.35 },
-    { upTo: Infinity, rate: 0.37 }
-  ];
-
-  const incomeTax = taxOnBrackets(taxable, filing === "mfj" ? bracketsMFJ : bracketsSingle);
-
-  const ssRate = 0.062;
-  const medicareRate = 0.0145;
-  const ssWageBase = 168600;
-  const addMedicareRate = 0.009;
-  const addMedicareThreshold = (filing === "mfj") ? 250000 : 200000;
-
-  const ss = Math.min(gross, ssWageBase) * ssRate;
-  const medicare = gross * medicareRate;
-  const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
-
-  const fica = ss + medicare + addMedicare;
-  const totalDeductions = incomeTax + fica + stateTax + k401;
-  const net = Math.max(0, gross - totalDeductions);
-
-  return { gross, k401, wageForIncomeTax, taxable, standardDeduction, incomeTax, fica, stateTax, ss, medicare, addMedicare, totalDeductions, net };
-}
-
-const el = (id) => document.getElementById(id);
-function toggleCountrySections(){
-  const country = el("country").value;
-  const us = el("usOptions");
-  const uk = el("ukOptions");
-  if (us) us.style.display = (country === "us") ? "" : "none";
-  if (uk) uk.style.display = (country === "uk") ? "" : "none";
-}
-function calculate(){
-    toggleCountrySections();
-  const country = el("country").value;
-  const gross = Number(el("salary").value);
-  const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
-const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
-// Overtime estimate (weekly hours * hourly rate * multiplier * 52)
-const otHoursRaw = el("otHours") ? el("otHours").value.trim() : "";
-const otHours = otHoursRaw === "" ? 0 : Number(otHoursRaw);
-const otMult = Number(el("otRate") ? el("otRate").value : 1.5);
-
-// hourly rate derived from base salary (not including bonus)
-const hourly = gross / (52 * 40);
-const overtimePay = (isNum(otHours) ? Math.max(0, otHours) : 0) * hourly * (isNum(otMult) ? otMult : 1.5) * 52;
-
-const totalGross = gross
-  + (isNum(bonus) ? Math.max(0, bonus) : 0)
-  + (isNum(overtimePay) ? Math.max(0, overtimePay) : 0);
-  const filing = el("filing").value;
-  const state = el("state").value;
-  const pensionPctRaw = el("pension").value.trim();
-  const pensionPct = pensionPctRaw === "" ? 0 : Number(pensionPctRaw);
-  const ccy = pickCurrency(country, el("currency").value);
-
-  if (!isNum(totalGross) || totalGross <= 0){
-    el("netYear").textContent = "—";
-    el("netMonth").textContent = "—";
-    el("taxYear").textContent = "—";
-    el("breakdown").textContent = "Please enter a positive annual salary.";
-    el("assumptions").textContent = "";
-    el("comparison").style.display = "none";
-    return;
-  }
-if (country === "uk"){
-  const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value, el("ukYear").value);
-
-  el("netYear").textContent = fmtMoney(r.net, ccy);
-  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
-
-  el("breakdown").innerHTML =
-    `<b>UK estimate</b><br>
-Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
-Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
-Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
-Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
-National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
-Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
-<b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
-
-  const loanPlan = el("ukLoan").value;
-  const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
-
-  el("assumptions").innerHTML =
-    `<b>Assumptions (UK):</b> Standard personal allowance used, banded income tax, and a simplified employee NI model.
-Student loan applied if selected. ${isScotland ? "Scottish income tax bands applied." : "England/Wales/NI income tax bands applied."}`;
-// Quick compare vs no-income-tax states (estimate)
-const tx = usEstimate(totalGross, filing, "TX", k401Pct);
-const fl = usEstimate(totalGross, filing, "FL", k401Pct);
-const wa = usEstimate(totalGross, filing, "WA", k401Pct);
-
-const stateNameShort = el("state").selectedOptions[0].textContent;
-
-
-} else {
-  const k401Raw = el("k401") ? el("k401").value.trim() : ""; const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);  const r = usEstimate(totalGross, filing, state, k401Pct);
-  // Quick compare vs no-income-tax states (estimate)
-const tx = usEstimate(totalGross, filing, "TX", k401Pct);
-const fl = usEstimate(totalGross, filing, "FL", k401Pct);
-const wa = usEstimate(totalGross, filing, "WA", k401Pct);
-
-el("cmp1Label").textContent = "Texas";
-el("cmp1Net").textContent = fmtMoney(tx.net, ccy);
-el("cmp1Diff").textContent = `Diff vs ${state}: ${fmtMoney(tx.net - r.net, ccy)}`;
-
-el("cmp2Label").textContent = "Florida";
-el("cmp2Net").textContent = fmtMoney(fl.net, ccy);
-el("cmp2Diff").textContent = `Diff vs ${state}: ${fmtMoney(fl.net - r.net, ccy)}`;
-
-el("cmp3Label").textContent = "Washington";
-el("cmp3Net").textContent = fmtMoney(wa.net, ccy);
-el("cmp3Diff").textContent = `Diff vs ${state}: ${fmtMoney(wa.net - r.net, ccy)}`;
-
-el("comparison").style.display = (state !== "none") ? "block" : "none";
-
-  el("netYear").textContent = fmtMoney(r.net, ccy);
-  el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
-  el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
-
-  const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
-  const stateName = el("state").selectedOptions[0].textContent;
-
-  el("breakdown").innerHTML =
-    `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
-Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
-Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
-401(k) (assumed ${clamp(k401Pct,0,80)}%): ${fmtMoney(r.k401, ccy)}<br>
-Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
-Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
-FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
-State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
-<span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
-<b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
-
-  el("assumptions").innerHTML =
-  `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
-Local taxes are not included. ${clamp(k401Pct,0,80) > 0 ? "401(k) included as a pre-tax deduction for income tax (FICA still applies)." : "No 401(k), health insurance, or other payroll deductions included."}`;
-
-}
-}
-
-el("calcBtn").addEventListener("click", calculate);
-el("country").addEventListener("change", calculate);
-  toggleCountrySections();
-el("filing").addEventListener("change", calculate);
-el("state").addEventListener("change", calculate);
-el("k401").addEventListener("change", calculate);
-el("currency").addEventListener("change", calculate);
-  el("ukYear").addEventListener("change", calculate);
-el("ukLoan").addEventListener("change", calculate);
-el("pension").addEventListener("input", calculate);
-  el("bonus").addEventListener("input", calculate);
-el("otHours").addEventListener("input", calculate);
-el("otRate").addEventListener("change", calculate);
-  el("k401").addEventListener("input", calculate);
-el("salary").addEventListener("input", () => {
-  if (el("salary").value.trim().length >= 4) calculate();
-});
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Is this take-home pay exact?","acceptedAnswer":{"@type":"Answer","text":"No — it’s an estimate. Real take-home pay depends on deductions like pensions or 401(k), benefits, student loans, bonuses, and in the US, state and local taxes."}},
-    {"@type":"Question","name":"Does the US result include state tax?","acceptedAnswer":{"@type":"Answer","text":"Yes — the US estimate includes federal tax, FICA, and a simple state tax estimate for selected states. Local taxes aren’t included."}},
-    {"@type":"Question","name":"Which UK tax rules are used?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses a simplified UK estimate based on standard income tax bands and National Insurance assumptions for England, Wales and Northern Ireland."}}
-  ]
-}
-</script>
   <section class="salary-guides">
-<h2>UK Salary Guides</h2>
+    <h2>UK Salary Guides</h2>
+    <p>Explore guides for common UK hourly wages and salaries:</p>
 
-<p>Explore guides for common UK hourly wages and salaries:</p>
+    <ul>
+      <li><a href="/15-an-hour-salary-uk.html">£15 an hour salary</a></li>
+      <li><a href="/18-an-hour-salary-uk.html">£18 an hour salary</a></li>
+      <li><a href="/20-an-hour-salary-uk.html">£20 an hour salary</a></li>
+      <li><a href="/22-an-hour-salary-uk.html">£22 an hour salary</a></li>
+      <li><a href="/25-an-hour-salary-uk.html">£25 an hour salary</a></li>
+      <li><a href="/30-an-hour-salary-uk.html">£30 an hour salary</a></li>
+      <li><a href="/30000-salary-after-tax-uk.html">£30k salary after tax</a></li>
+      <li><a href="/35000-salary-after-tax-uk.html">£35k salary after tax</a></li>
+      <li><a href="/40000-salary-after-tax-uk.html">£40k salary after tax</a></li>
+      <li><a href="/45000-salary-after-tax-uk.html">£45k salary after tax</a></li>
+      <li><a href="/50000-salary-after-tax-uk.html">£50k salary after tax</a></li>
+      <li><a href="/60000-salary-after-tax-uk.html">£60k salary after tax</a></li>
+    </ul>
+  </section>
 
-<ul>
-<li><a href="/15-an-hour-salary-uk.html">£15 an hour salary</a></li>
-<li><a href="/18-an-hour-salary-uk.html">£18 an hour salary</a></li>
-<li><a href="/20-an-hour-salary-uk.html">£20 an hour salary</a></li>
-<li><a href="/22-an-hour-salary-uk.html">£22 an hour salary</a></li>
-<li><a href="/25-an-hour-salary-uk.html">£25 an hour salary</a></li>
-<li><a href="/30-an-hour-salary-uk.html">£30 an hour salary</a></li>
+  <script>
+    // =============================
+    // UK Student Loan (2025/26)
+    // =============================
+    const UK_STUDENT_LOAN = {
+      plan1: { threshold: 26065, rate: 0.09 },
+      plan2: { threshold: 28470, rate: 0.09 },
+      plan4: { threshold: 32745, rate: 0.09 },
+      plan5: { threshold: 25000, rate: 0.09 },
+      pgl:   { threshold: 21000, rate: 0.06 }
+    };
 
-<li><a href="/30000-salary-after-tax-uk.html">£30k salary after tax</a></li>
-<li><a href="/35000-salary-after-tax-uk.html">£35k salary after tax</a></li>
-<li><a href="/40000-salary-after-tax-uk.html">£40k salary after tax</a></li>
-<li><a href="/45000-salary-after-tax-uk.html">£45k salary after tax</a></li>
-<li><a href="/50000-salary-after-tax-uk.html">£50k salary after tax</a></li>
-<li><a href="/60000-salary-after-tax-uk.html">£60k salary after tax</a></li>
-</ul>
-</section>
+    // UK Student Loan (2024/25)
+    const UK_STUDENT_LOAN_2024_25 = {
+      plan1: { threshold: 24990, rate: 0.09 },
+      plan2: { threshold: 27295, rate: 0.09 },
+      plan4: { threshold: 31395, rate: 0.09 },
+      plan5: { threshold: 25000, rate: 0.09 },
+      pgl:   { threshold: 21000, rate: 0.06 }
+    };
+
+    function pickUkStudentLoanTable(ukYear) {
+      return ukYear === "2024-25" ? UK_STUDENT_LOAN_2024_25 : UK_STUDENT_LOAN;
+    }
+
+    function calculateUkStudentLoan(planKey, grossForLoan, ukYear) {
+      if (!planKey || planKey === "none") return 0;
+      if (!isFinite(grossForLoan)) return 0;
+
+      const table = pickUkStudentLoanTable(ukYear);
+      const plans = planKey.includes("+")
+        ? planKey.split("+").map(s => s.trim()).filter(Boolean)
+        : [planKey];
+
+      let total = 0;
+
+      for (const p of plans) {
+        const config = table[p];
+        if (!config) continue;
+        const repayable = Math.max(0, grossForLoan - config.threshold);
+        total += repayable * config.rate;
+      }
+
+      return total;
+    }
+
+    function isNum(x) { return typeof x === "number" && isFinite(x); }
+    function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+
+    function fmtMoney(n, ccy) {
+      if (!isNum(n)) return "—";
+      const sym = ccy === "GBP" ? "£" : ccy === "USD" ? "$" : "";
+      return sym + Math.round(n).toLocaleString();
+    }
+
+    function pickCurrency(country, selection) {
+      if (selection && selection !== "auto") return selection;
+      return country === "uk" ? "GBP" : "USD";
+    }
+
+    function taxOnBrackets(taxable, brackets) {
+      let remaining = Math.max(0, taxable);
+      let prev = 0;
+      let tax = 0;
+
+      for (const b of brackets) {
+        const top = b.upTo;
+        const width = (top === Infinity) ? remaining : Math.max(0, Math.min(remaining, top - prev));
+        tax += width * b.rate;
+        remaining -= width;
+        prev = top;
+        if (remaining <= 0) break;
+      }
+
+      return tax;
+    }
+
+    function ukEstimate(gross, pensionPct, loanPlan, ukYear) {
+      const allowance = 12570;
+      const pension = gross * (clamp(pensionPct || 0, 0, 40) / 100);
+      const adjustedGross = Math.max(0, gross - pension);
+      const taxable = Math.max(0, adjustedGross - allowance);
+
+      const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
+
+      const incomeTax = isScotland
+        ? taxOnBrackets(taxable, [
+            { upTo: (((ukYear === "2024-25") ? 14876 : 15397) - allowance), rate: 0.19 },
+            { upTo: (((ukYear === "2024-25") ? 26561 : 27491) - allowance), rate: 0.20 },
+            { upTo: (43662 - allowance), rate: 0.21 },
+            { upTo: (75000 - allowance), rate: 0.42 },
+            { upTo: (125140 - allowance), rate: 0.45 },
+            { upTo: Infinity, rate: 0.48 }
+          ])
+        : taxOnBrackets(taxable, [
+            { upTo: (50270 - allowance), rate: 0.20 },
+            { upTo: (125140 - allowance), rate: 0.40 },
+            { upTo: Infinity, rate: 0.45 }
+          ]);
+
+      const niMainRate = 0.08;
+      const niUpperRate = 0.02;
+      const niMainUpper = 50270;
+
+      let ni = 0;
+      const niBand1 = Math.max(0, Math.min(adjustedGross, niMainUpper) - allowance);
+      ni += niBand1 * niMainRate;
+      const niBand2 = Math.max(0, adjustedGross - niMainUpper);
+      ni += niBand2 * niUpperRate;
+
+      const studentLoan = calculateUkStudentLoan(loanPlan, adjustedGross, ukYear);
+      const totalDeductions = incomeTax + ni + pension + studentLoan;
+      const net = Math.max(0, gross - totalDeductions);
+
+      return {
+        gross,
+        pension,
+        adjustedGross,
+        taxable,
+        incomeTax,
+        ni,
+        studentLoan,
+        totalDeductions,
+        net
+      };
+    }
+
+    function usEstimate(gross, filing, state, k401Pct) {
+      const standardDeduction = (filing === "mfj") ? 29200 : 14600;
+
+      const stateRates = {
+        CA: 0.06, NY: 0.06, NJ: 0.05, MA: 0.05, IL: 0.05,
+        PA: 0.03, GA: 0.04, NC: 0.045, TX: 0.0, FL: 0.0, WA: 0.0, none: 0.0
+      };
+
+      const stateRate = stateRates[state] ?? 0;
+      const k401 = gross * (clamp(k401Pct || 0, 0, 80) / 100);
+      const wageForIncomeTax = Math.max(0, gross - k401);
+      const stateTax = wageForIncomeTax * stateRate;
+      const taxable = Math.max(0, wageForIncomeTax - standardDeduction);
+
+      const bracketsSingle = [
+        { upTo: 11600, rate: 0.10 },
+        { upTo: 47150, rate: 0.12 },
+        { upTo: 100525, rate: 0.22 },
+        { upTo: 191950, rate: 0.24 },
+        { upTo: 243725, rate: 0.32 },
+        { upTo: 609350, rate: 0.35 },
+        { upTo: Infinity, rate: 0.37 }
+      ];
+
+      const bracketsMFJ = [
+        { upTo: 23200, rate: 0.10 },
+        { upTo: 94300, rate: 0.12 },
+        { upTo: 201050, rate: 0.22 },
+        { upTo: 383900, rate: 0.24 },
+        { upTo: 487450, rate: 0.32 },
+        { upTo: 731200, rate: 0.35 },
+        { upTo: Infinity, rate: 0.37 }
+      ];
+
+      const incomeTax = taxOnBrackets(taxable, filing === "mfj" ? bracketsMFJ : bracketsSingle);
+
+      const ssRate = 0.062;
+      const medicareRate = 0.0145;
+      const ssWageBase = 168600;
+      const addMedicareRate = 0.009;
+      const addMedicareThreshold = (filing === "mfj") ? 250000 : 200000;
+
+      const ss = Math.min(gross, ssWageBase) * ssRate;
+      const medicare = gross * medicareRate;
+      const addMedicare = Math.max(0, gross - addMedicareThreshold) * addMedicareRate;
+
+      const fica = ss + medicare + addMedicare;
+      const totalDeductions = incomeTax + fica + stateTax + k401;
+      const net = Math.max(0, gross - totalDeductions);
+
+      return {
+        gross,
+        k401,
+        wageForIncomeTax,
+        taxable,
+        standardDeduction,
+        incomeTax,
+        fica,
+        stateTax,
+        ss,
+        medicare,
+        addMedicare,
+        totalDeductions,
+        net
+      };
+    }
+
+    const el = (id) => document.getElementById(id);
+
+    function toggleCountrySections() {
+      const country = el("country").value;
+      const us = el("usOptions");
+      const uk = el("ukOptions");
+      if (us) us.style.display = (country === "us") ? "" : "none";
+      if (uk) uk.style.display = (country === "uk") ? "" : "none";
+    }
+
+    function calculate() {
+      toggleCountrySections();
+
+      const country = el("country").value;
+      const gross = Number(el("salary").value);
+      const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
+      const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
+
+      const otHoursRaw = el("otHours") ? el("otHours").value.trim() : "";
+      const otHours = otHoursRaw === "" ? 0 : Number(otHoursRaw);
+      const otMult = Number(el("otRate") ? el("otRate").value : 1.5);
+
+      const hourly = gross / (52 * 40);
+      const overtimePay = (isNum(otHours) ? Math.max(0, otHours) : 0) * hourly * (isNum(otMult) ? otMult : 1.5) * 52;
+
+      const totalGross = gross
+        + (isNum(bonus) ? Math.max(0, bonus) : 0)
+        + (isNum(overtimePay) ? Math.max(0, overtimePay) : 0);
+
+      const filing = el("filing").value;
+      const state = el("state").value;
+      const pensionPctRaw = el("pension").value.trim();
+      const pensionPct = pensionPctRaw === "" ? 0 : Number(pensionPctRaw);
+      const ccy = pickCurrency(country, el("currency").value);
+
+      if (!isNum(totalGross) || totalGross <= 0) {
+        el("netYear").textContent = "—";
+        el("netMonth").textContent = "—";
+        el("taxYear").textContent = "—";
+        el("breakdown").textContent = "Please enter a positive annual salary.";
+        el("assumptions").textContent = "";
+        el("comparison").style.display = "none";
+        return;
+      }
+
+      if (country === "uk") {
+        const r = ukEstimate(totalGross, pensionPct, el("ukLoan").value, el("ukYear").value);
+
+        el("netYear").textContent = fmtMoney(r.net, ccy);
+        el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+        el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+
+        el("breakdown").innerHTML =
+          `<b>UK estimate</b><br>
+          Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
+          Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
+          Pension (assumed ${clamp(pensionPct,0,40)}%): ${fmtMoney(r.pension, ccy)}<br>
+          Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+          National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
+          Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
+          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+
+        const loanPlan = el("ukLoan").value;
+        const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
+
+        el("assumptions").innerHTML =
+          `<b>Assumptions (UK):</b> Standard personal allowance used, banded income tax, and a simplified employee NI model.
+          Student loan applied if selected. ${isScotland ? "Scottish income tax bands applied." : "England/Wales/NI income tax bands applied."}`;
+
+        el("comparison").style.display = "none";
+      } else {
+        const k401Raw = el("k401") ? el("k401").value.trim() : "";
+        const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);
+        const r = usEstimate(totalGross, filing, state, k401Pct);
+
+        const tx = usEstimate(totalGross, filing, "TX", k401Pct);
+        const fl = usEstimate(totalGross, filing, "FL", k401Pct);
+        const wa = usEstimate(totalGross, filing, "WA", k401Pct);
+
+        el("cmp1Label").textContent = "Texas";
+        el("cmp1Net").textContent = fmtMoney(tx.net, ccy);
+        el("cmp1Diff").textContent = `Diff vs ${state}: ${fmtMoney(tx.net - r.net, ccy)}`;
+
+        el("cmp2Label").textContent = "Florida";
+        el("cmp2Net").textContent = fmtMoney(fl.net, ccy);
+        el("cmp2Diff").textContent = `Diff vs ${state}: ${fmtMoney(fl.net - r.net, ccy)}`;
+
+        el("cmp3Label").textContent = "Washington";
+        el("cmp3Net").textContent = fmtMoney(wa.net, ccy);
+        el("cmp3Diff").textContent = `Diff vs ${state}: ${fmtMoney(wa.net - r.net, ccy)}`;
+
+        el("comparison").style.display = (state !== "none") ? "block" : "none";
+
+        el("netYear").textContent = fmtMoney(r.net, ccy);
+        el("netMonth").textContent = fmtMoney(r.net / 12, ccy);
+        el("taxYear").textContent = fmtMoney(r.totalDeductions, ccy);
+
+        const filingText = (filing === "mfj") ? "Married filing jointly" : "Single";
+        const stateName = el("state").selectedOptions[0].textContent;
+
+        el("breakdown").innerHTML =
+          `<b>US estimate</b> <span class="pill good">${filingText}</span><br>
+          Overtime (estimated): ${fmtMoney(overtimePay, ccy)}<br>
+          Gross (salary + bonus + overtime): ${fmtMoney(totalGross, ccy)}<br>
+          401(k) (assumed ${clamp(k401Pct,0,80)}%): ${fmtMoney(r.k401, ccy)}<br>
+          Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
+          Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
+          FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
+          State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
+          <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
+          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+
+        el("assumptions").innerHTML =
+          `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
+          Local taxes are not included. ${clamp(k401Pct,0,80) > 0 ? "401(k) included as a pre-tax deduction for income tax (FICA still applies)." : "No 401(k), health insurance, or other payroll deductions included."}`;
+      }
+    }
+
+    el("calcBtn").addEventListener("click", calculate);
+    el("country").addEventListener("change", calculate);
+    el("filing").addEventListener("change", calculate);
+    el("state").addEventListener("change", calculate);
+    el("k401").addEventListener("change", calculate);
+    el("currency").addEventListener("change", calculate);
+    el("ukYear").addEventListener("change", calculate);
+    el("ukLoan").addEventListener("change", calculate);
+    el("pension").addEventListener("input", calculate);
+    el("bonus").addEventListener("input", calculate);
+    el("otHours").addEventListener("input", calculate);
+    el("otRate").addEventListener("change", calculate);
+    el("k401").addEventListener("input", calculate);
+    el("salary").addEventListener("input", () => {
+      if (el("salary").value.trim().length >= 4) calculate();
+    });
+
+    toggleCountrySections();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Is this take-home pay exact?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No — it’s an estimate. Real take-home pay depends on deductions like pensions or 401(k), benefits, student loans, bonuses, and in the US, state and local taxes."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does the US result include state tax?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes — the US estimate includes federal tax, FICA, and a simple state tax estimate for selected states. Local taxes aren’t included."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Which UK tax rules are used?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The calculator uses a simplified UK estimate based on standard income tax bands and National Insurance assumptions for England, Wales and Northern Ireland."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
