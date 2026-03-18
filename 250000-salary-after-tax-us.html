@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$250,000 Salary After Tax US (2026)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="See estimated take-home pay on a $250,000 salary in the US for 2026 using federal tax, Social Security, and Medicare with no state income tax.">
+  <style>
+    :root{
+      --bg:#f3f5f7;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#5b6472;
+      --line:#d9dee5;
+      --accent:#1d4ed8;
+      --accent-soft:#e8f0ff;
+      --good:#0f766e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:24px;
+    }
+    .hero{
+      background:linear-gradient(135deg,#ffffff 0%,#eef4ff 100%);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:32px;
+      margin-bottom:22px;
+    }
+    .hero h1{
+      margin:0 0 12px;
+      font-size:2.2rem;
+      line-height:1.15;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      max-width:850px;
+      font-size:1.04rem;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,2.25fr) minmax(280px,1fr);
+      gap:22px;
+      align-items:start;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:22px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.02);
+    }
+    .card h2{
+      margin:0 0 14px;
+      font-size:1.35rem;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.05rem;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .stat{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+    }
+    .stat .label{
+      display:block;
+      color:var(--muted);
+      font-size:0.92rem;
+      margin-bottom:8px;
+    }
+    .stat .value{
+      font-size:1.55rem;
+      font-weight:700;
+      line-height:1.15;
+    }
+    .notice{
+      background:#f8fbff;
+      border:1px solid #cfe0ff;
+      border-radius:16px;
+      padding:18px;
+    }
+    .notice strong{
+      color:#0b3ea8;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:0.98rem;
+    }
+    th, td{
+      text-align:left;
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    th{
+      background:#f8fafc;
+      font-weight:700;
+    }
+    .muted{color:var(--muted)}
+    .good{color:var(--good); font-weight:700}
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .link-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .link-box{
+      display:block;
+      padding:14px 15px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      color:var(--text);
+      text-decoration:none;
+      transition:0.15s ease;
+    }
+    .link-box:hover{
+      border-color:#b7c5da;
+      background:#f8fbff;
+    }
+    .link-box span{
+      display:block;
+      color:var(--muted);
+      font-size:0.9rem;
+      margin-top:4px;
+    }
+    .sidebar .card{
+      position:sticky;
+      top:20px;
+    }
+    .sidebar ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .sidebar li{
+      margin:0 0 10px;
+    }
+    .sidebar a,
+    .content a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .sidebar a:hover,
+    .content a:hover{
+      text-decoration:underline;
+    }
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#1542aa;
+      font-size:0.92rem;
+      text-decoration:none;
+      border:1px solid #cfe0ff;
+    }
+    ul.checks{
+      margin:0;
+      padding-left:18px;
+    }
+    ul.checks li{margin-bottom:8px}
+    @media (max-width: 980px){
+      .layout{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+      .link-grid{grid-template-columns:1fr}
+      .sidebar .card{position:static}
+    }
+    @media (max-width: 640px){
+      .wrap{padding:16px}
+      .hero{padding:24px}
+      .hero h1{font-size:1.8rem}
+      .stats{grid-template-columns:1fr}
+      .stat .value{font-size:1.4rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>$250,000 Salary After Tax in the US</h1>
+      <p>
+        A $250,000 salary is a strong top-end income, but the gross number still needs to be translated into realistic take-home
+        pay before it is useful for budgeting, comparing offers, or judging the impact of a raise. On the assumptions used across
+        this US section, a $250,000 gross salary works out to an estimated <strong>$183,025 net per year</strong>, which is around
+        <strong>$15,252.08 per month</strong> or <strong>$3,519.71 per week</strong>.
+      </p>
+    </section>
+
+    <div class="layout">
+      <main class="content">
+        <section class="card">
+          <div class="stats">
+            <div class="stat">
+              <span class="label">Gross annual salary</span>
+              <div class="value">$250,000</div>
+            </div>
+            <div class="stat">
+              <span class="label">Estimated net annual pay</span>
+              <div class="value">$183,025</div>
+            </div>
+            <div class="stat">
+              <span class="label">Estimated net monthly pay</span>
+              <div class="value">$15,252.08</div>
+            </div>
+            <div class="stat">
+              <span class="label">Estimated net weekly pay</span>
+              <div class="value">$3,519.71</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="notice">
+            <strong>Quick summary:</strong> this $250,000 after-tax estimate uses a single filer, the standard deduction of
+            $16,100, 2026 federal tax brackets, Social Security at 6.2% up to the wage base of $184,500, Medicare at 1.45%,
+            and no state or city income tax. No retirement deductions, health premiums, or other pre-tax adjustments are included.
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Full tax breakdown on a $250,000 salary</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Annual amount</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gross salary</td>
+                <td>$250,000.00</td>
+                <td>Total salary before tax and payroll deductions</td>
+              </tr>
+              <tr>
+                <td>Standard deduction</td>
+                <td>$16,100.00</td>
+                <td>Single filer assumption</td>
+              </tr>
+              <tr>
+                <td>Taxable income</td>
+                <td>$233,900.00</td>
+                <td>Gross salary minus standard deduction</td>
+              </tr>
+              <tr>
+                <td>Federal income tax</td>
+                <td>$51,911.00</td>
+                <td>Calculated using 2026 federal tax brackets</td>
+              </tr>
+              <tr>
+                <td>Social Security</td>
+                <td>$11,439.00</td>
+                <td>6.2% applied up to the $184,500 wage base</td>
+              </tr>
+              <tr>
+                <td>Medicare</td>
+                <td>$3,625.00</td>
+                <td>1.45% of full salary</td>
+              </tr>
+              <tr>
+                <td><strong>Total deductions</strong></td>
+                <td><strong>$66,975.00</strong></td>
+                <td><strong>Combined federal and payroll taxes</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Estimated take-home pay</strong></td>
+                <td class="good"><strong>$183,025.00</strong></td>
+                <td><strong>Net income after the deductions above</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card">
+          <h2>How the federal income tax is built up</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Bracket</th>
+                <th>Taxed amount</th>
+                <th>Rate</th>
+                <th>Tax from bracket</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$0 to $11,925</td>
+                <td>$11,925</td>
+                <td>10%</td>
+                <td>$1,192.50</td>
+              </tr>
+              <tr>
+                <td>$11,925 to $48,475</td>
+                <td>$36,550</td>
+                <td>12%</td>
+                <td>$4,386.00</td>
+              </tr>
+              <tr>
+                <td>$48,475 to $103,350</td>
+                <td>$54,875</td>
+                <td>22%</td>
+                <td>$12,072.50</td>
+              </tr>
+              <tr>
+                <td>$103,350 to $197,300</td>
+                <td>$93,950</td>
+                <td>24%</td>
+                <td>$22,548.00</td>
+              </tr>
+              <tr>
+                <td>$197,300 to $233,900</td>
+                <td>$36,600</td>
+                <td>32%</td>
+                <td>$11,712.00</td>
+              </tr>
+              <tr>
+                <td><strong>Total federal income tax</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>$51,911.00</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card">
+          <h2>Net pay by frequency</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Pay period</th>
+                <th>Gross pay</th>
+                <th>Estimated net pay</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Yearly</td>
+                <td>$250,000.00</td>
+                <td>$183,025.00</td>
+              </tr>
+              <tr>
+                <td>Monthly</td>
+                <td>$20,833.33</td>
+                <td>$15,252.08</td>
+              </tr>
+              <tr>
+                <td>Biweekly</td>
+                <td>$9,615.38</td>
+                <td>$7,039.42</td>
+              </tr>
+              <tr>
+                <td>Weekly</td>
+                <td>$4,807.69</td>
+                <td>$3,519.71</td>
+              </tr>
+              <tr>
+                <td>Daily</td>
+                <td>$961.54</td>
+                <td>$703.94</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card">
+          <h2>Pay comparison with nearby salaries</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Salary</th>
+                <th>Estimated net annual</th>
+                <th>Estimated net monthly</th>
+                <th>Useful page</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$240,000</td>
+                <td>$176,370.00</td>
+                <td>$14,697.50</td>
+                <td><a href="/240000-salary-after-tax-us.html">$240,000 after tax</a></td>
+              </tr>
+              <tr>
+                <td>$245,000</td>
+                <td>$179,697.50</td>
+                <td>$14,974.79</td>
+                <td><a href="/245000-salary-after-tax-us.html">$245,000 after tax</a></td>
+              </tr>
+              <tr>
+                <td><strong>$250,000</strong></td>
+                <td><strong>$183,025.00</strong></td>
+                <td><strong>$15,252.08</strong></td>
+                <td><strong>Current page</strong></td>
+              </tr>
+              <tr>
+                <td>$255,000</td>
+                <td>Compare nearby</td>
+                <td>Compare nearby</td>
+                <td><a href="/255000-salary-after-tax-us.html">$255,000 after tax</a></td>
+              </tr>
+              <tr>
+                <td>$260,000</td>
+                <td>Compare nearby</td>
+                <td>Compare nearby</td>
+                <td><a href="/260000-salary-after-tax-us.html">$260,000 after tax</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted">
+            At this level, extra gross salary still makes a difference, but not on a one-for-one basis. Part of each increase is
+            absorbed by federal tax and payroll deductions, which is why nearby comparison pages can be useful when you are assessing
+            promotions, offer negotiations, or a move into a higher-paying role.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="two-col">
+            <div>
+              <h2>What does $250,000 after tax feel like?</h2>
+              <p>
+                A net income of about $183,025 a year gives substantial earning power and strong monthly flexibility, especially in a
+                no-state-tax scenario like the one used on this page. Broken down monthly, just over $15,252 after tax creates serious
+                room for housing, saving, investing, travel, and lifestyle spending.
+              </p>
+              <p>
+                That said, real affordability still depends on location, household size, and deductions. A high-cost metro area with
+                expensive housing and childcare can make even a strong income feel tighter than expected, while a lower-cost area can
+                make the same salary go much further.
+              </p>
+            </div>
+            <div>
+              <h2>Budgeting angle</h2>
+              <p>
+                Gross salary is useful for headlines, but after-tax income is what actually supports your budget. A page like this is
+                helpful when you want to work out how much room exists after mortgage or rent, debt payments, retirement saving,
+                childcare, commuting, and leisure spending.
+              </p>
+              <p>
+                At roughly $15,252.08 per month after tax on this baseline, a $250,000 salary can support large fixed outgoings while
+                still leaving meaningful room for wealth building. That is why after-tax salary pages matter when comparing nearby pay bands.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>What can change take-home pay on $250,000?</h2>
+          <ul class="checks">
+            <li><strong>State income tax:</strong> this estimate assumes none, so many real paychecks would come in lower.</li>
+            <li><strong>City or local taxes:</strong> some locations add another layer on top of federal and state tax.</li>
+            <li><strong>401(k), HSA, FSA, and other pre-tax deductions:</strong> these can reduce taxable income and shift net pay.</li>
+            <li><strong>Health, dental, and vision premiums:</strong> payroll deductions for benefits can materially reduce take-home income.</li>
+            <li><strong>Bonuses, commission, and stock compensation:</strong> supplemental income is often withheld differently from salary.</li>
+            <li><strong>Filing status:</strong> this page is locked to a single filer using the standard deduction.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Assumptions used for this $250,000 after-tax calculation</h2>
+          <p>
+            This page follows the standard used across the US build: <strong>single filer</strong>,
+            <strong>$16,100 standard deduction</strong>, <strong>2026 federal tax brackets</strong>,
+            <strong>Social Security at 6.2%</strong>, <strong>Medicare at 1.45%</strong>,
+            <strong>Social Security wage base of $184,500</strong>, <strong>no state income tax</strong>,
+            <strong>no city income tax</strong>, and <strong>no pre-tax deductions</strong>.
+          </p>
+          <p>
+            That means the result is best used as a clean benchmark rather than an exact paycheck forecast. Real payroll results can
+            differ because of benefits, retirement elections, state withholding, supplemental wages, and employer payroll timing.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Explore related salary pages</h2>
+          <div class="link-grid">
+            <a class="link-box" href="/245000-salary-after-tax-us.html">$245,000 salary after tax<span>Previous nearby main salary page</span></a>
+            <a class="link-box" href="/255000-salary-after-tax-us.html">$255,000 salary after tax<span>Next nearby main salary page</span></a>
+            <a class="link-box" href="/240000-salary-after-tax-us.html">$240,000 salary after tax<span>Extra lower nearby comparison</span></a>
+            <a class="link-box" href="/260000-salary-after-tax-us.html">$260,000 salary after tax<span>Extra higher nearby comparison</span></a>
+            <a class="link-box" href="/250000-after-tax-monthly-us.html">$250,000 after tax monthly<span>Monthly breakdown for this salary</span></a>
+            <a class="link-box" href="/250000-after-tax-weekly-us.html">$250,000 after tax weekly<span>Weekly breakdown for this salary</span></a>
+            <a class="link-box" href="/salary-after-tax-us.html">US salary after tax hub<span>Main US navigation page</span></a>
+            <a class="link-box" href="/us-income-tax-explained.html">US income tax explained<span>Background guide and tax context</span></a>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>$250,000 summary</h3>
+          <p><strong>Gross annual:</strong> $250,000</p>
+          <p><strong>Net annual:</strong> $183,025.00</p>
+          <p><strong>Net monthly:</strong> $15,252.08</p>
+          <p><strong>Net weekly:</strong> $3,519.71</p>
+
+          <h3 style="margin-top:18px;">This cluster</h3>
+          <ul>
+            <li><a href="/250000-salary-after-tax-us.html">Main salary page</a></li>
+            <li><a href="/250000-after-tax-monthly-us.html">Monthly page</a></li>
+            <li><a href="/250000-after-tax-weekly-us.html">Weekly page</a></li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Nearby salary links</h3>
+          <ul>
+            <li><a href="/245000-salary-after-tax-us.html">$245,000 main page</a></li>
+            <li><a href="/255000-salary-after-tax-us.html">$255,000 main page</a></li>
+            <li><a href="/240000-salary-after-tax-us.html">$240,000 main page</a></li>
+            <li><a href="/260000-salary-after-tax-us.html">$260,000 main page</a></li>
+          </ul>
+
+          <h3 style="margin-top:18px;">Support pages</h3>
+          <ul>
+            <li><a href="/salary-after-tax-us.html">Salary after tax US</a></li>
+            <li><a href="/take-home-pay-us.html">Take-home pay US</a></li>
+            <li><a href="/salary-after-tax-50000-100000-us.html">$50k to $100k US guide</a></li>
+            <li><a href="/us-income-tax-explained.html">US income tax explained</a></li>
+          </ul>
+
+          <div class="pill-row">
+            <a class="pill" href="/250000-after-tax-monthly-us.html">Monthly</a>
+            <a class="pill" href="/250000-after-tax-weekly-us.html">Weekly</a>
+            <a class="pill" href="/255000-salary-after-tax-us.html">Next cluster</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
