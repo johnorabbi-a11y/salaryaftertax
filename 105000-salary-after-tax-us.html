@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$105,000 Salary After Tax US 2026</title>
-<meta name="description" content="Calculate the estimated take-home pay for a $105,000 salary in the US after federal tax, Social Security, and Medicare using 2026 assumptions.">
+<title>$105,000 Salary After Tax in the US 2026 | Take-Home Pay Calculator</title>
+<meta name="description" content="See estimated take-home pay on a $105,000 salary in the US for 2026 using federal tax, Social Security, and Medicare with no state income tax.">
 <link rel="canonical" href="https://aftertaxtool.com/105000-salary-after-tax-us.html">
 
 <style>
@@ -15,6 +15,7 @@
 --muted:#6b7280;
 --border:#e5e7eb;
 --accent:#2563eb;
+--accent-soft:#dbeafe;
 --greenbg:#dcfce7;
 --green:#166534;
 }
@@ -30,96 +31,193 @@ line-height:1.6;
 }
 
 .container{
-max-width:1100px;
+max-width:1120px;
 margin:auto;
-padding:24px;
+padding:24px 16px 48px;
 }
 
-.card{
+.card,.hero{
 background:var(--card);
 border:1px solid var(--border);
-border-radius:16px;
+border-radius:18px;
 padding:24px;
-margin-bottom:22px;
+margin-bottom:20px;
+box-shadow:0 1px 3px rgba(0,0,0,0.04);
 }
 
-h1{margin-top:0;font-size:34px}
-h2{margin-top:0;font-size:24px}
-h3{margin-top:0}
+.breadcrumbs{
+font-size:14px;
+color:var(--muted);
+margin-bottom:10px;
+}
+
+.breadcrumbs a{
+color:var(--accent);
+text-decoration:none;
+}
+
+h1{
+margin:0 0 12px;
+font-size:34px;
+line-height:1.2;
+}
+
+h2{
+margin:0 0 14px;
+font-size:24px;
+line-height:1.3;
+}
+
+h3{
+margin:0 0 10px;
+font-size:18px;
+line-height:1.4;
+}
+
+p{
+margin:0 0 14px;
+}
+
+.lead{
+font-size:18px;
+color:#374151;
+margin-bottom:0;
+}
 
 .stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin-top:20px;
+gap:16px;
+margin:20px 0;
 }
 
 .stat{
 background:#f9fafb;
 border:1px solid var(--border);
-border-radius:12px;
-padding:16px;
+border-radius:14px;
+padding:18px;
 }
 
 .stat-label{
 font-size:12px;
 color:var(--muted);
-margin-bottom:6px;
+margin-bottom:8px;
 text-transform:uppercase;
+letter-spacing:.04em;
 }
 
 .stat-value{
-font-size:26px;
-font-weight:bold;
+font-size:28px;
+font-weight:700;
+line-height:1.1;
 }
 
 .notice{
 background:var(--greenbg);
 border:1px solid #bbf7d0;
 color:var(--green);
-padding:14px;
-border-radius:12px;
-margin-top:14px;
+padding:16px 18px;
+border-radius:14px;
+margin-top:10px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:2fr 1fr;
 gap:20px;
+margin-top:20px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:10px;
+margin-top:8px;
 }
 
 th,td{
-padding:10px;
+padding:12px 10px;
 border-bottom:1px solid var(--border);
 text-align:left;
+vertical-align:top;
+}
+
+th{
+font-size:14px;
+color:var(--muted);
+font-weight:600;
 }
 
 .highlight td{
-font-weight:bold;
+font-weight:700;
+}
+
+ul{
+margin:0;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+a{
+color:var(--accent);
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.links{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
 }
 
 .links a{
 display:block;
-padding:10px;
+padding:12px 14px;
 background:#f9fafb;
 border:1px solid var(--border);
-border-radius:10px;
-margin-bottom:8px;
-text-decoration:none;
-color:var(--accent);
+border-radius:12px;
+font-weight:600;
 }
 
-.small{font-size:14px;color:var(--muted)}
+.link-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.link-grid a{
+display:block;
+padding:12px 14px;
+background:#f9fafb;
+border:1px solid var(--border);
+border-radius:12px;
+font-weight:600;
+}
+
+.small{
+font-size:14px;
+color:var(--muted);
+}
+
+.assumption-box{
+background:var(--accent-soft);
+border:1px solid #bfdbfe;
+border-radius:14px;
+padding:16px 18px;
+}
 
 @media(max-width:900px){
-.stats{grid-template-columns:1fr 1fr}
-.grid{grid-template-columns:1fr}
+.stats,.grid,.link-grid{
+grid-template-columns:1fr;
+}
+h1{
+font-size:30px;
+}
 }
 </style>
 </head>
@@ -128,43 +226,47 @@ color:var(--accent);
 
 <div class="container">
 
-<div class="card">
+<section class="hero">
+
+<div class="breadcrumbs">
+<a href="/">Home</a> / <a href="/salary-after-tax-us.html">US Salary After Tax</a> / $105,000 Salary
+</div>
 
 <h1>$105,000 Salary After Tax in the US</h1>
 
-<p>
-A salary of <strong>$105,000 per year</strong> results in an estimated take-home pay of approximately <strong>$81,716</strong> after federal tax, Social Security and Medicare under the simplified 2026 assumptions used on this site.
+<p class="lead">
+A salary of <strong>$105,000 per year</strong> gives you an estimated take-home pay of around <strong>$81,716</strong> after federal tax, Social Security, and Medicare under the simplified 2026 assumptions used across the US section of AfterTaxTool. You can compare this with nearby salaries such as <a href="/100000-salary-after-tax-us.html">$100,000</a>, <a href="/110000-salary-after-tax-us.html">$110,000</a>, and <a href="/115000-salary-after-tax-us.html">$115,000</a> to see how net income changes as gross pay rises.
 </p>
 
 <div class="stats">
 
 <div class="stat">
-<div class="stat-label">Gross Annual</div>
+<div class="stat-label">Gross Annual Pay</div>
 <div class="stat-value">$105,000</div>
 </div>
 
 <div class="stat">
-<div class="stat-label">Net Annual</div>
+<div class="stat-label">Estimated Net Annual Pay</div>
 <div class="stat-value">$81,716</div>
 </div>
 
 <div class="stat">
-<div class="stat-label">Net Monthly</div>
+<div class="stat-label">Estimated Net Monthly Pay</div>
 <div class="stat-value">$6,810</div>
 </div>
 
 <div class="stat">
-<div class="stat-label">Net Weekly</div>
+<div class="stat-label">Estimated Net Weekly Pay</div>
 <div class="stat-value">$1,571</div>
 </div>
 
 </div>
 
 <div class="notice">
-Estimated deductions total about <strong>$23,284</strong>, roughly <strong>22.2%</strong> of gross salary.
+Estimated deductions total about <strong>$23,284</strong>, which is roughly <strong>22.2%</strong> of gross salary. This example assumes a single filer taking the standard deduction with no state or city income tax.
 </div>
 
-</div>
+</section>
 
 <div class="grid">
 
@@ -172,32 +274,62 @@ Estimated deductions total about <strong>$23,284</strong>, roughly <strong>22.2%
 
 <div class="card">
 
-<h2>$105,000 After Tax Breakdown</h2>
+<h2>$105,000 After Tax Breakdown for 2026</h2>
+
+<p>
+This page uses the same federal-only baseline as the wider <a href="/salary-after-tax-us.html">US salary after tax</a> section. It is designed to give you a useful benchmark before state income tax, local taxes, health insurance deductions, retirement contributions, or other payroll adjustments are included.
+</p>
 
 <table>
+<thead>
 <tr><th>Item</th><th>Amount</th></tr>
+</thead>
+<tbody>
 <tr><td>Gross salary</td><td>$105,000</td></tr>
-<tr><td>Taxable income after $16,100 deduction</td><td>$88,900</td></tr>
-<tr><td>Estimated federal tax</td><td>$15,319</td></tr>
+<tr><td>Taxable income after $16,100 standard deduction</td><td>$88,900</td></tr>
+<tr><td>Estimated federal income tax</td><td>$15,319</td></tr>
 <tr><td>Social Security (6.2%)</td><td>$6,510</td></tr>
 <tr><td>Medicare (1.45%)</td><td>$1,523</td></tr>
 <tr><td>Total deductions</td><td>$23,284</td></tr>
 <tr class="highlight"><td>Estimated take-home pay</td><td>$81,716</td></tr>
+</tbody>
 </table>
 
 </div>
 
 <div class="card">
 
-<h2>Income by Pay Period</h2>
+<h2>$105,000 Salary to Annual, Monthly and Weekly Net Pay</h2>
+
+<p>
+Breaking a $105,000 salary down by pay period makes it easier to compare offers and plan your budget. You can also visit the dedicated <a href="/105000-after-tax-monthly-us.html">$105,000 after tax monthly</a> and <a href="/105000-after-tax-weekly-us.html">$105,000 after tax weekly</a> pages for more focused comparisons.
+</p>
 
 <table>
-<tr><th>Period</th><th>Gross</th><th>Net</th></tr>
-<tr><td>Year</td><td>$105,000</td><td>$81,716</td></tr>
-<tr><td>Month</td><td>$8,750</td><td>$6,810</td></tr>
+<thead>
+<tr><th>Pay Period</th><th>Gross Pay</th><th>Estimated Net Pay</th></tr>
+</thead>
+<tbody>
+<tr><td>Annual</td><td>$105,000</td><td>$81,716</td></tr>
+<tr><td>Monthly</td><td>$8,750</td><td>$6,810</td></tr>
 <tr><td>Biweekly</td><td>$4,038</td><td>$3,142</td></tr>
-<tr><td>Week</td><td>$2,019</td><td>$1,571</td></tr>
+<tr><td>Weekly</td><td>$2,019</td><td>$1,571</td></tr>
+</tbody>
 </table>
+
+</div>
+
+<div class="card">
+
+<h2>How $105,000 Compares With Nearby Salaries</h2>
+
+<p>
+A $105,000 salary sits just above the six-figure mark, which makes it a useful comparison point if you are weighing up a raise, promotion, or job change. Moving from <a href="/100000-salary-after-tax-us.html">$100,000</a> to $105,000 increases gross income by $5,000, but the increase in take-home pay is smaller once federal tax and payroll taxes are applied.
+</p>
+
+<p>
+Comparing nearby pages such as <a href="/95000-salary-after-tax-us.html">$95,000 salary after tax</a>, <a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a>, and <a href="/110000-salary-after-tax-us.html">$110,000 salary after tax</a> can help you see how much difference modest salary changes actually make to monthly and weekly net pay.
+</p>
 
 </div>
 
@@ -205,13 +337,56 @@ Estimated deductions total about <strong>$23,284</strong>, roughly <strong>22.2%
 
 <h2>What Can Affect Your Take-Home Pay?</h2>
 
+<p>
+The estimate on this page is intentionally simple so it can act as a clean benchmark. Real payroll results can change for several reasons:
+</p>
+
 <ul>
-<li>State income tax</li>
-<li>401(k) retirement contributions</li>
-<li>Employer health insurance deductions</li>
-<li>Local city taxes</li>
-<li>Bonuses or additional income</li>
+<li><strong>State income tax:</strong> some states take a substantial extra share of pay, while others have no state income tax.</li>
+<li><strong>401(k) contributions:</strong> retirement saving can reduce taxable income but also lowers immediate take-home pay.</li>
+<li><strong>Employer health insurance deductions:</strong> medical, dental, and vision contributions can materially reduce net pay.</li>
+<li><strong>Local or city taxes:</strong> some locations apply extra payroll taxes on top of federal rules.</li>
+<li><strong>Bonuses or additional income:</strong> extra compensation can change withholding and your overall annual tax picture.</li>
+<li><strong>Filing status:</strong> this page assumes a single filer using the standard deduction.</li>
 </ul>
+
+</div>
+
+<div class="card">
+
+<h2>Is $105,000 a Good Salary in the US?</h2>
+
+<p>
+For many workers, $105,000 is a strong salary that can provide a comfortable standard of living in a large part of the US. In lower-cost areas, it may leave solid room for saving, investing, and discretionary spending. In higher-cost cities, housing and childcare costs can still reduce how far that income goes.
+</p>
+
+<p>
+Under the federal-only assumptions used here, estimated net pay is around $6,810 per month. That can be a useful benchmark when comparing job offers or planning how much of a pay rise you would actually feel after tax.
+</p>
+
+<p>
+If you want a broader view, compare this page with state-focused guides such as <a href="/california-salary-after-tax.html">California salary after tax</a>, <a href="/texas-salary-after-tax.html">Texas salary after tax</a>, and <a href="/new-york-salary-after-tax.html">New York salary after tax</a>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Tax Assumptions Used on This Page</h2>
+
+<div class="assumption-box">
+<ul>
+<li>Tax year used: <strong>2026</strong></li>
+<li>Filing status: <strong>Single filer</strong></li>
+<li>Standard deduction: <strong>$16,100</strong></li>
+<li>Federal tax brackets: <strong>2026 single filer brackets</strong></li>
+<li>Social Security: <strong>6.2%</strong></li>
+<li>Medicare: <strong>1.45%</strong></li>
+<li>State income tax: <strong>None included</strong></li>
+<li>City tax: <strong>None included</strong></li>
+<li>Pre-tax deductions: <strong>None included</strong></li>
+</ul>
+</div>
 
 </div>
 
@@ -223,29 +398,37 @@ Estimated deductions total about <strong>$23,284</strong>, roughly <strong>22.2%
 
 <h3>Related Salary Pages</h3>
 
-<div class="links">
+<div class="link-grid">
 <a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a>
+<a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly</a>
+<a href="/100000-after-tax-weekly-us.html">$100,000 after tax weekly</a>
 <a href="/105000-after-tax-monthly-us.html">$105,000 after tax monthly</a>
 <a href="/105000-after-tax-weekly-us.html">$105,000 after tax weekly</a>
 <a href="/110000-salary-after-tax-us.html">$110,000 salary after tax</a>
+<a href="/110000-after-tax-monthly-us.html">$110,000 after tax monthly</a>
+<a href="/110000-after-tax-weekly-us.html">$110,000 after tax weekly</a>
 </div>
 
 </div>
 
 <div class="card">
 
-<h3>Tools</h3>
+<h3>US Salary Hubs and Tools</h3>
 
 <div class="links">
-<a href="/">After tax calculator</a>
-<a href="/salary-after-tax-faq.html">Salary tax FAQ</a>
-<a href="/salary-after-tax-uk.html">UK salary after tax</a>
+<a href="/">After tax calculator home</a>
+<a href="/salary-after-tax-us.html">US salary after tax hub</a>
+<a href="/salary-after-tax-100000-120000-us.html">$100,000 to $120,000 salary range</a>
+<a href="/95000-salary-after-tax-us.html">$95,000 salary after tax</a>
+<a href="/california-salary-after-tax.html">California salary after tax</a>
+<a href="/texas-salary-after-tax.html">Texas salary after tax</a>
+<a href="/new-york-salary-after-tax.html">New York salary after tax</a>
 </div>
 
 </div>
 
 <div class="card small">
-This example assumes a single filer using the standard deduction with no state income tax and no additional pre-tax deductions.
+This example assumes a single filer using the standard deduction with no state income tax, no city income tax, and no additional pre-tax deductions.
 </div>
 
 </aside>
