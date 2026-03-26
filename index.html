@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Salary After Tax Calculator (UK & US) – Take-Home Pay + State Estimate</title>
-  <meta name="description" content="Estimate take-home pay after tax in the UK and US. Includes a simple US state tax estimate and clear breakdown." />
+  <title>Salary After Tax Calculator (UK &amp; US) – Take-Home Pay + State Estimate</title>
+  <meta name="description" content="Estimate take-home pay after tax in the UK and US. Includes a simple US state tax estimate, salary guides, and clear breakdowns." />
   <link rel="canonical" href="https://aftertaxtool.com/" />
+  <meta name="robots" content="index,follow" />
   <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo" />
 
   <style>
@@ -14,10 +15,13 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 0 auto;
       padding: 22px;
-      max-width: 920px;
+      max-width: 980px;
+      color: #111;
+      background: #fff;
     }
-    h1 { margin: 0 0 8px; font-size: 28px; }
-    h2 { margin-top: 0; }
+    h1 { margin: 0 0 8px; font-size: 30px; line-height: 1.2; }
+    h2 { margin: 0 0 10px; font-size: 24px; line-height: 1.25; }
+    h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.3; }
     .sub { color: #444; margin-bottom: 14px; }
     .card { border: 1px solid #ddd; border-radius: 14px; padding: 16px; margin: 14px 0; }
     .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
@@ -32,6 +36,7 @@
       margin-top: 6px;
       font-size: 16px;
       box-sizing: border-box;
+      background: #fff;
     }
 
     button {
@@ -46,7 +51,7 @@
     }
 
     .results { font-size: 18px; line-height: 1.6; }
-    .muted { color: #555; font-size: 14px; line-height: 1.5; }
+    .muted { color: #555; font-size: 14px; line-height: 1.55; }
     .pill {
       display: inline-block;
       padding: 2px 10px;
@@ -61,6 +66,9 @@
 
     .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     @media (max-width: 700px) { .grid3 { grid-template-columns: 1fr; } }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
 
     .box { border: 1px solid #e2e2e2; border-radius: 12px; padding: 12px; }
     .box h3 { margin: 0 0 6px; font-size: 14px; color: #333; }
@@ -82,15 +90,33 @@
     ul { padding-left: 20px; }
     li { margin-bottom: 8px; }
 
-    .salary-guides {
+    .salary-guides,
+    .authority-guides,
+    .popular-clusters {
       margin: 18px 0 0;
       padding: 16px;
       border: 1px solid #ddd;
       border-radius: 14px;
     }
+
+    .hero-intro {
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 10px;
+    }
+
+    .quick-links a {
+      font-weight: 700;
+    }
+
+    .ad-slot {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      background: #fafafa;
+    }
   </style>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -105,17 +131,38 @@
     <a href="/hourly-to-salary.html">Hourly → Salary</a>
     <a href="/salary-to-hourly.html">Salary → Hourly</a>
     <a href="/salary-guides.html">Salary Guides</a>
+    <a href="/salary-after-tax-uk.html">UK Salary After Tax</a>
   </nav>
 
-  <h1>Salary After Tax Calculator (UK & US) – See Your Take-Home Pay</h1>
+  <h1>Salary After Tax Calculator (UK &amp; US) – See Your Take-Home Pay</h1>
   <div class="sub">
     Estimate your take-home pay in the <b>UK</b> or <b>US</b> in plain English.
     <span class="pill warn">Estimates</span>
   </div>
 
-  <p class="muted">
-    AfterTaxTool helps you estimate take-home pay in the UK and US. Use our calculators to convert hourly wages to salaries, calculate salary after tax, and compare common UK salary levels.
+  <p class="hero-intro">
+    AfterTaxTool helps you estimate take-home pay in the UK and US, compare common salary bands,
+    convert hourly wages into annual pay, and explore popular UK salary guides. Use the calculator below
+    for a quick estimate, then browse related pages to compare nearby salaries and monthly take-home pay.
   </p>
+
+  <div class="card quick-links">
+    <h2 style="margin-bottom:8px;">Popular Starting Points</h2>
+    <ul>
+      <li><a href="/salary-after-tax-uk.html">UK salary after tax hub</a></li>
+      <li><a href="/salary-guides.html">Browse UK salary guides</a></li>
+      <li><a href="/hourly-to-salary.html">Hourly wage to salary calculator</a></li>
+      <li><a href="/salary-to-hourly.html">Salary to hourly calculator</a></li>
+      <li><a href="/is-40000-a-good-salary-uk.html">Is £40,000 a good salary in the UK?</a></li>
+      <li><a href="/is-50000-a-good-salary-uk.html">Is £50,000 a good salary in the UK?</a></li>
+      <li><a href="/is-55000-a-good-salary-uk.html">Is £55,000 a good salary in the UK?</a></li>
+      <li><a href="/is-60000-a-good-salary-uk.html">Is £60,000 a good salary in the UK?</a></li>
+    </ul>
+  </div>
+
+  <div class="card ad-slot">
+    <em>Advertisement</em>
+  </div>
 
   <div class="card">
     <div class="row">
@@ -247,7 +294,7 @@
         <div class="big" id="netMonth">—</div>
       </div>
       <div class="box">
-        <h3>Total tax & deductions (year)</h3>
+        <h3>Total tax &amp; deductions (year)</h3>
         <div class="big" id="taxYear">—</div>
       </div>
     </div>
@@ -255,9 +302,8 @@
     <div class="results" id="breakdown" style="margin-top:12px;">Enter a salary and hit Calculate.</div>
     <div class="muted" id="assumptions" style="margin-top:10px;"></div>
 
-    <div class="card" id="ad-slot" style="text-align:center; font-size:14px; color:#777;">
+    <div class="card ad-slot" id="ad-slot">
       <em>Advertisement</em>
-      <!-- Future AdSense code will go here -->
     </div>
 
     <div class="card" id="comparison" style="display:none;">
@@ -279,6 +325,60 @@
           <div class="tiny" id="cmp3Diff">—</div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="card ad-slot">
+    <em>Advertisement</em>
+  </div>
+
+  <div class="card">
+    <h2>Popular UK Salary Comparisons</h2>
+    <p class="muted">
+      These are some of the most useful salary pages to compare if you are checking promotions, pay rises,
+      or job offers in the UK.
+    </p>
+    <div class="grid2">
+      <ul>
+        <li><a href="/40000-salary-after-tax-uk.html">£40,000 salary after tax</a></li>
+        <li><a href="/45000-salary-after-tax-uk.html">£45,000 salary after tax</a></li>
+        <li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></li>
+        <li><a href="/51000-salary-after-tax-uk.html">£51,000 salary after tax</a></li>
+        <li><a href="/52000-salary-after-tax-uk.html">£52,000 salary after tax</a></li>
+        <li><a href="/53000-salary-after-tax-uk.html">£53,000 salary after tax</a></li>
+      </ul>
+      <ul>
+        <li><a href="/54000-salary-after-tax-uk.html">£54,000 salary after tax</a></li>
+        <li><a href="/55000-salary-after-tax-uk.html">£55,000 salary after tax</a></li>
+        <li><a href="/60000-salary-after-tax-uk.html">£60,000 salary after tax</a></li>
+        <li><a href="/65000-salary-after-tax-uk.html">£65,000 salary after tax</a></li>
+        <li><a href="/68000-salary-after-tax-uk.html">£68,000 salary after tax</a></li>
+        <li><a href="/70000-salary-after-tax-uk.html">£70,000 salary after tax</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Popular Monthly Take-Home Pages</h2>
+    <p class="muted">
+      Monthly pages are useful if you want a quick view of what lands in your bank account each month after
+      tax and National Insurance.
+    </p>
+    <div class="grid2">
+      <ul>
+        <li><a href="/50000-after-tax-monthly.html">£50,000 after tax monthly</a></li>
+        <li><a href="/51000-after-tax-monthly.html">£51,000 after tax monthly</a></li>
+        <li><a href="/52000-after-tax-monthly.html">£52,000 after tax monthly</a></li>
+        <li><a href="/53000-after-tax-monthly.html">£53,000 after tax monthly</a></li>
+        <li><a href="/54000-after-tax-monthly.html">£54,000 after tax monthly</a></li>
+      </ul>
+      <ul>
+        <li><a href="/55000-after-tax-monthly.html">£55,000 after tax monthly</a></li>
+        <li><a href="/56000-after-tax-monthly.html">£56,000 after tax monthly</a></li>
+        <li><a href="/60000-after-tax-monthly.html">£60,000 after tax monthly</a></li>
+        <li><a href="/68000-after-tax-monthly.html">£68,000 after tax monthly</a></li>
+        <li><a href="/70000-after-tax-monthly.html">£70,000 after tax monthly</a></li>
+      </ul>
     </div>
   </div>
 
@@ -311,39 +411,44 @@
     </p>
   </div>
 
+  <div class="card ad-slot">
+    <em>Advertisement</em>
+  </div>
+
   <div class="card">
-    <div class="card">
-<div class="card">
-<h2>Popular Salary Calculators</h2>
-<p class="muted">
-Use these calculators to convert wages and estimate take-home pay.
-</p>
-
-<ul>
-<li><a href="/hourly-to-salary.html">Hourly Wage to Salary Calculator</a></li>
-<li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
-<li><a href="/">Salary After Tax Calculator</a></li>
-<li><a href="/salary-guides.html">UK Salary Guides</a></li>
-</ul>
-
-</div>
-    <h2>Related Salary Tools</h2>
-    <p class="muted">Helpful calculators related to salary and take-home pay.</p>
+    <h2>Popular Salary Calculators</h2>
+    <p class="muted">
+      Use these calculators to convert wages, compare pay, and estimate take-home salary.
+    </p>
     <ul>
       <li><a href="/hourly-to-salary.html">Hourly Wage to Salary Calculator</a></li>
       <li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
-      <a href="/uk-salary-after-tax.html">UK Salary After Tax Guide</a>
+      <li><a href="/">Salary After Tax Calculator</a></li>
       <li><a href="/salary-guides.html">UK Salary Guides</a></li>
-
-      <h2>Browse UK Salaries After Tax</h2>
-
-<ul>
-<li><a href="/salary-after-tax-by-income.html">Browse salaries by income</a></li>
-<li><a href="/salary-guides.html">Salary guides</a></li>
-<li><a href="/uk-salary-after-tax.html">UK salary after tax calculator</a></li>
-</ul>
-      
+      <li><a href="/salary-after-tax-uk.html">UK Salary After Tax</a></li>
     </ul>
+  </div>
+
+  <div class="card">
+    <h2>UK Salary Guides and Authority Pages</h2>
+    <p class="muted">
+      These pages help explain what different salary levels actually mean in the UK and make it easier to
+      compare gross salary with realistic monthly take-home pay.
+    </p>
+    <div class="grid2">
+      <ul>
+        <li><a href="/is-40000-a-good-salary-uk.html">Is £40,000 a good salary in the UK?</a></li>
+        <li><a href="/is-50000-a-good-salary-uk.html">Is £50,000 a good salary in the UK?</a></li>
+        <li><a href="/is-55000-a-good-salary-uk.html">Is £55,000 a good salary in the UK?</a></li>
+        <li><a href="/is-60000-a-good-salary-uk.html">Is £60,000 a good salary in the UK?</a></li>
+      </ul>
+      <ul>
+        <li><a href="/salary-guides.html">Browse all salary guides</a></li>
+        <li><a href="/salary-after-tax-uk.html">UK salary after tax hub</a></li>
+        <li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></li>
+        <li><a href="/60000-salary-after-tax-uk.html">£60,000 salary after tax</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="card" id="faq">
@@ -376,7 +481,6 @@ Use these calculators to convert wages and estimate take-home pay.
   <section class="salary-guides">
     <h2>UK Salary Guides</h2>
     <p>Explore guides for common UK hourly wages and salaries:</p>
-
     <ul>
       <li><a href="/15-an-hour-salary-uk.html">£15 an hour salary</a></li>
       <li><a href="/18-an-hour-salary-uk.html">£18 an hour salary</a></li>
@@ -389,14 +493,13 @@ Use these calculators to convert wages and estimate take-home pay.
       <li><a href="/40000-salary-after-tax-uk.html">£40k salary after tax</a></li>
       <li><a href="/45000-salary-after-tax-uk.html">£45k salary after tax</a></li>
       <li><a href="/50000-salary-after-tax-uk.html">£50k salary after tax</a></li>
+      <li><a href="/55000-salary-after-tax-uk.html">£55k salary after tax</a></li>
       <li><a href="/60000-salary-after-tax-uk.html">£60k salary after tax</a></li>
+      <li><a href="/65000-salary-after-tax-uk.html">£65k salary after tax</a></li>
     </ul>
   </section>
 
   <script>
-    // =============================
-    // UK Student Loan (2025/26)
-    // =============================
     const UK_STUDENT_LOAN = {
       plan1: { threshold: 26065, rate: 0.09 },
       plan2: { threshold: 28470, rate: 0.09 },
@@ -405,7 +508,6 @@ Use these calculators to convert wages and estimate take-home pay.
       pgl:   { threshold: 21000, rate: 0.06 }
     };
 
-    // UK Student Loan (2024/25)
     const UK_STUDENT_LOAN_2024_25 = {
       plan1: { threshold: 24990, rate: 0.09 },
       plan2: { threshold: 27295, rate: 0.09 },
