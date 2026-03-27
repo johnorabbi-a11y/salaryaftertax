@@ -4999,4 +4999,31 @@
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
+  <url>
+  <loc>https://aftertaxtool.com/average-salary-uk.html</loc>
+  <lastmod>2026-03-26</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://aftertaxtool.com/median-salary-uk.html</loc>
+  <lastmod>2026-03-26</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://aftertaxtool.com/average-salary-uk-by-age.html</loc>
+  <lastmod>2026-03-26</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://aftertaxtool.com/average-salary-uk-by-region.html</loc>
+  <lastmod>2026-03-26</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
 </urlset>
