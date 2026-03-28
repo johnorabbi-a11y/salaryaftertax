@@ -1,64 +1,634 @@
-<h1>Salary Guides – UK and US Income Examples</h1>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salary Guides – UK and US Income Examples</title>
+<meta name="description" content="Browse salary guides for the UK and US, including hourly wage conversions, annual salary examples, and after-tax monthly and weekly income pages.">
+<link rel="canonical" href="https://aftertaxtool.com/salary-guides.html">
+<meta name="robots" content="index,follow">
+<style>
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --accent-soft:#dbeafe;
+  --accent-dark:#1d4ed8;
+  --good:#065f46;
+  --good-bg:#ecfdf5;
+  --shadow:0 10px 30px rgba(15,23,42,0.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.topbar{
+  max-width:1180px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.brand{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+}
+nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+nav a{
+  font-weight:600;
+}
+.hero{
+  background:linear-gradient(135deg,#eff6ff 0%,#ffffff 65%);
+  border-bottom:1px solid var(--border);
+}
+.hero-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:42px 20px 34px;
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+.hero-copy h1{
+  margin:0 0 14px;
+  font-size:2.5rem;
+  line-height:1.15;
+}
+.hero-copy p{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:1.06rem;
+  max-width:760px;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.badge{
+  display:inline-block;
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:.94rem;
+  font-weight:700;
+}
+.hero-panel{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.hero-panel h2{
+  margin:0 0 10px;
+  font-size:1.05rem;
+}
+.hero-panel ul{
+  margin:0;
+  padding-left:18px;
+}
+.hero-panel li{
+  margin:6px 0;
+}
+.page{
+  max-width:1180px;
+  margin:28px auto 48px;
+  padding:0 20px;
+}
+.ad-slot{
+  background:linear-gradient(180deg,#fafafa 0%,#f3f4f6 100%);
+  border:1px dashed #cbd5e1;
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+  margin:22px 0;
+}
+.layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:24px;
+}
+.sidebar{
+  position:sticky;
+  top:82px;
+  align-self:start;
+}
+.side-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.side-card h3{
+  margin:0 0 12px;
+  font-size:1rem;
+}
+.side-card ul{
+  margin:0;
+  padding-left:18px;
+}
+.side-card li{
+  margin:8px 0;
+}
+.content{
+  min-width:0;
+}
+.section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px;
+}
+.section h2{
+  margin:0 0 12px;
+  font-size:1.55rem;
+}
+.section h3{
+  margin:24px 0 10px;
+  font-size:1.05rem;
+}
+.section-intro{
+  margin:0 0 16px;
+  color:var(--muted);
+}
+.grid-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.link-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 14px 12px;
+  transition:.15s ease;
+}
+.link-card:hover{
+  border-color:#bfdbfe;
+  box-shadow:0 8px 24px rgba(37,99,235,0.08);
+}
+.link-card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:.98rem;
+}
+.link-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.mini-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.mini-box{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+}
+.mini-box h4{
+  margin:0 0 8px;
+  font-size:.95rem;
+}
+.mini-box ul{
+  margin:0;
+  padding-left:18px;
+}
+.mini-box li{
+  margin:6px 0;
+}
+.callout{
+  background:var(--good-bg);
+  border:1px solid #bbf7d0;
+  border-radius:14px;
+  padding:16px;
+  margin-top:18px;
+}
+.callout strong{
+  color:var(--good);
+}
+.footer-note{
+  color:var(--muted);
+  font-size:.95rem;
+  margin-top:12px;
+}
+footer{
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:24px 20px 40px;
+  color:var(--muted);
+  font-size:.94rem;
+}
+@media (max-width:980px){
+  .hero-inner,
+  .layout{
+    grid-template-columns:1fr;
+  }
+  .sidebar{
+    position:static;
+  }
+}
+@media (max-width:700px){
+  .hero-copy h1{
+    font-size:2rem;
+  }
+  .grid-links,
+  .mini-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
 
-<p>Browse salary guides covering hourly wages, annual salaries, and after-tax monthly and weekly income across the UK and United States.</p>
+<header>
+  <div class="topbar">
+    <div class="brand">AfterTaxTool</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/salary-after-tax-uk.html">UK Salary After Tax</a>
+      <a href="/salary-after-tax-us.html">US Salary After Tax</a>
+      <a href="/hourly-to-salary.html">Hourly → Salary</a>
+      <a href="/salary-to-hourly.html">Salary → Hourly</a>
+      <a href="/us-salary-guides.html">US Salary Guides</a>
+    </nav>
+  </div>
+</header>
 
-<h2>🇬🇧 UK Salary Guides</h2>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>Salary Guides – UK and US Income Examples</h1>
+      <p>Browse salary guides covering hourly wages, annual salaries, and after-tax monthly and weekly income across the UK and United States. This page acts as a central hub for your most useful salary examples, salary ranges and conversion guides.</p>
+      <p>Whether you are checking take-home pay on a £40,000 UK salary, comparing $100,000 salary after tax in the US, or using grouped salary ranges to explore a whole earnings bracket, these guides help you jump straight to the most relevant pages.</p>
+      <div class="badges">
+        <span class="badge">UK salary guides</span>
+        <span class="badge">US salary guides</span>
+        <span class="badge">Monthly take-home</span>
+        <span class="badge">Weekly take-home</span>
+        <span class="badge">Hourly wage conversions</span>
+      </div>
+    </div>
 
-<h3>Hourly wage guides</h3>
-<div class="card">
-<ul class="columns">
-<li><a href="/12-an-hour-salary-uk.html">£12 an hour salary</a></li>
-<li><a href="/15-an-hour-salary-uk.html">£15 an hour salary</a></li>
-<li><a href="/20-an-hour-salary-uk.html">£20 an hour salary</a></li>
-<li><a href="/25-an-hour-salary-uk.html">£25 an hour salary</a></li>
-<li><a href="/30-an-hour-salary-uk.html">£30 an hour salary</a></li>
-<li><a href="/minimum-wage-uk-salary.html">Minimum wage UK salary</a></li>
-</ul>
-</div>
+    <div class="hero-panel">
+      <h2>Popular starting points</h2>
+      <ul>
+        <li><a href="/salary-after-tax-uk.html">UK salary after tax overview</a></li>
+        <li><a href="/salary-after-tax-us.html">US salary after tax overview</a></li>
+        <li><a href="/hourly-to-salary.html">Hourly to salary calculator</a></li>
+        <li><a href="/salary-to-hourly.html">Salary to hourly calculator</a></li>
+        <li><a href="/salary-after-tax-20000-30000-uk.html">UK salaries £20,000–£30,000</a></li>
+        <li><a href="/us-salary-guides.html">Dedicated US salary hub</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<h3>Salary after tax (UK)</h3>
-<div class="card">
-<ul class="columns">
-<li><a href="/25000-salary-after-tax-uk.html">£25,000 after tax</a></li>
-<li><a href="/30000-salary-after-tax-uk.html">£30,000 after tax</a></li>
-<li><a href="/40000-salary-after-tax-uk.html">£40,000 after tax</a></li>
-<li><a href="/50000-salary-after-tax-uk.html">£50,000 after tax</a></li>
-<li><a href="/75000-salary-after-tax-uk.html">£75,000 after tax</a></li>
-<li><a href="/100000-salary-after-tax-uk.html">£100,000 after tax</a></li>
-</ul>
-</div>
+<main class="page">
 
-<h3>Browse by salary range (UK)</h3>
-<div class="card">
-<ul>
-<li><a href="/salary-after-tax-20000-30000-uk.html">£20,000–£30,000 salaries</a></li>
-<li><a href="/salary-after-tax-30000-40000-uk.html">£30,000–£40,000 salaries</a></li>
-<li><a href="/salary-after-tax-40000-50000-uk.html">£40,000–£50,000 salaries</a></li>
-<li><a href="/salary-after-tax-50000-60000-uk.html">£50,000–£60,000 salaries</a></li>
-<li><a href="/salary-after-tax-60000-80000-uk.html">£60,000–£80,000 salaries</a></li>
-<li><a href="/salary-after-tax-80000-100000-uk.html">£80,000–£100,000 salaries</a></li>
-<li><a href="/salary-after-tax-100000-plus-uk.html">£100,000+ salaries</a></li>
-</ul>
-</div>
+  <div class="ad-slot">Advertisement space</div>
 
-<h2>🇺🇸 US Salary Guides</h2>
+  <div class="layout">
 
-<div class="card">
-<ul class="columns">
-<li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a></li>
-<li><a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a></li>
-<li><a href="/120000-salary-after-tax-us.html">$120,000 salary after tax</a></li>
-<li><a href="/150000-salary-after-tax-us.html">$150,000 salary after tax</a></li>
-<li><a href="/200000-salary-after-tax-us.html">$200,000 salary after tax</a></li>
-</ul>
-</div>
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Jump to section</h3>
+        <ul>
+          <li><a href="#uk-guides">UK salary guides</a></li>
+          <li><a href="#uk-ranges">UK salary ranges</a></li>
+          <li><a href="#uk-monthly-weekly">UK monthly and weekly</a></li>
+          <li><a href="#us-guides">US salary guides</a></li>
+          <li><a href="#us-hub">US hub and support pages</a></li>
+          <li><a href="#tools">Useful calculators and tools</a></li>
+        </ul>
+      </div>
 
-<h3>US monthly and weekly take-home</h3>
-<div class="card">
-<ul>
-<li><a href="/80000-after-tax-monthly-us.html">$80,000 monthly take-home</a></li>
-<li><a href="/80000-after-tax-weekly-us.html">$80,000 weekly take-home</a></li>
-<li><a href="/100000-after-tax-monthly-us.html">$100,000 monthly take-home</a></li>
-<li><a href="/100000-after-tax-weekly-us.html">$100,000 weekly take-home</a></li>
-</ul>
-</div>
+      <div class="side-card">
+        <h3>Popular pages</h3>
+        <ul>
+          <li><a href="/40000-salary-after-tax-uk.html">£40,000 salary after tax</a></li>
+          <li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></li>
+          <li><a href="/20-an-hour-salary-uk.html">£20 an hour salary</a></li>
+          <li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a></li>
+          <li><a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a></li>
+          <li><a href="/salary-guides.html">Salary guides hub</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot">Sidebar ad space</div>
+    </aside>
+
+    <div class="content">
+
+      <section class="section" id="uk-guides">
+        <h2>UK Salary Guides</h2>
+        <p class="section-intro">Explore UK income examples by hourly wage, annual salary and common after-tax take-home pay pages. These links cover some of the most useful entry points for UK visitors and help connect the main salary clusters across the site.</p>
+
+        <h3>Hourly wage guides</h3>
+        <div class="grid-links">
+          <a class="link-card" href="/12-an-hour-salary-uk.html">
+            <strong>£12 an hour salary</strong>
+            <p>See what a £12 hourly wage looks like over a year in the UK.</p>
+          </a>
+          <a class="link-card" href="/15-an-hour-salary-uk.html">
+            <strong>£15 an hour salary</strong>
+            <p>Compare a common mid-range hourly wage with annual earnings.</p>
+          </a>
+          <a class="link-card" href="/20-an-hour-salary-uk.html">
+            <strong>£20 an hour salary</strong>
+            <p>One of the strongest practical hourly wage comparison pages.</p>
+          </a>
+          <a class="link-card" href="/25-an-hour-salary-uk.html">
+            <strong>£25 an hour salary</strong>
+            <p>Useful for higher hourly pay comparisons and take-home context.</p>
+          </a>
+          <a class="link-card" href="/30-an-hour-salary-uk.html">
+            <strong>£30 an hour salary</strong>
+            <p>Ideal for users comparing strong hourly earnings in the UK.</p>
+          </a>
+          <a class="link-card" href="/minimum-wage-uk-salary.html">
+            <strong>Minimum wage UK salary</strong>
+            <p>A key authority page for lower-income and entry-level searches.</p>
+          </a>
+        </div>
+
+        <h3>Popular UK salary after tax pages</h3>
+        <div class="grid-links">
+          <a class="link-card" href="/25000-salary-after-tax-uk.html">
+            <strong>£25,000 salary after tax</strong>
+            <p>Useful for lower to lower-middle UK salary comparisons.</p>
+          </a>
+          <a class="link-card" href="/30000-salary-after-tax-uk.html">
+            <strong>£30,000 salary after tax</strong>
+            <p>A very common benchmark for salary take-home research.</p>
+          </a>
+          <a class="link-card" href="/40000-salary-after-tax-uk.html">
+            <strong>£40,000 salary after tax</strong>
+            <p>One of the most commercially useful UK salary examples.</p>
+          </a>
+          <a class="link-card" href="/50000-salary-after-tax-uk.html">
+            <strong>£50,000 salary after tax</strong>
+            <p>A major search target for professional salary comparisons.</p>
+          </a>
+          <a class="link-card" href="/75000-salary-after-tax-uk.html">
+            <strong>£75,000 salary after tax</strong>
+            <p>Good for higher salary bracket searches and net pay estimates.</p>
+          </a>
+          <a class="link-card" href="/100000-salary-after-tax-uk.html">
+            <strong>£100,000 salary after tax</strong>
+            <p>Important for higher earners and tax band research in the UK.</p>
+          </a>
+        </div>
+
+        <div class="callout">
+          <strong>Why this section matters:</strong> these pages help connect your strongest UK hourly, annual and take-home examples into one crawlable structure, making it easier for users and search engines to move through your UK salary content.
+        </div>
+      </section>
+
+      <div class="ad-slot">In-content advertisement space</div>
+
+      <section class="section" id="uk-ranges">
+        <h2>Browse UK Salary Ranges</h2>
+        <p class="section-intro">These range pages are especially useful because they connect multiple salary examples under one earnings bracket. That helps users browse naturally and gives search engines a stronger view of your wider topical coverage.</p>
+
+        <div class="mini-grid">
+          <div class="mini-box">
+            <h4>Lower salary ranges</h4>
+            <ul>
+              <li><a href="/salary-after-tax-20000-30000-uk.html">£20,000–£30,000 salaries</a></li>
+              <li><a href="/salary-after-tax-30000-40000-uk.html">£30,000–£40,000 salaries</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Core middle ranges</h4>
+            <ul>
+              <li><a href="/salary-after-tax-40000-50000-uk.html">£40,000–£50,000 salaries</a></li>
+              <li><a href="/salary-after-tax-50000-60000-uk.html">£50,000–£60,000 salaries</a></li>
+              <li><a href="/salary-after-tax-60000-80000-uk.html">£60,000–£80,000 salaries</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Higher income ranges</h4>
+            <ul>
+              <li><a href="/salary-after-tax-80000-100000-uk.html">£80,000–£100,000 salaries</a></li>
+              <li><a href="/salary-after-tax-100000-plus-uk.html">£100,000+ salaries</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="uk-monthly-weekly">
+        <h2>UK Monthly and Weekly Take-Home Guides</h2>
+        <p class="section-intro">For users who want a faster practical answer, monthly and weekly pages are often the cleanest format. These help support salary clusters while also matching strong search intent.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/30000-after-tax-monthly.html">
+            <strong>£30,000 after tax monthly</strong>
+            <p>Quick monthly take-home estimate for a common UK salary.</p>
+          </a>
+          <a class="link-card" href="/40000-after-tax-monthly.html">
+            <strong>£40,000 after tax monthly</strong>
+            <p>A high-value guide for monthly net pay comparisons.</p>
+          </a>
+          <a class="link-card" href="/50000-after-tax-monthly.html">
+            <strong>£50,000 after tax monthly</strong>
+            <p>Useful for users comparing monthly household budgeting.</p>
+          </a>
+          <a class="link-card" href="/60000-after-tax-monthly.html">
+            <strong>£60,000 after tax monthly</strong>
+            <p>Helpful for strong mid-to-upper UK salary intent.</p>
+          </a>
+          <a class="link-card" href="/50000-after-tax-weekly.html">
+            <strong>£50,000 after tax weekly</strong>
+            <p>Weekly income estimate for one of the most searched salary points.</p>
+          </a>
+          <a class="link-card" href="/80000-after-tax-weekly.html">
+            <strong>£80,000 after tax weekly</strong>
+            <p>Useful for higher-earning weekly take-home comparisons.</p>
+          </a>
+        </div>
+      </section>
+
+      <div class="ad-slot">Advertisement space</div>
+
+      <section class="section" id="us-guides">
+        <h2>US Salary Guides</h2>
+        <p class="section-intro">The US side of the site now stretches much further in depth, including major salary clusters, monthly and weekly take-home pages and higher-income examples. This section acts as a bridge into the dedicated US hub.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/50000-salary-after-tax-us.html">
+            <strong>$50,000 salary after tax</strong>
+            <p>Entry-level and lower-middle US salary take-home example.</p>
+          </a>
+          <a class="link-card" href="/80000-salary-after-tax-us.html">
+            <strong>$80,000 salary after tax</strong>
+            <p>A strong core page for professional US salary research.</p>
+          </a>
+          <a class="link-card" href="/100000-salary-after-tax-us.html">
+            <strong>$100,000 salary after tax</strong>
+            <p>One of the most important US salary comparison pages.</p>
+          </a>
+          <a class="link-card" href="/150000-salary-after-tax-us.html">
+            <strong>$150,000 salary after tax</strong>
+            <p>Useful for higher-income tax and net pay comparisons.</p>
+          </a>
+          <a class="link-card" href="/300000-salary-after-tax-us.html">
+            <strong>$300,000 salary after tax</strong>
+            <p>Helps establish upper-income topical depth.</p>
+          </a>
+          <a class="link-card" href="/800000-salary-after-tax-us.html">
+            <strong>$800,000 salary after tax</strong>
+            <p>Signals full salary range coverage at the top end of the US build.</p>
+          </a>
+        </div>
+
+        <h3>Monthly and weekly US examples</h3>
+        <div class="grid-links">
+          <a class="link-card" href="/80000-after-tax-monthly-us.html">
+            <strong>$80,000 after tax monthly</strong>
+            <p>Monthly take-home estimate for a highly useful US salary point.</p>
+          </a>
+          <a class="link-card" href="/100000-after-tax-monthly-us.html">
+            <strong>$100,000 after tax monthly</strong>
+            <p>Popular benchmark for American salary comparisons.</p>
+          </a>
+          <a class="link-card" href="/80000-after-tax-weekly-us.html">
+            <strong>$80,000 after tax weekly</strong>
+            <p>Weekly net pay example for one of the strongest US pages.</p>
+          </a>
+          <a class="link-card" href="/100000-after-tax-weekly-us.html">
+            <strong>$100,000 after tax weekly</strong>
+            <p>Helpful for weekly take-home pay breakdown searches.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="us-hub">
+        <h2>Dedicated US Salary Hub and Support Pages</h2>
+        <p class="section-intro">Use the dedicated US hub to explore the deeper US build. This is the cleanest way to support crawling into the growing American salary silo without overloading this page with too many links.</p>
+
+        <div class="mini-grid">
+          <div class="mini-box">
+            <h4>Main US pages</h4>
+            <ul>
+              <li><a href="/us-salary-guides.html">US salary guides</a></li>
+              <li><a href="/salary-after-tax-us.html">US salary after tax overview</a></li>
+              <li><a href="/us-income-tax-explained.html">US income tax explained</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>High-value US examples</h4>
+            <ul>
+              <li><a href="/50000-salary-after-tax-us.html">$50,000 after tax</a></li>
+              <li><a href="/100000-salary-after-tax-us.html">$100,000 after tax</a></li>
+              <li><a href="/200000-salary-after-tax-us.html">$200,000 after tax</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Deep salary coverage</h4>
+            <ul>
+              <li><a href="/300000-salary-after-tax-us.html">$300,000 after tax</a></li>
+              <li><a href="/500000-salary-after-tax-us.html">$500,000 after tax</a></li>
+              <li><a href="/800000-salary-after-tax-us.html">$800,000 after tax</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Best practice:</strong> keep this page as the broad UK and US authority hub, and let <a href="/us-salary-guides.html">/us-salary-guides.html</a> carry more of the deeper US internal linking structure.
+        </div>
+      </section>
+
+      <section class="section" id="tools">
+        <h2>Useful Salary Tools and Related Pages</h2>
+        <p class="section-intro">These support pages help reinforce the wider theme of salary comparison, tax explanation and pay conversion across the site.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/">
+            <strong>Salary after tax calculator</strong>
+            <p>Use the main calculator to estimate take-home pay in the UK and US.</p>
+          </a>
+          <a class="link-card" href="/hourly-to-salary.html">
+            <strong>Hourly to salary converter</strong>
+            <p>Convert hourly wages into annual salary estimates quickly.</p>
+          </a>
+          <a class="link-card" href="/salary-to-hourly.html">
+            <strong>Salary to hourly converter</strong>
+            <p>Break annual salary into hourly earnings for comparison.</p>
+          </a>
+          <a class="link-card" href="/salary-after-tax-faq.html">
+            <strong>Salary after tax FAQ</strong>
+            <p>Answers common questions about take-home pay and tax deductions.</p>
+          </a>
+          <a class="link-card" href="/uk-income-tax-explained.html">
+            <strong>UK income tax explained</strong>
+            <p>Understand how UK tax bands affect salary and take-home pay.</p>
+          </a>
+          <a class="link-card" href="/national-insurance-rates.html">
+            <strong>National Insurance rates</strong>
+            <p>See how National Insurance affects pay in the UK.</p>
+          </a>
+        </div>
+
+        <p class="footer-note">This page is designed to help users browse salary examples more efficiently while strengthening the internal structure between calculators, salary pages, range pages and dedicated topic hubs.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p><strong>AfterTaxTool</strong> – salary comparison, tax explanations and take-home pay examples for the UK and US.</p>
+  </div>
+</footer>
+
+</body>
+</html>
