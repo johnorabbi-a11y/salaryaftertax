@@ -4,123 +4,568 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>US Salary Guides – After-Tax Income, Monthly and Weekly Pay</title>
-<meta name="description" content="Browse US salary guides for after-tax income, monthly take-home pay and weekly pay examples across a wide range of salaries.">
+<meta name="description" content="Browse US salary guides covering annual after-tax income, monthly take-home pay, weekly pay examples and high-income salary ranges across the United States.">
 <link rel="canonical" href="https://aftertaxtool.com/us-salary-guides.html">
 <meta name="robots" content="index,follow">
 <style>
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f8fb;margin:0;color:#1a1a1a;line-height:1.6}
-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 24px}
-nav a{margin-right:16px;text-decoration:none;color:#2563eb;font-weight:500}
-.container{max-width:980px;margin:40px auto;padding:0 20px}
-.card{background:#fff;padding:18px;border-radius:8px;border:1px solid #e5e7eb;margin-top:18px}
-h1,h2,h3{line-height:1.25}
-ul{margin:0;padding-left:20px}
-.columns{columns:2;column-gap:40px}
-.intro{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:18px}
-@media (max-width:700px){.columns{columns:1}}
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --accent-soft:#dbeafe;
+  --accent-dark:#1d4ed8;
+  --good:#065f46;
+  --good-bg:#ecfdf5;
+  --shadow:0 10px 30px rgba(15,23,42,0.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.topbar{
+  max-width:1180px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.brand{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+}
+nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+nav a{
+  font-weight:600;
+}
+.hero{
+  background:linear-gradient(135deg,#eff6ff 0%,#ffffff 65%);
+  border-bottom:1px solid var(--border);
+}
+.hero-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:42px 20px 34px;
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+.hero-copy h1{
+  margin:0 0 14px;
+  font-size:2.45rem;
+  line-height:1.15;
+}
+.hero-copy p{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:1.06rem;
+  max-width:760px;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.badge{
+  display:inline-block;
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:.94rem;
+  font-weight:700;
+}
+.hero-panel{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.hero-panel h2{
+  margin:0 0 10px;
+  font-size:1.05rem;
+}
+.hero-panel ul{
+  margin:0;
+  padding-left:18px;
+}
+.hero-panel li{
+  margin:6px 0;
+}
+.page{
+  max-width:1180px;
+  margin:28px auto 48px;
+  padding:0 20px;
+}
+.ad-slot{
+  background:linear-gradient(180deg,#fafafa 0%,#f3f4f6 100%);
+  border:1px dashed #cbd5e1;
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+  margin:22px 0;
+}
+.layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:24px;
+}
+.sidebar{
+  position:sticky;
+  top:82px;
+  align-self:start;
+}
+.side-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.side-card h3{
+  margin:0 0 12px;
+  font-size:1rem;
+}
+.side-card ul{
+  margin:0;
+  padding-left:18px;
+}
+.side-card li{
+  margin:8px 0;
+}
+.content{
+  min-width:0;
+}
+.section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px;
+}
+.section h2{
+  margin:0 0 12px;
+  font-size:1.55rem;
+}
+.section h3{
+  margin:24px 0 10px;
+  font-size:1.05rem;
+}
+.section-intro{
+  margin:0 0 16px;
+  color:var(--muted);
+}
+.grid-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.link-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 14px 12px;
+  transition:.15s ease;
+}
+.link-card:hover{
+  border-color:#bfdbfe;
+  box-shadow:0 8px 24px rgba(37,99,235,0.08);
+}
+.link-card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:.98rem;
+}
+.link-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.mini-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.mini-box{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+}
+.mini-box h4{
+  margin:0 0 8px;
+  font-size:.95rem;
+}
+.mini-box ul{
+  margin:0;
+  padding-left:18px;
+}
+.mini-box li{
+  margin:6px 0;
+}
+.callout{
+  background:var(--good-bg);
+  border:1px solid #bbf7d0;
+  border-radius:14px;
+  padding:16px;
+  margin-top:18px;
+}
+.callout strong{
+  color:var(--good);
+}
+.footer-note{
+  color:var(--muted);
+  font-size:.95rem;
+  margin-top:12px;
+}
+footer{
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:24px 20px 40px;
+  color:var(--muted);
+  font-size:.94rem;
+}
+@media (max-width:980px){
+  .hero-inner,
+  .layout{
+    grid-template-columns:1fr;
+  }
+  .sidebar{
+    position:static;
+  }
+}
+@media (max-width:700px){
+  .hero-copy h1{
+    font-size:2rem;
+  }
+  .grid-links,
+  .mini-grid{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 <body>
 
 <header>
-<nav>
-<a href="/">Home</a>
-<a href="/salary-after-tax-us.html">US Salary After Tax</a>
-<a href="/salary-guides.html">All Salary Guides</a>
-<a href="/hourly-to-salary.html">Hourly → Salary</a>
-<a href="/salary-to-hourly.html">Salary → Hourly</a>
-</nav>
+  <div class="topbar">
+    <div class="brand">AfterTaxTool</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/salary-guides.html">UK & US Salary Guides</a>
+      <a href="/salary-after-tax-us.html">US Salary After Tax</a>
+      <a href="/hourly-to-salary.html">Hourly → Salary</a>
+      <a href="/salary-to-hourly.html">Salary → Hourly</a>
+    </nav>
+  </div>
 </header>
 
-<main class="container">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>US Salary Guides</h1>
+      <p>Browse US salary guides covering annual after-tax income, monthly take-home pay, weekly pay examples and higher-income salary ranges. This page is designed to act as the main hub for the American side of the site, helping users and search engines move through the US salary structure more efficiently.</p>
+      <p>If you want a quick comparison for a common salary like $80,000 or $100,000, or you want to explore much higher income levels such as $300,000, $500,000 or $800,000, these guides provide strong entry points into the wider US salary build.</p>
+      <div class="badges">
+        <span class="badge">US annual salary guides</span>
+        <span class="badge">Monthly take-home</span>
+        <span class="badge">Weekly take-home</span>
+        <span class="badge">High-income examples</span>
+        <span class="badge">US tax support pages</span>
+      </div>
+    </div>
 
-<h1>US Salary Guides</h1>
+    <div class="hero-panel">
+      <h2>Popular US starting points</h2>
+      <ul>
+        <li><a href="/salary-after-tax-us.html">US salary after tax overview</a></li>
+        <li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a></li>
+        <li><a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a></li>
+        <li><a href="/80000-after-tax-monthly-us.html">$80,000 after tax monthly</a></li>
+        <li><a href="/100000-after-tax-weekly-us.html">$100,000 after tax weekly</a></li>
+        <li><a href="/salary-guides.html">Back to main salary guides hub</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<div class="intro">
-<p>Browse US salary guides covering annual after-tax income, monthly take-home pay and weekly pay examples. These guides help you compare common salaries and higher income bands across a wide range of earnings.</p>
-</div>
+<main class="page">
 
-<h2>Popular US salary after tax guides</h2>
-<div class="card">
-<ul class="columns">
-<li><a href="/50000-salary-after-tax-us.html">$50,000 salary after tax</a></li>
-<li><a href="/60000-salary-after-tax-us.html">$60,000 salary after tax</a></li>
-<li><a href="/70000-salary-after-tax-us.html">$70,000 salary after tax</a></li>
-<li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a></li>
-<li><a href="/90000-salary-after-tax-us.html">$90,000 salary after tax</a></li>
-<li><a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a></li>
-<li><a href="/120000-salary-after-tax-us.html">$120,000 salary after tax</a></li>
-<li><a href="/150000-salary-after-tax-us.html">$150,000 salary after tax</a></li>
-<li><a href="/200000-salary-after-tax-us.html">$200,000 salary after tax</a></li>
-<li><a href="/250000-salary-after-tax-us.html">$250,000 salary after tax</a></li>
-<li><a href="/300000-salary-after-tax-us.html">$300,000 salary after tax</a></li>
-<li><a href="/500000-salary-after-tax-us.html">$500,000 salary after tax</a></li>
-<li><a href="/800000-salary-after-tax-us.html">$800,000 salary after tax</a></li>
-</ul>
-</div>
+  <div class="ad-slot">Advertisement space</div>
 
-<h2>US monthly take-home guides</h2>
-<div class="card">
-<ul class="columns">
-<li><a href="/50000-after-tax-monthly-us.html">$50,000 after tax monthly</a></li>
-<li><a href="/60000-after-tax-monthly-us.html">$60,000 after tax monthly</a></li>
-<li><a href="/70000-after-tax-monthly-us.html">$70,000 after tax monthly</a></li>
-<li><a href="/80000-after-tax-monthly-us.html">$80,000 after tax monthly</a></li>
-<li><a href="/90000-after-tax-monthly-us.html">$90,000 after tax monthly</a></li>
-<li><a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly</a></li>
-<li><a href="/120000-after-tax-monthly-us.html">$120,000 after tax monthly</a></li>
-<li><a href="/150000-after-tax-monthly-us.html">$150,000 after tax monthly</a></li>
-<li><a href="/200000-after-tax-monthly-us.html">$200,000 after tax monthly</a></li>
-<li><a href="/250000-after-tax-monthly-us.html">$250,000 after tax monthly</a></li>
-<li><a href="/300000-after-tax-monthly-us.html">$300,000 after tax monthly</a></li>
-<li><a href="/500000-after-tax-monthly-us.html">$500,000 after tax monthly</a></li>
-<li><a href="/800000-after-tax-monthly-us.html">$800,000 after tax monthly</a></li>
-</ul>
-</div>
+  <div class="layout">
 
-<h2>US weekly take-home guides</h2>
-<div class="card">
-<ul class="columns">
-<li><a href="/50000-after-tax-weekly-us.html">$50,000 after tax weekly</a></li>
-<li><a href="/60000-after-tax-weekly-us.html">$60,000 after tax weekly</a></li>
-<li><a href="/70000-after-tax-weekly-us.html">$70,000 after tax weekly</a></li>
-<li><a href="/80000-after-tax-weekly-us.html">$80,000 after tax weekly</a></li>
-<li><a href="/90000-after-tax-weekly-us.html">$90,000 after tax weekly</a></li>
-<li><a href="/100000-after-tax-weekly-us.html">$100,000 after tax weekly</a></li>
-<li><a href="/120000-after-tax-weekly-us.html">$120,000 after tax weekly</a></li>
-<li><a href="/150000-after-tax-weekly-us.html">$150,000 after tax weekly</a></li>
-<li><a href="/200000-after-tax-weekly-us.html">$200,000 after tax weekly</a></li>
-<li><a href="/250000-after-tax-weekly-us.html">$250,000 after tax weekly</a></li>
-<li><a href="/300000-after-tax-weekly-us.html">$300,000 after tax weekly</a></li>
-<li><a href="/500000-after-tax-weekly-us.html">$500,000 after tax weekly</a></li>
-<li><a href="/800000-after-tax-weekly-us.html">$800,000 after tax weekly</a></li>
-</ul>
-</div>
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Jump to section</h3>
+        <ul>
+          <li><a href="#popular-us">Popular US salary guides</a></li>
+          <li><a href="#monthly-us">US monthly take-home</a></li>
+          <li><a href="#weekly-us">US weekly take-home</a></li>
+          <li><a href="#higher-us">Higher-income US pages</a></li>
+          <li><a href="#ranges-us">US salary ranges</a></li>
+          <li><a href="#tools-us">US support pages and tools</a></li>
+        </ul>
+      </div>
 
-<h2>Browse US salary ranges</h2>
-<div class="card">
-<ul>
-<li><a href="/salary-after-tax-50000-100000-us.html">$50,000 to $100,000 salaries</a></li>
-<li><a href="/salary-after-tax-100000-150000-us.html">$100,000 to $150,000 salaries</a></li>
-<li><a href="/salary-after-tax-150000-200000-us.html">$150,000 to $200,000 salaries</a></li>
-<li><a href="/salary-after-tax-200000-300000-us.html">$200,000 to $300,000 salaries</a></li>
-<li><a href="/salary-after-tax-300000-500000-us.html">$300,000 to $500,000 salaries</a></li>
-<li><a href="/salary-after-tax-500000-plus-us.html">$500,000+ salaries</a></li>
-</ul>
-</div>
+      <div class="side-card">
+        <h3>Popular US pages</h3>
+        <ul>
+          <li><a href="/50000-salary-after-tax-us.html">$50,000 after tax</a></li>
+          <li><a href="/80000-salary-after-tax-us.html">$80,000 after tax</a></li>
+          <li><a href="/100000-salary-after-tax-us.html">$100,000 after tax</a></li>
+          <li><a href="/150000-salary-after-tax-us.html">$150,000 after tax</a></li>
+          <li><a href="/200000-salary-after-tax-us.html">$200,000 after tax</a></li>
+          <li><a href="/800000-salary-after-tax-us.html">$800,000 after tax</a></li>
+        </ul>
+      </div>
 
-<h2>US tax and calculator pages</h2>
-<div class="card">
-<ul>
-<li><a href="/salary-after-tax-us.html">US salary after tax overview</a></li>
-<li><a href="/us-income-tax-explained.html">US income tax explained</a></li>
-<li><a href="/">Salary after tax calculator</a></li>
-</ul>
-</div>
+      <div class="ad-slot">Sidebar ad space</div>
+    </aside>
 
-<p><a href="/salary-guides.html">Browse all salary guides</a> for both UK and US pages.</p>
+    <div class="content">
 
+      <section class="section" id="popular-us">
+        <h2>Popular US Salary After Tax Guides</h2>
+        <p class="section-intro">These are some of the strongest entry-point pages for the US salary side of the site. They cover common search salaries as well as stronger higher-income pages that help show the full depth of the US content silo.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/50000-salary-after-tax-us.html">
+            <strong>$50,000 salary after tax</strong>
+            <p>A useful entry-level US take-home pay page for broad salary intent.</p>
+          </a>
+          <a class="link-card" href="/60000-salary-after-tax-us.html">
+            <strong>$60,000 salary after tax</strong>
+            <p>A common salary band for comparing taxes and net income in the US.</p>
+          </a>
+          <a class="link-card" href="/80000-salary-after-tax-us.html">
+            <strong>$80,000 salary after tax</strong>
+            <p>One of the most important core US salary comparison pages.</p>
+          </a>
+          <a class="link-card" href="/100000-salary-after-tax-us.html">
+            <strong>$100,000 salary after tax</strong>
+            <p>A major benchmark page for American income comparisons.</p>
+          </a>
+          <a class="link-card" href="/150000-salary-after-tax-us.html">
+            <strong>$150,000 salary after tax</strong>
+            <p>Strong for higher professional salary searches and take-home comparisons.</p>
+          </a>
+          <a class="link-card" href="/200000-salary-after-tax-us.html">
+            <strong>$200,000 salary after tax</strong>
+            <p>Useful for upper-middle and higher income search intent.</p>
+          </a>
+        </div>
+
+        <div class="callout">
+          <strong>Why this section matters:</strong> it gives Google a clean route into your strongest American salary pages while also helping users move straight into the most commercially valuable salary bands.
+        </div>
+      </section>
+
+      <div class="ad-slot">In-content advertisement space</div>
+
+      <section class="section" id="monthly-us">
+        <h2>US Monthly Take-Home Guides</h2>
+        <p class="section-intro">Monthly take-home pages are especially useful for users making budgeting decisions or comparing annual salary offers in more practical terms.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/50000-after-tax-monthly-us.html">
+            <strong>$50,000 after tax monthly</strong>
+            <p>Monthly net pay breakdown for a common US salary level.</p>
+          </a>
+          <a class="link-card" href="/80000-after-tax-monthly-us.html">
+            <strong>$80,000 after tax monthly</strong>
+            <p>A strong page for household budgeting and salary comparison searches.</p>
+          </a>
+          <a class="link-card" href="/100000-after-tax-monthly-us.html">
+            <strong>$100,000 after tax monthly</strong>
+            <p>One of the best benchmark pages for monthly net pay in the US.</p>
+          </a>
+          <a class="link-card" href="/150000-after-tax-monthly-us.html">
+            <strong>$150,000 after tax monthly</strong>
+            <p>Higher-income monthly comparison for stronger US search intent.</p>
+          </a>
+          <a class="link-card" href="/200000-after-tax-monthly-us.html">
+            <strong>$200,000 after tax monthly</strong>
+            <p>Useful for advanced income planning and net pay comparisons.</p>
+          </a>
+          <a class="link-card" href="/300000-after-tax-monthly-us.html">
+            <strong>$300,000 after tax monthly</strong>
+            <p>Reinforces upper-income depth across the US salary cluster.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="weekly-us">
+        <h2>US Weekly Take-Home Guides</h2>
+        <p class="section-intro">Weekly take-home pages can help capture users who want quick earnings comparisons or salary examples expressed in a simpler weekly format.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/50000-after-tax-weekly-us.html">
+            <strong>$50,000 after tax weekly</strong>
+            <p>Weekly take-home estimate for an important lower-core US salary band.</p>
+          </a>
+          <a class="link-card" href="/80000-after-tax-weekly-us.html">
+            <strong>$80,000 after tax weekly</strong>
+            <p>A strong internal link target for one of your most valuable US examples.</p>
+          </a>
+          <a class="link-card" href="/100000-after-tax-weekly-us.html">
+            <strong>$100,000 after tax weekly</strong>
+            <p>Popular benchmark for quick weekly salary comparisons.</p>
+          </a>
+          <a class="link-card" href="/150000-after-tax-weekly-us.html">
+            <strong>$150,000 after tax weekly</strong>
+            <p>Supports higher-income search intent in a practical weekly format.</p>
+          </a>
+          <a class="link-card" href="/200000-after-tax-weekly-us.html">
+            <strong>$200,000 after tax weekly</strong>
+            <p>Useful for upper-income weekly take-home comparisons.</p>
+          </a>
+          <a class="link-card" href="/300000-after-tax-weekly-us.html">
+            <strong>$300,000 after tax weekly</strong>
+            <p>Deepens the upper-income internal linking structure for US pages.</p>
+          </a>
+        </div>
+      </section>
+
+      <div class="ad-slot">Advertisement space</div>
+
+      <section class="section" id="higher-us">
+        <h2>Higher-Income US Salary Pages</h2>
+        <p class="section-intro">These pages help signal the full upper end of the US salary build. They are useful both for users in high-income brackets and for reinforcing the depth and breadth of the US content cluster.</p>
+
+        <div class="mini-grid">
+          <div class="mini-box">
+            <h4>Upper core salaries</h4>
+            <ul>
+              <li><a href="/200000-salary-after-tax-us.html">$200,000 after tax</a></li>
+              <li><a href="/250000-salary-after-tax-us.html">$250,000 after tax</a></li>
+              <li><a href="/300000-salary-after-tax-us.html">$300,000 after tax</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>High-income salary pages</h4>
+            <ul>
+              <li><a href="/400000-salary-after-tax-us.html">$400,000 after tax</a></li>
+              <li><a href="/500000-salary-after-tax-us.html">$500,000 after tax</a></li>
+              <li><a href="/600000-salary-after-tax-us.html">$600,000 after tax</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Top-end coverage</h4>
+            <ul>
+              <li><a href="/700000-salary-after-tax-us.html">$700,000 after tax</a></li>
+              <li><a href="/800000-salary-after-tax-us.html">$800,000 after tax</a></li>
+              <li><a href="/800000-after-tax-monthly-us.html">$800,000 monthly</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ranges-us">
+        <h2>Browse US Salary Ranges</h2>
+        <p class="section-intro">Use grouped salary ranges to explore broader earnings bands instead of single examples. These range pages are valuable because they help connect related salary clusters under one roof.</p>
+
+        <div class="mini-grid">
+          <div class="mini-box">
+            <h4>Mid-range salaries</h4>
+            <ul>
+              <li><a href="/salary-after-tax-50000-100000-us.html">$50,000 to $100,000 salaries</a></li>
+              <li><a href="/salary-after-tax-100000-150000-us.html">$100,000 to $150,000 salaries</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Higher salary ranges</h4>
+            <ul>
+              <li><a href="/salary-after-tax-150000-200000-us.html">$150,000 to $200,000 salaries</a></li>
+              <li><a href="/salary-after-tax-200000-300000-us.html">$200,000 to $300,000 salaries</a></li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>Top-end ranges</h4>
+            <ul>
+              <li><a href="/salary-after-tax-300000-500000-us.html">$300,000 to $500,000 salaries</a></li>
+              <li><a href="/salary-after-tax-500000-plus-us.html">$500,000+ salaries</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tools-us">
+        <h2>US Support Pages and Related Tools</h2>
+        <p class="section-intro">These pages support the wider US salary structure and help reinforce the site’s overall salary and tax comparison theme.</p>
+
+        <div class="grid-links">
+          <a class="link-card" href="/salary-after-tax-us.html">
+            <strong>US salary after tax overview</strong>
+            <p>The main American salary after tax overview page.</p>
+          </a>
+          <a class="link-card" href="/us-income-tax-explained.html">
+            <strong>US income tax explained</strong>
+            <p>Background page explaining the tax context behind the salary guides.</p>
+          </a>
+          <a class="link-card" href="/">
+            <strong>Salary after tax calculator</strong>
+            <p>Use the main calculator to compare take-home pay in the UK and US.</p>
+          </a>
+          <a class="link-card" href="/salary-guides.html">
+            <strong>Main salary guides hub</strong>
+            <p>Return to the broader UK and US authority page.</p>
+          </a>
+        </div>
+
+        <p class="footer-note">This US hub is designed to help search engines and users navigate the American salary content structure more efficiently, while supporting deeper crawling into annual, monthly, weekly and higher-income salary pages.</p>
+      </section>
+
+    </div>
+  </div>
 </main>
+
+<footer>
+  <div class="footer-inner">
+    <p><strong>AfterTaxTool</strong> – salary comparison, tax explanations and take-home pay examples for the UK and US.</p>
+  </div>
+</footer>
 
 </body>
 </html>
