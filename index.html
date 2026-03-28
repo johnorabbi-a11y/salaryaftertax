@@ -493,7 +493,24 @@
   gtag('js', new Date());
   gtag('config', 'G-GNPTB0CMD0');
 </script>
- 
+ <script>
+document.addEventListener("cookieyes_consent_update", function() {
+  if (CookieYes.consent.analytics) {
+    // Load GA manually
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0";
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', 'G-GNPTB0CMD0');
+  }
+});
+</script>
 
  
 </head>
