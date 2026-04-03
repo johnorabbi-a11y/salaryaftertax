@@ -1,124 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salary After Tax US | Take Home Pay Guide</title>
-<meta name="description" content="Guide to salary after tax in the United States including federal tax, Social Security, Medicare and state-level salary routes. Compare take-home pay, monthly income and weekly pay across common salary bands.">
-<link rel="canonical" href="https://aftertaxtool.com/salary-after-tax-us.html">
-<style>
-body{font-family:Arial,Helvetica,sans-serif;background:#f3f4f6;margin:0;color:#111;line-height:1.65}
-.container{max-width:1100px;margin:auto;padding:24px}
-.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #e5e7eb}
-h1{margin-top:0;font-size:32px}
-h2,h3{margin-top:0;color:#111827}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-a{color:#2563eb;text-decoration:none}
-a:hover{text-decoration:underline}
-p{margin:0 0 14px}
-ul{margin:0;padding-left:20px}
-li{margin:0 0 8px}
-.breadcrumbs{font-size:14px;margin-bottom:16px}
-@media (max-width:800px){
-  .grid,.grid-3{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salary After Tax US | Take-Home Pay Guide, Monthly Net Pay &amp; State Comparisons</title>
+  <meta name="description" content="Explore salary after tax in the United States with clear take-home pay guidance, monthly and weekly net pay examples, federal tax explanations, and state salary routes for California, Texas, New York and more." />
+  <link rel="canonical" href="https://aftertaxtool.com/salary-after-tax-us.html" />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --accent-soft:#dbeafe;
+      --good:#065f46;
+      --good-bg:#ecfdf5;
+      --shadow:0 10px 30px rgba(15,23,42,0.06);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:24px 20px 44px;
+    }
+
+    .breadcrumbs{
+      font-size:14px;
+      margin-bottom:16px;
+      color:var(--muted);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:18px;
+      padding:24px;
+      margin-bottom:20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:2.3rem;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+
+    h2{
+      margin:0 0 10px;
+      color:#111827;
+      font-size:1.55rem;
+      line-height:1.2;
+    }
+
+    h3{
+      margin:18px 0 8px;
+      color:#111827;
+      font-size:1.05rem;
+      line-height:1.25;
+    }
+
+    p{
+      margin:0 0 14px;
+    }
+
+    ul{
+      margin:0;
+      padding-left:20px;
+    }
+
+    li{
+      margin:0 0 8px;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#eff6ff 0%,#ffffff 70%);
+    }
+
+    .hero p{
+      max-width:860px;
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:1.05rem;
+      margin-bottom:14px;
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+      border:1px solid #bfdbfe;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .notice{
+      background:var(--good-bg);
+      border:1px solid #bbf7d0;
+      border-radius:14px;
+      padding:16px;
+      margin-top:16px;
+    }
+
+    .notice strong{
+      color:var(--good);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .link-card{
+      display:block;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      transition:.15s ease;
+    }
+
+    .link-card:hover{
+      border-color:#bfdbfe;
+      box-shadow:0 8px 24px rgba(37,99,235,0.08);
+      text-decoration:none;
+    }
+
+    .link-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--text);
+      font-size:.98rem;
+    }
+
+    .link-card span{
+      display:block;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .stat{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+    }
+
+    .stat h3{
+      margin:0 0 6px;
+      font-size:14px;
+      color:#374151;
+    }
+
+    .stat .big{
+      font-size:1.3rem;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .ad-slot{
+      text-align:center;
+      font-size:14px;
+      color:#777;
+      background:linear-gradient(180deg,#fafafa 0%,#f3f4f6 100%);
+      border:1px dashed #cbd5e1;
+      border-radius:14px;
+      padding:16px;
+      margin:20px 0;
+    }
+
+    @media (max-width:900px){
+      .grid,
+      .grid-3,
+      .stats{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:700px){
+      .grid,
+      .grid-3,
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .container{
+        padding:18px 14px 34px;
+      }
+
+      h1{
+        font-size:1.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
 
-<div class="breadcrumbs">
-<a href="https://aftertaxtool.com/">Home</a> › Salary After Tax US
-</div>
+    <div class="breadcrumbs">
+      <a href="https://aftertaxtool.com/">Home</a> › Salary After Tax US
+    </div>
 
-<div class="card">
-<h1>Salary After Tax in the United States</h1>
-<p>This guide explains how salary after tax works in the US and what your take-home pay may look like after federal income tax, Social Security and Medicare deductions.</p>
-<p>The examples across AfterTaxTool assume a single filer using the standard deduction and no state income tax unless otherwise stated. Real take-home pay can vary depending on state tax, benefits, retirement contributions and filing status.</p>
-<p><a href="/salary-after-tax-calculator.html">Salary After Tax Calculator (UK &amp; US) – See Your Take-Home Pay</a></p>
-</div>
+    <div class="card hero">
+      <h1>Salary After Tax in the United States</h1>
+      <p class="sub">Compare take-home pay in the US with annual, monthly and weekly salary examples, simple tax explanations and state-specific salary routes.</p>
+      <p>
+        This page is the main US hub for salary after tax comparisons on AfterTaxTool. Use it to move into common salary bands, monthly and weekly net pay examples, and state pages that show how location can affect real take-home pay after federal income tax, Social Security, Medicare and state deductions.
+      </p>
+      <p>
+        Across the site, many examples use a simplified single-filer baseline with the standard deduction and no state income tax unless a state page says otherwise. Real take-home pay can vary depending on filing status, 401(k) contributions, health insurance, bonuses, overtime and local taxes.
+      </p>
 
-<div class="card">
-<h2>Browse US Salary After Tax by Range</h2>
-<div class="grid">
-<a href="/salary-after-tax-20000-50000-us.html">$20,000 to $50,000 salary after tax</a>
-<a href="/salary-after-tax-50000-100000-us.html">$50,000 to $100,000 salary after tax</a>
-<a href="/salary-after-tax-100000-200000-us.html">$100,000 to $200,000 salary after tax</a>
-<a href="/salary-after-tax-200000-plus-us.html">$200,000+ salary after tax</a>
-</div>
-</div>
+      <div class="badge-row">
+        <span class="badge">Federal tax</span>
+        <span class="badge">Social Security</span>
+        <span class="badge">Medicare</span>
+        <span class="badge">State comparisons</span>
+        <span class="badge">Monthly net pay</span>
+        <span class="badge">Weekly take-home</span>
+      </div>
 
-<div class="card">
-<h2>Common US Salary Examples</h2>
-<div class="grid">
-<a href="/50000-salary-after-tax-us.html">$50,000 salary after tax US</a>
-<a href="/60000-salary-after-tax-us.html">$60,000 salary after tax US</a>
-<a href="/70000-salary-after-tax-us.html">$70,000 salary after tax US</a>
-<a href="/80000-salary-after-tax-us.html">$80,000 salary after tax US</a>
-<a href="/90000-salary-after-tax-us.html">$90,000 salary after tax US</a>
-<a href="/100000-salary-after-tax-us.html">$100,000 salary after tax US</a>
-<a href="/110000-salary-after-tax-us.html">$110,000 salary after tax US</a>
-<a href="/120000-salary-after-tax-us.html">$120,000 salary after tax US</a>
-<a href="/130000-salary-after-tax-us.html">$130,000 salary after tax US</a>
-<a href="/150000-salary-after-tax-us.html">$150,000 salary after tax US</a>
-<a href="/200000-salary-after-tax-us.html">$200,000 salary after tax US</a>
-<a href="/250000-salary-after-tax-us.html">$250,000 salary after tax US</a>
-</div>
-</div>
+      <div class="notice">
+        <strong>Good place to start:</strong> compare a common US salary below, then jump into the matching monthly, weekly or state route to see how take-home pay changes across different income levels.
+      </div>
+    </div>
 
-<div class="card">
-<h2>Monthly and Weekly Pay Examples</h2>
-<div class="grid">
-<a href="/salary-after-tax-monthly-us.html">Salary After Tax Monthly US</a>
-<a href="/salary-after-tax-weekly-us.html">Salary After Tax Weekly US</a>
-<a href="/80000-after-tax-monthly-us.html">$80k after tax monthly</a>
-<a href="/80000-after-tax-weekly-us.html">$80k after tax weekly</a>
-<a href="/100000-after-tax-monthly-us.html">$100k after tax monthly</a>
-<a href="/100000-after-tax-weekly-us.html">$100k after tax weekly</a>
-<a href="/120000-after-tax-monthly-us.html">$120k after tax monthly</a>
-<a href="/120000-after-tax-weekly-us.html">$120k after tax weekly</a>
-</div>
-</div>
+    <div class="card">
+      <h2>Quick US Salary Overview</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>Main focus</h3>
+          <div class="big">US take-home pay</div>
+        </div>
+        <div class="stat">
+          <h3>Includes</h3>
+          <div class="big">Federal + FICA</div>
+        </div>
+        <div class="stat">
+          <h3>State routes</h3>
+          <div class="big">Major US states</div>
+        </div>
+        <div class="stat">
+          <h3>Best use</h3>
+          <div class="big">Salary comparison</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:14px;">
+        Use this hub to move through the strongest US routes on the site, including salary band hubs, common benchmark salaries, monthly examples, weekly examples and state-based salary pages.
+      </p>
+    </div>
 
-<div class="card">
-<h2>Browse Salary After Tax by State</h2>
-<p>These state pages give users another way to explore take-home pay and help connect the wider US salary structure through strong internal links.</p>
-<div class="grid-3">
-<a href="/salary-after-tax-california.html">Salary After Tax California</a>
-<a href="/salary-after-tax-texas.html">Salary After Tax Texas</a>
-<a href="/salary-after-tax-new-york.html">Salary After Tax New York</a>
-</div>
-</div>
+    <div class="ad-slot"><em>Advertisement</em></div>
 
-<div class="card">
-<h2>What Affects Take-Home Pay in the US?</h2>
-<ul>
-<li>Federal income tax brackets</li>
-<li>Standard deduction</li>
-<li>Social Security tax</li>
-<li>Medicare tax</li>
-<li>State income tax</li>
-<li>Health insurance deductions</li>
-<li>401(k) retirement contributions</li>
-</ul>
-</div>
+    <div class="card">
+      <h2>Browse US Salary After Tax by Range</h2>
+      <p class="muted">These salary range hubs make it easier to move through nearby income levels and compare take-home pay across the wider US salary structure.</p>
+      <div class="grid">
+        <a class="link-card" href="/salary-after-tax-20000-50000-us.html">
+          <strong>$20,000 to $50,000 salary after tax</strong>
+          <span>Lower salary range pages for entry-level and early-career take-home pay comparisons.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-50000-100000-us.html">
+          <strong>$50,000 to $100,000 salary after tax</strong>
+          <span>Core mid-range salary hub with some of the most commercially useful US examples.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-100000-200000-us.html">
+          <strong>$100,000 to $200,000 salary after tax</strong>
+          <span>Move into higher-earning US salary comparisons and related monthly or weekly routes.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-200000-plus-us.html">
+          <strong>$200,000+ salary after tax</strong>
+          <span>High-income comparisons showing how tax changes affect larger salaries.</span>
+        </a>
+      </div>
+    </div>
 
-<div class="card">
-<h2>Explore More US Salary Routes</h2>
-<div class="grid">
-<a href="/salary-after-tax-50000-100000-us.html">$50,000 to $100,000 hub</a>
-<a href="/salary-after-tax-100000-200000-us.html">$100,000 to $200,000 hub</a>
-<a href="/salary-after-tax-200000-plus-us.html">$200,000+ hub</a>
-<a href="/salary-after-tax-california.html">California salary hub</a>
-<a href="/salary-after-tax-texas.html">Texas salary hub</a>
-<a href="/salary-after-tax-new-york.html">New York salary hub</a>
-<a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a>
-<a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly</a>
-<a href="/100000-after-tax-weekly-us.html">$100,000 after tax weekly</a>
-</div>
-</div>
+    <div class="card">
+      <h2>Common US Salary Examples</h2>
+      <p class="muted">These benchmark salary pages are useful for job offers, budgeting, pay-rise comparisons and quick take-home pay checks.</p>
+      <div class="grid">
+        <a class="link-card" href="/50000-salary-after-tax-us.html">
+          <strong>$50,000 salary after tax US</strong>
+          <span>Common benchmark for entry-to-mid level US salary comparisons.</span>
+        </a>
+        <a class="link-card" href="/60000-salary-after-tax-us.html">
+          <strong>$60,000 salary after tax US</strong>
+          <span>Useful for comparing take-home pay across nearby mid-range salaries.</span>
+        </a>
+        <a class="link-card" href="/70000-salary-after-tax-us.html">
+          <strong>$70,000 salary after tax US</strong>
+          <span>Strong benchmark for household budgeting and job offer checks.</span>
+        </a>
+        <a class="link-card" href="/80000-salary-after-tax-us.html">
+          <strong>$80,000 salary after tax US</strong>
+          <span>One of the most useful mid-range US salary pages.</span>
+        </a>
+        <a class="link-card" href="/90000-salary-after-tax-us.html">
+          <strong>$90,000 salary after tax US</strong>
+          <span>Useful for promotion and household earnings comparisons.</span>
+        </a>
+        <a class="link-card" href="/100000-salary-after-tax-us.html">
+          <strong>$100,000 salary after tax US</strong>
+          <span>A major benchmark for higher mid-range American salary intent.</span>
+        </a>
+        <a class="link-card" href="/110000-salary-after-tax-us.html">
+          <strong>$110,000 salary after tax US</strong>
+          <span>Compare how net pay changes as earnings move above six figures.</span>
+        </a>
+        <a class="link-card" href="/120000-salary-after-tax-us.html">
+          <strong>$120,000 salary after tax US</strong>
+          <span>Useful for higher-earning salary and budgeting comparisons.</span>
+        </a>
+        <a class="link-card" href="/130000-salary-after-tax-us.html">
+          <strong>$130,000 salary after tax US</strong>
+          <span>Check the effect of federal and payroll deductions on stronger salaries.</span>
+        </a>
+        <a class="link-card" href="/150000-salary-after-tax-us.html">
+          <strong>$150,000 salary after tax US</strong>
+          <span>Higher-salary route with strong comparison value.</span>
+        </a>
+        <a class="link-card" href="/200000-salary-after-tax-us.html">
+          <strong>$200,000 salary after tax US</strong>
+          <span>Useful for larger salary offers and top-end household income checks.</span>
+        </a>
+        <a class="link-card" href="/250000-salary-after-tax-us.html">
+          <strong>$250,000 salary after tax US</strong>
+          <span>Shows how tax drag grows at upper income levels.</span>
+        </a>
+      </div>
+    </div>
 
-</div>
+    <div class="card">
+      <h2>Monthly and Weekly Take-Home Pay Examples</h2>
+      <p class="muted">Many users want monthly or weekly net pay rather than annual salary alone. These routes help compare real cash flow more directly.</p>
+      <div class="grid">
+        <a class="link-card" href="/salary-after-tax-monthly-us.html">
+          <strong>Salary After Tax Monthly US</strong>
+          <span>Monthly net pay hub for American salary examples.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-weekly-us.html">
+          <strong>Salary After Tax Weekly US</strong>
+          <span>Weekly take-home hub for common US salary levels.</span>
+        </a>
+        <a class="link-card" href="/80000-after-tax-monthly-us.html">
+          <strong>$80,000 after tax monthly</strong>
+          <span>Monthly take-home estimate for a strong mid-range US salary.</span>
+        </a>
+        <a class="link-card" href="/80000-after-tax-weekly-us.html">
+          <strong>$80,000 after tax weekly</strong>
+          <span>Weekly pay estimate for a common benchmark salary.</span>
+        </a>
+        <a class="link-card" href="/100000-after-tax-monthly-us.html">
+          <strong>$100,000 after tax monthly</strong>
+          <span>Useful for budgeting and offer comparisons at six figures.</span>
+        </a>
+        <a class="link-card" href="/100000-after-tax-weekly-us.html">
+          <strong>$100,000 after tax weekly</strong>
+          <span>Weekly net pay route for a highly searched salary level.</span>
+        </a>
+        <a class="link-card" href="/120000-after-tax-monthly-us.html">
+          <strong>$120,000 after tax monthly</strong>
+          <span>Monthly net pay guide for higher-earning salary comparisons.</span>
+        </a>
+        <a class="link-card" href="/120000-after-tax-weekly-us.html">
+          <strong>$120,000 after tax weekly</strong>
+          <span>Weekly take-home example for a higher-income route.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="ad-slot"><em>Advertisement</em></div>
+
+    <div class="card">
+      <h2>Browse Salary After Tax by State</h2>
+      <p>
+        State tax can materially change real take-home pay in the US. These state hubs and deeper state pages help users compare how the same salary may look in places like California, Texas and New York.
+      </p>
+      <div class="grid-3">
+        <a class="link-card" href="/salary-after-tax-california.html">
+          <strong>Salary After Tax California</strong>
+          <span>Explore take-home pay in one of the highest-tax major states.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-texas.html">
+          <strong>Salary After Tax Texas</strong>
+          <span>Useful for no-state-income-tax comparisons.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-new-york.html">
+          <strong>Salary After Tax New York</strong>
+          <span>Compare salary deductions in a major high-interest state market.</span>
+        </a>
+      </div>
+
+      <h3>Popular state examples</h3>
+      <div class="grid">
+        <a class="link-card" href="/80000-salary-after-tax-california.html">
+          <strong>$80,000 salary after tax California</strong>
+          <span>See how a common salary looks in a higher-tax state.</span>
+        </a>
+        <a class="link-card" href="/70000-salary-after-tax-new-york.html">
+          <strong>$70,000 salary after tax New York</strong>
+          <span>Useful for a major salary and location comparison route.</span>
+        </a>
+        <a class="link-card" href="/70000-after-tax-monthly-texas.html">
+          <strong>$70,000 after tax monthly Texas</strong>
+          <span>Monthly state comparison for a no-state-tax benchmark.</span>
+        </a>
+        <a class="link-card" href="/75000-after-tax-weekly-new-york.html">
+          <strong>$75,000 after tax weekly New York</strong>
+          <span>Weekly state route for deeper internal comparison coverage.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What Affects Take-Home Pay in the US?</h2>
+
+      <h3>Federal income tax</h3>
+      <p class="muted">
+        Federal tax is one of the biggest factors affecting net pay. The amount you keep depends on taxable income after the standard deduction and the bracket system applied to your filing status.
+      </p>
+
+      <h3>Social Security and Medicare</h3>
+      <p class="muted">
+        Most employees also pay payroll taxes through Social Security and Medicare. These deductions apply separately from federal income tax and reduce real take-home pay even in states with no income tax.
+      </p>
+
+      <h3>State income tax</h3>
+      <p class="muted">
+        State tax can change your net pay significantly. States such as Texas and Florida generally leave more of gross salary untouched by state income tax, while California and New York often reduce take-home pay more.
+      </p>
+
+      <h3>Other deductions</h3>
+      <ul>
+        <li>401(k) retirement contributions</li>
+        <li>Health insurance deductions</li>
+        <li>Bonuses and overtime</li>
+        <li>Filing status changes</li>
+        <li>Local taxes in some locations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Explore More US Salary Routes</h2>
+      <p class="muted">Use these links to move deeper into the strongest US parts of the site and reinforce nearby salary comparisons.</p>
+      <div class="grid">
+        <a class="link-card" href="/salary-after-tax-50000-100000-us.html">
+          <strong>$50,000 to $100,000 hub</strong>
+          <span>Mid-range US salary comparisons and deeper routes.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-100000-200000-us.html">
+          <strong>$100,000 to $200,000 hub</strong>
+          <span>Higher-earning salary routes and related examples.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-200000-plus-us.html">
+          <strong>$200,000+ hub</strong>
+          <span>Upper-income salary comparisons and tax-heavy examples.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-california.html">
+          <strong>California salary hub</strong>
+          <span>Main route into California salary after tax pages.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-texas.html">
+          <strong>Texas salary hub</strong>
+          <span>Main route into Texas salary after tax pages.</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-new-york.html">
+          <strong>New York salary hub</strong>
+          <span>Main route into New York salary after tax pages.</span>
+        </a>
+        <a class="link-card" href="/100000-salary-after-tax-us.html">
+          <strong>$100,000 salary after tax</strong>
+          <span>A strong core example for US intent.</span>
+        </a>
+        <a class="link-card" href="/100000-after-tax-monthly-us.html">
+          <strong>$100,000 after tax monthly</strong>
+          <span>Monthly net pay version of a core six-figure benchmark.</span>
+        </a>
+        <a class="link-card" href="/100000-after-tax-weekly-us.html">
+          <strong>$100,000 after tax weekly</strong>
+          <span>Weekly take-home version of a core six-figure benchmark.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Use the Main Calculator</h2>
+      <p>
+        For a broader UK and US estimate, use the main calculator page to check yearly and monthly take-home pay, then come back to the US routes above to compare similar salaries and nearby state examples.
+      </p>
+      <p><a href="/">Salary After Tax Calculator (UK &amp; US) – See Your Take-Home Pay</a></p>
+    </div>
+
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://aftertaxtool.com/salary-after-tax-us.html#webpage",
+        "url":"https://aftertaxtool.com/salary-after-tax-us.html",
+        "name":"Salary After Tax US | Take-Home Pay Guide, Monthly Net Pay & State Comparisons",
+        "description":"Explore salary after tax in the United States with take-home pay guidance, monthly and weekly net pay examples, federal tax explanations, and state salary routes."
+      },
+      {
+        "@type":"CollectionPage",
+        "name":"US Salary After Tax Hub",
+        "url":"https://aftertaxtool.com/salary-after-tax-us.html",
+        "description":"Hub page for US salary after tax guides, monthly examples, weekly examples and state routes."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Home",
+            "item":"https://aftertaxtool.com/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Salary After Tax US",
+            "item":"https://aftertaxtool.com/salary-after-tax-us.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
