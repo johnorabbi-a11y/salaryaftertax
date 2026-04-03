@@ -1,166 +1,527 @@
-<!doctype html>
-<html lang="en-GB">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Is £50,000 a Good Salary in the UK? Take-Home Pay Explained</title>
-  <meta name="description" content="Is £50,000 a good salary in the UK? See take-home pay, lifestyle comparison, and how £50k compares to other UK salaries.">
-  <link rel="canonical" href="https://aftertaxtool.com/is-50000-a-good-salary-uk.html">
-  <meta name="robots" content="index,follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is £50,000 a Good Salary in the UK? | Take-Home Pay, Cost of Living & Salary Comparison</title>
+  <meta name="description" content="Is £50,000 a good salary in the UK? See estimated take-home pay, monthly and weekly net income, cost-of-living context, and whether £50k is good for a single person or family." />
+  <link rel="canonical" href="https://aftertaxtool.com/is-50000-a-good-salary-uk.html" />
   <style>
-    :root{
-      --bg:#f5f7fb;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --border:#dbe3ee;
-      --accent:#1d4ed8;
-      --accent-soft:#e8f0ff;
-      --good:#166534;
-      --good-bg:#ecfdf3;
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #dbe4f0;
+      --blue: #1d4ed8;
+      --blue-dark: #1e40af;
+      --green: #166534;
+      --green-bg: #ecfdf5;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1180px;margin:0 auto;padding:20px;}
-    .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;}
-    .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:20px;}
-    h1{font-size:34px;margin:0 0 12px}
-    h2{font-size:24px;margin:0 0 12px}
-    h3{font-size:18px;margin:0 0 10px}
-    .lead{font-size:18px;color:#374151}
-    .quick{background:var(--good-bg);color:var(--good);padding:12px;border-radius:10px;font-weight:700;margin-top:12px;display:inline-block;}
-    .ad-slot{border:1px dashed #94a3b8;padding:16px;text-align:center;margin:20px 0;border-radius:10px;}
-    table{width:100%;border-collapse:collapse;margin-top:10px}
-    th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}
-    .link-list{list-style:none;padding:0;margin:0}
-    .link-list li{margin:6px 0}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--blue-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .notice {
+      background: var(--green-bg);
+      border: 1px solid #bbf7d0;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 18px;
+    }
+
+    .notice strong {
+      color: var(--green);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .stat-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .two-col {
+      grid-template-columns: 1.25fr 0.95fr;
+      align-items: start;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p:last-child,
+    ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+    }
+
+    th,
+    td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #111827;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .link-group {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .link-group ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+
+    .compare-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .compare-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .ad-box {
+      text-align: center;
+      padding: 22px;
+      border: 1px dashed #bfd0ea;
+      border-radius: 16px;
+      color: var(--muted);
+      background: #fbfdff;
+      font-size: 0.95rem;
+    }
+
+    .small {
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .stats-grid,
+      .two-col,
+      .compare-boxes,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
-
 <body>
-<div class="container">
-<div class="layout">
+  <div class="container">
 
-<main>
+    <section class="hero">
+      <h1>Is £50,000 a Good Salary in the UK?</h1>
+      <p>
+        A £50,000 salary is a strong income in many parts of the UK and sits above the level many people think of as “decent.” Still, whether it feels genuinely comfortable depends on where you live, whether you support children, how much you pay in rent or mortgage costs, and how much of the salary you actually keep after tax.
+      </p>
+      <div class="notice">
+        <strong>Quick answer:</strong> yes, for many people <strong>£50,000 is a good salary in the UK</strong>. For a single adult outside the most expensive parts of the country it can feel solid to strong. For families or households in high-cost areas, it can still be good but may feel much tighter. On a simple UK estimate, £50,000 works out to about <strong>£39,520 after tax per year</strong>, or roughly <strong>£3,293 per month</strong>.
+      </div>
+    </section>
 
-<section class="card">
-<h1>Is £50,000 a Good Salary in the UK?</h1>
-<p class="lead">A salary of <strong>£50,000 per year</strong> is generally considered a <strong>good salary in the UK</strong>, placing you above the national average and allowing for a comfortable lifestyle in many areas.</p>
+    <section class="card">
+      <h2>£50,000 salary after tax – quick stats</h2>
+      <div class="grid stats-grid">
+        <div class="stat-box">
+          <span class="stat-label">Annual gross salary</span>
+          <div class="stat-value">£50,000</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Estimated annual take-home</span>
+          <div class="stat-value">£39,520</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Estimated monthly take-home</span>
+          <div class="stat-value">£3,293</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Estimated weekly take-home</span>
+          <div class="stat-value">£760</div>
+        </div>
+      </div>
+      <p class="muted small" style="margin-top: 14px;">
+        This is a simple PAYE-style estimate for England, Wales, or Northern Ireland with a standard tax code and no pension, student loan, salary sacrifice, or bonus deductions included. Scotland uses different income tax bands, so take-home pay there can differ.
+      </p>
+    </section>
 
-<div class="quick">Typical take-home pay: ~£3,290 per month</div>
+    <section class="grid two-col">
+      <div class="card">
+        <h2>How much is £50,000 after tax?</h2>
+        <p>
+          Gross salary and take-home pay are not the same thing. Once income tax and National Insurance are taken off, a £50,000 salary becomes much more useful as a real-world monthly number. That net figure is what determines how easy it is to cover housing, transport, bills, savings, and everyday spending.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Estimated amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gross salary</td>
+                <td>£50,000</td>
+              </tr>
+              <tr>
+                <td>Income tax</td>
+                <td>£7,486</td>
+              </tr>
+              <tr>
+                <td>National Insurance</td>
+                <td>£2,994</td>
+              </tr>
+              <tr>
+                <td><strong>Estimated take-home pay</strong></td>
+                <td><strong>£39,520</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          That works out to around £3,293 per month after tax. In many parts of the UK, that is enough to live reasonably well, but in expensive areas or with larger family costs it may feel less generous than the gross headline suggests.
+        </p>
+      </div>
 
-<p>However, whether £50,000 is “good” depends heavily on location, lifestyle, and household situation. This guide breaks down exactly what £50k means in real terms and how it compares to nearby salaries.</p>
-</section>
+      <div class="card">
+        <h2>Why your take-home pay can differ</h2>
+        <ul>
+          <li><strong>Income tax:</strong> most of the taxable portion of a £50,000 salary is charged at the basic rate in the rest of the UK.</li>
+          <li><strong>National Insurance:</strong> employee NI reduces your real monthly pay.</li>
+          <li><strong>Pension contributions:</strong> workplace pension deductions can lower monthly take-home.</li>
+          <li><strong>Student loans:</strong> Plan 1, Plan 2, Plan 4 or postgraduate deductions can make a noticeable difference.</li>
+          <li><strong>Tax code:</strong> a non-standard tax code changes the final number.</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="ad-slot"><strong>Advertisement</strong><br>Ad space</div>
+    <section class="card">
+      <h2>Is £50,000 a good salary in the UK?</h2>
+      <p>
+        For many people, yes. A £50,000 salary is generally seen as a good salary in the UK. It is strong enough to sit above many average earnings discussions, and for a single person or couple without very high costs it can provide a comfortable standard of living.
+      </p>
+      <p>
+        The important catch is that “good” changes depending on your situation. In lower-cost towns and cities, £50,000 can feel strong. In London or other expensive areas, especially with high rent, childcare, or long commuting costs, it may still be a good salary without feeling especially wealthy.
+      </p>
 
-<section class="card">
-<h2>£50,000 After Tax (Monthly Breakdown)</h2>
+      <div class="grid two-col" style="margin-top: 18px;">
+        <div class="link-group">
+          <h3>For a single person</h3>
+          <p>
+            For a single adult, £50,000 is usually a good salary in most parts of the UK. A take-home pay figure of roughly £3,293 a month often allows room for rent or mortgage payments, bills, social spending, and at least some saving if housing costs are sensible.
+          </p>
+          <p>
+            Outside the most expensive areas, it can feel comfortably above average and provide real breathing room compared with lower salary bands.
+          </p>
+        </div>
+        <div class="link-group">
+          <h3>For a family</h3>
+          <p>
+            For a family, £50,000 is more mixed. It can still be a good salary, but childcare, bigger housing needs, transport costs, and food bills can quickly narrow the margin.
+          </p>
+          <p>
+            In lower-cost parts of the UK it may be enough to feel stable and fairly comfortable. In high-cost areas, it can feel more moderate than strong, especially on one income.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<table>
-<tr><th>Type</th><th>Amount</th></tr>
-<tr><td>Gross salary</td><td>£50,000</td></tr>
-<tr><td>Take-home (yearly)</td><td>~£39,500</td></tr>
-<tr><td>Take-home (monthly)</td><td><strong>~£3,290</strong></td></tr>
-<tr><td>Take-home (weekly)</td><td>~£760</td></tr>
-</table>
+    <section class="card">
+      <h2>Location matters – where £50,000 goes further</h2>
+      <p>
+        One of the biggest reasons people search whether £50,000 is a good salary is because the same take-home pay can feel very different across the country. Housing is usually the biggest reason.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Area type</th>
+              <th>How £50k tends to feel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lower-cost towns and regions</td>
+              <td>Usually feels solid. Housing and general living costs take up a smaller share of take-home pay.</td>
+            </tr>
+            <tr>
+              <td>Mid-cost cities and suburbs</td>
+              <td>Often a good, balanced salary that supports a decent lifestyle and some savings.</td>
+            </tr>
+            <tr>
+              <td>London and high-cost commuter areas</td>
+              <td>Still a good salary, but rent, childcare, and transport can stop it feeling especially high.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        This is why the salary can feel strong in one part of the UK and only fairly average in another, even before any personal debts or family costs are added.
+      </p>
+    </section>
 
-<p>👉 See full breakdown:  
-<a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></p>
+    <section class="card">
+      <h2>What can change your take-home pay?</h2>
+      <div class="grid two-col">
+        <div>
+          <ul>
+            <li><strong>Pension deductions:</strong> these can reduce monthly take-home but improve long-term finances.</li>
+            <li><strong>Student loans:</strong> repayments can noticeably lower net pay at this salary.</li>
+            <li><strong>Salary sacrifice:</strong> cycle schemes, EV schemes, and pension sacrifice can change the result.</li>
+            <li><strong>Bonus or overtime:</strong> extra income can lift annual pay but also changes deductions.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Tax code changes:</strong> company benefits or adjustments can alter your PAYE outcome.</li>
+            <li><strong>Household setup:</strong> one-income vs two-income households experience the same salary very differently.</li>
+            <li><strong>Housing costs:</strong> rent or mortgage payments have the biggest impact on whether the salary feels good.</li>
+            <li><strong>Childcare and commuting:</strong> these can absorb a large part of the monthly net pay.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section class="card">
+      <h2>Nearby salary comparison</h2>
+      <div class="compare-boxes">
+        <div class="compare-box">
+          <h3>£50k vs £45k</h3>
+          <p>
+            A move from £45,000 to £50,000 often gives a noticeable boost in monthly breathing room, especially once fixed bills are covered.
+          </p>
+          <p><a href="/45000-salary-after-tax-uk.html">Compare with £45,000 after tax</a></p>
+        </div>
+        <div class="compare-box">
+          <h3>£50k vs £55k</h3>
+          <p>
+            £55,000 can start to feel more comfortable for saving and family costs, though higher-rate tax begins to matter more above this level.
+          </p>
+          <p><a href="/55000-salary-after-tax-uk.html">Compare with £55,000 after tax</a></p>
+        </div>
+        <div class="compare-box">
+          <h3>£50k vs £60k</h3>
+          <p>
+            At £60,000, the monthly difference becomes more meaningful for households trying to save, overpay a mortgage, or manage childcare.
+          </p>
+          <p><a href="/is-60000-a-good-salary-uk.html">See whether £60,000 is a good salary in the UK</a></p>
+        </div>
+      </div>
+    </section>
 
-<section class="card">
-<h2>How £50k Compares to UK Salaries</h2>
+    <section class="card">
+      <div class="ad-box">Advertisement</div>
+    </section>
 
-<table>
-<tr><th>Salary</th><th>Monthly Take-Home</th><th>Comparison</th></tr>
-<tr><td>£30,000</td><td>~£2,100</td><td>Below average</td></tr>
-<tr><td>£40,000</td><td>~£2,700</td><td>Average</td></tr>
-<tr><td><strong>£50,000</strong></td><td><strong>~£3,290</strong></td><td><strong>Above average</strong></td></tr>
-<tr><td>£60,000</td><td>~£3,800</td><td>High earner</td></tr>
-</table>
+    <section class="card">
+      <h2>Useful salary links</h2>
+      <div class="link-grid">
+        <div class="link-group">
+          <h3>Direct £50,000 salary links</h3>
+          <ul>
+            <li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax (UK)</a></li>
+            <li><a href="/50000-after-tax-monthly.html">£50,000 after tax monthly</a></li>
+            <li><a href="/50000-after-tax-weekly.html">£50,000 after tax weekly</a></li>
+            <li><a href="/salary-after-tax-uk.html">UK salary after tax hub</a></li>
+            <li><a href="/salary-guides.html">UK salary guides</a></li>
+            <li><a href="/">AfterTaxTool homepage</a></li>
+          </ul>
+        </div>
 
-<p>This places £50k firmly in the <strong>upper-middle income bracket</strong> in the UK.</p>
-</section>
+        <div class="link-group">
+          <h3>Nearby UK salary pages</h3>
+          <ul>
+            <li><a href="/45000-salary-after-tax-uk.html">£45,000 salary after tax</a></li>
+            <li><a href="/55000-salary-after-tax-uk.html">£55,000 salary after tax</a></li>
+            <li><a href="/60000-salary-after-tax-uk.html">£60,000 salary after tax</a></li>
+            <li><a href="/40000-salary-after-tax-uk.html">£40,000 salary after tax</a></li>
+            <li><a href="/70000-salary-after-tax-uk.html">£70,000 salary after tax</a></li>
+          </ul>
+        </div>
 
-<div class="ad-slot"><strong>Advertisement</strong><br>Ad space</div>
+        <div class="link-group">
+          <h3>Related authority pages</h3>
+          <ul>
+            <li><a href="/is-40000-a-good-salary-uk.html">Is £40,000 a good salary in the UK?</a></li>
+            <li><a href="/is-55000-a-good-salary-uk.html">Is £55,000 a good salary in the UK?</a></li>
+            <li><a href="/is-60000-a-good-salary-uk.html">Is £60,000 a good salary in the UK?</a></li>
+            <li><a href="/is-70000-a-good-salary-uk.html">Is £70,000 a good salary in the UK?</a></li>
+            <li><a href="/is-80000-a-good-salary-us.html">Is $80,000 a good salary in the US?</a></li>
+          </ul>
+        </div>
 
-<section class="card">
-<h2>Is £50k Enough to Live Comfortably?</h2>
+        <div class="link-group">
+          <h3>Useful comparisons</h3>
+          <ul>
+            <li><a href="/50000-salary-after-tax-us.html">$50,000 salary after tax (US)</a></li>
+            <li><a href="/is-60000-a-good-salary-us.html">Is $60,000 a good salary in the US?</a></li>
+            <li><a href="/salary-after-tax-us.html">US salary after tax hub</a></li>
+            <li><a href="/uk-salary-examples.html">UK salary examples</a></li>
+            <li><a href="/salary-after-tax-faq.html">Salary after tax FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<p>For most of the UK, £50k allows for:</p>
+    <section class="card">
+      <h2>FAQ – £50,000 salary in the UK</h2>
 
-<ul>
-<li>Comfortable rent or mortgage</li>
-<li>Disposable income after bills</li>
-<li>Savings potential</li>
-<li>Decent lifestyle</li>
-</ul>
+      <div class="faq-item">
+        <h3>Is £50,000 a good salary in the UK?</h3>
+        <p>
+          Yes, for many people it is. £50,000 is generally a good salary in the UK, especially for a single person or couple outside the most expensive areas.
+        </p>
+      </div>
 
-<h3>But location matters:</h3>
+      <div class="faq-item">
+        <h3>How much is £50,000 after tax per month?</h3>
+        <p>
+          On a simple estimate, £50,000 works out to about £3,293 per month after income tax and National Insurance.
+        </p>
+      </div>
 
-<ul>
-<li><strong>London:</strong> Comfortable but not wealthy</li>
-<li><strong>North UK:</strong> Very strong salary</li>
-<li><strong>Single vs family:</strong> Big difference in spending power</li>
-</ul>
+      <div class="faq-item">
+        <h3>Is £50,000 enough for a family?</h3>
+        <p>
+          It can be, especially in lower-cost areas or with a second income, but family costs such as childcare and housing can make the salary feel much tighter.
+        </p>
+      </div>
 
-</section>
+      <div class="faq-item">
+        <h3>Is £50,000 good outside London?</h3>
+        <p>
+          In many parts of the UK outside London and high-cost commuter belts, £50,000 is a solid salary and often goes much further because housing costs are lower.
+        </p>
+      </div>
+    </section>
 
-<section class="card">
-<h2>Compare Nearby Salaries</h2>
-
-<ul class="link-list">
-<li><a href="/45000-salary-after-tax-uk.html">£45,000 salary after tax</a></li>
-<li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></li>
-<li><a href="/52000-salary-after-tax-uk.html">£52,000 salary after tax</a></li>
-<li><a href="/55000-salary-after-tax-uk.html">£55,000 salary after tax</a></li>
-<li><a href="/60000-salary-after-tax-uk.html">£60,000 salary after tax</a></li>
-</ul>
-
-</section>
-
-<section class="card">
-<h2>Use the Salary Calculator</h2>
-
-<p>Want to test your own salary?</p>
-
-<ul class="link-list">
-<li><a href="/">Salary After Tax Calculator</a></li>
-<li><a href="/salary-to-hourly.html">Salary to hourly</a></li>
-<li><a href="/hourly-to-salary.html">Hourly to salary</a></li>
-</ul>
-
-</section>
-
-</main>
-
-<aside>
-
-<div class="card">
-<div class="ad-slot"><strong>Advertisement</strong><br>Ad space</div>
-</div>
-
-<div class="card">
-<h3>Related Guides</h3>
-<ul class="link-list">
-<li><a href="/is-60000-a-good-salary-uk.html">Is £60k a good salary?</a></li>
-<li><a href="/is-40000-a-good-salary-uk.html">Is £40k a good salary?</a></li>
-<li><a href="/salary-after-tax-uk.html">UK salary hub</a></li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Quick Take</h3>
-<p>£50,000 is a strong UK salary, giving around <strong>£3,290/month</strong> after tax and placing you above average earnings.</p>
-</div>
-
-</aside>
-
-</div>
-</div>
+  </div>
 </body>
 </html>
