@@ -3,29 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salary After Tax UK – Compare Take-Home Pay Across Income Bands</title>
-  <meta name="description" content="Explore salary after tax in the UK across major income bands. Compare take-home pay, monthly income, weekly pay, and UK salary examples from £20,000 to £400,000+." />
+  <title>Salary After Tax UK | Compare Take-Home Pay, Monthly Net Pay &amp; Weekly Income</title>
+  <meta name="description" content="Explore salary after tax in the UK across major income bands. Compare take-home pay, monthly income, weekly pay and nearby salary examples from £20,000 to £400,000+." />
   <link rel="canonical" href="https://aftertaxtool.com/salary-after-tax-uk.html" />
+  <meta name="robots" content="index,follow" />
+
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;line-height:1.65;margin:0;background:#f6f8fb;color:#1c2430}
-    .wrap{max-width:1180px;margin:auto;padding:24px}
-    .hero,.card,.faq,.table-wrap{background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.06);padding:28px;margin-bottom:24px}
-    h1,h2,h3{color:#122033;margin-top:0}
-    a{color:#0b63ce;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-    .mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .pill{display:inline-block;background:#eef4ff;color:#0b63ce;padding:8px 12px;border-radius:999px;font-size:.95rem;margin:0 8px 8px 0}
-    .cta{background:#0b63ce;color:#fff;padding:12px 18px;border-radius:10px;display:inline-block;font-weight:700}
-    .cta:hover{color:#fff}
-    ul.link-list{padding-left:18px;margin:10px 0}
-    ul.link-list li{margin:8px 0}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:12px;border-bottom:1px solid #e8edf4;text-align:left;vertical-align:top}
-    th{background:#f4f7fb}
-    .note{font-size:.96rem;color:#4a5668}
-    .breadcrumbs{font-size:.95rem;margin-bottom:14px}
-    .section-intro{max-width:920px}
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --accent-soft:#dbeafe;
+      --good:#065f46;
+      --good-bg:#ecfdf5;
+      --shadow:0 10px 30px rgba(15,23,42,0.06);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.65;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      max-width:1180px;
+      margin:auto;
+      padding:24px 20px 40px;
+    }
+
+    .hero,
+    .card,
+    .faq,
+    .table-wrap{
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-bottom:24px;
+      border:1px solid var(--border);
+    }
+
+    h1,h2,h3{
+      color:#122033;
+      margin-top:0;
+    }
+
+    h1{
+      font-size:2.35rem;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+      margin-bottom:12px;
+    }
+
+    h2{
+      font-size:1.55rem;
+      line-height:1.2;
+      margin-bottom:10px;
+    }
+
+    h3{
+      font-size:1.05rem;
+      line-height:1.25;
+      margin:18px 0 8px;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .stat{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      background:#fff;
+    }
+
+    .stat h3{
+      margin:0 0 6px;
+      font-size:14px;
+      color:#374151;
+    }
+
+    .stat .big{
+      font-size:1.25rem;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .pill{
+      display:inline-block;
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.95rem;
+      margin:0 8px 8px 0;
+      border:1px solid #bfdbfe;
+      font-weight:700;
+    }
+
+    .cta{
+      background:#0b63ce;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:10px;
+      display:inline-block;
+      font-weight:700;
+    }
+
+    .cta:hover{
+      color:#fff;
+    }
+
+    ul.link-list{
+      padding-left:18px;
+      margin:10px 0 0;
+    }
+
+    ul.link-list li{
+      margin:8px 0;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th,td{
+      padding:12px;
+      border-bottom:1px solid #e8edf4;
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th{
+      background:#f4f7fb;
+    }
+
+    .note{
+      font-size:.96rem;
+      color:#4a5668;
+    }
+
+    .breadcrumbs{
+      font-size:.95rem;
+      margin-bottom:14px;
+      color:var(--muted);
+    }
+
+    .section-intro{
+      max-width:940px;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .notice{
+      background:var(--good-bg);
+      border:1px solid #bbf7d0;
+      border-radius:14px;
+      padding:16px;
+      margin-top:16px;
+    }
+
+    .notice strong{
+      color:var(--good);
+    }
+
+    .link-card{
+      display:block;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      transition:.15s ease;
+    }
+
+    .link-card:hover{
+      border-color:#bfdbfe;
+      box-shadow:0 8px 24px rgba(37,99,235,0.08);
+      text-decoration:none;
+    }
+
+    .link-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--text);
+      font-size:.98rem;
+    }
+
+    .link-card span{
+      display:block;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .ad-slot{
+      text-align:center;
+      font-size:14px;
+      color:#777;
+      background:linear-gradient(180deg,#fafafa 0%,#f3f4f6 100%);
+      border:1px dashed #cbd5e1;
+      border-radius:14px;
+      padding:16px;
+      margin:20px 0;
+    }
+
+    @media (max-width:900px){
+      .stats{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:700px){
+      .wrap{
+        padding:18px 14px 30px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:1.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -38,13 +274,13 @@
     <section class="hero">
       <h1>Salary After Tax UK</h1>
       <p class="section-intro">
-        This page is the main UK salary after tax hub on AfterTaxTool. It brings together salary examples across major income bands so users can compare take-home pay, monthly income, weekly pay, and nearby salary levels in one place. It is designed to support both real visitors and strong internal linking across the wider UK salary structure.
+        This page is the main UK salary after tax hub on AfterTaxTool. It brings together salary examples across major income bands so users can compare take-home pay, monthly income, weekly pay and nearby salary levels in one place. It is built to support both real visitors and strong internal linking across the wider UK salary structure.
       </p>
       <p class="section-intro">
-        UK salary after tax calculations are shaped by PAYE income tax, National Insurance, and the salary level itself. Many users want a quick estimate of net pay, while others want to compare nearby salaries, understand what a pay rise means, or move into monthly and weekly breakdowns. This page helps users do all of that while acting as the master UK anchor page for the site.
+        UK salary after tax calculations are shaped by PAYE income tax, National Insurance and the salary level itself. Many users want a quick estimate of net pay, while others want to compare nearby salaries, understand what a pay rise really means after deductions, or move into monthly and weekly breakdowns. This page helps users do that while acting as the main UK anchor page for the site.
       </p>
       <p>
-        <a class="cta" href="https://aftertaxtool.com/salary-after-tax-calculator.html">Salary After Tax Calculator (UK &amp; US) – See Your Take-Home Pay</a>
+        <a class="cta" href="https://aftertaxtool.com/">Salary After Tax Calculator (UK &amp; US) – See Your Take-Home Pay</a>
       </p>
       <div>
         <span class="pill">UK take-home pay</span>
@@ -53,6 +289,29 @@
         <span class="pill">Monthly and weekly pages</span>
         <span class="pill">Internal crawl anchor</span>
       </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>Main focus</h3>
+          <div class="big">UK take-home pay</div>
+        </div>
+        <div class="stat">
+          <h3>Best for</h3>
+          <div class="big">Salary comparison</div>
+        </div>
+        <div class="stat">
+          <h3>Useful views</h3>
+          <div class="big">Year / month / week</div>
+        </div>
+        <div class="stat">
+          <h3>Coverage</h3>
+          <div class="big">£20k to £400k+</div>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Good place to start:</strong> open the range that matches your salary, then compare nearby annual, monthly and weekly pages to see how small pay changes affect real take-home income.
+      </div>
     </section>
 
     <section class="card">
@@ -60,28 +319,28 @@
       <div class="grid">
         <div>
           <h3>£20,000 to £30,000</h3>
-          <p>Useful for entry-level salaries, lower income planning, early-career take-home pay comparisons, and practical budgeting.</p>
+          <p>Useful for entry-level salaries, lower income planning, early-career take-home pay comparisons and practical budgeting.</p>
           <ul class="link-list">
             <li><a href="https://aftertaxtool.com/salary-after-tax-20000-30000-uk.html">£20,000 to £30,000 salary after tax</a></li>
           </ul>
         </div>
         <div>
           <h3>£30,000 to £50,000</h3>
-          <p>A major UK salary range covering many full-time jobs, promotions, household budgeting decisions, and career comparisons.</p>
+          <p>A major UK salary range covering many full-time jobs, promotions, household budgeting decisions and career comparisons.</p>
           <ul class="link-list">
             <li><a href="https://aftertaxtool.com/salary-after-tax-30000-50000-uk.html">£30,000 to £50,000 salary after tax</a></li>
           </ul>
         </div>
         <div>
           <h3>£50,000 to £80,000</h3>
-          <p>Important for higher-rate tax comparisons, stronger earnings analysis, and understanding larger take-home changes.</p>
+          <p>Important for higher-rate tax comparisons, stronger earnings analysis and understanding larger take-home changes.</p>
           <ul class="link-list">
             <li><a href="https://aftertaxtool.com/salary-after-tax-50000-80000-uk.html">£50,000 to £80,000 salary after tax</a></li>
           </ul>
         </div>
         <div>
           <h3>£80,000 to £100,000+</h3>
-          <p>Useful for senior salary comparisons, upper-income analysis, and navigating into higher salary examples.</p>
+          <p>Useful for senior salary comparisons, upper-income analysis and moving into higher salary examples.</p>
           <ul class="link-list">
             <li><a href="https://aftertaxtool.com/salary-after-tax-80000-100000-uk.html">£80,000 to £100,000 salary after tax</a></li>
             <li><a href="https://aftertaxtool.com/salary-after-tax-100000-plus-uk.html">£100,000+ salary after tax</a></li>
@@ -94,24 +353,60 @@
       <h2>Popular UK Salary After Tax Pages</h2>
       <p>These are some of the most useful and commercially valuable UK salary levels for quick comparison and internal navigation.</p>
       <div class="mini-grid">
-        <a href="https://aftertaxtool.com/20000-salary-after-tax-uk.html">£20,000 after tax</a>
-        <a href="https://aftertaxtool.com/25000-salary-after-tax-uk.html">£25,000 after tax</a>
-        <a href="https://aftertaxtool.com/30000-salary-after-tax-uk.html">£30,000 after tax</a>
-        <a href="https://aftertaxtool.com/35000-salary-after-tax-uk.html">£35,000 after tax</a>
-        <a href="https://aftertaxtool.com/40000-salary-after-tax-uk.html">£40,000 after tax</a>
-        <a href="https://aftertaxtool.com/50000-salary-after-tax-uk.html">£50,000 after tax</a>
-        <a href="https://aftertaxtool.com/60000-salary-after-tax-uk.html">£60,000 after tax</a>
-        <a href="https://aftertaxtool.com/80000-salary-after-tax-uk.html">£80,000 after tax</a>
-        <a href="https://aftertaxtool.com/100000-salary-after-tax-uk.html">£100,000 after tax</a>
-        <a href="https://aftertaxtool.com/150000-salary-after-tax-uk.html">£150,000 after tax</a>
-        <a href="https://aftertaxtool.com/200000-salary-after-tax-uk.html">£200,000 after tax</a>
-        <a href="https://aftertaxtool.com/300000-salary-after-tax-uk.html">£300,000 after tax</a>
+        <a class="link-card" href="https://aftertaxtool.com/20000-salary-after-tax-uk.html">
+          <strong>£20,000 after tax</strong>
+          <span>Entry-level benchmark for lower income comparisons.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/25000-salary-after-tax-uk.html">
+          <strong>£25,000 after tax</strong>
+          <span>Useful for practical budgeting and pay progression checks.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/30000-salary-after-tax-uk.html">
+          <strong>£30,000 after tax</strong>
+          <span>A common full-time benchmark for UK salary searches.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/35000-salary-after-tax-uk.html">
+          <strong>£35,000 after tax</strong>
+          <span>Useful for mid-range salary comparisons and job offers.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/40000-salary-after-tax-uk.html">
+          <strong>£40,000 after tax</strong>
+          <span>One of the strongest benchmark salary pages on the site.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/50000-salary-after-tax-uk.html">
+          <strong>£50,000 after tax</strong>
+          <span>Major UK benchmark for promotions and household budgeting.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/60000-salary-after-tax-uk.html">
+          <strong>£60,000 after tax</strong>
+          <span>Higher mid-range route for stronger income comparisons.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/80000-salary-after-tax-uk.html">
+          <strong>£80,000 after tax</strong>
+          <span>Senior salary comparison with larger deduction changes.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/100000-salary-after-tax-uk.html">
+          <strong>£100,000 after tax</strong>
+          <span>Strong upper-income benchmark for UK salary intent.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/150000-salary-after-tax-uk.html">
+          <strong>£150,000 after tax</strong>
+          <span>Higher-income comparison showing heavier tax drag.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/200000-salary-after-tax-uk.html">
+          <strong>£200,000 after tax</strong>
+          <span>Useful for top-end household and senior salary comparisons.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/300000-salary-after-tax-uk.html">
+          <strong>£300,000 after tax</strong>
+          <span>Upper-end example for large salary and tax comparisons.</span>
+        </a>
       </div>
     </section>
 
     <section class="card">
       <h2>Monthly and Weekly UK Take-Home Pay Pages</h2>
-      <p>Some users search by annual salary, while others want a monthly or weekly budgeting view. These pages help connect those intents.</p>
+      <p>Some users search by annual salary, while others want a monthly or weekly budgeting view. These pages help connect those intents cleanly.</p>
       <div class="grid">
         <div>
           <h3>Monthly UK Pages</h3>
@@ -119,6 +414,7 @@
             <li><a href="https://aftertaxtool.com/30000-after-tax-monthly.html">£30,000 after tax monthly</a></li>
             <li><a href="https://aftertaxtool.com/40000-after-tax-monthly.html">£40,000 after tax monthly</a></li>
             <li><a href="https://aftertaxtool.com/50000-after-tax-monthly.html">£50,000 after tax monthly</a></li>
+            <li><a href="https://aftertaxtool.com/60000-after-tax-monthly.html">£60,000 after tax monthly</a></li>
             <li><a href="https://aftertaxtool.com/100000-after-tax-monthly.html">£100,000 after tax monthly</a></li>
           </ul>
         </div>
@@ -128,11 +424,14 @@
             <li><a href="https://aftertaxtool.com/30000-after-tax-weekly.html">£30,000 after tax weekly</a></li>
             <li><a href="https://aftertaxtool.com/40000-after-tax-weekly.html">£40,000 after tax weekly</a></li>
             <li><a href="https://aftertaxtool.com/50000-after-tax-weekly.html">£50,000 after tax weekly</a></li>
+            <li><a href="https://aftertaxtool.com/60000-after-tax-weekly.html">£60,000 after tax weekly</a></li>
             <li><a href="https://aftertaxtool.com/100000-after-tax-weekly.html">£100,000 after tax weekly</a></li>
           </ul>
         </div>
       </div>
     </section>
+
+    <div class="ad-slot"><em>Advertisement</em></div>
 
     <section class="table-wrap">
       <h2>UK Salary Bands at a Glance</h2>
@@ -177,11 +476,20 @@
 
     <section class="card">
       <h2>How UK Salary After Tax Works</h2>
+
+      <h3>PAYE income tax and National Insurance</h3>
       <p>
-        In the UK, salary after tax usually means take-home pay after PAYE income tax and National Insurance contributions. Exact net pay can vary depending on the tax year, tax code, pension contributions, student loan deductions, and any salary sacrifice arrangements, but broad salary pages are still extremely useful for comparison.
+        In the UK, salary after tax usually means take-home pay after PAYE income tax and National Insurance contributions. Exact net pay can vary depending on tax year, tax code, pension contributions, student loan deductions and salary sacrifice arrangements, but broad salary pages are still very useful for comparison.
       </p>
+
+      <h3>Why salary comparisons matter</h3>
       <p>
-        Many people use salary after tax pages to compare job offers, estimate a pay rise, understand how tax affects earnings, or work out what a salary means in monthly and weekly terms. These hub pages make that easier by connecting related salaries and nearby ranges together in one place.
+        Many people use salary after tax pages to compare job offers, estimate a pay rise, understand how deductions affect earnings or work out what a salary means in monthly and weekly terms. These hub pages make that easier by connecting related salaries and nearby ranges together in one place.
+      </p>
+
+      <h3>Monthly and weekly net pay</h3>
+      <p>
+        Looking at annual salary alone is not always enough. Monthly and weekly pages help people budget more realistically and understand what a salary looks like in day-to-day life, especially when comparing rent, childcare, travel and household bills.
       </p>
     </section>
 
@@ -195,7 +503,7 @@
 
       <h3>Why browse salary ranges instead of just one salary page?</h3>
       <p>
-        Range hubs help users compare nearby incomes quickly. That is useful when someone is considering a promotion, a pay rise, a new job, or a change in hours.
+        Range hubs help users compare nearby incomes quickly. That is useful when someone is considering a promotion, a pay rise, a new job or a change in hours.
       </p>
 
       <h3>Why are monthly and weekly pages useful?</h3>
@@ -212,17 +520,116 @@
     <section class="card">
       <h2>Explore More UK Salary Pages</h2>
       <div class="mini-grid">
-        <a href="https://aftertaxtool.com/salary-after-tax-30000-50000-uk.html">£30,000 to £50,000 hub</a>
-        <a href="https://aftertaxtool.com/salary-after-tax-50000-80000-uk.html">£50,000 to £80,000 hub</a>
-        <a href="https://aftertaxtool.com/50000-salary-after-tax-uk.html">£50,000 salary after tax</a>
-        <a href="https://aftertaxtool.com/100000-salary-after-tax-uk.html">£100,000 salary after tax</a>
-        <a href="https://aftertaxtool.com/50000-after-tax-monthly.html">£50,000 after tax monthly</a>
-        <a href="https://aftertaxtool.com/50000-after-tax-weekly.html">£50,000 after tax weekly</a>
-        <a href="https://aftertaxtool.com/uk-income-tax-explained.html">UK income tax explained</a>
-        <a href="https://aftertaxtool.com/salary-after-tax-calculator.html">Salary After Tax Calculator (UK &amp; US)</a>
+        <a class="link-card" href="https://aftertaxtool.com/salary-after-tax-30000-50000-uk.html">
+          <strong>£30,000 to £50,000 hub</strong>
+          <span>Mainstream salary range for common UK comparisons.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/salary-after-tax-50000-80000-uk.html">
+          <strong>£50,000 to £80,000 hub</strong>
+          <span>Higher-rate tax comparison range with strong internal value.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/50000-salary-after-tax-uk.html">
+          <strong>£50,000 salary after tax</strong>
+          <span>Major benchmark page for take-home pay checks.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/100000-salary-after-tax-uk.html">
+          <strong>£100,000 salary after tax</strong>
+          <span>Higher-income comparison with strong search intent.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/50000-after-tax-monthly.html">
+          <strong>£50,000 after tax monthly</strong>
+          <span>Monthly budgeting route for a major salary benchmark.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/50000-after-tax-weekly.html">
+          <strong>£50,000 after tax weekly</strong>
+          <span>Weekly take-home route for a highly useful comparison salary.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/uk-income-tax-explained.html">
+          <strong>UK income tax explained</strong>
+          <span>Helpful explainer page supporting broader UK tax understanding.</span>
+        </a>
+        <a class="link-card" href="https://aftertaxtool.com/">
+          <strong>Salary After Tax Calculator (UK &amp; US)</strong>
+          <span>Main calculator entry point for quick take-home estimates.</span>
+        </a>
       </div>
     </section>
 
   </div>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://aftertaxtool.com/salary-after-tax-uk.html#webpage",
+        "url":"https://aftertaxtool.com/salary-after-tax-uk.html",
+        "name":"Salary After Tax UK | Compare Take-Home Pay, Monthly Net Pay & Weekly Income",
+        "description":"Explore salary after tax in the UK across major income bands. Compare take-home pay, monthly income, weekly pay and nearby salary examples from £20,000 to £400,000+."
+      },
+      {
+        "@type":"CollectionPage",
+        "name":"UK Salary After Tax Hub",
+        "url":"https://aftertaxtool.com/salary-after-tax-uk.html",
+        "description":"Hub page for UK salary after tax guides, monthly examples, weekly examples and nearby salary ranges."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Home",
+            "item":"https://aftertaxtool.com/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Salary After Tax UK",
+            "item":"https://aftertaxtool.com/salary-after-tax-uk.html"
+          }
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"What does salary after tax mean in the UK?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"It usually refers to take-home pay after PAYE income tax and National Insurance have been deducted. Other deductions such as pension contributions or student loan repayments can also affect net pay."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Why browse salary ranges instead of just one salary page?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Range hubs help users compare nearby incomes quickly, which is useful when considering a promotion, pay rise, new job or change in hours."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Why are monthly and weekly pages useful?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Many people budget monthly or think in weekly income terms. Linking annual salary pages to monthly and weekly versions makes the site easier to use and broadens search coverage."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Is this page useful for both SEO and crawling?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes. It targets broad UK salary after tax intent while also acting as a central internal anchor that helps users and search engines reach more specific UK salary pages."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
