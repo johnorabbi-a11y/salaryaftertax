@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Salary After Tax Calculator (UK &amp; US) – Take-Home Pay + State Estimate</title>
-  <meta name="description" content="Estimate take-home pay after tax in the UK and US. Includes a simple US state tax estimate, salary guides, monthly and weekly examples, and clear breakdowns." />
+  <title>Salary After Tax Calculator (UK &amp; US) – Take-Home Pay, Monthly Net Pay &amp; State Estimate</title>
+  <meta name="description" content="Estimate salary after tax in the UK and US with a clear calculator, monthly and yearly take-home pay examples, simple US state estimates, and strong internal links to salary guides and comparison pages." />
   <link rel="canonical" href="https://aftertaxtool.com/" />
   <meta name="robots" content="index,follow" />
   <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo" />
@@ -92,15 +92,15 @@
       margin:0 auto;
       padding:44px 20px 34px;
       display:grid;
-      grid-template-columns:1.5fr 1fr;
+      grid-template-columns:1.55fr 1fr;
       gap:24px;
       align-items:start;
     }
 
     .hero-copy h1{
       margin:0 0 12px;
-      font-size:2.6rem;
-      line-height:1.1;
+      font-size:2.65rem;
+      line-height:1.08;
       letter-spacing:-0.02em;
     }
 
@@ -114,7 +114,7 @@
       margin:0 0 14px;
       color:var(--muted);
       font-size:1.03rem;
-      max-width:760px;
+      max-width:780px;
     }
 
     .pill{
@@ -278,12 +278,6 @@
       margin:6px 0 0;
       color:var(--muted);
       max-width:760px;
-    }
-
-    .row{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
     }
 
     .grid2{
@@ -481,64 +475,61 @@
         padding-right:14px;
       }
     }
-</style>
-<!-- Start cookieyes banner -->
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/a9396c6b1aeeb71d0018a290583f77bb/script.js"></script>
-<!-- End cookieyes banner -->
+  </style>
 
-<!-- Google Analytics loader (loads only after analytics consent) -->
-<script>
-(function () {
-  const GA_ID = "G-GNPTB0CMD0";
+  <!-- Start cookieyes banner -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/a9396c6b1aeeb71d0018a290583f77bb/script.js"></script>
+  <!-- End cookieyes banner -->
 
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-    return "";
-  }
+  <!-- Google Analytics loader (loads only after analytics consent) -->
+  <script>
+    (function () {
+      const GA_ID = "G-GNPTB0CMD0";
 
-  function hasAnalyticsConsent() {
-    const consent = decodeURIComponent(getCookie("cookieyes-consent") || "");
-    return consent.includes("analytics:yes");
-  }
-
-  function loadGA() {
-    if (window.__gaLoaded) return;
-    window.__gaLoaded = true;
-
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(s);
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){ dataLayer.push(arguments); };
-    gtag("js", new Date());
-    gtag("config", GA_ID);
-  }
-
-  function checkConsentAndLoad() {
-    if (hasAnalyticsConsent()) {
-      loadGA();
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    checkConsentAndLoad();
-
-    let lastCookie = document.cookie;
-    setInterval(function () {
-      if (document.cookie !== lastCookie) {
-        lastCookie = document.cookie;
-        checkConsentAndLoad();
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return "";
       }
-    }, 500);
-  });
-})();
-</script>
 
- 
+      function hasAnalyticsConsent() {
+        const consent = decodeURIComponent(getCookie("cookieyes-consent") || "");
+        return consent.includes("analytics:yes");
+      }
+
+      function loadGA() {
+        if (window.__gaLoaded) return;
+        window.__gaLoaded = true;
+
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ dataLayer.push(arguments); };
+        gtag("js", new Date());
+        gtag("config", GA_ID);
+      }
+
+      function checkConsentAndLoad() {
+        if (hasAnalyticsConsent()) loadGA();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        checkConsentAndLoad();
+
+        let lastCookie = document.cookie;
+        setInterval(function () {
+          if (document.cookie !== lastCookie) {
+            lastCookie = document.cookie;
+            checkConsentAndLoad();
+          }
+        }, 500);
+      });
+    })();
+  </script>
 </head>
 <body>
 
@@ -562,18 +553,21 @@
       <div class="hero-copy">
         <h1>Salary After Tax Calculator for the UK &amp; US</h1>
         <p class="sub">
-          Estimate your take-home pay in plain English with monthly and yearly net pay examples.
+          Estimate salary after tax, take-home pay, monthly net pay and yearly deductions in the UK and US.
           <span class="pill warn">Estimates</span>
         </p>
         <p>
-          AfterTaxTool helps you estimate take-home pay in the UK and US, compare common salary bands,
-          convert hourly wages into annual income, and explore monthly and weekly salary examples. Use the calculator below for a quick estimate, then browse related guides and hubs to compare nearby salaries and understand how deductions affect your pay.
+          AfterTaxTool helps you estimate salary after tax in the UK and US, including monthly take-home pay,
+          weekly net pay examples and simple US state comparisons. Use the calculator below to work out
+          after-tax pay, then explore salary guides, monthly examples, weekly examples and state-based pages
+          to compare nearby earnings and see how deductions change your real take-home pay.
         </p>
         <div class="hero-badges">
           <span class="badge">UK tax estimate</span>
           <span class="badge">US federal + FICA</span>
           <span class="badge">State estimate</span>
           <span class="badge">Monthly take-home</span>
+          <span class="badge">Weekly net pay</span>
           <span class="badge">Salary guides</span>
         </div>
       </div>
@@ -583,8 +577,8 @@
         <ul>
           <li><a href="/salary-guides.html">Main salary guides hub</a></li>
           <li><a href="/us-salary-guides.html">US salary guides hub</a></li>
-          <li><a href="/hourly-to-salary.html">Hourly wage to salary calculator</a></li>
-          <li><a href="/salary-to-hourly.html">Salary to hourly calculator</a></li>
+          <li><a href="/salary-after-tax-uk.html">UK salary after tax hub</a></li>
+          <li><a href="/salary-after-tax-us.html">US salary after tax hub</a></li>
           <li><a href="/40000-salary-after-tax-uk.html">£40,000 salary after tax</a></li>
           <li><a href="/50000-salary-after-tax-uk.html">£50,000 salary after tax</a></li>
           <li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a></li>
@@ -599,7 +593,6 @@
     <div class="ad-slot"><em>Advertisement</em></div>
 
     <div class="layout">
-
       <aside class="sidebar">
         <div class="side-card">
           <h3>Jump to section</h3>
@@ -607,7 +600,8 @@
             <li><a href="#calculator">Calculator</a></li>
             <li><a href="#popular-comparisons">Popular comparisons</a></li>
             <li><a href="#salary-guides">Salary guides</a></li>
-            <li><a href="#explainers">Pay explainers</a></li>
+            <li><a href="#us-take-home">US salary after tax</a></li>
+            <li><a href="#uk-take-home">UK take-home pay</a></li>
             <li><a href="#tools">Useful tools</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
@@ -619,8 +613,10 @@
             <li><a href="/salary-guides.html">Salary guides</a></li>
             <li><a href="/us-salary-guides.html">US salary guides</a></li>
             <li><a href="/50000-after-tax-monthly.html">£50,000 after tax monthly</a></li>
+            <li><a href="/60000-salary-after-tax-uk.html">£60,000 salary after tax</a></li>
             <li><a href="/80000-salary-after-tax-us.html">$80,000 after tax</a></li>
             <li><a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly</a></li>
+            <li><a href="/80000-salary-after-tax-california.html">$80,000 after tax California</a></li>
             <li><a href="/is-50000-a-good-salary-uk.html">Is £50,000 a good salary?</a></li>
           </ul>
         </div>
@@ -634,7 +630,7 @@
           <div class="calc-head">
             <div>
               <h2>Salary Calculator</h2>
-              <p>Enter your salary, add bonus or overtime if needed, and get an estimated yearly and monthly take-home figure with a simple breakdown.</p>
+              <p>Enter your salary, add bonus or overtime if needed, and get an estimated yearly and monthly take-home figure with a simple breakdown for the UK or US.</p>
             </div>
           </div>
 
@@ -648,14 +644,14 @@
                 </select>
 
                 <h3 style="margin-top:18px;">Earnings</h3>
-                <div class="muted" style="margin:0 0 10px;">Enter your base salary, then add bonus or overtime if you want.</div>
+                <div class="muted" style="margin:0 0 10px;">Enter your base salary, then add bonus or overtime if you want a more realistic estimate.</div>
 
                 <label for="salary">Annual gross salary</label>
                 <input id="salary" type="number" inputmode="decimal" placeholder="e.g. 40000" min="0" />
 
                 <label for="bonus">Annual bonus (optional)</label>
                 <input id="bonus" type="number" inputmode="decimal" placeholder="e.g. 5000" min="0" />
-                <div class="tiny">Bonus is added to salary before tax as an estimate.</div>
+                <div class="tiny">Bonus is added to salary before tax as a simple estimate.</div>
 
                 <label for="otHours">Overtime hours per week (optional)</label>
                 <input id="otHours" type="number" inputmode="decimal" placeholder="e.g. 5" min="0" />
@@ -667,7 +663,7 @@
                   <option value="1.25">1.25x</option>
                   <option value="1.0">Straight time (1.0x)</option>
                 </select>
-                <div class="tiny">Estimate: overtime pay is based on your salary-derived hourly rate.</div>
+                <div class="tiny">Overtime pay is estimated using your salary-derived hourly rate.</div>
               </div>
 
               <div>
@@ -797,7 +793,7 @@
           </div>
 
           <div class="callout">
-            <strong>Good way to use this page:</strong> run the calculator first, then compare the result against nearby annual, monthly or weekly guides below to see how small salary changes affect take-home pay.
+            <strong>Good way to use this page:</strong> run the calculator first, then compare the result against nearby annual, monthly, weekly and state pages below to see how small salary changes affect real take-home pay.
           </div>
         </section>
 
@@ -805,7 +801,7 @@
 
         <section class="section" id="popular-comparisons">
           <h2>Popular Salary Comparisons</h2>
-          <p class="section-intro">These are some of the most useful pages to compare if you are checking promotions, pay rises, job offers or budgeting changes.</p>
+          <p class="section-intro">These pages are useful for promotions, pay rises, budgeting decisions, job offers and quick monthly take-home checks in both the UK and US.</p>
 
           <div class="link-grid">
             <a class="link-card" href="/40000-salary-after-tax-uk.html">
@@ -837,7 +833,7 @@
 
         <section class="section" id="salary-guides">
           <h2>Salary Guides and Hubs</h2>
-          <p class="section-intro">These hub pages help users and search engines move through your wider salary ecosystem more efficiently.</p>
+          <p class="section-intro">These hub pages help users and search engines move through the wider salary ecosystem more efficiently and discover nearby salary comparisons faster.</p>
 
           <div class="link-grid">
             <a class="link-card" href="/salary-guides.html">
@@ -889,31 +885,84 @@
 
         <div class="ad-slot"><em>Advertisement</em></div>
 
-        <section class="section" id="explainers">
-          <h2>How Take-Home Pay Works</h2>
+        <section class="section" id="us-take-home">
+          <h2>US Salary After Tax and State Take-Home Pay</h2>
+          <p class="section-intro">
+            If you are comparing wages after tax in the US, your take-home pay can vary a lot depending on filing status,
+            401(k) contributions and the state you live in. Federal income tax and FICA apply across the country, but
+            state income tax can make a big difference to your real monthly and yearly net pay.
+          </p>
+
+          <p class="muted">
+            This homepage calculator gives a quick US estimate, while the pages below help you compare salary after tax
+            across common income levels and major states. That makes it easier to judge whether the same salary looks
+            stronger in Texas or Florida than it does in California or New York.
+          </p>
+
+          <div class="link-grid">
+            <a class="link-card" href="/salary-after-tax-us.html">
+              <strong>US salary after tax hub</strong>
+              <p>Main US overview page for after-tax salary examples and comparisons.</p>
+            </a>
+            <a class="link-card" href="/salary-after-tax-50000-100000-us.html">
+              <strong>US salary comparison range</strong>
+              <p>Compare common American salary levels and move into deeper pages.</p>
+            </a>
+            <a class="link-card" href="/80000-salary-after-tax-us.html">
+              <strong>$80,000 salary after tax</strong>
+              <p>A strong benchmark for mid-range US take-home pay searches.</p>
+            </a>
+            <a class="link-card" href="/100000-salary-after-tax-us.html">
+              <strong>$100,000 salary after tax</strong>
+              <p>Useful for higher-earning US salary comparisons and budgeting.</p>
+            </a>
+            <a class="link-card" href="/80000-salary-after-tax-california.html">
+              <strong>$80,000 salary after tax California</strong>
+              <p>See how state tax changes take-home pay in a higher-tax state.</p>
+            </a>
+            <a class="link-card" href="/70000-salary-after-tax-new-york.html">
+              <strong>$70,000 salary after tax New York</strong>
+              <p>Compare take-home pay in one of the most searched US state markets.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="uk-take-home">
+          <h2>UK Salary After Tax, Monthly Net Pay and Salary Guides</h2>
 
           <h3>UK take-home pay explained</h3>
           <p class="muted">
-            Take-home pay in the UK depends on income tax bands, National Insurance and pension contributions.
-            This calculator uses a simplified model to estimate net salary after standard deductions for England,
-            Wales and Northern Ireland. Actual take-home pay can vary due to student loans, salary sacrifice schemes,
-            bonuses and benefit deductions.
+            Take-home pay in the UK depends on income tax bands, National Insurance, pension contributions and, for many workers,
+            student loan repayments. That means two people on the same salary can still take home different amounts each month.
+            This calculator uses a simplified model to estimate net salary after standard deductions for England, Wales and Northern Ireland.
           </p>
 
-          <h3>US salary after tax by state</h3>
+          <h3>Why monthly and weekly net pay matters</h3>
           <p class="muted">
-            Take-home pay in the US varies significantly depending on the state you live in. States like Texas and
-            Florida have no state income tax, while states like California and New York can reduce net salary more
-            due to higher state taxes. This calculator provides a simplified estimate including federal tax, FICA
-            and an approximate state tax adjustment.
+            Many people do not search by annual salary alone. They want to know what a salary looks like per month or per week so
+            they can compare job offers, budget rent and bills, or decide whether a pay rise is really worthwhile after tax.
+            That is why the site links annual salary pages with monthly and weekly examples across nearby salary bands.
           </p>
 
-          <h3>Why take-home pay differs between states</h3>
-          <p class="muted">
-            Two people earning the same salary can take home very different amounts depending on where they live.
-            Differences in state income tax, local taxes and deductions can significantly change net pay. That is
-            why comparing take-home salary between states can give a clearer picture than looking at gross salary alone.
-          </p>
+          <h3>Useful UK salary pages</h3>
+          <div class="link-grid">
+            <a class="link-card" href="/40000-after-tax-monthly.html">
+              <strong>£40,000 after tax monthly</strong>
+              <p>Monthly take-home estimate for a common UK benchmark salary.</p>
+            </a>
+            <a class="link-card" href="/50000-after-tax-monthly.html">
+              <strong>£50,000 after tax monthly</strong>
+              <p>Useful for quick budgeting and job offer comparisons.</p>
+            </a>
+            <a class="link-card" href="/60000-after-tax-monthly.html">
+              <strong>£60,000 after tax monthly</strong>
+              <p>Higher mid-range monthly take-home guide for UK salary comparisons.</p>
+            </a>
+            <a class="link-card" href="/is-50000-a-good-salary-uk.html">
+              <strong>Is £50,000 a good salary in the UK?</strong>
+              <p>Authority-style comparison page that adds wider salary context.</p>
+            </a>
+          </div>
         </section>
 
         <section class="section" id="tools">
@@ -941,7 +990,7 @@
 
           <h3>Is this take-home pay exact?</h3>
           <p class="muted">
-            No — it’s an estimate. Real take-home pay depends on deductions like pensions, 401(k), benefits, student loans, bonuses and, in the US, state and local taxes.
+            No — it is an estimate. Real take-home pay depends on deductions like pensions, 401(k), benefits, student loans, bonuses and, in the US, state and local taxes.
           </p>
 
           <h3>Does the US result include state tax?</h3>
@@ -1015,8 +1064,13 @@
       return total;
     }
 
-    function isNum(x) { return typeof x === "number" && isFinite(x); }
-    function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+    function isNum(x) {
+      return typeof x === "number" && isFinite(x);
+    }
+
+    function clamp(n, min, max) {
+      return Math.min(Math.max(n, min), max);
+    }
 
     function fmtMoney(n, ccy) {
       if (!isNum(n)) return "—";
@@ -1100,8 +1154,18 @@
       const standardDeduction = (filing === "mfj") ? 29200 : 14600;
 
       const stateRates = {
-        CA: 0.06, NY: 0.06, NJ: 0.05, MA: 0.05, IL: 0.05,
-        PA: 0.03, GA: 0.04, NC: 0.045, TX: 0.0, FL: 0.0, WA: 0.0, none: 0.0
+        CA: 0.06,
+        NY: 0.06,
+        NJ: 0.05,
+        MA: 0.05,
+        IL: 0.05,
+        PA: 0.03,
+        GA: 0.04,
+        NC: 0.045,
+        TX: 0.0,
+        FL: 0.0,
+        WA: 0.0,
+        none: 0.0
       };
 
       const stateRate = stateRates[state] ?? 0;
@@ -1169,6 +1233,7 @@
       const country = el("country").value;
       const us = el("usOptions");
       const uk = el("ukOptions");
+
       if (us) us.style.display = (country === "us") ? "" : "none";
       if (uk) uk.style.display = (country === "uk") ? "" : "none";
     }
@@ -1178,12 +1243,12 @@
 
       const country = el("country").value;
       const gross = Number(el("salary").value);
-      const bonusRaw = el("bonus") ? el("bonus").value.trim() : "";
+      const bonusRaw = el("bonus").value.trim();
       const bonus = bonusRaw === "" ? 0 : Number(bonusRaw);
 
-      const otHoursRaw = el("otHours") ? el("otHours").value.trim() : "";
+      const otHoursRaw = el("otHours").value.trim();
       const otHours = otHoursRaw === "" ? 0 : Number(otHoursRaw);
-      const otMult = Number(el("otRate") ? el("otRate").value : 1.5);
+      const otMult = Number(el("otRate").value);
 
       const hourly = gross / (52 * 40);
       const overtimePay = (isNum(otHours) ? Math.max(0, otHours) : 0) * hourly * (isNum(otMult) ? otMult : 1.5) * 52;
@@ -1223,7 +1288,7 @@
           Income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
           National Insurance (estimated): ${fmtMoney(r.ni, ccy)}<br>
           Student loan (estimated): ${fmtMoney(r.studentLoan, ccy)}<br>
-          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net / 12, ccy)} per month)`;
 
         const loanPlan = el("ukLoan").value;
         const isScotland = loanPlan === "plan4" || loanPlan === "plan4+pgl";
@@ -1234,7 +1299,7 @@
 
         el("comparison").style.display = "none";
       } else {
-        const k401Raw = el("k401") ? el("k401").value.trim() : "";
+        const k401Raw = el("k401").value.trim();
         const k401Pct = k401Raw === "" ? 0 : Number(k401Raw);
         const r = usEstimate(totalGross, filing, state, k401Pct);
 
@@ -1273,7 +1338,7 @@
           FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
           State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
           <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
-          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net/12, ccy)} per month)`;
+          <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net / 12, ccy)} per month)`;
 
         el("assumptions").innerHTML =
           `<b>Assumptions (US):</b> Federal income tax + FICA included, plus a simple state tax estimate.
@@ -1304,31 +1369,68 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
+    "@graph":[
       {
-        "@type":"Question",
-        "name":"Is this take-home pay exact?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"No — it’s an estimate. Real take-home pay depends on deductions like pensions or 401(k), benefits, student loans, bonuses, and in the US, state and local taxes."
+        "@type":"WebSite",
+        "@id":"https://aftertaxtool.com/#website",
+        "url":"https://aftertaxtool.com/",
+        "name":"AfterTaxTool",
+        "description":"Salary after tax calculator and take-home pay guides for the UK and US.",
+        "potentialAction":{
+          "@type":"SearchAction",
+          "target":"https://aftertaxtool.com/?q={search_term_string}",
+          "query-input":"required name=search_term_string"
         }
       },
       {
-        "@type":"Question",
-        "name":"Does the US result include state tax?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes — the US estimate includes federal tax, FICA, and a simple state tax estimate for selected states. Local taxes aren’t included."
-        }
+        "@type":"WebPage",
+        "@id":"https://aftertaxtool.com/#webpage",
+        "url":"https://aftertaxtool.com/",
+        "name":"Salary After Tax Calculator (UK & US) – Take-Home Pay, Monthly Net Pay & State Estimate",
+        "isPartOf":{"@id":"https://aftertaxtool.com/#website"},
+        "description":"Estimate salary after tax in the UK and US with a clear calculator, monthly and yearly take-home pay examples, simple US state estimates, and linked salary guides."
       },
       {
-        "@type":"Question",
-        "name":"Which UK tax rules are used?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"The calculator uses a simplified UK estimate based on standard income tax bands and National Insurance assumptions for England, Wales and Northern Ireland."
-        }
+        "@type":"SoftwareApplication",
+        "name":"AfterTaxTool Salary After Tax Calculator",
+        "applicationCategory":"FinanceApplication",
+        "operatingSystem":"Web",
+        "offers":{
+          "@type":"Offer",
+          "price":"0",
+          "priceCurrency":"GBP"
+        },
+        "url":"https://aftertaxtool.com/",
+        "description":"A web calculator for estimating salary after tax, monthly take-home pay and yearly deductions in the UK and US."
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Is this take-home pay exact?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No — it is an estimate. Real take-home pay depends on deductions like pensions or 401(k), benefits, student loans, bonuses, and in the US, state and local taxes."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Does the US result include state tax?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes — the US estimate includes federal tax, FICA, and a simple state tax estimate for selected states. Local taxes are not included."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Which UK tax rules are used?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"The calculator uses a simplified UK estimate based on standard income tax bands and National Insurance assumptions for England, Wales and Northern Ireland."
+            }
+          }
+        ]
       }
     ]
   }
