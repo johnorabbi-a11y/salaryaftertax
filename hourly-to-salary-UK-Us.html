@@ -1,0 +1,1305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hourly Wage to Salary Calculator (UK & US) – Annual, Monthly & Weekly Pay</title>
+  <meta name="description" content="Convert an hourly wage into annual salary, monthly pay and weekly income in the UK or US. Includes gross pay, estimated take-home pay, pension or 401(k), tax estimates, bonus, overtime, and a full breakdown.">
+  <link rel="canonical" href="https://aftertaxtool.com/hourly-to-salary.html">
+  <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo">
+
+  <style>
+    :root{
+      --bg:#f3f7fc;
+      --card:#ffffff;
+      --text:#17324d;
+      --muted:#607489;
+      --blue:#1d6fdc;
+      --blue-dark:#1557af;
+      --line:#d9e5f0;
+      --soft:#eef5fb;
+      --soft-2:#f8fbff;
+      --warn:#fff8e8;
+      --warn-line:#efdca8;
+      --good:#e9f8ee;
+      --good-line:#bfe0cb;
+      --shadow:0 14px 36px rgba(23,50,77,0.08);
+      --radius:18px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    a:hover{color:var(--blue-dark);text-decoration:underline}
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:18px;
+    }
+
+    .breadcrumbs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+      margin:4px 0 18px;
+    }
+
+    .breadcrumbs span{color:#8aa0b5}
+
+    .hero{
+      background:linear-gradient(135deg,#ffffff 0%, #f6fbff 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-bottom:20px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#eaf3ff;
+      color:var(--blue-dark);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom:12px;
+    }
+
+    h1{
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.1;
+      margin:0 0 12px;
+    }
+
+    h2{
+      font-size:28px;
+      line-height:1.15;
+      margin:0 0 12px;
+    }
+
+    h3{
+      font-size:18px;
+      line-height:1.2;
+      margin:0 0 8px;
+    }
+
+    p{margin:0 0 14px}
+
+    .sub{
+      color:var(--muted);
+      font-size:18px;
+      max-width:860px;
+      margin-bottom:18px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.25fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .hero-point{
+      background:var(--soft-2);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
+    .hero-point strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .hero-point span{
+      display:block;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+    }
+
+    .card-soft{
+      background:var(--soft-2);
+    }
+
+    .notice{
+      background:var(--warn);
+      border:1px solid var(--warn-line);
+      border-radius:14px;
+      padding:14px 16px;
+      font-size:14px;
+      margin-top:14px;
+    }
+
+    .success{
+      background:var(--good);
+      border:1px solid var(--good-line);
+      border-radius:14px;
+      padding:14px 16px;
+      font-size:14px;
+      margin-top:14px;
+    }
+
+    .calc-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .field-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .field{
+      margin-bottom:14px;
+    }
+
+    .field label{
+      display:block;
+      font-size:14px;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+
+    .help{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:5px;
+    }
+
+    input,select{
+      width:100%;
+      padding:12px 13px;
+      border-radius:12px;
+      border:1px solid #cbd8e4;
+      background:#fff;
+      color:var(--text);
+      font:inherit;
+      outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease;
+    }
+
+    input:focus,select:focus{
+      border-color:#80b2ef;
+      box-shadow:0 0 0 4px rgba(29,111,220,.12);
+    }
+
+    .btn-row{
+      display:flex;
+      gap:12px;
+      margin-top:8px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      appearance:none;
+      border:0;
+      border-radius:12px;
+      padding:13px 18px;
+      font:inherit;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .05s ease, opacity .15s ease, background .15s ease;
+    }
+
+    button:active{transform:translateY(1px)}
+
+    .btn-primary{
+      background:#111827;
+      color:#fff;
+      min-width:180px;
+    }
+
+    .btn-primary:hover{opacity:.95}
+
+    .btn-secondary{
+      background:#edf3fa;
+      color:var(--text);
+      border:1px solid var(--line);
+      min-width:140px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:16px;
+    }
+
+    .stat{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#f9fbfe;
+    }
+
+    .stat .label{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:6px;
+      font-weight:700;
+    }
+
+    .big{
+      font-size:30px;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:-.5px;
+    }
+
+    .tiny{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+    }
+
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:620px;
+    }
+
+    th,td{
+      padding:13px 14px;
+      border-bottom:1px solid #e5edf5;
+      text-align:left;
+      font-size:14px;
+      vertical-align:top;
+    }
+
+    th{
+      background:#f5f9fd;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+      color:#4f6881;
+    }
+
+    tr:last-child td{border-bottom:0}
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 11px;
+      border-radius:999px;
+      background:#eef5ff;
+      border:1px solid #d6e7fb;
+      color:#295b98;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .explain-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .ad-slot{
+      border:2px dashed #bfd3e7;
+      border-radius:18px;
+      background:#f7fbff;
+      padding:26px 16px;
+      text-align:center;
+      color:#6f879d;
+      font-weight:700;
+    }
+
+    .links-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .link-box{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .link-box h3{margin-bottom:8px}
+    .link-box ul{margin:0;padding-left:18px}
+    .link-box li{margin:0 0 8px}
+
+    .faq{
+      display:grid;
+      gap:12px;
+    }
+
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+    }
+
+    .faq summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+
+    .faq summary::-webkit-details-marker{display:none}
+
+    .faq .answer{
+      color:var(--muted);
+      padding-top:10px;
+    }
+
+    .muted{color:var(--muted)}
+
+    .hide{display:none}
+
+    @media (max-width:980px){
+      .hero-grid,
+      .calc-grid,
+      .split,
+      .stats,
+      .links-grid,
+      .explain-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-points,
+      .field-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:720px){
+      .wrap{padding:14px}
+      .hero{padding:22px}
+      .card{padding:18px}
+      .hero-points,
+      .field-grid{
+        grid-template-columns:1fr;
+      }
+      .big{font-size:26px}
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GNPTB0CMD0');
+  </script>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/salary-guides.html">Salary Guides</a>
+      <span>›</span>
+      <span>Hourly Wage to Salary Calculator</span>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Mini calculator · UK &amp; US</div>
+          <h1>Hourly Wage to Salary Calculator</h1>
+          <p class="sub">
+            Convert hourly pay into <strong>annual salary</strong>, <strong>monthly income</strong>, and <strong>weekly take-home pay</strong> in the UK or US. Add overtime, bonus, pension, student loan, 401(k), and state tax for a more realistic estimate.
+          </p>
+          <div class="notice">
+            This tool gives <strong>estimates</strong>, not payroll advice. Real net pay can differ depending on tax code, pre-tax deductions, benefits, overtime patterns, local taxes, age, filing choices, and employer-specific payroll treatment.
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Calculator first</strong>
+              <span>Fast hourly-to-salary conversion with a proper net pay estimate.</span>
+            </div>
+            <div class="hero-point">
+              <strong>UK + US logic</strong>
+              <span>Supports UK tax and student loan plus US federal, FICA and selected states.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Useful next clicks</strong>
+              <span>Feeds into strong salary pages, monthly pages and salary hubs.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-soft" style="margin:0">
+          <h2 style="font-size:22px">What this calculator shows</h2>
+          <p class="muted">Enter your hourly rate and weekly hours, then layer in extras like bonus and overtime.</p>
+          <div class="pill-row">
+            <span class="pill">Gross annual pay</span>
+            <span class="pill">Estimated yearly net</span>
+            <span class="pill">Monthly take-home</span>
+            <span class="pill">Weekly take-home</span>
+            <span class="pill">Tax breakdown</span>
+            <span class="pill">Pension / 401(k)</span>
+          </div>
+          <div class="success">
+            Tip: try a few scenarios. Small changes to hourly rate, overtime, pension or 401(k) can change take-home pay more than people expect.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="calculator">
+      <h2>Calculate your hourly wage as a salary</h2>
+      <p class="muted">Choose your country, enter your hourly wage and hours worked per week, then add any optional deductions or extras.</p>
+
+      <div class="calc-grid">
+        <div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="country">Country</label>
+              <select id="country">
+                <option value="uk">UK</option>
+                <option value="us">US</option>
+              </select>
+              <span class="help">Switches the tax logic, currency and deduction options.</span>
+            </div>
+
+            <div class="field">
+              <label for="hourly">Hourly wage</label>
+              <input id="hourly" type="number" min="0" step="0.01" placeholder="20">
+              <span class="help">Enter your base hourly rate before deductions.</span>
+            </div>
+
+            <div class="field">
+              <label for="hours">Hours per week</label>
+              <input id="hours" type="number" min="0" step="0.1" placeholder="40">
+              <span class="help">Example: 37.5, 40 or your normal weekly hours.</span>
+            </div>
+
+            <div class="field">
+              <label for="weeks">Weeks worked per year</label>
+              <input id="weeks" type="number" min="1" max="52" step="0.5" value="52">
+              <span class="help">Use 52 for a full-year estimate or reduce for unpaid time off.</span>
+            </div>
+
+            <div class="field">
+              <label for="bonus">Annual bonus (optional)</label>
+              <input id="bonus" type="number" min="0" step="1" placeholder="0">
+              <span class="help">Add any yearly performance or contractual bonus.</span>
+            </div>
+
+            <div class="field">
+              <label for="otHours">Overtime hours per week</label>
+              <input id="otHours" type="number" min="0" step="0.1" placeholder="0">
+              <span class="help">Average extra hours per week across the year.</span>
+            </div>
+
+            <div class="field">
+              <label for="otRate">Overtime multiplier</label>
+              <select id="otRate">
+                <option value="1">1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5" selected>1.5x</option>
+                <option value="2">2x</option>
+              </select>
+              <span class="help">Common examples are time-and-a-quarter, time-and-a-half or double time.</span>
+            </div>
+
+            <div class="field">
+              <label for="filingStatus">US filing status</label>
+              <select id="filingStatus">
+                <option value="single">Single</option>
+                <option value="married">Married filing jointly</option>
+              </select>
+              <span class="help">Used for the US federal estimate only.</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div id="ukFields">
+            <div class="field-grid">
+              <div class="field">
+                <label for="pension">UK pension %</label>
+                <input id="pension" type="number" min="0" max="100" step="0.1" placeholder="5">
+                <span class="help">A simple pre-tax pension estimate. Leave blank for 0%.</span>
+              </div>
+
+              <div class="field">
+                <label for="loan">Student loan plan</label>
+                <select id="loan">
+                  <option value="none">None</option>
+                  <option value="plan1">Plan 1</option>
+                  <option value="plan2" selected>Plan 2</option>
+                  <option value="plan4">Plan 4</option>
+                  <option value="plan5">Plan 5</option>
+                  <option value="postgrad">Postgraduate</option>
+                </select>
+                <span class="help">Student loan deductions are estimated using annual thresholds.</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="usFields" class="hide">
+            <div class="field-grid">
+              <div class="field">
+                <label for="k401">US 401(k) %</label>
+                <input id="k401" type="number" min="0" max="100" step="0.1" placeholder="5">
+                <span class="help">Treated as a pre-tax retirement contribution for income tax estimates.</span>
+              </div>
+
+              <div class="field">
+                <label for="state">US state</label>
+                <select id="state">
+                  <option value="none">No state selected</option>
+                  <option value="CA">California</option>
+                  <option value="TX">Texas</option>
+                  <option value="FL">Florida</option>
+                  <option value="NY">New York</option>
+                  <option value="IL">Illinois</option>
+                </select>
+                <span class="help">State tax is estimated for selected states only.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn-primary" onclick="calc()">Calculate pay</button>
+            <button type="button" class="btn-secondary" onclick="resetCalc()">Reset</button>
+          </div>
+
+          <div class="notice">
+            For the cleanest estimate, use your regular contracted hours first, then add separate overtime hours instead of folding them into base hours.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="results">
+      <h2>Your estimated pay</h2>
+      <p class="muted">These figures update after you run the calculator.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Gross pay · yearly</span>
+          <div class="big" id="grossYear">—</div>
+          <div class="tiny">Base salary plus overtime and bonus</div>
+        </div>
+
+        <div class="stat">
+          <span class="label">Estimated take-home · yearly</span>
+          <div class="big" id="netYear">—</div>
+          <div class="tiny">After estimated tax and selected deductions</div>
+        </div>
+
+        <div class="stat">
+          <span class="label">Estimated take-home · monthly</span>
+          <div class="big" id="netMonth">—</div>
+          <div class="tiny">Simple annual net divided by 12</div>
+        </div>
+
+        <div class="stat">
+          <span class="label">Estimated take-home · weekly</span>
+          <div class="big" id="netWeek">—</div>
+          <div class="tiny">Simple annual net divided by weeks worked</div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Annual</th>
+                  <th>Monthly</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTable">
+                <tr>
+                  <td>Base pay</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Overtime pay</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Bonus</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Income tax</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Payroll taxes</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Student loan / retirement</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td><strong>Estimated net pay</strong></td>
+                  <td><strong>—</strong></td>
+                  <td><strong>—</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="card card-soft" style="margin:0">
+            <h3>Breakdown notes</h3>
+            <div id="breakdown">
+              <p class="muted">Run the calculator to see your pay breakdown, tax notes and assumptions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How the calculator works</h2>
+      <div class="explain-grid">
+        <div class="mini">
+          <h3>1) Gross pay</h3>
+          <p class="muted">We convert your hourly wage into annual pay using your weekly hours and weeks worked. Overtime and bonus are then added separately.</p>
+        </div>
+        <div class="mini">
+          <h3>2) Estimated deductions</h3>
+          <p class="muted">For the UK, the tool estimates income tax, National Insurance and student loan. For the US, it estimates federal tax, FICA and selected state tax.</p>
+        </div>
+        <div class="mini">
+          <h3>3) Net take-home</h3>
+          <p class="muted">The calculator then shows estimated yearly, monthly and weekly take-home pay, plus a breakdown you can compare across scenarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="ad-slot">
+        Advertisement placeholder
+        <div class="tiny" style="margin-top:8px">Use this slot for a responsive display ad or in-content ad unit.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Useful next steps</h2>
+      <p class="muted">Use these related pages to compare salary levels, switch calculator types, or move into stronger salary clusters.</p>
+
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>Core calculators</h3>
+          <ul>
+            <li><a href="/">Salary After Tax Calculator</a></li>
+            <li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
+            <li><a href="/salary-after-tax-faq.html">Salary After Tax FAQ</a></li>
+            <li><a href="/salary-guides.html">Salary Guides</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>UK salary hubs</h3>
+          <ul>
+            <li><a href="/salary-after-tax-uk.html">Salary After Tax UK</a></li>
+            <li><a href="/uk-income-tax-explained.html">UK Income Tax Explained</a></li>
+            <li><a href="/uk-salary-examples.html">UK Salary Examples</a></li>
+            <li><a href="/minimum-wage-uk-salary.html">Minimum Wage UK Salary</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>US salary hubs</h3>
+          <ul>
+            <li><a href="/salary-after-tax-us.html">Salary After Tax US</a></li>
+            <li><a href="/us-salary-guides.html">US Salary Guides</a></li>
+            <li><a href="/salary-after-tax-by-income.html">Salary After Tax by Income</a></li>
+            <li><a href="/salary-after-tax-50000-100000-us.html">$50k–$100k Salary Pages</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Popular examples and comparison pages</h2>
+      <p class="muted">These are good follow-on pages if you want to compare an hourly rate with common salary search intent.</p>
+
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>Hourly examples</h3>
+          <ul>
+            <li><a href="/20-an-hour-salary-uk.html">£20 an Hour Salary in the UK</a></li>
+            <li><a href="/hourly-to-salary.html">Hourly Wage to Salary Calculator</a></li>
+            <li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>Monthly pages</h3>
+          <ul>
+            <li><a href="/50000-after-tax-monthly.html">£50,000 After Tax Monthly</a></li>
+            <li><a href="/60000-after-tax-monthly.html">£60,000 After Tax Monthly</a></li>
+            <li><a href="/70000-after-tax-monthly.html">£70,000 After Tax Monthly</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>Weekly pages</h3>
+          <ul>
+            <li><a href="/50000-after-tax-weekly.html">£50,000 After Tax Weekly</a></li>
+            <li><a href="/60000-after-tax-weekly.html">£60,000 After Tax Weekly</a></li>
+            <li><a href="/70000-after-tax-weekly.html">£70,000 After Tax Weekly</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Hourly wage to salary FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>How do you convert hourly pay into annual salary?</summary>
+          <div class="answer">
+            Multiply your hourly wage by your hours per week and then by the number of weeks you work each year. For example, 40 hours a week at 20 per hour over 52 weeks gives a gross annual pay figure before tax and deductions.
+          </div>
+        </details>
+
+        <details>
+          <summary>Does this calculator show take-home pay or just gross salary?</summary>
+          <div class="answer">
+            It shows both. You get a gross annual figure and an estimated net pay figure after the selected deductions and tax logic are applied.
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I include overtime and bonus?</summary>
+          <div class="answer">
+            Yes. Add average overtime hours per week and choose an overtime multiplier, then add any annual bonus. These are included in the gross estimate and flow through to the deduction estimates.
+          </div>
+        </details>
+
+        <details>
+          <summary>How accurate is the UK estimate?</summary>
+          <div class="answer">
+            It is designed as a strong estimate using UK tax bands, National Insurance and selected student loan logic. Real payroll can differ because of tax code changes, salary sacrifice, pension setup, benefits in kind and employer payroll treatment.
+          </div>
+        </details>
+
+        <details>
+          <summary>How accurate is the US estimate?</summary>
+          <div class="answer">
+            It is a solid estimate using federal tax, Social Security, Medicare, and selected state tax logic. Real take-home can vary due to filing details, local taxes, healthcare deductions, retirement plan choices and payroll timing.
+          </div>
+        </details>
+
+        <details>
+          <summary>Should pension or 401(k) be included?</summary>
+          <div class="answer">
+            Yes, if you want a more realistic take-home estimate. A pension or 401(k) contribution reduces the cash you take home, even though it can also reduce taxable income in some cases.
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const els = {
+      country: document.getElementById('country'),
+      hourly: document.getElementById('hourly'),
+      hours: document.getElementById('hours'),
+      weeks: document.getElementById('weeks'),
+      bonus: document.getElementById('bonus'),
+      otHours: document.getElementById('otHours'),
+      otRate: document.getElementById('otRate'),
+      filingStatus: document.getElementById('filingStatus'),
+      pension: document.getElementById('pension'),
+      loan: document.getElementById('loan'),
+      k401: document.getElementById('k401'),
+      state: document.getElementById('state'),
+      ukFields: document.getElementById('ukFields'),
+      usFields: document.getElementById('usFields'),
+      grossYear: document.getElementById('grossYear'),
+      netYear: document.getElementById('netYear'),
+      netMonth: document.getElementById('netMonth'),
+      netWeek: document.getElementById('netWeek'),
+      summaryTable: document.getElementById('summaryTable'),
+      breakdown: document.getElementById('breakdown')
+    };
+
+    function clampNumber(value, min, max){
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function toNumber(value){
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function currencySymbol(country){
+      return country === 'us' ? '$' : '£';
+    }
+
+    function formatMoney(value, country){
+      const symbol = currencySymbol(country);
+      const rounded = Math.round((value + Number.EPSILON) * 100) / 100;
+      return symbol + rounded.toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      });
+    }
+
+    function formatMoneyExact(value, country){
+      const symbol = currencySymbol(country);
+      const rounded = Math.round((value + Number.EPSILON) * 100) / 100;
+      return symbol + rounded.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function toggleCountryFields(){
+      const isUK = els.country.value === 'uk';
+      els.ukFields.classList.toggle('hide', !isUK);
+      els.usFields.classList.toggle('hide', isUK);
+    }
+
+    function taxFromBrackets(income, brackets){
+      let tax = 0;
+      for(let i = 0; i < brackets.length; i++){
+        const current = brackets[i];
+        const nextLimit = current.limit;
+        if(income > current.from){
+          const taxableAtBand = Math.min(income, nextLimit) - current.from;
+          if(taxableAtBand > 0){
+            tax += taxableAtBand * current.rate;
+          }
+        }
+      }
+      return Math.max(0, tax);
+    }
+
+    function calcUK(gross, pensionPct, loanPlan){
+      const pensionRate = clampNumber(pensionPct || 0, 0, 100) / 100;
+      const pension = gross * pensionRate;
+
+      let personalAllowance = 12570;
+      if(gross > 100000){
+        personalAllowance = Math.max(0, 12570 - ((gross - 100000) / 2));
+      }
+
+      const taxableIncome = Math.max(0, gross - pension - personalAllowance);
+
+      const basicBand = 37700;
+      const higherBand = 125140 - personalAllowance;
+
+      let incomeTax = 0;
+      const basicTaxable = Math.min(taxableIncome, basicBand);
+      incomeTax += basicTaxable * 0.20;
+
+      const higherTaxable = Math.max(0, Math.min(taxableIncome - basicBand, Math.max(0, higherBand - basicBand)));
+      incomeTax += higherTaxable * 0.40;
+
+      const additionalTaxable = Math.max(0, taxableIncome - higherBand);
+      incomeTax += additionalTaxable * 0.45;
+
+      const niable = Math.max(0, gross - 12570);
+      const mainNI = Math.min(niable, 50270 - 12570) * 0.08;
+      const upperNI = Math.max(0, gross - 50270) * 0.02;
+      const nationalInsurance = Math.max(0, mainNI + upperNI);
+
+      const studentLoanThresholds = {
+        none: { threshold: Infinity, rate: 0, label: 'None' },
+        plan1: { threshold: 26065, rate: 0.09, label: 'Plan 1' },
+        plan2: { threshold: 28470, rate: 0.09, label: 'Plan 2' },
+        plan4: { threshold: 32745, rate: 0.09, label: 'Plan 4' },
+        plan5: { threshold: 25000, rate: 0.09, label: 'Plan 5' },
+        postgrad: { threshold: 21000, rate: 0.06, label: 'Postgraduate' }
+      };
+
+      const loan = studentLoanThresholds[loanPlan] || studentLoanThresholds.none;
+      const studentLoan = Math.max(0, (gross - loan.threshold) * loan.rate);
+
+      const totalDeductions = incomeTax + nationalInsurance + studentLoan + pension;
+      const net = Math.max(0, gross - totalDeductions);
+
+      return {
+        country: 'uk',
+        pension,
+        incomeTax,
+        payrollTax: nationalInsurance,
+        stateTax: 0,
+        retirement: pension,
+        studentLoan,
+        net,
+        notes: [
+          'UK estimate uses income tax bands, personal allowance tapering, and employee National Insurance.',
+          'Pension is treated as a simple pre-tax contribution estimate.',
+          'Student loan uses annual thresholds for the selected plan.'
+        ],
+        meta: {
+          pensionRate,
+          personalAllowance,
+          taxableIncome,
+          loanLabel: loan.label
+        }
+      };
+    }
+
+    function calcUS(gross, filingStatus, k401Pct, stateCode){
+      const retirementRate = clampNumber(k401Pct || 0, 0, 100) / 100;
+      const retirement = gross * retirementRate;
+
+      const standardDeduction = filingStatus === 'married' ? 32200 : 16100;
+      const taxableFederal = Math.max(0, gross - retirement - standardDeduction);
+
+      const federalBracketsSingle = [
+        { from: 0, limit: 11925, rate: 0.10 },
+        { from: 11925, limit: 48475, rate: 0.12 },
+        { from: 48475, limit: 103350, rate: 0.22 },
+        { from: 103350, limit: 197300, rate: 0.24 },
+        { from: 197300, limit: 250525, rate: 0.32 },
+        { from: 250525, limit: 626350, rate: 0.35 },
+        { from: 626350, limit: Infinity, rate: 0.37 }
+      ];
+
+      const federalBracketsMarried = [
+        { from: 0, limit: 23850, rate: 0.10 },
+        { from: 23850, limit: 96950, rate: 0.12 },
+        { from: 96950, limit: 206700, rate: 0.22 },
+        { from: 206700, limit: 394600, rate: 0.24 },
+        { from: 394600, limit: 501050, rate: 0.32 },
+        { from: 501050, limit: 751600, rate: 0.35 },
+        { from: 751600, limit: Infinity, rate: 0.37 }
+      ];
+
+      const federalTax = taxFromBrackets(
+        taxableFederal,
+        filingStatus === 'married' ? federalBracketsMarried : federalBracketsSingle
+      );
+
+      const socialSecurityWageBase = 184500;
+      const socialSecurity = Math.min(gross, socialSecurityWageBase) * 0.062;
+      const medicare = gross * 0.0145;
+      const payrollTax = socialSecurity + medicare;
+
+      const stateTaxable = Math.max(0, gross - retirement);
+      let stateTax = 0;
+      let stateLabel = 'No state selected';
+
+      if(stateCode === 'CA'){
+        stateLabel = 'California';
+        stateTax += Math.min(stateTaxable, 10412) * 0.01;
+        stateTax += Math.max(0, Math.min(stateTaxable - 10412, 14262)) * 0.02;
+        stateTax += Math.max(0, Math.min(stateTaxable - 24674, 14264)) * 0.04;
+        stateTax += Math.max(0, Math.min(stateTaxable - 38938, 15134)) * 0.06;
+        stateTax += Math.max(0, Math.min(stateTaxable - 54072, 136739)) * 0.08;
+        stateTax += Math.max(0, Math.min(stateTaxable - 190811, 48199)) * 0.093;
+        stateTax = Math.max(0, stateTax - 154);
+      }else if(stateCode === 'NY'){
+        stateLabel = 'New York';
+        stateTax += Math.min(stateTaxable, 8500) * 0.04;
+        stateTax += Math.max(0, Math.min(stateTaxable - 8500, 3200)) * 0.045;
+        stateTax += Math.max(0, Math.min(stateTaxable - 11700, 2200)) * 0.0525;
+        stateTax += Math.max(0, Math.min(stateTaxable - 13900, 66400)) * 0.055;
+        stateTax += Math.max(0, Math.min(stateTaxable - 80300, 134700)) * 0.06;
+        stateTax += Math.max(0, stateTaxable - 215000) * 0.0685;
+      }else if(stateCode === 'IL'){
+        stateLabel = 'Illinois';
+        stateTax = stateTaxable * 0.0495;
+      }else if(stateCode === 'TX'){
+        stateLabel = 'Texas';
+        stateTax = 0;
+      }else if(stateCode === 'FL'){
+        stateLabel = 'Florida';
+        stateTax = 0;
+      }
+
+      const totalDeductions = federalTax + payrollTax + stateTax + retirement;
+      const net = Math.max(0, gross - totalDeductions);
+
+      return {
+        country: 'us',
+        pension: 0,
+        incomeTax: federalTax,
+        payrollTax,
+        stateTax,
+        retirement,
+        studentLoan: 0,
+        net,
+        notes: [
+          'US estimate uses a standard deduction and progressive federal tax brackets.',
+          'FICA includes Social Security at 6.2% up to the wage base and Medicare at 1.45%.',
+          'Selected state tax is estimated for California, New York and Illinois. Texas and Florida have no state income tax.'
+        ],
+        meta: {
+          filingStatus,
+          standardDeduction,
+          taxableFederal,
+          stateLabel
+        }
+      };
+    }
+
+    function buildSummaryRows(data){
+      const weeksWorked = data.weeksWorked || 52;
+      const monthly = v => v / 12;
+
+      return `
+        <tr>
+          <td>Base pay</td>
+          <td>${formatMoney(data.basePay, data.country)}</td>
+          <td>${formatMoney(monthly(data.basePay), data.country)}</td>
+        </tr>
+        <tr>
+          <td>Overtime pay</td>
+          <td>${formatMoney(data.overtimePay, data.country)}</td>
+          <td>${formatMoney(monthly(data.overtimePay), data.country)}</td>
+        </tr>
+        <tr>
+          <td>Bonus</td>
+          <td>${formatMoney(data.bonus, data.country)}</td>
+          <td>${formatMoney(monthly(data.bonus), data.country)}</td>
+        </tr>
+        <tr>
+          <td>Income tax</td>
+          <td>${formatMoney(data.incomeTax, data.country)}</td>
+          <td>${formatMoney(monthly(data.incomeTax), data.country)}</td>
+        </tr>
+        <tr>
+          <td>${data.country === 'us' ? 'FICA + state tax' : 'National Insurance'}</td>
+          <td>${formatMoney(data.payrollTax + data.stateTax, data.country)}</td>
+          <td>${formatMoney(monthly(data.payrollTax + data.stateTax), data.country)}</td>
+        </tr>
+        <tr>
+          <td>${data.country === 'us' ? '401(k)' : 'Student loan / pension'}</td>
+          <td>${formatMoney(data.country === 'us' ? data.retirement : (data.studentLoan + data.retirement), data.country)}</td>
+          <td>${formatMoney(monthly(data.country === 'us' ? data.retirement : (data.studentLoan + data.retirement)), data.country)}</td>
+        </tr>
+        <tr>
+          <td><strong>Estimated net pay</strong></td>
+          <td><strong>${formatMoney(data.net, data.country)}</strong></td>
+          <td><strong>${formatMoney(monthly(data.net), data.country)}</strong></td>
+        </tr>
+      `;
+    }
+
+    function buildBreakdown(data){
+      const weeklyNet = data.weeksWorked > 0 ? data.net / data.weeksWorked : 0;
+      const monthlyNet = data.net / 12;
+      const countryName = data.country === 'us' ? 'US' : 'UK';
+
+      let extraMeta = '';
+
+      if(data.country === 'uk'){
+        extraMeta = `
+          <p><strong>UK assumptions used</strong></p>
+          <ul>
+            <li>Personal allowance: ${formatMoneyExact(data.meta.personalAllowance, data.country)}</li>
+            <li>Taxable income after pension and allowance: ${formatMoneyExact(data.meta.taxableIncome, data.country)}</li>
+            <li>Student loan setting: ${data.meta.loanLabel}</li>
+          </ul>
+        `;
+      }else{
+        extraMeta = `
+          <p><strong>US assumptions used</strong></p>
+          <ul>
+            <li>Filing status: ${data.meta.filingStatus === 'married' ? 'Married filing jointly' : 'Single'}</li>
+            <li>Standard deduction: ${formatMoneyExact(data.meta.standardDeduction, data.country)}</li>
+            <li>Selected state: ${data.meta.stateLabel}</li>
+          </ul>
+        `;
+      }
+
+      const noteItems = data.notes.map(n => `<li>${n}</li>`).join('');
+
+      return `
+        <p><strong>${countryName} result summary</strong></p>
+        <p>
+          Estimated gross pay is <strong>${formatMoney(data.gross, data.country)}</strong> per year.
+          Estimated take-home pay is <strong>${formatMoney(data.net, data.country)}</strong> per year,
+          which works out to roughly <strong>${formatMoney(monthlyNet, data.country)}</strong> per month and
+          <strong>${formatMoney(weeklyNet, data.country)}</strong> per week.
+        </p>
+
+        <p><strong>Main components</strong></p>
+        <ul>
+          <li>Base pay: ${formatMoney(data.basePay, data.country)}</li>
+          <li>Overtime pay: ${formatMoney(data.overtimePay, data.country)}</li>
+          <li>Bonus: ${formatMoney(data.bonus, data.country)}</li>
+          <li>Income tax: ${formatMoney(data.incomeTax, data.country)}</li>
+          <li>${data.country === 'us' ? 'FICA' : 'National Insurance'}: ${formatMoney(data.payrollTax, data.country)}</li>
+          ${data.country === 'us' ? `<li>State tax: ${formatMoney(data.stateTax, data.country)}</li>` : `<li>Student loan: ${formatMoney(data.studentLoan, data.country)}</li>`}
+          <li>${data.country === 'us' ? '401(k)' : 'Pension'}: ${formatMoney(data.retirement, data.country)}</li>
+        </ul>
+
+        ${extraMeta}
+
+        <p><strong>Important notes</strong></p>
+        <ul>${noteItems}</ul>
+      `;
+    }
+
+    function calc(){
+      const country = els.country.value;
+      const hourly = toNumber(els.hourly.value);
+      const hours = toNumber(els.hours.value);
+      const weeksWorked = clampNumber(toNumber(els.weeks.value) || 52, 1, 52);
+      const bonus = Math.max(0, toNumber(els.bonus.value));
+      const otHours = Math.max(0, toNumber(els.otHours.value));
+      const otRate = Math.max(1, toNumber(els.otRate.value) || 1.5);
+
+      if(hourly <= 0 || hours <= 0){
+        els.grossYear.textContent = '—';
+        els.netYear.textContent = '—';
+        els.netMonth.textContent = '—';
+        els.netWeek.textContent = '—';
+        els.summaryTable.innerHTML = `
+          <tr><td>Base pay</td><td>—</td><td>—</td></tr>
+          <tr><td>Overtime pay</td><td>—</td><td>—</td></tr>
+          <tr><td>Bonus</td><td>—</td><td>—</td></tr>
+          <tr><td>Income tax</td><td>—</td><td>—</td></tr>
+          <tr><td>Payroll taxes</td><td>—</td><td>—</td></tr>
+          <tr><td>Student loan / retirement</td><td>—</td><td>—</td></tr>
+          <tr><td><strong>Estimated net pay</strong></td><td><strong>—</strong></td><td><strong>—</strong></td></tr>
+        `;
+        els.breakdown.innerHTML = `<p class="muted">Enter an hourly wage and hours per week, then click calculate.</p>`;
+        return;
+      }
+
+      const basePay = hourly * hours * weeksWorked;
+      const overtimePay = hourly * otHours * otRate * weeksWorked;
+      const gross = basePay + overtimePay + bonus;
+
+      let result;
+
+      if(country === 'uk'){
+        result = calcUK(
+          gross,
+          toNumber(els.pension.value),
+          els.loan.value
+        );
+      }else{
+        result = calcUS(
+          gross,
+          els.filingStatus.value,
+          toNumber(els.k401.value),
+          els.state.value
+        );
+      }
+
+      const merged = {
+        ...result,
+        gross,
+        basePay,
+        overtimePay,
+        bonus,
+        weeksWorked
+      };
+
+      els.grossYear.textContent = formatMoney(gross, country);
+      els.netYear.textContent = formatMoney(merged.net, country);
+      els.netMonth.textContent = formatMoney(merged.net / 12, country);
+      els.netWeek.textContent = formatMoney(merged.net / weeksWorked, country);
+      els.summaryTable.innerHTML = buildSummaryRows(merged);
+      els.breakdown.innerHTML = buildBreakdown(merged);
+    }
+
+    function resetCalc(){
+      els.country.value = 'uk';
+      els.hourly.value = '';
+      els.hours.value = '';
+      els.weeks.value = '52';
+      els.bonus.value = '';
+      els.otHours.value = '';
+      els.otRate.value = '1.5';
+      els.filingStatus.value = 'single';
+      els.pension.value = '';
+      els.loan.value = 'plan2';
+      els.k401.value = '';
+      els.state.value = 'none';
+      toggleCountryFields();
+      calc();
+    }
+
+    els.country.addEventListener('change', toggleCountryFields);
+    toggleCountryFields();
+  </script>
+</body>
+</html>
