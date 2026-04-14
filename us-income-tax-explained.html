@@ -1,57 +1,869 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>US Income Tax Explained | Federal Tax Guide</title>
-<meta name="description" content="Simple explanation of how US income tax works including federal tax brackets, Social Security and Medicare deductions.">
-<link rel="canonical" href="https://aftertaxtool.com/us-income-tax-explained.html">
-<style>
-body{font-family:Arial,Helvetica,sans-serif;background:#f3f4f6;margin:0;color:#111}
-.container{max-width:1100px;margin:auto;padding:24px}
-.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;border:1px solid #e5e7eb}
-h1{margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-a{color:#2563eb;text-decoration:none}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>US Income Tax Explained (2026) – Federal Tax Brackets, FICA & State Taxes</title>
+  <meta name="description" content="Understand US income tax in 2026 with a clear guide to federal tax brackets, the standard deduction, FICA, state income tax, and take-home pay examples.">
+  <link rel="canonical" href="https://aftertaxtool.com/us-income-tax-explained.html">
+  <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo">
+
+  <style>
+    :root{
+      --bg:#f3f7fc;
+      --card:#ffffff;
+      --text:#17324d;
+      --muted:#5f748a;
+      --blue:#1d6fdc;
+      --blue-dark:#1557af;
+      --line:#d9e5f0;
+      --soft:#eef5fb;
+      --soft2:#f8fbff;
+      --warn:#fff8e8;
+      --warn-line:#efdca8;
+      --good:#e9f8ee;
+      --good-line:#bfe0cb;
+      --shadow:0 14px 36px rgba(23,50,77,0.08);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    a:hover{
+      color:var(--blue-dark);
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:18px;
+    }
+
+    .breadcrumbs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+      margin:4px 0 18px;
+    }
+
+    .breadcrumbs span{color:#8aa0b5}
+
+    .hero{
+      background:linear-gradient(135deg,#ffffff 0%, #f6fbff 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-bottom:20px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background:#eaf3ff;
+      color:var(--blue-dark);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom:12px;
+    }
+
+    h1{
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.1;
+      margin:0 0 12px;
+    }
+
+    h2{
+      font-size:28px;
+      line-height:1.15;
+      margin:0 0 12px;
+    }
+
+    h3{
+      font-size:19px;
+      line-height:1.2;
+      margin:0 0 8px;
+    }
+
+    p{margin:0 0 14px}
+
+    .sub{
+      color:var(--muted);
+      font-size:18px;
+      max-width:860px;
+      margin-bottom:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+    }
+
+    .card-soft{background:var(--soft2)}
+
+    .notice{
+      background:var(--warn);
+      border:1px solid var(--warn-line);
+      border-radius:14px;
+      padding:14px 16px;
+      font-size:14px;
+      margin-top:14px;
+    }
+
+    .success{
+      background:var(--good);
+      border:1px solid var(--good-line);
+      border-radius:14px;
+      padding:14px 16px;
+      font-size:14px;
+      margin-top:14px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .stat{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#f9fbfe;
+    }
+
+    .stat .k{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:6px;
+      font-weight:700;
+    }
+
+    .big{
+      font-size:28px;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:-.4px;
+    }
+
+    .tiny{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+    }
+
+    .table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:620px;
+    }
+
+    th,td{
+      padding:13px 14px;
+      border-bottom:1px solid #e5edf5;
+      text-align:left;
+      vertical-align:top;
+      font-size:14px;
+    }
+
+    th{
+      background:#f5f9fd;
+      color:#4f6881;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+    }
+
+    tr:last-child td{border-bottom:0}
+
+    ul{
+      margin:0 0 14px 18px;
+      padding:0;
+    }
+
+    li{margin:0 0 8px}
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 11px;
+      border-radius:999px;
+      background:#eef5ff;
+      border:1px solid #d6e7fb;
+      color:#295b98;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .comparison{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .example-box{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .example-box .salary{
+      font-size:24px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .ad-slot{
+      border:2px dashed #bfd3e7;
+      border-radius:18px;
+      background:#f7fbff;
+      padding:26px 16px;
+      text-align:center;
+      color:#6f879d;
+      font-weight:700;
+    }
+
+    .links-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .link-box{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .link-box h3{margin-bottom:8px}
+    .link-box ul{margin:0;padding-left:18px}
+    .link-box li{margin:0 0 8px}
+
+    .faq{
+      display:grid;
+      gap:12px;
+    }
+
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:16px;
+    }
+
+    .faq summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+
+    .faq summary::-webkit-details-marker{display:none}
+
+    .faq .answer{
+      color:var(--muted);
+      padding-top:10px;
+    }
+
+    .muted{color:var(--muted)}
+
+    @media (max-width:980px){
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .stats,
+      .comparison,
+      .links-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:720px){
+      .wrap{padding:14px}
+      .hero{padding:22px}
+      .card{padding:18px}
+      .big{font-size:25px}
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNPTB0CMD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GNPTB0CMD0');
+  </script>
 </head>
 <body>
+  <div class="wrap">
 
-<div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/salary-after-tax-us.html">Salary After Tax US</a>
+      <span>›</span>
+      <span>US Income Tax Explained</span>
+    </nav>
 
-<div class="card">
-<h1>How Income Tax Works in the United States</h1>
-<p>Income tax in the United States is made up of several different components. The biggest are federal income tax, Social Security tax and Medicare tax. Many states also apply their own income taxes.</p>
-</div>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">US tax guide · authority page</div>
+          <h1>US Income Tax Explained (2026)</h1>
+          <p class="sub">
+            This guide explains how <strong>US income tax</strong> works, including <strong>federal tax brackets</strong>, the <strong>standard deduction</strong>, <strong>Social Security</strong>, <strong>Medicare</strong>, and the role of <strong>state income tax</strong>. If you want to understand why two people on the same salary can take home very different amounts, this page is the place to start.
+          </p>
+          <p class="muted">
+            The United States does not use a single flat nationwide income tax. Instead, take-home pay is shaped by a mix of federal tax, payroll tax, state tax, filing status, and pretax deductions such as a 401(k).
+          </p>
 
-<div class="card">
-<h2>Federal Income Tax</h2>
-<p>The federal government uses progressive tax brackets. This means higher portions of income are taxed at higher rates.</p>
-<p>Before calculating federal income tax, most workers subtract the standard deduction from their salary.</p>
-</div>
+          <div class="notice">
+            This page is a simplified guide for salary planning and comparison. Real tax outcomes can differ because of filing status, credits, dependents, itemized deductions, retirement contributions, healthcare deductions, bonuses, RSUs, and local taxes.
+          </div>
+        </div>
 
-<div class="card">
-<h2>Social Security Tax</h2>
-<p>Employees pay 6.2% Social Security tax on earnings up to the wage base limit. Employers match this contribution.</p>
-</div>
+        <div class="card card-soft" style="margin:0">
+          <h2 style="font-size:22px">What this page covers</h2>
+          <div class="pill-row">
+            <span class="pill">Federal tax brackets</span>
+            <span class="pill">Standard deduction</span>
+            <span class="pill">FICA</span>
+            <span class="pill">State tax</span>
+            <span class="pill">Take-home examples</span>
+            <span class="pill">Internal salary links</span>
+          </div>
+          <div class="success">
+            This page is designed to do two jobs at once: help users understand US tax clearly and push them deeper into your strongest US salary pages, monthly pages, state pages, and calculators.
+          </div>
+        </div>
+      </div>
 
-<div class="card">
-<h2>Medicare Tax</h2>
-<p>Medicare tax is charged at 1.45% of income with no income cap for most workers.</p>
-</div>
+      <div class="stats">
+        <div class="stat">
+          <span class="k">2026 standard deduction · single</span>
+          <div class="big">$16,100</div>
+          <div class="tiny">Used before calculating federal taxable income</div>
+        </div>
+        <div class="stat">
+          <span class="k">2026 standard deduction · married filing jointly</span>
+          <div class="big">$32,200</div>
+          <div class="tiny">Larger deduction for joint filers</div>
+        </div>
+        <div class="stat">
+          <span class="k">Social Security rate</span>
+          <div class="big">6.2%</div>
+          <div class="tiny">Applies up to the wage base</div>
+        </div>
+        <div class="stat">
+          <span class="k">Medicare rate</span>
+          <div class="big">1.45%</div>
+          <div class="tiny">No basic wage cap on regular Medicare tax</div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h2>Example Salary Calculations</h2>
-<div class="grid">
-<a href="/60000-salary-after-tax-us.html">$60,000 salary after tax</a>
-<a href="/80000-salary-after-tax-us.html">$80,000 salary after tax</a>
-<a href="/100000-salary-after-tax-us.html">$100,000 salary after tax</a>
-<a href="/120000-salary-after-tax-us.html">$120,000 salary after tax</a>
-<a href="/130000-salary-after-tax-us.html">$130,000 salary after tax</a>
-</div>
-</div>
+    <section class="card">
+      <h2>How US income tax works</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>1) Gross income</h3>
+          <p class="muted">
+            Your starting point is your gross pay: salary, wages, overtime, bonus, and in some cases other taxable compensation.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>2) Taxable income</h3>
+          <p class="muted">
+            Federal taxable income is generally lower than gross income because deductions such as the standard deduction and some pretax retirement contributions reduce the amount being taxed.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>3) Take-home pay</h3>
+          <p class="muted">
+            Your final net pay can be reduced by federal tax, Social Security, Medicare, state income tax, local tax, 401(k) contributions, healthcare deductions, and other payroll items.
+          </p>
+        </div>
+      </div>
 
-</div>
+      <p>
+        One of the biggest misunderstandings around US tax is the idea that your whole salary is taxed at your top bracket. That is not how it works. The federal system is <strong>progressive</strong>, which means each slice of taxable income is taxed at the rate for that slice rather than one flat rate on the entire amount.
+      </p>
 
+      <p>
+        That is why a person on $70,000 does not suddenly lose 22% or 24% of their entire pay just because they move into a higher bracket. Only the portion of taxable income inside that bracket is taxed at that higher rate.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>2026 federal income tax brackets</h2>
+      <p class="muted">
+        These are the main federal marginal rates that matter for most salary earners. Your actual tax bill depends on taxable income after deductions, not just your headline salary.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rate</th>
+              <th>Single</th>
+              <th>Married filing jointly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10%</td>
+              <td>$0 to $12,400</td>
+              <td>$0 to $24,800</td>
+            </tr>
+            <tr>
+              <td>12%</td>
+              <td>$12,401 to $50,400</td>
+              <td>$24,801 to $100,800</td>
+            </tr>
+            <tr>
+              <td>22%</td>
+              <td>$50,401 to $105,700</td>
+              <td>$100,801 to $211,400</td>
+            </tr>
+            <tr>
+              <td>24%</td>
+              <td>$105,701 to $201,775</td>
+              <td>$211,401 to $403,550</td>
+            </tr>
+            <tr>
+              <td>32%</td>
+              <td>$201,776 to $256,225</td>
+              <td>$403,551 to $512,450</td>
+            </tr>
+            <tr>
+              <td>35%</td>
+              <td>$256,226 to $640,600</td>
+              <td>$512,451 to $768,700</td>
+            </tr>
+            <tr>
+              <td>37%</td>
+              <td>Over $640,600</td>
+              <td>Over $768,700</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="notice">
+        Your top bracket is not the same as your effective tax rate. Effective tax rate is the share of your total income that actually goes to tax after the lower bands and deductions have been applied.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2026 standard deduction</h2>
+      <div class="grid-2">
+        <div>
+          <p>
+            The standard deduction is one of the biggest reasons take-home pay is better than many people first assume. It reduces how much of your income is exposed to federal income tax before the bracket system is applied.
+          </p>
+          <ul>
+            <li><strong>Single:</strong> $16,100</li>
+            <li><strong>Married filing jointly:</strong> $32,200</li>
+            <li><strong>Head of household:</strong> $24,150</li>
+          </ul>
+          <p class="muted">
+            Many employees use the standard deduction rather than itemizing, especially when doing quick salary and take-home comparisons.
+          </p>
+        </div>
+        <div class="card card-soft" style="margin:0">
+          <h3>Simple example</h3>
+          <p>
+            If a single filer earns <strong>$70,000</strong>, the full $70,000 is not exposed to federal income tax in the same way. The standard deduction reduces taxable income before the bracket calculation is made.
+          </p>
+          <p>
+            This is one of the reasons a salary page or calculator should always show a breakdown rather than just applying one flat percentage to gross pay.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>FICA: Social Security and Medicare</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Social Security</h3>
+          <p>
+            Social Security tax is charged at <strong>6.2%</strong> on employee wages up to the yearly wage base. For 2026, that wage base is <strong>$184,500</strong>.
+          </p>
+          <p class="muted">
+            Once wages go above the Social Security cap, that part of FICA no longer rises through Social Security, although Medicare still continues.
+          </p>
+        </div>
+
+        <div>
+          <h3>Medicare</h3>
+          <p>
+            Medicare tax is charged at <strong>1.45%</strong> on employee wages and does not have the same regular wage cap as Social Security.
+          </p>
+          <p class="muted">
+            High earners can also face extra Medicare withholding in some cases, which is another reason exact net pay can differ from simplified examples.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead>
+            <tr>
+              <th>Payroll tax</th>
+              <th>Employee rate</th>
+              <th>2026 note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Social Security</td>
+              <td>6.2%</td>
+              <td>Applies up to $184,500 of covered wages</td>
+            </tr>
+            <tr>
+              <td>Medicare</td>
+              <td>1.45%</td>
+              <td>No regular wage cap on basic Medicare tax</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Why state taxes matter so much</h2>
+      <p>
+        Federal tax is only part of the picture. In the US, state income tax can create a major take-home difference between people on the same salary. A worker on $70,000 in Texas can have a different net outcome from someone on $70,000 in California or New York even before local taxes and deductions are considered.
+      </p>
+
+      <div class="grid-3">
+        <div class="mini">
+          <h3>California</h3>
+          <p class="muted">
+            Progressive state tax structure. Take-home pay is often lower than no-tax states on the same gross salary.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Texas & Florida</h3>
+          <p class="muted">
+            No state income tax, which can make headline salary go further, all else being equal.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>New York & Illinois</h3>
+          <p class="muted">
+            New York can be heavier than many states, while Illinois is commonly treated as a flatter state-tax comparison point.
+          </p>
+        </div>
+      </div>
+
+      <div class="success">
+        This is why state salary pages are useful: they turn a general tax explanation into a specific take-home answer for the salary band and state the user actually cares about.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What affects take-home pay beyond headline tax rates?</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>401(k) contributions</h3>
+          <p class="muted">
+            Pretax retirement contributions can reduce taxable income for federal purposes, while also reducing the cash you take home each payday.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Bonus and overtime</h3>
+          <p class="muted">
+            Extra pay can move more of your income into higher marginal brackets, and withholding on bonuses can look different from regular salary withholding.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Healthcare and payroll deductions</h3>
+          <p class="muted">
+            Insurance, HSA or FSA contributions, commuter benefits, and other payroll deductions can materially change real take-home pay.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:12px">
+        <div class="mini">
+          <h3>Filing status</h3>
+          <p class="muted">
+            Single, married filing jointly, and head of household all change the tax calculation and can shift the effective tax rate noticeably.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Local taxes</h3>
+          <p class="muted">
+            City or local taxes can further reduce pay in some locations, which means state-only comparisons do not always tell the whole story.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Tax credits and deductions</h3>
+          <p class="muted">
+            Credits and special deductions can pull actual tax below what a broad salary example suggests, which is why guides and calculators should be treated as estimates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Real salary examples: how US tax changes take-home pay</h2>
+      <p class="muted">
+        These examples are the natural next step for users who move from a general tax guide to a specific salary search.
+      </p>
+
+      <div class="comparison">
+        <div class="example-box">
+          <div class="salary">$50,000 salary</div>
+          <p>
+            A common entry point for users comparing federal tax, FICA, and whether a mid-range salary stretches differently across states.
+          </p>
+          <ul>
+            <li><a href="/50000-salary-after-tax-us.html">$50,000 Salary After Tax US</a></li>
+            <li><a href="/50000-salary-after-tax-california.html">$50,000 Salary After Tax California</a></li>
+            <li><a href="/50000-after-tax-monthly-california.html">$50,000 After Tax Monthly California</a></li>
+          </ul>
+        </div>
+
+        <div class="example-box">
+          <div class="salary">$70,000 salary</div>
+          <p>
+            A strong mid-band comparison point where state differences become easier to spot and monthly take-home pages tend to perform well.
+          </p>
+          <ul>
+            <li><a href="/70000-salary-after-tax-us.html">$70,000 Salary After Tax US</a></li>
+            <li><a href="/70000-salary-after-tax-texas.html">$70,000 Salary After Tax Texas</a></li>
+            <li><a href="/70000-after-tax-monthly-new-york.html">$70,000 After Tax Monthly New York</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="comparison" style="margin-top:12px">
+        <div class="example-box">
+          <div class="salary">$85,000 salary</div>
+          <p>
+            This is a strong salary band for exploring how California, Illinois, and no-tax states change the net result.
+          </p>
+          <ul>
+            <li><a href="/85000-salary-after-tax-us.html">$85,000 Salary After Tax US</a></li>
+            <li><a href="/85000-salary-after-tax-california.html">$85,000 Salary After Tax California</a></li>
+            <li><a href="/85000-salary-after-tax-illinois.html">$85,000 Salary After Tax Illinois</a></li>
+          </ul>
+        </div>
+
+        <div class="example-box">
+          <div class="salary">$100,000 salary</div>
+          <p>
+            Six-figure salary searches often have strong informational intent and are ideal for linking to both main pages and monthly breakdown pages.
+          </p>
+          <ul>
+            <li><a href="/100000-salary-after-tax-us.html">$100,000 Salary After Tax US</a></li>
+            <li><a href="/100000-salary-after-tax-california.html">$100,000 Salary After Tax California</a></li>
+            <li><a href="/100000-after-tax-monthly-texas.html">$100,000 After Tax Monthly Texas</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="ad-slot">
+        Advertisement placeholder
+        <div class="tiny" style="margin-top:8px">Use this space for a responsive display ad or in-content ad unit.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Use these calculators after reading this guide</h2>
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>Core calculators</h3>
+          <ul>
+            <li><a href="/">Salary After Tax Calculator</a></li>
+            <li><a href="/hourly-to-salary-us.html">Hourly to Salary Calculator US</a></li>
+            <li><a href="/hourly-to-salary.html">Hourly to Salary Calculator</a></li>
+            <li><a href="/salary-to-hourly.html">Salary to Hourly Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>US hubs</h3>
+          <ul>
+            <li><a href="/salary-after-tax-us.html">Salary After Tax US</a></li>
+            <li><a href="/us-salary-guides.html">US Salary Guides</a></li>
+            <li><a href="/salary-after-tax-by-income.html">Salary After Tax by Income</a></li>
+            <li><a href="/salary-after-tax-50000-100000-us.html">$50k to $100k US Salary Pages</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>Related explainers</h3>
+          <ul>
+            <li><a href="/salary-after-tax-faq.html">Salary After Tax FAQ</a></li>
+            <li><a href="/salary-guides.html">Salary Guides</a></li>
+            <li><a href="/salary-after-tax-us.html">US Salary Hub</a></li>
+            <li><a href="/hourly-to-salary-us.html">US Hourly to Salary Guide</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Best next pages by state</h2>
+      <p class="muted">
+        These internal links help turn a broad tax guide into a state-specific answer.
+      </p>
+
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>California</h3>
+          <ul>
+            <li><a href="/70000-salary-after-tax-california.html">$70,000 Salary After Tax California</a></li>
+            <li><a href="/85000-salary-after-tax-california.html">$85,000 Salary After Tax California</a></li>
+            <li><a href="/90000-salary-after-tax-california.html">$90,000 Salary After Tax California</a></li>
+            <li><a href="/70000-after-tax-monthly-california.html">$70,000 After Tax Monthly California</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>Texas & Florida</h3>
+          <ul>
+            <li><a href="/70000-salary-after-tax-texas.html">$70,000 Salary After Tax Texas</a></li>
+            <li><a href="/85000-salary-after-tax-texas.html">$85,000 Salary After Tax Texas</a></li>
+            <li><a href="/70000-salary-after-tax-florida.html">$70,000 Salary After Tax Florida</a></li>
+            <li><a href="/85000-salary-after-tax-florida.html">$85,000 Salary After Tax Florida</a></li>
+          </ul>
+        </div>
+
+        <div class="link-box">
+          <h3>New York & Illinois</h3>
+          <ul>
+            <li><a href="/70000-salary-after-tax-new-york.html">$70,000 Salary After Tax New York</a></li>
+            <li><a href="/75000-after-tax-monthly-new-york.html">$75,000 After Tax Monthly New York</a></li>
+            <li><a href="/85000-salary-after-tax-illinois.html">$85,000 Salary After Tax Illinois</a></li>
+            <li><a href="/70000-after-tax-monthly-illinois.html">$70,000 After Tax Monthly Illinois</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>US income tax FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>How does the US federal tax bracket system work?</summary>
+          <div class="answer">
+            The federal system is progressive. Different slices of taxable income are taxed at different rates. You do not pay your top marginal rate on every dollar you earn.
+          </div>
+        </details>
+
+        <details>
+          <summary>What is the difference between gross pay and taxable income?</summary>
+          <div class="answer">
+            Gross pay is your headline income before deductions. Taxable income is the amount left after deductions such as the standard deduction and some pretax contributions have been applied.
+          </div>
+        </details>
+
+        <details>
+          <summary>Why can two people on the same salary take home different amounts?</summary>
+          <div class="answer">
+            They may live in different states, have different filing statuses, contribute different amounts to retirement, pay local taxes, or have different payroll deductions such as healthcare premiums.
+          </div>
+        </details>
+
+        <details>
+          <summary>Is FICA separate from federal income tax?</summary>
+          <div class="answer">
+            Yes. FICA generally refers to Social Security and Medicare payroll taxes. These are separate from federal income tax and appear in addition to it on most salary calculations.
+          </div>
+        </details>
+
+        <details>
+          <summary>Do Texas and Florida really have no state income tax?</summary>
+          <div class="answer">
+            They do not have a regular state income tax on wages, which is one reason salary comparisons often show stronger net pay in those states than in higher-tax states.
+          </div>
+        </details>
+
+        <details>
+          <summary>Is this page enough to calculate my exact take-home pay?</summary>
+          <div class="answer">
+            No. This page explains the system. For a closer estimate, use the linked salary and calculator pages so you can layer in salary level, state, monthly breakdowns, and other deduction assumptions.
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
