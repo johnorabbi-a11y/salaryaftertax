@@ -1,531 +1,772 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Is $100,000 a Good Salary in the US? | Take-Home Pay, Cost of Living & State Differences</title>
-  <meta name="description" content="Is $100,000 a good salary in the US? See estimated take-home pay, monthly and weekly net income, state-by-state cost differences, and whether $100k is enough for a single person or family." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Is $100,000 a Good Salary in the US? | Take-Home Pay, Monthly Income & Comparison</title>
+  <meta name="description" content="Is $100,000 a good salary in the US? See estimated take-home pay, monthly and weekly income, state comparisons, lifestyle context, and how $100k compares to nearby salaries." />
   <link rel="canonical" href="https://aftertaxtool.com/is-100000-a-good-salary-us.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo" />
   <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #dbe4f0;
-      --blue: #1d4ed8;
-      --blue-dark: #1e40af;
-      --green: #166534;
-      --green-bg: #ecfdf5;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#132033;
+      --muted:#5d6b82;
+      --line:#dbe4f0;
+      --blue:#1d4ed8;
+      --blue-dark:#143ea8;
+      --soft:#eef4ff;
+      --soft2:#f8fbff;
+      --gold:#fff8dc;
+      --gold-line:#ecdca1;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --radius:18px;
+      --max:1240px;
     }
-
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#f8fbff 0%, #f5f7fb 100%);
+      color:var(--text);
+      line-height:1.6;
     }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:24px 16px 64px;
     }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
+    .breadcrumbs{
+      font-size:.95rem;
+      color:var(--muted);
+      margin-bottom:18px;
     }
-
-    a:hover {
-      color: var(--blue-dark);
-      text-decoration: underline;
+    .breadcrumbs a{color:var(--blue)}
+    .hero{
+      background:linear-gradient(135deg,#ffffff 0%, #eef4ff 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:0 10px 30px rgba(15,23,42,.08);
+      padding:32px 24px;
+      margin-bottom:22px;
     }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 24px 16px 48px;
+    .hero h1{
+      margin:0 0 12px;
+      font-size:2.25rem;
+      line-height:1.12;
+      letter-spacing:-0.02em;
     }
-
-    .hero {
-      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      margin-bottom: 20px;
+    .hero p{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width:980px;
+      font-size:1.04rem;
     }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-      line-height: 1.2;
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:20px;
     }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.05rem;
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--blue);
     }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      margin-bottom: 20px;
+    .btn.primary{
+      background:var(--blue);
+      border-color:var(--blue);
+      color:#fff;
     }
-
-    .notice {
-      background: var(--green-bg);
-      border: 1px solid #bbf7d0;
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-top: 18px;
+    .btn.primary:hover{
+      background:var(--blue-dark);
+      text-decoration:none;
     }
-
-    .notice strong {
-      color: var(--green);
+    .btn:hover{text-decoration:none}
+    .notice{
+      margin-top:18px;
+      background:var(--gold);
+      border:1px solid var(--gold-line);
+      color:#695400;
+      border-radius:14px;
+      padding:14px 16px;
+      font-size:.97rem;
     }
-
-    .grid {
-      display: grid;
-      gap: 16px;
+    .grid{
+      display:grid;
+      gap:18px;
     }
-
-    .stats-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .stats-grid{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      margin:22px 0;
     }
-
-    .stat-box {
-      background: #f8fbff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
     }
-
-    .stat-label {
-      display: block;
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 8px;
+    .stat-card h2,
+    .section h2{
+      margin:0 0 10px;
+      font-size:1.35rem;
+      line-height:1.2;
     }
-
-    .stat-value {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--blue-dark);
+    .stat-number{
+      font-size:1.7rem;
+      font-weight:800;
+      color:var(--blue-dark);
+      margin-bottom:6px;
     }
-
-    .two-col {
-      grid-template-columns: 1.25fr 0.95fr;
-      align-items: start;
+    .muted{color:var(--muted)}
+    .section{
+      margin-top:22px;
     }
-
-    h2 {
-      font-size: 1.45rem;
-      margin-top: 0;
-      margin-bottom: 14px;
+    .section-intro{
+      margin-top:-2px;
+      color:var(--muted);
     }
-
-    h3 {
-      font-size: 1.08rem;
-      margin-top: 0;
-      margin-bottom: 10px;
+    .two-col{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
     }
-
-    p:last-child,
-    ul:last-child {
-      margin-bottom: 0;
+    .three-col{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
     }
-
-    .table-wrap {
-      overflow-x: auto;
+    .link-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.98rem;
+    .link-card{
+      display:block;
+      background:var(--soft2);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      min-height:78px;
+      font-weight:700;
+      color:var(--blue-dark);
     }
-
-    th,
-    td {
-      padding: 12px 10px;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-      vertical-align: top;
+    .link-card span{
+      display:block;
+      font-size:.88rem;
+      color:var(--muted);
+      font-weight:400;
+      margin-top:5px;
     }
-
-    th {
-      background: #f8fafc;
-      color: #111827;
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:16px;
     }
-
-    .muted {
-      color: var(--muted);
+    .mini-box{
+      background:var(--soft);
+      border:1px solid #cfe0ff;
+      border-radius:16px;
+      padding:18px;
     }
-
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+    .mini-box h3{
+      margin:0 0 6px;
+      font-size:1rem;
     }
-
-    .link-group {
-      background: #f8fbff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
+    .mini-box .big{
+      font-size:1.55rem;
+      font-weight:800;
+      color:var(--blue-dark);
+      line-height:1.15;
     }
-
-    .link-group ul {
-      margin: 0;
-      padding-left: 18px;
+    .chip-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
     }
-
-    .faq-item {
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-      margin-top: 16px;
+    .chip{
+      display:inline-block;
+      padding:10px 12px;
+      background:var(--soft);
+      border:1px solid #cfe0ff;
+      border-radius:999px;
+      font-weight:700;
+      color:var(--blue-dark);
+      font-size:.96rem;
     }
-
-    .compare-boxes {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:14px;
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
     }
-
-    .compare-box {
-      background: #f8fbff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
+    th,td{
+      padding:14px 12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
     }
-
-    .ad-box {
-      text-align: center;
-      padding: 22px;
-      border: 1px dashed #bfd0ea;
-      border-radius: 16px;
-      color: var(--muted);
-      background: #fbfdff;
-      font-size: 0.95rem;
+    th{
+      background:#f8fbff;
+      font-size:.95rem;
     }
-
-    .small {
-      font-size: 0.92rem;
+    tr:last-child td{border-bottom:none}
+    ul.clean{
+      margin:12px 0 0;
+      padding-left:18px;
     }
-
-    @media (max-width: 920px) {
-      .stats-grid,
-      .two-col,
-      .compare-boxes,
-      .link-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 1.7rem;
-      }
+    ul.clean li{margin:8px 0}
+    .ad-slot{
+      margin:24px 0;
+      border:1px dashed #b9c8dc;
+      border-radius:16px;
+      background:linear-gradient(180deg,#fbfdff 0%, #f5f8fd 100%);
+      color:#6d7c92;
+      text-align:center;
+      padding:22px 16px;
+      font-weight:700;
+    }
+    .faq details{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:14px;
+      padding:15px 16px;
+      margin:12px 0;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight:700;
+      color:var(--text);
+    }
+    .faq p{
+      margin:12px 0 0;
+      color:var(--muted);
+    }
+    .footer-links{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+    @media (max-width:1100px){
+      .stats-grid,.link-grid,.mini-grid,.footer-links,.three-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      .hero h1{font-size:1.85rem}
+      .stats-grid,.link-grid,.mini-grid,.footer-links,.three-col{grid-template-columns:1fr}
+      .container{padding:18px 12px 48px}
+      .card,.hero{padding:18px}
+      th,td{padding:12px 10px}
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <nav class="breadcrumbs">
+      <a href="/">Home</a> ›
+      <a href="/salary-after-tax-us.html">Salary After Tax US</a> ›
+      Is $100,000 a Good Salary in the US?
+    </nav>
 
     <section class="hero">
       <h1>Is $100,000 a Good Salary in the US?</h1>
       <p>
-        A $100,000 salary is widely seen as a strong income in the US, but how strong it feels depends on more than the headline number. Your state, housing costs, family size, debts, and benefits all affect whether $100k feels comfortably upper-middle, merely solid, or stretched by local living costs.
+        <strong>$100,000 a year in the US</strong> is widely seen as a strong salary, but whether it feels genuinely
+        good depends on where you live, how much housing costs, whether you support a family, and how much is lost to
+        taxes, benefits, retirement contributions and other deductions.
       </p>
+      <p>
+        In many parts of the country, a $100k salary can support a comfortable lifestyle with room for savings and
+        flexibility. In high-cost areas, especially expensive parts of California or New York, it may still feel less
+        impressive than the headline number suggests. That is why it helps to compare <strong>annual, monthly and weekly
+        take-home pay</strong>, then judge $100k against nearby salaries and state-specific versions.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn primary" href="/100000-salary-after-tax-us.html">$100,000 After Tax US</a>
+        <a class="btn" href="/100000-after-tax-monthly-us.html">$100,000 Monthly</a>
+        <a class="btn" href="/100000-after-tax-weekly-us.html">$100,000 Weekly</a>
+        <a class="btn" href="/salary-to-hourly.html">Salary to Hourly Calculator</a>
+      </div>
+
       <div class="notice">
-        <strong>Quick answer:</strong> yes, <strong>$100,000 is a good salary in the US</strong> for many people. For a single person it is often very comfortable, while for families it can range from solid to strong depending on location and expenses. On a simple federal-only estimate, $100,000 works out to about <strong>$81,259 after tax per year</strong>, or roughly <strong>$6,772 per month</strong>.
+        This page is a practical salary comparison guide. Actual take-home pay can vary depending on filing status,
+        state tax, retirement contributions, healthcare deductions, bonuses and payroll setup.
       </div>
     </section>
 
-    <section class="card">
-      <h2>$100,000 salary after tax – quick stats</h2>
-      <div class="grid stats-grid">
-        <div class="stat-box">
-          <span class="stat-label">Annual gross pay</span>
-          <div class="stat-value">$100,000</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">Estimated annual take-home</span>
-          <div class="stat-value">$81,259</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">Estimated monthly take-home</span>
-          <div class="stat-value">$6,772</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-label">Estimated weekly take-home</span>
-          <div class="stat-value">$1,563</div>
-        </div>
-      </div>
-      <p class="muted small" style="margin-top: 14px;">
-        Estimate based on a simple single-filer federal scenario using the standard deduction and no extra pre-tax deductions. Real take-home pay can be higher or lower once state income tax, health insurance, retirement contributions, and filing status are included.
+    <section class="grid stats-grid">
+      <article class="card stat-card">
+        <h2>Salary Level</h2>
+        <div class="stat-number">Strong benchmark</div>
+        <div class="muted">A major US salary milestone often used in job, promotion and lifestyle comparisons.</div>
+      </article>
+      <article class="card stat-card">
+        <h2>Best Use</h2>
+        <div class="stat-number">Lifestyle check</div>
+        <div class="muted">Useful for seeing what a six-figure salary actually feels like after taxes.</div>
+      </article>
+      <article class="card stat-card">
+        <h2>Best Comparison</h2>
+        <div class="stat-number">$85k–$120k</div>
+        <div class="muted">This is where nearby comparisons become most useful for judging real progression.</div>
+      </article>
+      <article class="card stat-card">
+        <h2>Support Layer</h2>
+        <div class="stat-number">State + monthly</div>
+        <div class="muted">State pages and monthly comparisons are especially valuable at this salary level.</div>
+      </article>
+    </section>
+
+    <div class="ad-slot">Advertisement Placeholder</div>
+
+    <section class="section card">
+      <h2>$100,000 Take-Home Pay at a Glance</h2>
+      <p class="section-intro">
+        A six-figure salary sounds strong on paper, but the most useful question is what is actually left after federal
+        tax, payroll deductions and possible state tax. These broad figures help frame what $100k can mean in practice.
       </p>
-    </section>
 
-    <section class="grid two-col">
-      <div class="card">
-        <h2>How much is $100,000 after tax in the US?</h2>
-        <p>
-          Earning six figures is an important milestone, but the gross figure is only part of the picture. Federal income tax, Social Security, and Medicare reduce the amount you actually take home, and state taxes can widen the difference further.
-        </p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Estimated amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Gross salary</td>
-                <td>$100,000</td>
-              </tr>
-              <tr>
-                <td>Federal income tax</td>
-                <td>$11,681</td>
-              </tr>
-              <tr>
-                <td>Social Security</td>
-                <td>$6,200</td>
-              </tr>
-              <tr>
-                <td>Medicare</td>
-                <td>$1,450</td>
-              </tr>
-              <tr>
-                <td><strong>Estimated take-home pay</strong></td>
-                <td><strong>$81,259</strong></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="mini-grid">
+        <div class="mini-box">
+          <h3>Estimated annual take-home</h3>
+          <div class="big">Around low-to-mid $70k range</div>
+          <div class="muted">A far more realistic planning figure than the gross headline salary.</div>
         </div>
-        <p>
-          That leaves roughly $6,772 per month after federal taxes in a simple baseline scenario. For many people, that is enough to move beyond basic financial stability into stronger saving, investing, and lifestyle flexibility.
-        </p>
+        <div class="mini-box">
+          <h3>Estimated monthly take-home</h3>
+          <div class="big">Around low-to-mid $6k range</div>
+          <div class="muted">Useful for housing, bills, savings targets and medium-term budgeting.</div>
+        </div>
+        <div class="mini-box">
+          <h3>Estimated weekly take-home</h3>
+          <div class="big">Around mid-$1k range</div>
+          <div class="muted">Useful for shorter cash-flow and practical spending comparisons.</div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>Why gross and net pay are different</h2>
-        <ul>
-          <li><strong>Federal income tax:</strong> taxable income is reduced by deductions, but a large portion of pay is still taxed.</li>
-          <li><strong>FICA taxes:</strong> Social Security and Medicare are normally withheld from paychecks.</li>
-          <li><strong>State income tax:</strong> six figures in Texas or Florida often goes further than six figures in California or New York.</li>
-          <li><strong>Payroll deductions:</strong> 401(k), health insurance, HSA contributions, and other benefits all reduce net pay.</li>
-          <li><strong>Family status:</strong> your filing status and dependents can change your effective tax position.</li>
+      <div class="chip-wrap">
+        <a class="chip" href="/100000-salary-after-tax-us.html">View full $100k annual page</a>
+        <a class="chip" href="/100000-after-tax-monthly-us.html">View $100k monthly page</a>
+        <a class="chip" href="/100000-after-tax-weekly-us.html">View $100k weekly page</a>
+        <a class="chip" href="/take-home-pay-us.html">Read take-home pay guide</a>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <article class="card">
+        <h2>Is $100,000 a Good Salary in America?</h2>
+        <p class="section-intro">
+          In general, <strong>yes</strong> — $100k is usually considered a good salary in the US. It tends to provide
+          strong flexibility for a single person and can also support a household more comfortably than many mid-range salaries,
+          though local costs still matter a lot.
+        </p>
+
+        <ul class="clean">
+          <li>In lower-cost areas, $100k can provide a very comfortable lifestyle with room for savings and discretionary spending.</li>
+          <li>In average-cost areas, it is often seen as a strong and stable income with meaningful lifestyle flexibility.</li>
+          <li>In high-cost cities, it is still a solid salary, but it may not stretch as far as many people assume.</li>
+          <li>For households, $100k can be a major financial milestone, especially when combined with another income.</li>
+          <li>For career comparison, $100k is a clear benchmark salary that sits above many common US pay levels.</li>
         </ul>
-      </div>
-    </section>
 
-    <section class="card">
-      <h2>Is $100,000 a good salary in the US?</h2>
-      <p>
-        Yes. In most parts of the country, $100,000 is clearly a good salary. It usually gives a single adult a comfortable standard of living, strong room for saving, and the ability to handle everyday expenses without constant financial pressure.
-      </p>
-      <p>
-        For families, the answer is still usually yes, but the margin varies. In lower-cost states, $100k can feel strong and secure. In expensive metro areas with childcare, high rent, and commuting costs, it may still be a good salary without feeling especially wealthy. That is why location matters so much when judging whether six figures is “good.”
-      </p>
-
-      <div class="grid two-col" style="margin-top: 18px;">
-        <div class="link-group">
-          <h3>For a single person</h3>
-          <p>
-            For a single adult, $100,000 is usually a very good salary in the US. With an estimated $6,772 a month after federal taxes, there is often room for higher rent, travel, saving, retirement investing, and a stronger emergency buffer.
-          </p>
-          <p>
-            In many cities and states, this is the level where work income starts supporting long-term wealth building rather than just covering monthly life.
-          </p>
-        </div>
-        <div class="link-group">
-          <h3>For a couple or family</h3>
-          <p>
-            For households with children, $100,000 is often solid to strong, but it is not automatically high-income everywhere. Childcare, larger housing needs, and transport costs can absorb a big share of the extra take-home pay.
-          </p>
-          <p>
-            It is usually enough for stability and planning, especially outside the highest-cost areas, but family budgets can still feel stretched in expensive locations.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>State comparison – where $100,000 goes further</h2>
-      <p>
-        At $100,000, state differences become even more noticeable because both taxes and lifestyle choices scale up. Two people on the same six-figure salary can experience very different standards of living depending on where they live.
-      </p>
-      <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>State type</th>
-              <th>How $100k tends to feel</th>
+              <th>Situation</th>
+              <th>How $100k may feel</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>No-tax or lower-tax states<br><span class="muted">Texas, Florida</span></td>
-              <td>Often feels comfortably strong. More income stays in your pocket, and housing can be better value.</td>
+              <td>Single person, lower-cost area</td>
+              <td>Usually strong to very comfortable</td>
             </tr>
             <tr>
-              <td>Higher-cost, higher-tax states<br><span class="muted">California, New York</span></td>
-              <td>Still a good salary, but the lifestyle difference can shrink quickly once rent, childcare, and commuting are included.</td>
+              <td>Single person, average-cost area</td>
+              <td>Typically a very solid salary with flexibility</td>
             </tr>
             <tr>
-              <td>Mid-cost states and cities</td>
-              <td>Usually a sweet spot where $100k supports good housing, decent saving, and more flexibility.</td>
+              <td>Single person, high-cost city</td>
+              <td>Still good, but often less powerful than expected</td>
+            </tr>
+            <tr>
+              <td>Household budget planning</td>
+              <td>A strong benchmark, though family costs still matter</td>
+            </tr>
+            <tr>
+              <td>Promotion or career progression</td>
+              <td>A major salary milestone worth comparing carefully</td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <p>
-        This is why national guides are useful, but state-specific salary pages often give the more realistic answer for everyday budgeting.
+      </article>
+
+      <aside class="card">
+        <h2>Best Quick Routes</h2>
+        <div class="link-grid" style="grid-template-columns:1fr;">
+          <a class="link-card" href="/100000-salary-after-tax-us.html">
+            $100,000 after tax
+            <span>Main annual salary comparison page</span>
+          </a>
+          <a class="link-card" href="/100000-after-tax-monthly-us.html">
+            $100,000 monthly
+            <span>Best for recurring budget planning</span>
+          </a>
+          <a class="link-card" href="/100000-after-tax-weekly-us.html">
+            $100,000 weekly
+            <span>Best for shorter cash-flow comparison</span>
+          </a>
+          <a class="link-card" href="/salary-after-tax-100000-200000-us.html">
+            $100k–$200k US hub
+            <span>Compare $100k against higher salary levels</span>
+          </a>
+          <a class="link-card" href="/salary-to-hourly.html">
+            Salary to hourly
+            <span>Convert $100k into an hourly equivalent</span>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="ad-slot">Advertisement Placeholder</div>
+
+    <section class="section card">
+      <h2>How $100,000 Compares to Nearby Salaries</h2>
+      <p class="section-intro">
+        One of the best ways to judge whether $100k is good is to compare it with nearby salary levels and see whether
+        the extra take-home pay over $85k or $90k is meaningful, and how it compares with $120k and beyond.
       </p>
-    </section>
 
-    <section class="card">
-      <h2>What can change your take-home pay?</h2>
-      <div class="grid two-col">
-        <div>
-          <ul>
-            <li><strong>401(k) contributions:</strong> can reduce federal taxable income while helping build retirement savings.</li>
-            <li><strong>Health insurance and benefits:</strong> employer deductions can be substantial at this salary level.</li>
-            <li><strong>Filing status:</strong> married filing jointly or head of household can change the final tax picture.</li>
-            <li><strong>State income tax:</strong> one of the biggest reasons take-home pay varies across locations.</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li><strong>Bonuses and overtime:</strong> can push total annual compensation above $100k, but withholding patterns may vary.</li>
-            <li><strong>Pre-tax deductions:</strong> HSA, FSA, and commuter benefits reduce taxable pay.</li>
-            <li><strong>Debt load:</strong> student loans, auto loans, and credit card debt change how “good” six figures feels.</li>
-            <li><strong>Local costs:</strong> housing, childcare, transport, and insurance often matter as much as tax.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>$100,000 salary comparison</h2>
-      <div class="compare-boxes">
-        <div class="compare-box">
-          <h3>$100k vs $80k</h3>
-          <p>
-            Compared with $80,000, six figures often provide a more noticeable savings buffer and more flexibility for housing and lifestyle choices.
-          </p>
-          <p><a href="/is-80000-a-good-salary-us.html">See whether $80,000 is a good salary in the US</a></p>
-        </div>
-        <div class="compare-box">
-          <h3>$100k vs $120k</h3>
-          <p>
-            Moving from $100,000 to $120,000 can create another meaningful jump in monthly breathing room, especially after fixed costs are covered.
-          </p>
-          <p><a href="/is-120000-a-good-salary-us.html">See if $120,000 is a good salary in the US</a></p>
-        </div>
-        <div class="compare-box">
-          <h3>High-tax vs no-tax states</h3>
-          <p>
-            The six-figure threshold feels stronger in no-tax states, where more of that milestone income becomes usable take-home pay.
-          </p>
-          <p><a href="/100000-salary-after-tax-texas.html">View a Texas example</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="ad-box">Advertisement</div>
-    </section>
-
-    <section class="card">
-      <h2>Useful salary and state links</h2>
       <div class="link-grid">
-        <div class="link-group">
-          <h3>Direct $100,000 salary links</h3>
-          <ul>
-            <li><a href="/100000-salary-after-tax-us.html">$100,000 salary after tax (US)</a></li>
-            <li><a href="/100000-after-tax-monthly-us.html">$100,000 after tax per month (US)</a></li>
-            <li><a href="/100000-after-tax-weekly-us.html">$100,000 after tax per week (US)</a></li>
-            <li><a href="/salary-after-tax-us.html">US salary after tax hub</a></li>
-            <li><a href="/us-salary-guides.html">US salary guides</a></li>
-            <li><a href="/">AfterTaxTool homepage</a></li>
-          </ul>
-        </div>
-
-        <div class="link-group">
-          <h3>Nearby US salary pages</h3>
-          <ul>
-            <li><a href="/80000-salary-after-tax-us.html">$80,000 salary after tax (US)</a></li>
-            <li><a href="/90000-salary-after-tax-us.html">$90,000 salary after tax (US)</a></li>
-            <li><a href="/110000-salary-after-tax-us.html">$110,000 salary after tax (US)</a></li>
-            <li><a href="/120000-salary-after-tax-us.html">$120,000 salary after tax (US)</a></li>
-            <li><a href="/70000-salary-after-tax-us.html">$70,000 salary after tax (US)</a></li>
-          </ul>
-        </div>
-
-        <div class="link-group">
-          <h3>Relevant state pages</h3>
-          <ul>
-            <li><a href="/100000-salary-after-tax-california.html">$100,000 salary after tax in California</a></li>
-            <li><a href="/100000-salary-after-tax-texas.html">$100,000 salary after tax in Texas</a></li>
-            <li><a href="/100000-salary-after-tax-new-york.html">$100,000 salary after tax in New York</a></li>
-            <li><a href="/100000-salary-after-tax-florida.html">$100,000 salary after tax in Florida</a></li>
-            <li><a href="/100000-salary-after-tax-illinois.html">$100,000 salary after tax in Illinois</a></li>
-          </ul>
-        </div>
-
-        <div class="link-group">
-          <h3>Related authority pages</h3>
-          <ul>
-            <li><a href="/is-80000-a-good-salary-us.html">Is $80,000 a good salary in the US?</a></li>
-            <li><a href="/is-120000-a-good-salary-us.html">Is $120,000 a good salary in the US?</a></li>
-            <li><a href="/is-60000-a-good-salary-us.html">Is $60,000 a good salary in the US?</a></li>
-            <li><a href="/is-50000-a-good-salary-uk.html">Is £50,000 a good salary in the UK?</a></li>
-            <li><a href="/is-70000-a-good-salary-uk.html">Is £70,000 a good salary in the UK?</a></li>
-          </ul>
-        </div>
+        <a class="link-card" href="/85000-salary-after-tax-us.html">
+          $85,000 after tax
+          <span>Compare against a strong upper-mid salary</span>
+        </a>
+        <a class="link-card" href="/90000-salary-after-tax-us.html">
+          $90,000 after tax
+          <span>See how close it feels to six figures</span>
+        </a>
+        <a class="link-card" href="/100000-salary-after-tax-us.html">
+          $100,000 after tax
+          <span>Main $100k benchmark page</span>
+        </a>
+        <a class="link-card" href="/120000-salary-after-tax-us.html">
+          $120,000 after tax
+          <span>Useful next-step progression comparison</span>
+        </a>
+        <a class="link-card" href="/150000-salary-after-tax-us.html">
+          $150,000 after tax
+          <span>See what a bigger jump looks like</span>
+        </a>
+        <a class="link-card" href="/90000-salary-after-tax-california.html">
+          $90,000 California
+          <span>Strong California comparison page</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-us.html">
+          Salary After Tax US
+          <span>Main US salary hub</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-by-income.html">
+          Salary by income
+          <span>Browse wider salary bands in one place</span>
+        </a>
       </div>
     </section>
 
-    <section class="card">
-      <h2>FAQ – $100,000 salary in the US</h2>
+    <section class="section card">
+      <h2>Monthly and Weekly Views Matter at $100k</h2>
+      <p class="section-intro">
+        Even at a six-figure salary, annual pay on its own does not tell the full story. Monthly and weekly views make
+        it much easier to judge the real spending power and budgeting value of $100k.
+      </p>
 
-      <div class="faq-item">
-        <h3>Is $100,000 a good salary for a single person?</h3>
-        <p>
-          Yes. In most parts of the US, $100,000 is a very good salary for a single person and usually allows comfortable living, saving, and investing.
-        </p>
+      <table>
+        <thead>
+          <tr>
+            <th>View</th>
+            <th>Why it matters</th>
+            <th>Explore</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Annual</td>
+            <td>Best for broad compensation and role comparison</td>
+            <td><a href="/100000-salary-after-tax-us.html">$100k annual after tax</a></td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td>Most useful for housing, bills, savings and family budgeting</td>
+            <td><a href="/100000-after-tax-monthly-us.html">$100k monthly after tax</a></td>
+          </tr>
+          <tr>
+            <td>Weekly</td>
+            <td>Helpful for practical weekly cash-flow and near-term comparison</td>
+            <td><a href="/100000-after-tax-weekly-us.html">$100k weekly after tax</a></td>
+          </tr>
+          <tr>
+            <td>Hourly equivalent</td>
+            <td>Useful when comparing salaried and hourly opportunities</td>
+            <td><a href="/salary-to-hourly.html">Convert salary to hourly</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="ad-slot">Advertisement Placeholder</div>
+
+    <section class="section card">
+      <h2>Is $100,000 Good in Different States?</h2>
+      <p class="section-intro">
+        $100k can feel very different depending on the state. State tax, housing markets and cost of living have a major
+        effect on how strong a six-figure salary really feels.
+      </p>
+
+      <div class="three-col">
+        <div class="card" style="padding:18px; margin-top:0;">
+          <h3 style="margin:0 0 10px;">California</h3>
+          <p class="muted" style="margin:0 0 12px;">
+            $100k is still a strong salary in California, but the cost of living in expensive areas can reduce how powerful it feels.
+          </p>
+          <div class="chip-wrap">
+            <a class="chip" href="/100000-salary-after-tax-california.html">$100k California</a>
+            <a class="chip" href="/salary-after-tax-california.html">California salary hub</a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:18px; margin-top:0;">
+          <h3 style="margin:0 0 10px;">Texas</h3>
+          <p class="muted" style="margin:0 0 12px;">
+            In Texas, a $100k salary can often go further thanks to lower tax pressure and generally less expensive housing markets.
+          </p>
+          <div class="chip-wrap">
+            <a class="chip" href="/100000-salary-after-tax-texas.html">$100k Texas</a>
+            <a class="chip" href="/salary-after-tax-texas.html">Texas salary hub</a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:18px; margin-top:0;">
+          <h3 style="margin:0 0 10px;">New York</h3>
+          <p class="muted" style="margin:0 0 12px;">
+            In New York, especially around higher-cost areas, a $100k salary is still good, but it may feel less flexible than expected.
+          </p>
+          <div class="chip-wrap">
+            <a class="chip" href="/100000-salary-after-tax-new-york.html">$100k New York</a>
+            <a class="chip" href="/salary-after-tax-new-york.html">New York salary hub</a>
+          </div>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <h3>Is $100,000 a good salary for a family?</h3>
-        <p>
-          Usually yes, but the answer depends on location and costs. In lower-cost areas it can feel strong, while in expensive cities with childcare and high housing costs it may feel more moderate.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How much is $100,000 after tax per month?</h3>
-        <p>
-          On a simple federal-only estimate, $100,000 works out to about $6,772 per month after tax. Your real monthly take-home may vary with state tax and payroll deductions.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Does state tax make a big difference at $100,000?</h3>
-        <p>
-          Yes. At six figures, the difference between living in a no-tax state and a higher-tax state can be meaningful, especially when combined with differences in rent and general living costs.
-        </p>
+      <div class="link-grid">
+        <a class="link-card" href="/100000-salary-after-tax-florida.html">
+          $100k Florida
+          <span>Useful for no-state-income-tax comparison</span>
+        </a>
+        <a class="link-card" href="/100000-salary-after-tax-illinois.html">
+          $100k Illinois
+          <span>Midwestern benchmark comparison</span>
+        </a>
+        <a class="link-card" href="/85000-salary-after-tax-california.html">
+          $85k California
+          <span>Useful California contrast point</span>
+        </a>
+        <a class="link-card" href="/90000-salary-after-tax-california.html">
+          $90k California
+          <span>Strong California winner route</span>
+        </a>
       </div>
     </section>
 
+    <section class="section two-col">
+      <article class="card">
+        <h2>What Makes $100,000 Feel Strong or Underwhelming?</h2>
+        <p class="section-intro">
+          The difference between a “good” six-figure salary and a merely “okay” one often comes down to local costs and
+          household structure rather than the salary figure itself.
+        </p>
+
+        <ul class="clean">
+          <li><strong>Housing:</strong> six figures stretches much further in lower-cost housing markets than in expensive urban areas.</li>
+          <li><strong>Family size:</strong> a single person and a family with children will experience $100k very differently.</li>
+          <li><strong>State tax:</strong> a no-state-income-tax environment can make six figures feel much stronger.</li>
+          <li><strong>Debt obligations:</strong> large car payments, student loans and credit commitments can quickly erode flexibility.</li>
+          <li><strong>Benefits package:</strong> employer healthcare and retirement matching materially improve the value of $100k.</li>
+          <li><strong>Commute and lifestyle:</strong> major commuting costs and higher discretionary spending can reduce the practical advantage.</li>
+        </ul>
+      </article>
+
+      <aside class="card">
+        <h2>Tax and Take-Home Support</h2>
+        <div class="link-grid" style="grid-template-columns:1fr;">
+          <a class="link-card" href="/take-home-pay-us.html">
+            Take Home Pay US
+            <span>Broader guide to real net pay after deductions</span>
+          </a>
+          <a class="link-card" href="/us-income-tax-explained.html">
+            US Income Tax Explained
+            <span>Understand the deductions behind salary estimates</span>
+          </a>
+          <a class="link-card" href="/salary-after-tax-monthly-us.html">
+            Monthly salary hub
+            <span>Move into practical monthly comparisons</span>
+          </a>
+          <a class="link-card" href="/salary-after-tax-weekly-us.html">
+            Weekly salary hub
+            <span>Useful for weekly budget comparisons</span>
+          </a>
+          <a class="link-card" href="/hourly-to-salary-us.html">
+            Hourly to salary US
+            <span>Reverse the comparison if you think in hourly rates</span>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="ad-slot">Advertisement Placeholder</div>
+
+    <section class="section card faq">
+      <h2>Is $100,000 a Good Salary in the US? – FAQs</h2>
+
+      <details open>
+        <summary>Is $100,000 a good salary for a single person in the US?</summary>
+        <p>
+          In most parts of the country, yes. A $100k salary is usually considered strong for a single person, though it
+          will still feel less impressive in the most expensive housing markets.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is $100,000 a good household salary?</summary>
+        <p>
+          It can be a good household salary, especially in lower-cost and average-cost areas. In higher-cost areas or
+          larger households, it may still require careful budgeting but is generally a solid benchmark.
+        </p>
+      </details>
+
+      <details>
+        <summary>How much is $100,000 after tax per month?</summary>
+        <p>
+          The exact figure depends on taxes and deductions, but the monthly take-home amount is much more useful than the
+          gross salary for judging housing affordability and recurring expenses. Use the
+          <a href="/100000-after-tax-monthly-us.html">$100k monthly page</a> for the practical view.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is $100,000 still a good salary in California?</summary>
+        <p>
+          Yes, it is still generally a good salary, but it may not feel as powerful as people expect in high-cost parts
+          of California. Housing and state tax make a big difference.
+        </p>
+      </details>
+
+      <details>
+        <summary>Should I compare $100,000 with $90,000 or $120,000?</summary>
+        <p>
+          Both are useful. $90k helps show whether the extra jump to six figures is meaningful, while $120k shows what
+          the next major step up looks like after tax.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does $100,000 mean financial comfort everywhere?</summary>
+        <p>
+          Not everywhere. It often provides strong flexibility, but not all regions have the same rent, tax and transport
+          costs. Location still matters a lot.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why does a six-figure salary sometimes feel smaller than expected?</summary>
+        <p>
+          Because taxes, payroll deductions, retirement contributions, healthcare costs and housing can take a large share
+          of what looks like a very strong gross salary.
+        </p>
+      </details>
+    </section>
+
+    <section class="section card">
+      <h2>Compare More “Good Salary” and Benchmark Pages</h2>
+      <p class="section-intro">
+        This page works best inside a wider comparison network. Browse nearby salaries and broader hubs to see where
+        $100k sits in the US salary landscape.
+      </p>
+
+      <div class="link-grid">
+        <a class="link-card" href="/is-50000-a-good-salary-us.html">
+          Is $50k a good salary?
+          <span>Compare against a lower benchmark</span>
+        </a>
+        <a class="link-card" href="/is-70000-a-good-salary-us.html">
+          Is $70k a good salary?
+          <span>Compare against a strong mid-range benchmark</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-100000-200000-us.html">
+          $100k–$200k salary hub
+          <span>Browse the wider six-figure range</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-by-income.html">
+          Salary by income
+          <span>Navigate US salaries across wider bands</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-us.html">
+          Salary After Tax US
+          <span>Main US hub page</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-monthly-us.html">
+          Salary After Tax Monthly US
+          <span>Strong monthly take-home hub</span>
+        </a>
+        <a class="link-card" href="/salary-after-tax-weekly-us.html">
+          Salary After Tax Weekly US
+          <span>Strong weekly take-home hub</span>
+        </a>
+        <a class="link-card" href="/take-home-pay-us.html">
+          Take Home Pay US
+          <span>Authority page supporting broader take-home queries</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot">Advertisement Placeholder</div>
+
+    <section class="section card">
+      <h2>Explore More US Salary Routes</h2>
+      <p class="section-intro">
+        These routes strengthen the broader US network and help move users into annual salary pages, monthly pages,
+        weekly pages, state pages and calculator tools.
+      </p>
+
+      <div class="footer-links">
+        <a class="link-card" href="/salary-after-tax-us.html">US Salary Hub<span>Main US anchor page</span></a>
+        <a class="link-card" href="/salary-after-tax-by-income.html">Salary by Income<span>Broad distribution hub</span></a>
+        <a class="link-card" href="/salary-after-tax-100000-200000-us.html">$100k–$200k Hub<span>Core six-figure hub</span></a>
+        <a class="link-card" href="/100000-salary-after-tax-us.html">$100k After Tax<span>Main annual page</span></a>
+        <a class="link-card" href="/100000-after-tax-monthly-us.html">$100k Monthly<span>Monthly planning page</span></a>
+        <a class="link-card" href="/100000-after-tax-weekly-us.html">$100k Weekly<span>Weekly planning page</span></a>
+        <a class="link-card" href="/salary-to-hourly.html">Salary to Hourly<span>Calculator route</span></a>
+        <a class="link-card" href="/hourly-to-salary-us.html">Hourly to Salary US<span>US calculator route</span></a>
+        <a class="link-card" href="/salary-after-tax-california.html">California Hub<span>State route</span></a>
+        <a class="link-card" href="/90000-salary-after-tax-california.html">$90k California<span>Winner route</span></a>
+      </div>
+    </section>
   </div>
 </body>
 </html>
