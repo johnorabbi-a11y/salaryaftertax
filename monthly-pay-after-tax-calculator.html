@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Monthly Pay After Tax Calculator | Estimate Monthly Take-Home Pay</title>
-  <meta name="description" content="Use the monthly pay after tax calculator to estimate how much of your gross monthly income you may take home after tax. Compare UK and US monthly salary examples." />
+  <meta name="description" content="Use the monthly pay after tax calculator to estimate how much of your gross monthly income you may take home after tax. Compare UK and US monthly salary examples, annual equivalents and monthly take-home pay links." />
   <link rel="canonical" href="https://aftertaxtool.com/monthly-pay-after-tax-calculator.html" />
+  <meta name="robots" content="index,follow" />
 
   <style>
     body {
@@ -15,6 +16,15 @@
       background: #f3f7fb;
       color: #1f2937;
       line-height: 1.6;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -27,11 +37,6 @@
       font-size: 14px;
       margin-bottom: 18px;
       color: #4b5563;
-    }
-
-    .breadcrumb a {
-      color: #2563eb;
-      text-decoration: none;
     }
 
     .hero {
@@ -98,6 +103,11 @@
       color: #111827;
     }
 
+    .card h3 {
+      margin-top: 22px;
+      color: #111827;
+    }
+
     .calculator {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -111,13 +121,15 @@
       margin-bottom: 8px;
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
       box-sizing: border-box;
       padding: 13px;
       border: 1px solid #cbd5e1;
       border-radius: 10px;
       font-size: 16px;
+      background: #ffffff;
     }
 
     button {
@@ -130,6 +142,10 @@
       font-weight: 700;
       cursor: pointer;
       margin-top: 28px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
     }
 
     .result {
@@ -145,6 +161,33 @@
       color: #0f172a;
     }
 
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .result-box {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .result-box span {
+      display: block;
+      color: #6b7280;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .result-box b {
+      display: block;
+      color: #111827;
+      font-size: 20px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -152,10 +195,12 @@
       background: #ffffff;
     }
 
-    th, td {
+    th,
+    td {
       padding: 14px;
       border-bottom: 1px solid #e5e7eb;
       text-align: left;
+      vertical-align: top;
     }
 
     th {
@@ -178,6 +223,11 @@
       padding: 14px;
       color: #2563eb;
       font-weight: 700;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      background: #eff6ff;
       text-decoration: none;
     }
 
@@ -204,15 +254,34 @@
       margin: 28px 0;
     }
 
+    .small-note {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 12px;
+    }
+
+    .highlight {
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
     @media (max-width: 800px) {
       .grid,
       .calculator,
-      .links {
+      .links,
+      .result-grid {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
         font-size: 30px;
+      }
+
+      .container {
+        padding: 16px;
       }
     }
   </style>
@@ -237,11 +306,11 @@
       </p>
 
       <p>
-        The calculator gives a broad estimate rather than payroll advice. For full country-specific examples, use the UK and US monthly salary pages linked below, where you can compare monthly, weekly and yearly take-home figures in more detail.
+        This page also connects the main monthly salary examples across AfterTaxTool. You can use the calculator first, then compare annual salary pages, monthly pages, weekly pages and US state pages to see how the same income changes across different tax systems.
       </p>
 
       <div class="notice">
-        <strong>Quick answer:</strong> Enter your expected gross monthly pay below to estimate your monthly take-home pay and annual equivalent.
+        <strong>Quick answer:</strong> Enter your expected gross monthly pay below to estimate monthly take-home pay, annual gross salary, yearly take-home pay and estimated deductions.
       </div>
     </section>
 
@@ -252,7 +321,7 @@
       </div>
       <div class="stat">
         <strong>UK + US</strong>
-        Use this as a monthly hub for both countries.
+        Compare monthly take-home estimates.
       </div>
       <div class="stat">
         <strong>Annual equivalent</strong>
@@ -302,6 +371,10 @@
       <div class="result" id="result">
         Enter a monthly amount to see your estimated take-home pay.
       </div>
+
+      <p class="small-note">
+        This calculator is a planning estimate only. It does not replace payroll software, tax advice or your official payslip.
+      </p>
     </section>
 
     <div class="ad-slot">Ad placeholder</div>
@@ -324,27 +397,27 @@
           <tr>
             <td>£2,000 / $2,000</td>
             <td>£24,000 / $24,000</td>
-            <td>Entry-level or part-time equivalent in many roles.</td>
+            <td>Entry-level, part-time or early-career equivalent in many roles.</td>
           </tr>
           <tr>
             <td>£3,000 / $3,000</td>
             <td>£36,000 / $36,000</td>
-            <td>Useful for comparing typical full-time salaries.</td>
+            <td>Useful for comparing typical full-time salaries and monthly budgets.</td>
           </tr>
           <tr>
             <td>£4,000 / $4,000</td>
             <td>£48,000 / $48,000</td>
-            <td>A common middle-income planning point.</td>
+            <td>A common middle-income planning point for rent, bills and savings.</td>
           </tr>
           <tr>
             <td>£5,000 / $5,000</td>
             <td>£60,000 / $60,000</td>
-            <td>Strong salary level with more tax impact.</td>
+            <td>Strong salary level where tax impact becomes more noticeable.</td>
           </tr>
           <tr>
             <td>£7,500 / $7,500</td>
             <td>£90,000 / $90,000</td>
-            <td>Higher-income planning where deductions become more visible.</td>
+            <td>Higher-income planning where deductions can change the monthly picture significantly.</td>
           </tr>
         </tbody>
       </table>
@@ -388,10 +461,14 @@
           <tr>
             <td>7,500</td>
             <td>5,200 – 6,300</td>
-            <td>Senior salary or dual-income planning.</td>
+            <td>Senior salary, dual-income or relocation planning.</td>
           </tr>
         </tbody>
       </table>
+
+      <div class="highlight">
+        <strong>Tip:</strong> If you know your annual salary instead, use the main <a href="/">salary after tax calculator</a> or browse the salary hubs below.
+      </div>
     </section>
 
     <section class="card">
@@ -408,6 +485,9 @@
         <a href="/salary-after-tax-uk.html">UK salary after tax hub</a>
         <a href="/50000-after-tax-monthly.html">£50,000 after tax monthly</a>
         <a href="/40000-salary-after-tax-uk.html">£40,000 salary after tax UK</a>
+        <a href="/30000-after-tax-monthly.html">£30,000 after tax monthly</a>
+        <a href="/60000-after-tax-monthly.html">£60,000 after tax monthly</a>
+        <a href="/salary-guides.html">Salary guides hub</a>
       </div>
     </section>
 
@@ -425,6 +505,25 @@
         <a href="/salary-after-tax-monthly-us.html">US monthly salary after tax hub</a>
         <a href="/salary-after-tax-us.html">US salary after tax hub</a>
         <a href="/salary-after-tax-weekly-us.html">US weekly salary after tax</a>
+        <a href="/70000-after-tax-monthly-us.html">$70,000 after tax monthly US</a>
+        <a href="/80000-after-tax-monthly-us.html">$80,000 after tax monthly US</a>
+        <a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly US</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>US State Monthly Pay Examples</h2>
+      <p>
+        State income tax can change monthly take-home pay. Use these state pages to compare how the same salary may look in California, Texas, New York, Florida and Illinois.
+      </p>
+
+      <div class="links">
+        <a href="/70000-after-tax-monthly-california.html">$70,000 monthly after tax California</a>
+        <a href="/70000-after-tax-monthly-texas.html">$70,000 monthly after tax Texas</a>
+        <a href="/70000-after-tax-monthly-new-york.html">$70,000 monthly after tax New York</a>
+        <a href="/70000-after-tax-monthly-florida.html">$70,000 monthly after tax Florida</a>
+        <a href="/70000-after-tax-monthly-illinois.html">$70,000 monthly after tax Illinois</a>
+        <a href="/80000-salary-after-tax-california.html">$80,000 salary after tax California</a>
       </div>
     </section>
 
@@ -487,9 +586,25 @@
         <a href="/60000-after-tax-monthly.html">£60,000 after tax monthly</a>
         <a href="/70000-after-tax-monthly-us.html">$70,000 after tax monthly US</a>
         <a href="/80000-after-tax-monthly-us.html">$80,000 after tax monthly US</a>
-        <a href="/70000-after-tax-monthly-california.html">$70,000 monthly after tax California</a>
-        <a href="/70000-after-tax-monthly-texas.html">$70,000 monthly after tax Texas</a>
-        <a href="/70000-after-tax-monthly-new-york.html">$70,000 monthly after tax New York</a>
+        <a href="/90000-after-tax-monthly-us.html">$90,000 after tax monthly US</a>
+        <a href="/100000-after-tax-monthly-us.html">$100,000 after tax monthly US</a>
+        <a href="/salary-after-tax-monthly-us.html">US monthly salary after tax hub</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Related Salary Calculators and Hubs</h2>
+      <p>
+        Monthly income is only one way to look at pay. These related calculators and guides help you move between annual salary, hourly pay, weekly take-home pay and broader salary comparisons.
+      </p>
+
+      <div class="links">
+        <a href="/">Salary after tax calculator</a>
+        <a href="/hourly-to-salary.html">Hourly to salary calculator</a>
+        <a href="/salary-to-hourly.html">Salary to hourly calculator</a>
+        <a href="/salary-after-tax-uk.html">UK salary after tax</a>
+        <a href="/salary-after-tax-us.html">US salary after tax</a>
+        <a href="/salary-after-tax-faq.html">Salary after tax FAQ</a>
       </div>
     </section>
 
@@ -530,11 +645,21 @@
         <summary>Does US state tax affect monthly pay?</summary>
         <p>Yes. State income tax can make a noticeable difference. A salary in Texas or Florida may produce a different monthly take-home result than the same salary in California, New York or Illinois.</p>
       </details>
+
+      <details>
+        <summary>What is the best page for US monthly salary examples?</summary>
+        <p>Use the <a href="/salary-after-tax-monthly-us.html">US monthly salary after tax hub</a> to compare common American salary levels by monthly take-home pay.</p>
+      </details>
     </section>
 
   </main>
 
   <script>
+    function formatMoney(value, country) {
+      const symbol = country === 'uk' ? '£' : '$';
+      return symbol + value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    }
+
     function calculateMonthlyPay() {
       const monthlyPay = parseFloat(document.getElementById('monthlyPay').value);
       const country = document.getElementById('country').value;
@@ -547,8 +672,10 @@
       }
 
       let deductionRate = 0.24;
+      let deductionLabel = 'general estimate';
 
       if (country === 'uk') {
+        deductionLabel = 'UK estimate';
         if (monthlyPay < 2500) deductionRate = 0.18;
         else if (monthlyPay < 4500) deductionRate = 0.25;
         else if (monthlyPay < 7500) deductionRate = 0.32;
@@ -556,47 +683,155 @@
       }
 
       if (country === 'us') {
+        deductionLabel = 'US estimate';
         if (monthlyPay < 2500) deductionRate = 0.16;
         else if (monthlyPay < 4500) deductionRate = 0.23;
         else if (monthlyPay < 7500) deductionRate = 0.29;
         else deductionRate = 0.35;
 
-        if (state === 'california') deductionRate += 0.04;
-        if (state === 'new-york') deductionRate += 0.04;
-        if (state === 'illinois') deductionRate += 0.025;
-        if (state === 'texas') deductionRate -= 0.02;
-        if (state === 'florida') deductionRate -= 0.02;
+        if (state === 'california') {
+          deductionRate += 0.04;
+          deductionLabel = 'California estimate';
+        }
+        if (state === 'new-york') {
+          deductionRate += 0.04;
+          deductionLabel = 'New York estimate';
+        }
+        if (state === 'illinois') {
+          deductionRate += 0.025;
+          deductionLabel = 'Illinois estimate';
+        }
+        if (state === 'texas') {
+          deductionRate -= 0.02;
+          deductionLabel = 'Texas estimate';
+        }
+        if (state === 'florida') {
+          deductionRate -= 0.02;
+          deductionLabel = 'Florida estimate';
+        }
       }
+
+      deductionRate = Math.max(0.05, Math.min(0.55, deductionRate));
 
       const takeHome = monthlyPay * (1 - deductionRate);
       const annualGross = monthlyPay * 12;
       const annualTakeHome = takeHome * 12;
       const deductions = monthlyPay - takeHome;
+      const weeklyTakeHome = annualTakeHome / 52;
 
       result.innerHTML = `
-        <p>Estimated monthly take-home pay:</p>
-        <strong>${takeHome.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong>
+        <p><strong>${deductionLabel}</strong></p>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <span>Estimated monthly take-home</span>
+            <b>${formatMoney(takeHome, country)}</b>
+          </div>
+          <div class="result-box">
+            <span>Estimated monthly deductions</span>
+            <b>${formatMoney(deductions, country)}</b>
+          </div>
+          <div class="result-box">
+            <span>Annual gross equivalent</span>
+            <b>${formatMoney(annualGross, country)}</b>
+          </div>
+          <div class="result-box">
+            <span>Estimated weekly take-home</span>
+            <b>${formatMoney(weeklyTakeHome, country)}</b>
+          </div>
+        </div>
+
         <table>
           <tr>
             <th>Gross monthly pay</th>
-            <td>${monthlyPay.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+            <td>${formatMoney(monthlyPay, country)}</td>
+          </tr>
+          <tr>
+            <th>Estimated deduction rate</th>
+            <td>${(deductionRate * 100).toFixed(1)}%</td>
           </tr>
           <tr>
             <th>Estimated monthly deductions</th>
-            <td>${deductions.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
-          </tr>
-          <tr>
-            <th>Annual gross equivalent</th>
-            <td>${annualGross.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+            <td>${formatMoney(deductions, country)}</td>
           </tr>
           <tr>
             <th>Estimated annual take-home</th>
-            <td>${annualTakeHome.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+            <td>${formatMoney(annualTakeHome, country)}</td>
           </tr>
         </table>
-        <p><small>This is a broad estimate for planning only. Actual take-home pay depends on your tax code, filing status, deductions and payroll setup.</small></p>
+
+        <p><small>This is a broad estimate for planning only. Actual take-home pay depends on your tax code, filing status, deductions, pension contributions, payroll setup and local/state rules.</small></p>
       `;
     }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://aftertaxtool.com/monthly-pay-after-tax-calculator.html#webpage",
+        "url": "https://aftertaxtool.com/monthly-pay-after-tax-calculator.html",
+        "name": "Monthly Pay After Tax Calculator",
+        "description": "Use the monthly pay after tax calculator to estimate monthly take-home pay from gross monthly income and compare UK and US monthly salary examples.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "AfterTaxTool",
+          "url": "https://aftertaxtool.com/"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Monthly Pay After Tax Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aftertaxtool.com/monthly-pay-after-tax-calculator.html",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is monthly pay after tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Monthly pay after tax is the estimated amount you keep from your gross monthly income after deductions such as income tax, National Insurance, FICA, state tax, pension contributions or other payroll deductions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is monthly take-home pay the same as gross monthly pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Gross monthly pay is income before deductions. Take-home pay is the amount that reaches your bank account after tax and deductions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert monthly pay to annual salary?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Multiply gross monthly pay by 12. For example, 4000 per month is equivalent to 48000 per year before tax."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does US state tax affect monthly pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. State income tax can make a noticeable difference to monthly take-home pay, especially when comparing states such as California, New York, Texas, Florida and Illinois."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>
