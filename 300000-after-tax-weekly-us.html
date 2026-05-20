@@ -15,7 +15,7 @@ body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f3f4f6;color:#1
 th{font-size:12px;color:#6b7280;text-transform:uppercase}a{color:#2563eb;text-decoration:none}ul{margin:0;padding-left:18px}
 .link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.link-box{display:block;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;background:#fff;font-weight:600}.link-box small{display:block;color:#6b7280;font-weight:400;margin-top:4px}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.stats,.link-grid{grid-template-columns:1fr 1fr}.sidebar{position:static}}@media(max-width:640px){.stats,.link-grid{grid-template-columns:1fr}.container{padding:16px}}
-.pathway-card{background:#f8fbff;border-color:#dbe7f5}.pathway-card p{color:#374151}.pathway-card .link-grid{margin-top:12px}</style>
+.pathway-card{background:#f8fbff;border-color:#dbe7f5}.pathway-card p{color:#374151}.pathway-card .link-grid{margin-top:12px}.us-link-pathway{background:#f8fbff;border:1px solid #dbe7f5;border-radius:14px;padding:22px;margin:24px 0;box-shadow:0 8px 22px rgba(22,34,51,.04)}.us-link-pathway h2{margin-top:0}.us-link-pathway p{color:#374151}.ecosystem-link-group{margin-top:16px}.ecosystem-link-group h3{font-size:16px;margin:0 0 10px}.ecosystem-link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.ecosystem-link{display:block;background:#fff;border:1px solid #e1e8f2;border-radius:10px;padding:10px 12px;font-weight:700}.ecosystem-link small{display:block;color:#667085;font-weight:400;margin-top:3px}</style>
 </head>
 <body>
 <div class="container"><div class="layout"><main>
@@ -52,11 +52,14 @@ th{font-size:12px;color:#6b7280;text-transform:uppercase}a{color:#2563eb;text-de
 <div class="card"><h2>What Can Change Weekly Take-Home Pay?</h2><ul><li>State and local tax rules</li><li>Payroll deductions and benefits</li><li>Bonus-heavy compensation</li><li>Different filing status details</li></ul></div>
 <div class="card"><h2>Assumptions</h2><ul><li>Single filer</li><li>Standard deduction: $16,100</li><li>No state or city tax</li><li>No pre-tax deductions</li></ul></div>
 <div class="card"><h2>Salary After Tax Calculator</h2><p>Use the <a href="/salary-after-tax-us.html">Salary After Tax Calculator (UK &amp; US)</a> to compare weekly take-home pay at other salary levels.</p></div>
-<div class="card pathway-card">
-<h2>US Salary Pathway</h2>
-<p>This page now links the surrounding US salary ladder with the annual, monthly and weekly views for the same income level. Use these routes to move sideways to nearby salaries or switch pay periods without losing the salary context.</p>
-<div class="link-grid"><a class="link-box" href="/300000-salary-after-tax-us.html">$300,000 US salary after tax<small>Annual guide</small></a><a class="link-box" href="/300000-after-tax-monthly-us.html">$300,000 US monthly after tax<small>Monthly view</small></a><a class="link-box" href="/290000-after-tax-weekly-us.html">$290,000 US weekly after tax<small>Weekly view</small></a><a class="link-box" href="/295000-after-tax-weekly-us.html">$295,000 US weekly after tax<small>Weekly view</small></a><a class="link-box" href="/305000-after-tax-weekly-us.html">$305,000 US weekly after tax<small>Weekly view</small></a><a class="link-box" href="/310000-after-tax-weekly-us.html">$310,000 US weekly after tax<small>Weekly view</small></a><a class="link-box" href="/salary-after-tax-us.html">US salary after tax hub<small>US hub</small></a></div>
-</div>
+
+<!-- US_LINK_NORMALISATION_START -->
+<section class="us-link-pathway" aria-label="US salary ecosystem links">
+<h2>US Salary Ecosystem</h2>
+<p>Use these routes to move between the US $300,000 annual, monthly and weekly views, compare nearby salary levels, and continue into the wider US salary ecosystem without losing context.</p>
+<div class="ecosystem-link-group"><h3>Pay-period inheritance</h3><div class="ecosystem-link-grid"><a class="ecosystem-link" href="/300000-salary-after-tax-us.html">$300,000 salary after tax US<small>Annual salary guide</small></a><a class="ecosystem-link" href="/300000-after-tax-monthly-us.html">$300,000 after tax monthly US<small>Monthly take-home view</small></a></div></div><div class="ecosystem-link-group"><h3>Nearby salary ladder</h3><div class="ecosystem-link-grid"><a class="ecosystem-link" href="/290000-after-tax-weekly-us.html">$290,000 after tax weekly US<small>Weekly take-home view</small></a><a class="ecosystem-link" href="/295000-after-tax-weekly-us.html">$295,000 after tax weekly US<small>Weekly take-home view</small></a><a class="ecosystem-link" href="/305000-after-tax-weekly-us.html">$305,000 after tax weekly US<small>Weekly take-home view</small></a><a class="ecosystem-link" href="/310000-after-tax-weekly-us.html">$310,000 after tax weekly US<small>Weekly take-home view</small></a></div></div><div class="ecosystem-link-group"><h3>US and range hubs</h3><div class="ecosystem-link-grid"><a class="ecosystem-link" href="/salary-after-tax-weekly-us.html">US weekly salary hub<small>Weekly hub</small></a><a class="ecosystem-link" href="/salary-after-tax-us.html">US salary after tax hub<small>US guide hub</small></a><a class="ecosystem-link" href="/salary-after-tax-200000-plus-us.html">$200k+ US salary range<small>Range hub</small></a></div></div>
+</section>
+<!-- US_LINK_NORMALISATION_END -->
 <div class="card"><h2>Related Pages</h2><div class="link-grid">
 <a class="link-box" href="/300000-salary-after-tax-us.html">$300,000 salary after tax<small>Main page</small></a>
 <a class="link-box" href="/300000-after-tax-monthly-us.html">$300,000 after tax monthly<small>Monthly page</small></a>
