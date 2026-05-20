@@ -45,6 +45,19 @@
     .final a { color:#b7f0ff; }
     @media (max-width:860px){ .hero,.grid-two{grid-template-columns:1fr;} .stats{grid-template-columns:repeat(2,1fr);} .links{grid-template-columns:1fr;} header{align-items:flex-start; flex-direction:column;} }
   </style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <div class="page">
@@ -58,6 +71,27 @@
     </header>
 
     <main>
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK annual salary guide</p>
+    <h2>&pound;192,000 salary after tax with planning context</h2>
+    <p>This annual guide is now framed around interpretation as well as PAYE maths. A &pound;192,000 salary should be judged by take-home pay, marginal deductions, pension choices and how the income behaves across monthly and weekly budgets.</p>
+    <p>The supporting tables keep the calculation clear, while the surrounding links connect the annual result to monthly cash flow, weekly pay timing and nearby salary bands.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Annual salary view</h2>
+    <div class="final-normalised-main">senior income</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Take-home interpretation</h3><p>Gross salary can overstate flexibility, especially once pension, student loan, tax-code and benefit choices are included.</p></div>
+  <div class="final-normalised-card"><h3>Lifestyle realism</h3><p>Housing, commuting, childcare and savings goals determine whether the salary feels resilient or simply larger on paper.</p></div>
+  <div class="final-normalised-card"><h3>Ecosystem routing</h3><p>Monthly, weekly and nearby salary pages help users compare decisions without landing on a dead-end calculation page.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
       <section class="hero">
         <div class="hero-copy panel">
           <h1>&pound;192,000 Salary After Tax UK</h1>
@@ -72,14 +106,14 @@
         </aside>
       </section>
 
-      <div class="stats">
+      <div class="stats stat-grid">
         <div class="card"><div class="stat-label">Gross salary</div><div class="stat-value">&pound;192,000</div></div>
         <div class="card"><div class="stat-label">Estimated net pay</div><div class="stat-value">&pound;116,060</div></div>
         <div class="card"><div class="stat-label">Total deductions</div><div class="stat-value">&pound;75,940</div></div>
         <div class="card"><div class="stat-label">Net retained</div><div class="stat-value">60.4%</div></div>
       </div>
 
-      <div class="ad-slot" aria-label="Advertisement">Advertisement space - after summary</div>
+      
 
       <section class="panel card">
         <h2>What the pay period comparison shows</h2>
@@ -134,7 +168,7 @@
         </table>
       </section>
 
-      <div class="ad-slot" aria-label="Advertisement">Advertisement space - mid-page</div>
+      
 
       <section class="panel card">
         <h2>Compare the surrounding income bands</h2>
@@ -156,7 +190,7 @@
           <tr><td><a href="/212000-salary-after-tax-uk.html">&pound;212,000</a></td><td>&pound;126,660</td><td>&pound;10,555</td><td>&pound;2,436</td></tr>
           </tbody>
         </table>
-        <div class="links" style="margin-top:14px;">
+        <div class="links link-chips" style="margin-top:14px;">
           <a href="/172000-salary-after-tax-uk.html">&pound;172,000 after tax</a>
           <a href="/177000-salary-after-tax-uk.html">&pound;177,000 after tax</a>
           <a href="/182000-salary-after-tax-uk.html">&pound;182,000 after tax</a>
@@ -176,7 +210,7 @@
         <div class="card">
           <h2>Monthly and weekly versions</h2>
           <p>If you are planning around pay timing rather than the annual package, use the dedicated support pages for this salary.</p>
-          <div class="links">
+          <div class="links link-chips">
             <a href="/192000-after-tax-monthly.html">&pound;192,000 after tax monthly</a>
             <a href="/192000-after-tax-weekly.html">&pound;192,000 after tax weekly</a>
             <a href="/salary-after-tax-uk.html">UK salary after tax hub</a>
@@ -203,7 +237,7 @@
         <p>It excludes student loans, pension deductions, bonuses, benefits in kind, dividend income and individual tax-code adjustments.</p>
       </section>
 
-      <div class="ad-slot" aria-label="Advertisement">Advertisement space - before final summary</div>
+      
 
       <section class="final">
         <h2>What this income means after tax</h2>

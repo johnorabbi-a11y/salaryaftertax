@@ -230,8 +230,42 @@
       }
     }
   .cadence-variation-note{background:#fbfcff;border:1px solid #dbe7f5;border-radius:14px;padding:20px;margin:22px 0}.cadence-variation-note h2{margin-top:0}.cadence-variation-note p{color:#344054;margin-bottom:0}</style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK monthly salary guide</p>
+    <h2>&pound;79,000 monthly take-home context</h2>
+    <p>This page is now presented as a monthly planning guide, not just a conversion endpoint. A &pound;79,000 salary is most useful when the monthly take-home estimate is read against housing, childcare, debt, pension contributions and savings room.</p>
+    <p>Use the calculation tables as support, then compare the monthly result with the annual and weekly views to understand both headline salary and lived cash flow.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Monthly planning view</h2>
+    <div class="final-normalised-main">Budget-first reading</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Fixed-cost pressure</h3><p>Rent, mortgage payments, transport and household bills usually decide whether the monthly number feels comfortable.</p></div>
+  <div class="final-normalised-card"><h3>Tax and pension choices</h3><p>PAYE deductions, student loans and salary sacrifice can all move the monthly figure and change the best planning decision.</p></div>
+  <div class="final-normalised-card"><h3>Nearby comparison value</h3><p>Adjacent salary pages help show whether a raise creates real monthly flexibility after tax or only a modest net change.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
   <div class="container">
 
     <nav class="breadcrumbs">
@@ -260,7 +294,7 @@
         <strong>£58,682</strong>.
       </div>
 
-      <div class="stats">
+      <div class="stats stat-grid">
         <div class="stat">
           <div class="label">Annual Gross Pay</div>
           <div class="value">£79,000</div>
@@ -284,7 +318,7 @@
       </div>
     </section>
 
-    <div class="ad">Advertisement</div>
+    
 
     <section class="card">
       <h2>£79,000 salary after tax: monthly breakdown</h2>
@@ -373,7 +407,7 @@
       </table>
     </section>
 
-    <div class="ad">Advertisement</div>
+    
 
     <section class="card">
       <h2>What does £4,890 per month after tax mean in practice?</h2>

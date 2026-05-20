@@ -9,10 +9,44 @@
   <style>
     :root{--ink:#172033;--muted:#5d6a7c;--line:#dbe3ec;--soft:#f6f8fb;--panel:#fff;--accent:#1b6b5f;--accent2:#274c77}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f2f5f8;line-height:1.6}header{background:#fff;border-bottom:1px solid var(--line)}.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.topbar{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:16px 0}.brand{font-weight:800;color:var(--accent2);text-decoration:none;font-size:1.08rem}nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-size:.95rem}nav a:hover{color:var(--accent)}main{padding:34px 0 46px}.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:22px;align-items:stretch}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(23,32,51,.05)}.panel{padding:26px}.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.78rem}h1{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;margin:.35rem 0 1rem;letter-spacing:0}h2{font-size:1.45rem;margin:0 0 12px;letter-spacing:0}h3{margin:.2rem 0 .4rem}p{margin:.7rem 0}.answer-box{background:#e9f5f2;border:1px solid #b9d8d1;border-radius:8px;padding:18px;margin-top:18px}.answer-box strong{font-size:1.45rem;display:block;color:#0d4f45}.stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.stat{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:14px}.stat span{display:block;color:var(--muted);font-size:.9rem}.stat strong{display:block;font-size:1.25rem;margin-top:4px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eef3f7;font-weight:700}.ad-slot{min-height:88px;border:1px dashed #bac7d5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#6b7788;background:#fbfcfe;margin:22px 0;font-size:.92rem}.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-left:18px}.links a,.inline-links a{color:var(--accent2);font-weight:700}.note{color:var(--muted);font-size:.95rem}footer{border-top:1px solid var(--line);background:#fff;padding:20px 0;color:var(--muted)}@media(max-width:760px){.hero,.grid,.links{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}nav a{margin-left:0;margin-right:12px}.panel{padding:20px}}
   .cadence-variation-note{background:#fbfcff;border:1px solid #dbe7f5;border-radius:14px;padding:20px;margin:22px 0}.cadence-variation-note h2{margin-top:0}.cadence-variation-note p{color:#344054;margin-bottom:0}</style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header><div class="wrap topbar"><a class="brand" href="/">AfterTaxTool</a><nav aria-label="Main navigation"><a href="/salary-after-tax-uk.html">UK salary hub</a><a href="/monthly-pay-after-tax-calculator.html">Monthly calculator</a><a href="/uk-income-tax-explained.html">UK tax guide</a></nav></div></header>
   <main class="wrap">
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK monthly salary guide</p>
+    <h2>&pound;196,000 monthly take-home context</h2>
+    <p>This page is now presented as a monthly planning guide, not just a conversion endpoint. A &pound;196,000 salary is most useful when the monthly take-home estimate is read against housing, childcare, debt, pension contributions and savings room.</p>
+    <p>Use the calculation tables as support, then compare the monthly result with the annual and weekly views to understand both headline salary and lived cash flow.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Monthly planning view</h2>
+    <div class="final-normalised-main">Budget-first reading</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Fixed-cost pressure</h3><p>Rent, mortgage payments, transport and household bills usually decide whether the monthly number feels comfortable.</p></div>
+  <div class="final-normalised-card"><h3>Tax and pension choices</h3><p>PAYE deductions, student loans and salary sacrifice can all move the monthly figure and change the best planning decision.</p></div>
+  <div class="final-normalised-card"><h3>Nearby comparison value</h3><p>Adjacent salary pages help show whether a raise creates real monthly flexibility after tax or only a modest net change.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
     <section class="hero">
       <div class="panel">
         <div class="eyebrow">UK monthly take-home pay</div>
@@ -26,7 +60,7 @@
       </div>
       <aside class="panel"><h2>Monthly snapshot</h2><div class="stat-grid"><div class="stat"><span>Gross monthly pay</span><strong>&pound;16,333</strong></div><div class="stat"><span>Net monthly pay</span><strong>&pound;9,848</strong></div><div class="stat"><span>Weekly equivalent</span><strong>&pound;2,273</strong></div><div class="stat"><span>Estimated hourly net</span><strong>&pound;61</strong></div></div><p class="note">Assumes standard UK employee Income Tax and National Insurance, before pension, student loan, salary sacrifice, benefits or payroll adjustments.</p></aside>
     </section>
-    <div class="ad-slot">Advertisement</div>
+    
     <section class="grid" aria-label="Salary breakdown tables">
       <article class="card panel"><h2>How this salary moves between pay cycles</h2><table><thead><tr><th>Period</th><th>Gross pay</th><th>Estimated take-home</th></tr></thead><tbody><tr><td>Yearly</td><td>&pound;196,000</td><td>&pound;118,180</td></tr><tr><td>Monthly</td><td>&pound;16,333</td><td>&pound;9,848</td></tr><tr><td>Weekly</td><td>&pound;3,769</td><td>&pound;2,273</td></tr><tr><td>Hourly equivalent</td><td>&pound;101</td><td>&pound;61</td></tr></tbody></table></article>
       <article class="card panel"><h2>The tax shape of this monthly pay</h2><table><thead><tr><th>Deduction</th><th>Yearly estimate</th><th>Monthly equivalent</th></tr></thead><tbody><tr><td>Income Tax</td><td>&pound;71,889</td><td>&pound;5,991</td></tr><tr><td>National Insurance</td><td>&pound;5,931</td><td>&pound;494</td></tr><tr><td>Total deductions</td><td>&pound;77,820</td><td>&pound;6,485</td></tr><tr><td>Effective deduction rate</td><td>39.7%</td><td>Same annualised rate</td></tr></tbody></table></article>
@@ -37,10 +71,10 @@
 <tr><td>Living costs and family spending</td><td>&pound;1,477</td><td>A realistic allocation keeps comfort from turning into accidental lifestyle creep.</td></tr>
 <tr><td>Tax-aware saving and investing</td><td>&pound;3,053</td><td>At this band, structured saving can matter more than simply holding spare cash.</td></tr>
 <tr><td>Flexible lifestyle fund</td><td>&pound;985</td><td>Useful room for irregular costs, holidays and personal spending.</td></tr></tbody></table><p class="note">This is an illustrative framework, not personal financial advice. Actual pay can change with pension contributions, benefits, bonuses and individual circumstances.</p></section>
-    <div class="ad-slot">Advertisement</div>
+    
     <section class="grid">
       <article class="card panel"><h2>Related salary views</h2><p>These links keep the annual, monthly and weekly salary views connected so the page does not become a dead-end support page.</p><ul class="inline-links"><li><a href="/196000-salary-after-tax-uk.html">&pound;196,000 salary after tax UK</a> - annual salary context and wider comparison.</li><li><a href="/196000-after-tax-weekly.html">&pound;196,000 after tax weekly</a> - weekly cash-flow view for shorter pay-cycle planning.</li><li><a href="/salary-after-tax-uk.html">UK salary after tax hub</a> - browse the wider UK salary ecosystem.</li></ul></article>
-      <article class="card panel"><h2>Comparable monthly take-home figures</h2><p>Nearby monthly salaries show whether the next gross pay step produces a noticeable increase in monthly take-home pay after tax.</p><ul class="links"><li><a href="/186000-after-tax-monthly.html">&pound;186,000 after tax monthly</a> - compare the nearby monthly take-home estimate.</li>
+      <article class="card panel"><h2>Comparable monthly take-home figures</h2><p>Nearby monthly salaries show whether the next gross pay step produces a noticeable increase in monthly take-home pay after tax.</p><ul class="links link-chips"><li><a href="/186000-after-tax-monthly.html">&pound;186,000 after tax monthly</a> - compare the nearby monthly take-home estimate.</li>
 <li><a href="/191000-after-tax-monthly.html">&pound;191,000 after tax monthly</a> - compare the nearby monthly take-home estimate.</li>
 <li><a href="/193000-after-tax-monthly.html">&pound;193,000 after tax monthly</a> - compare the nearby monthly take-home estimate.</li>
 <li><a href="/194000-after-tax-monthly.html">&pound;194,000 after tax monthly</a> - compare the nearby monthly take-home estimate.</li>

@@ -9,9 +9,43 @@
   <style>
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#182235;line-height:1.6}.container{max-width:1120px;margin:0 auto;padding:24px}.hero{background:linear-gradient(135deg,#102a43,#2563eb);color:#fff;padding:34px;border-radius:8px;margin:18px 0}.breadcrumb{font-size:.92rem;margin-bottom:12px}.breadcrumb a,.hero a{color:#dbeafe}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.card{background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(15,23,42,.05)}.answer{border-left:5px solid #2563eb;background:#eff6ff}.stat{font-size:1.8rem;font-weight:700;color:#0f172a}.label{font-size:.9rem;color:#526173}.button{display:inline-block;background:#2563eb;color:#fff;text-decoration:none;padding:10px 14px;border-radius:6px;margin:4px 8px 4px 0}.button.alt{background:#0f766e}table{width:100%;border-collapse:collapse;background:#fff;margin:12px 0}th,td{border:1px solid #d9e2ec;padding:12px;text-align:left}th{background:#e8f1fb}.ad-slot{border:1px dashed #9aa8b6;background:#fff;padding:18px;text-align:center;color:#64748b;border-radius:8px;margin:22px 0}.link-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.link-list a{background:#fff;border:1px solid #d9e2ec;border-radius:6px;padding:12px;text-decoration:none;color:#174ea6}.muted{color:#526173}.section{margin:26px 0}h1{font-size:2.25rem;line-height:1.15;margin:.2rem 0 1rem}h2{margin-top:0;color:#102a43}@media(max-width:640px){.container{padding:16px}.hero{padding:24px}h1{font-size:1.8rem}th,td{padding:9px}}
   .cadence-variation-note{background:#fbfcff;border:1px solid #dbe7f5;border-radius:14px;padding:20px;margin:22px 0}.cadence-variation-note h2{margin-top:0}.cadence-variation-note p{color:#344054;margin-bottom:0}</style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <main class="container">
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK monthly salary guide</p>
+    <h2>&pound;58,000 monthly take-home context</h2>
+    <p>This page is now presented as a monthly planning guide, not just a conversion endpoint. A &pound;58,000 salary is most useful when the monthly take-home estimate is read against housing, childcare, debt, pension contributions and savings room.</p>
+    <p>Use the calculation tables as support, then compare the monthly result with the annual and weekly views to understand both headline salary and lived cash flow.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Monthly planning view</h2>
+    <div class="final-normalised-main">Budget-first reading</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Fixed-cost pressure</h3><p>Rent, mortgage payments, transport and household bills usually decide whether the monthly number feels comfortable.</p></div>
+  <div class="final-normalised-card"><h3>Tax and pension choices</h3><p>PAYE deductions, student loans and salary sacrifice can all move the monthly figure and change the best planning decision.</p></div>
+  <div class="final-normalised-card"><h3>Nearby comparison value</h3><p>Adjacent salary pages help show whether a raise creates real monthly flexibility after tax or only a modest net change.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
     <section class="hero">
       <div class="breadcrumb"><a href="/">AfterTaxTool</a> / <a href="/salary-after-tax-uk.html">UK salary after tax</a> / Monthly salary</div>
       <h1>&pound;58,000 After Tax Monthly UK</h1>
@@ -34,7 +68,7 @@
       <div class="card"><div class="label">Estimated take-home rate</div><div class="stat">76.2%</div><p>The share of gross salary left after the main PAYE deductions.</p></div>
     </section>
 
-    <div class="ad-slot">Advertisement</div>
+    
 
     <section class="card section">
       <h2>The same salary viewed by year, month and week</h2>
@@ -89,7 +123,7 @@
       </div>
     </section>
 
-    <div class="ad-slot">Advertisement</div>
+    
 
     <section class="card section">
       <h2>Useful neighbouring monthly salaries</h2>

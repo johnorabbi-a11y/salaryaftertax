@@ -25,6 +25,19 @@
     @media (max-width:800px){ .hero,.two { grid-template-columns:1fr; } .grid { grid-template-columns:1fr 1fr; } .answer-box { position:static; } }
     @media (max-width:520px){ .grid { grid-template-columns:1fr; } th,td { padding:10px; } .nav { align-items:flex-start; flex-direction:column; } }
   </style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header>
@@ -39,6 +52,27 @@
     </nav>
   </header>
   <main>
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK annual salary guide</p>
+    <h2>&pound;107,000 salary after tax with planning context</h2>
+    <p>This annual guide is now framed around interpretation as well as PAYE maths. A &pound;107,000 salary should be judged by take-home pay, marginal deductions, pension choices and how the income behaves across monthly and weekly budgets.</p>
+    <p>The supporting tables keep the calculation clear, while the surrounding links connect the annual result to monthly cash flow, weekly pay timing and nearby salary bands.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Annual salary view</h2>
+    <div class="final-normalised-main">higher income</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Take-home interpretation</h3><p>Gross salary can overstate flexibility, especially once pension, student loan, tax-code and benefit choices are included.</p></div>
+  <div class="final-normalised-card"><h3>Lifestyle realism</h3><p>Housing, commuting, childcare and savings goals determine whether the salary feels resilient or simply larger on paper.</p></div>
+  <div class="final-normalised-card"><h3>Ecosystem routing</h3><p>Monthly, weekly and nearby salary pages help users compare decisions without landing on a dead-end calculation page.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
     <div class="hero">
       <div class="panel">
         <p class="muted">UK salary after tax estimate</p>
@@ -63,7 +97,7 @@
       <div class="stat"><span class="muted">Total deductions</span><strong>&pound;35,083</strong></div>
     </div>
 
-    <div class="ad">Advertisement</div>
+    
 
     <section class="panel">
       <h2>How the take-home figure breaks down</h2>
@@ -102,7 +136,7 @@
       <div class="card">
         <h2>Monthly and weekly versions</h2>
         <p>Use this annual page for the full salary view, then switch to monthly or weekly versions when you want payslip-level or short-cycle budgeting detail.</p>
-        <div class="links">
+        <div class="links link-chips">
           <a href="/107000-after-tax-monthly.html">&pound;107,000 monthly after tax</a>
           <a href="/107000-after-tax-weekly.html">&pound;107,000 weekly after tax</a>
           <a href="/salary-after-tax-uk.html">UK salary hub</a>
@@ -126,7 +160,7 @@
       </table>
     </section>
 
-    <div class="ad">Advertisement</div>
+    
 
     <section class="panel">
       <h2>Where this salary sits in the ladder</h2>
@@ -148,7 +182,7 @@
           <tr><td><a href="/127000-salary-after-tax-uk.html">&pound;127,000</a></td><td>&pound;81,610</td><td>&pound;6,801</td><td>&pound;1,569</td></tr>
         </tbody>
       </table>
-      <div class="links">
+      <div class="links link-chips">
           <a href="/87000-salary-after-tax-uk.html">&pound;87,000 after tax</a>
           <a href="/92000-salary-after-tax-uk.html">&pound;92,000 after tax</a>
           <a href="/97000-salary-after-tax-uk.html">&pound;97,000 after tax</a>
@@ -173,7 +207,7 @@
         <details><summary>What should be checked before accepting a rise in this band?</summary><p>Look at net monthly change, pension options, bonus treatment, childcare or benefit interactions, and whether new commitments would absorb the extra take-home pay.</p></details>
     </section>
 
-    <div class="ad">Advertisement</div>
+    
 
     <section class="panel">
       <h2>The practical salary takeaway</h2>

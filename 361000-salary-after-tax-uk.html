@@ -33,6 +33,19 @@
     footer { margin-top: 24px; padding: 24px 0; color: #52606d; font-size: 0.95rem; }
     @media (max-width: 640px) { .container { padding: 18px; } th, td { font-size: 0.92rem; } }
   </style>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header class="hero">
@@ -43,9 +56,30 @@
     </div>
   </header>
   <main class="container">
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised UK annual salary guide</p>
+    <h2>&pound;361,000 salary after tax with planning context</h2>
+    <p>This annual guide is now framed around interpretation as well as PAYE maths. A &pound;361,000 salary should be judged by take-home pay, marginal deductions, pension choices and how the income behaves across monthly and weekly budgets.</p>
+    <p>The supporting tables keep the calculation clear, while the surrounding links connect the annual result to monthly cash flow, weekly pay timing and nearby salary bands.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Annual salary view</h2>
+    <div class="final-normalised-main">ultra high income</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Take-home interpretation</h3><p>Gross salary can overstate flexibility, especially once pension, student loan, tax-code and benefit choices are included.</p></div>
+  <div class="final-normalised-card"><h3>Lifestyle realism</h3><p>Housing, commuting, childcare and savings goals determine whether the salary feels resilient or simply larger on paper.</p></div>
+  <div class="final-normalised-card"><h3>Ecosystem routing</h3><p>Monthly, weekly and nearby salary pages help users compare decisions without landing on a dead-end calculation page.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
     <section class="card answer-box"><h2>The figure to start with</h2><p><strong>&pound;361,000 after tax is approximately &pound;205,630 per year in the UK.</strong></p><p>That is roughly <strong>&pound;17,136 per month</strong>, <strong>&pound;3,954 per week</strong>, or about <strong>&pound;105 per working hour</strong> after estimated income tax and National Insurance.</p></section>
     <section class="grid" aria-label="Key salary figures"><div class="stat"><span>Gross annual salary</span><strong>&pound;361,000</strong></div><div class="stat"><span>Estimated annual take-home</span><strong>&pound;205,630</strong></div><div class="stat"><span>Monthly take-home</span><strong>&pound;17,136</strong></div><div class="stat"><span>Total deductions</span><strong>&pound;155,370</strong></div></section>
-    <div class="ad-slot">Advertisement</div>
+    
     <section class="card"><h2>How the salary spreads across the year</h2><p>These views keep the salary useful for annual planning, recurring monthly commitments and weekly spending pace.</p><table><thead><tr><th>Period</th><th>Gross pay</th><th>Estimated take-home pay</th><th>Estimated deductions</th></tr></thead><tbody><tr><td>Yearly</td><td>&pound;361,000</td><td>&pound;205,630</td><td>&pound;155,370</td></tr><tr><td>Monthly</td><td>&pound;30,083</td><td>&pound;17,136</td><td>&pound;12,947</td></tr><tr><td>Weekly</td><td>&pound;6,942</td><td>&pound;3,954</td><td>&pound;2,988</td></tr></tbody></table><p>For focused cash-flow planning, see the <a href="/361000-after-tax-monthly.html">&pound;361,000 monthly after-tax page</a> and the <a href="/361000-after-tax-weekly.html">&pound;361,000 weekly after-tax page</a>.</p></section>
     <section class="card"><h2>Why gross salary can mislead</h2><p>This estimate applies UK income tax and National Insurance assumptions. It excludes pension contributions, student loans, salary sacrifice, benefits in kind and devolved tax differences.</p><table><thead><tr><th>Deduction</th><th>Estimated yearly amount</th><th>Share of gross salary</th></tr></thead><tbody><tr><td>Income tax</td><td>&pound;146,139</td><td>40.5%</td></tr><tr><td>National Insurance</td><td>&pound;9,231</td><td>2.6%</td></tr><tr><td>Total deductions</td><td>&pound;155,370</td><td>43.0%</td></tr><tr><td>Estimated take-home pay</td><td>&pound;205,630</td><td>57.0%</td></tr></tbody></table></section>
     <section class="card"><h2>How this income feels month to month</h2><p>Estimated monthly take-home pay of &pound;17,136 gives a strong planning base, but the surplus should be assigned deliberately before it becomes routine spending.</p><table><thead><tr><th>Budget area</th><th>Illustrative monthly amount</th><th>Context</th></tr></thead><tbody><tr><td>Housing and household commitments</td><td>&pound;3,770</td><td>Premium housing can be supported, but a defined ceiling protects flexibility and investment capacity.</td></tr>
@@ -69,7 +103,7 @@
           <a href="/362000-salary-after-tax-uk.html">&pound;362,000 after tax</a>
           <a href="/363000-salary-after-tax-uk.html">&pound;363,000 after tax</a>
           <a href="/366000-salary-after-tax-uk.html">&pound;366,000 after tax</a></div></section>
-    <div class="ad-slot">Advertisement</div>
+    
     <section class="card"><h2>Plan this salary from different views</h2><p>The annual page explains the full salary position. Monthly and weekly pages help convert it into recurring budgets and spending rhythm.</p><div class="link-grid"><a href="/361000-after-tax-monthly.html">&pound;361,000 after tax monthly</a>
           <a href="/361000-after-tax-weekly.html">&pound;361,000 after tax weekly</a>
           <a href="/salary-after-tax-uk.html">UK salary after tax hub</a>

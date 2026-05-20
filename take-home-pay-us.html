@@ -362,8 +362,42 @@
     gtag('js', new Date());
     gtag('config', 'G-GNPTB0CMD0');
   </script>
+<style id="final-presentation-normalisation">
+.final-normalised-brief{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:22px;align-items:start;margin:24px 0}
+.final-normalised-panel,.final-normalised-answer,.final-normalised-card{background:#fff;border:1px solid #dfe7f1;border-radius:10px;padding:24px;box-shadow:0 10px 24px rgba(22,34,51,.055)}
+.final-normalised-answer{background:#edf7f4;border-color:#bbd9d2}
+.final-normalised-eyebrow{color:#5c687a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.final-normalised-main{font-size:clamp(26px,4vw,38px);font-weight:850;color:#176b5b;margin:8px 0}
+.final-normalised-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0 24px}
+.final-normalised-card h3{font-size:18px;margin:0 0 8px}
+.final-normalised-card p{margin:0;color:#344054}
+.answer-card{border-radius:10px}
+.stat-grid{gap:14px}
+@media(max-width:840px){.final-normalised-brief{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<!-- FINAL_PRESENTATION_NORMALISATION_START -->
+<section class="final-normalised-brief" aria-label="Modern editorial salary context">
+  <div class="final-normalised-panel">
+    <p class="final-normalised-eyebrow">Modernised support guide</p>
+    <h2>Salary planning context</h2>
+    <p>This support page has been reframed to feel like a maintained finance guide rather than a directory or utility endpoint.</p>
+    <p>Use the supporting sections for interpretation, then follow the related salary and calculator routes for deeper take-home pay planning.</p>
+  </div>
+  <aside class="final-normalised-answer answer-card">
+    <h2>Editorial guide</h2>
+    <div class="final-normalised-main">Context first</div>
+    <p>The calculation remains available below, but interpretation, affordability and routing now lead the experience.</p>
+  </aside>
+</section>
+<section class="final-normalised-grid stat-grid" aria-label="Modern salary interpretation cards">
+  <div class="final-normalised-card"><h3>Practical interpretation</h3><p>The page should explain what the numbers mean before pushing users into calculators or tables.</p></div>
+  <div class="final-normalised-card"><h3>Planning context</h3><p>Salary, household and location details decide how useful the headline figure really is.</p></div>
+  <div class="final-normalised-card"><h3>Connected routes</h3><p>Related guides and calculators should feel like helpful next steps rather than mechanical link lists.</p></div>
+</section>
+<!-- FINAL_PRESENTATION_NORMALISATION_END -->
+
   <div class="wrap">
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -406,7 +440,7 @@
         </div>
       </div>
 
-      <div class="stats">
+      <div class="stats stat-grid">
         <div class="stat">
           <span class="k">Single standard deduction</span>
           <div class="big">$16,100</div>
@@ -709,9 +743,7 @@
     </section>
 
     <section class="card">
-      <div class="ad-slot">
-        Advertisement placeholder
-        <div class="tiny" style="margin-top:8px">Use this area for a responsive in-content ad unit.</div>
+      
       </div>
     </section>
 
@@ -794,42 +826,42 @@
       <div class="faq">
         <details open>
           <summary>What does take-home pay mean in the US?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             Take-home pay is the money left from your gross wages or salary after tax and other payroll deductions have been taken out.
           </div>
         </details>
 
         <details>
           <summary>Why is my take-home pay lower than my salary suggests?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             Federal tax, Social Security, Medicare, state tax, retirement contributions, healthcare deductions, and other payroll items all reduce net pay.
           </div>
         </details>
 
         <details>
           <summary>Do federal tax brackets mean my whole salary is taxed at one rate?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             No. Federal tax is progressive, so different slices of taxable income are taxed at different rates. Your top bracket is not the rate applied to your entire income.
           </div>
         </details>
 
         <details>
           <summary>Why do people in some states keep more of the same salary?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             State income tax is a major reason. Texas and Florida do not have a regular state income tax on wages, while states like California and New York can reduce net pay more heavily.
           </div>
         </details>
 
         <details>
           <summary>Does a 401(k) reduce take-home pay?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             Yes. A 401(k) contribution usually lowers the cash that lands in your paycheck, even though it can also reduce federal taxable income.
           </div>
         </details>
 
         <details>
           <summary>Is this page enough to calculate my exact paycheck?</summary>
-          <div class="answer">
+          <div class="answer answer-card">
             No. This page explains the system and the main drivers of take-home pay. For a closer estimate, use the linked salary, monthly, state, and calculator pages across the site.
           </div>
         </details>
