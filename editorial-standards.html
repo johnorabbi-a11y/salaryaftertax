@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editorial Standards | AfterTaxTool Maintenance and QA</title>
+  <meta name="description" content="How AfterTaxTool maintains salary after tax pages, reviews tax-year assumptions, checks links and explains salary estimates responsibly.">
+  <link rel="canonical" href="https://aftertaxtool.com/editorial-standards.html">
+  <meta name="robots" content="index,follow">
+  <style>
+    :root{--bg:#f4f7fb;--paper:#fff;--ink:#172033;--muted:#5c687a;--line:#dfe7f1;--soft:#edf7f4;--accent:#176b5b;--accent2:#274b8f;--nav:#102033;--shadow:0 10px 24px rgba(22,34,51,.055)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.62}a{color:#174f96;text-decoration:none}a:hover{text-decoration:underline}.site-header{background:var(--nav);color:#fff}.nav{max-width:1180px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:800;color:#fff}.nav-links{display:flex;flex-wrap:wrap;gap:14px}.nav-links a{color:#dce8ff;font-size:14px;font-weight:700}main{max-width:1180px;margin:0 auto;padding:30px 20px 54px}.hero{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(300px,.9fr);gap:22px;align-items:start}.panel,.answer-card,.feature-card,.context-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:var(--shadow)}.answer-card{background:var(--soft);border-color:#bbd9d2}.eyebrow{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 16px}h2{font-size:26px;line-height:1.22;margin:0 0 12px}h3{font-size:19px;margin:0 0 8px}p{margin:0 0 14px}.lead{font-size:18px;color:#28364b}.answer-main{font-size:clamp(28px,4vw,42px);font-weight:850;color:var(--accent);margin:8px 0}section{margin-top:24px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.context-card{box-shadow:none}.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}.link-card{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:0 6px 16px rgba(22,34,51,.035)}.link-card strong{display:block;color:#174f96}.link-card span{display:block;color:#5c687a;font-size:14px;margin-top:5px}.callout{background:#f9fbfe;border-left:4px solid var(--accent2);padding:18px;border-radius:8px;margin-top:16px}footer{background:var(--nav);color:#dce8ff;text-align:center;padding:24px 20px}footer a{color:#fff}.footer-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}@media(max-width:900px){.hero,.two,.three{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}}@media(max-width:560px){main{padding:22px 14px 42px}.panel,.answer-card,.feature-card,.context-card{padding:20px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="/">AfterTaxTool</a><div class="nav-links"><a href="/methodology.html">Methodology</a><a href="/tax-assumptions.html">Tax assumptions</a><a href="/editorial-standards.html">Editorial standards</a><a href="/about.html">About</a></div></nav></header>
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <p class="eyebrow">Publishing standards</p>
+        <h1>Editorial Standards and Site Maintenance</h1>
+        <p class="lead">AfterTaxTool is maintained as a practical salary and take-home-pay resource. The goal is to explain salary estimates clearly, keep calculation assumptions visible and make pages useful for real-world income planning.</p>
+        <p>The site is not trying to sound more formal than it is. Salary pages are informational estimates, and the editorial standard is straightforward: calculations should be understandable, assumptions should be visible, and guidance should help users make better comparisons.</p>
+      </div>
+      <aside class="answer-card">
+        <h2>Editorial aim</h2>
+        <div class="answer-main">Useful, clear, maintained</div>
+        <p>Pages should help a user understand take-home pay, not bury them in jargon or overstate precision.</p>
+      </aside>
+    </section>
+
+    <section class="feature-card">
+      <h2>How pages are maintained</h2>
+      <div class="three">
+        <div class="context-card"><h3>Tax-year review</h3><p>Tax-year assumptions are reviewed when UK or US tax thresholds, rates or payroll rules change in ways that affect salary estimates.</p></div>
+        <div class="context-card"><h3>Calculator checks</h3><p>Calculator outputs are checked for plausible salary ranges, pay-period consistency and visible calculation issues such as overflow, malformed currency symbols or broken result displays.</p></div>
+        <div class="context-card"><h3>Page QA</h3><p>Pages are reviewed for broken links, canonical consistency, readable metadata, mobile presentation and whether the content still feels useful rather than merely generated.</p></div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div class="panel">
+        <h2>Update process</h2>
+        <p>When a tax year changes, the priority is to review the calculations and assumptions that affect the broadest number of users first: main calculators, UK and US hubs, high-traffic salary pages and state pages where applicable.</p>
+        <p>Smaller pages are then checked in batches so that updates do not create unnecessary churn or break stable internal linking.</p>
+      </div>
+      <div class="panel">
+        <h2>Corrections and refinements</h2>
+        <p>If a page has unclear wording, a stale assumption or a presentation issue, the preferred fix is targeted and proportionate. The site avoids rewriting large areas when a small correction solves the actual problem.</p>
+        <p>This matters because salary pages should stay stable enough for users and search engines while still being maintained over time.</p>
+      </div>
+    </section>
+
+    <section class="feature-card">
+      <h2>How we treat estimates</h2>
+      <p>AfterTaxTool pages are written to make salary after tax easier to understand, not to provide personal financial advice. The same salary can produce different results depending on pension choices, tax codes, filing status, benefits, state rules, student loans, overtime and employer payroll setup.</p>
+      <p>The editorial approach is to explain those limitations plainly. A useful estimate should make uncertainty visible rather than pretend every payslip is identical.</p>
+      <div class="callout"><strong>Not formal advice:</strong> use the site for salary comparison and planning. For decisions that depend on exact personal tax treatment, check official guidance, payroll records or a qualified professional.</div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Quality checks we care about</h2>
+      <div class="three">
+        <div class="context-card"><h3>Calculation clarity</h3><p>Users should be able to see what the estimate represents and which assumptions might change it.</p></div>
+        <div class="context-card"><h3>Internal-link usefulness</h3><p>Links should help users move between annual, monthly, weekly, state and calculator views without feeling like a link dump.</p></div>
+        <div class="context-card"><h3>Presentation quality</h3><p>Pages should be readable on desktop and mobile, with tables and calculators supporting the explanation rather than dominating it.</p></div>
+      </div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Related trust pages</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/methodology.html"><strong>Methodology</strong><span>How salary after tax calculations are produced.</span></a>
+        <a class="link-card" href="/tax-assumptions.html"><strong>Tax assumptions</strong><span>The default assumptions behind UK and US estimates.</span></a>
+        <a class="link-card" href="/about.html"><strong>About AfterTaxTool</strong><span>What the site helps users understand.</span></a>
+        <a class="link-card" href="/salary-guides.html"><strong>Salary guides</strong><span>Browse UK and US salary planning resources.</span></a>
+      </div>
+    </section>
+  </main>
+  <footer><p><a href="/">AfterTaxTool</a> publishes practical salary, tax and take-home pay guides.</p><div class="footer-links"><a href="/methodology.html">Methodology</a><a href="/tax-assumptions.html">Tax assumptions</a><a href="/editorial-standards.html">Editorial standards</a><a href="/about.html">About</a></div></footer>
+</body>
+</html>

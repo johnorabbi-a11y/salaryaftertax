@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Methodology | How AfterTaxTool Calculates Salary After Tax</title>
+  <meta name="description" content="How AfterTaxTool estimates salary after tax, take-home pay, PAYE, National Insurance, US federal tax, FICA, state tax and pay-period conversions.">
+  <link rel="canonical" href="https://aftertaxtool.com/methodology.html">
+  <meta name="robots" content="index,follow">
+  <style>
+    :root{--bg:#f4f7fb;--paper:#fff;--ink:#172033;--muted:#5c687a;--line:#dfe7f1;--soft:#edf7f4;--soft2:#eef3fb;--accent:#176b5b;--accent2:#274b8f;--gold:#fbf3df;--nav:#102033;--shadow:0 10px 24px rgba(22,34,51,.055)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.62}a{color:#174f96;text-decoration:none}a:hover{text-decoration:underline}
+    .site-header{background:var(--nav);color:#fff}.nav{max-width:1180px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:800;color:#fff}.nav-links{display:flex;flex-wrap:wrap;gap:14px}.nav-links a{color:#dce8ff;font-size:14px;font-weight:700}
+    main{max-width:1180px;margin:0 auto;padding:30px 20px 54px}.hero{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(300px,.9fr);gap:22px;align-items:start}.panel,.answer-card,.feature-card,.context-card,.route-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:var(--shadow)}.answer-card{background:var(--soft);border-color:#bbd9d2}.gold-card{background:var(--gold);border-color:#ead7bc}.eyebrow{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+    h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 16px;letter-spacing:0}h2{font-size:26px;line-height:1.22;margin:0 0 12px}h3{font-size:19px;margin:0 0 8px}p{margin:0 0 14px}.lead{font-size:18px;color:#28364b}.answer-main{font-size:clamp(28px,4vw,42px);font-weight:850;color:var(--accent);margin:8px 0}.muted{color:var(--muted)}section{margin-top:24px}
+    .stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}.stat span{display:block;color:var(--muted);font-size:13px}.stat strong{display:block;font-size:22px;color:#132848;margin-top:3px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.context-card{box-shadow:none}
+    .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}.link-card{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:0 6px 16px rgba(22,34,51,.035)}.link-card strong{display:block;color:#174f96}.link-card span{display:block;color:#5c687a;font-size:14px;margin-top:5px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eef3f8}tr:last-child td{border-bottom:0}.callout{background:#f9fbfe;border-left:4px solid var(--accent2);padding:18px;border-radius:8px;margin-top:16px}footer{background:var(--nav);color:#dce8ff;text-align:center;padding:24px 20px}footer a{color:#fff}.footer-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    @media(max-width:900px){.hero,.two,.three{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.nav{align-items:flex-start;flex-direction:column}}@media(max-width:560px){main{padding:22px 14px 42px}.stat-grid{grid-template-columns:1fr}th,td{padding:10px}.panel,.answer-card,.feature-card,.context-card,.route-card{padding:20px}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/">AfterTaxTool</a>
+      <div class="nav-links">
+        <a href="/salary-after-tax-uk.html">UK salary after tax</a>
+        <a href="/salary-after-tax-us.html">US salary after tax</a>
+        <a href="/salary-guides.html">Salary guides</a>
+        <a href="/methodology.html">Methodology</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <p class="eyebrow">Calculation methodology</p>
+        <h1>How AfterTaxTool Calculates Salary After Tax</h1>
+        <p class="lead">AfterTaxTool estimates salary after tax by applying published tax rules, payroll deductions and pay-period conversions to a gross salary. The aim is practical take-home pay planning, not a replacement for a payslip or formal tax calculation.</p>
+        <p>The calculation pages are designed to answer a simple question clearly: if a salary is advertised as a gross annual amount, what might that become as annual, monthly or weekly take-home pay after the main employee deductions?</p>
+        <p>Because real payroll can include pension choices, benefits, salary sacrifice, local rules, filing details and employer-specific withholding, the results should be read as transparent estimates rather than exact statements of what every individual will receive.</p>
+      </div>
+      <aside class="answer-card">
+        <h2>What the estimate is for</h2>
+        <div class="answer-main">Planning clarity</div>
+        <p>Use the figures to compare salaries, understand deductions, plan monthly cash flow and decide when a more detailed payroll or tax review is needed.</p>
+      </aside>
+    </section>
+
+    <div class="stat-grid">
+      <div class="stat"><span>UK employee estimates</span><strong>PAYE and NI</strong></div>
+      <div class="stat"><span>US employee estimates</span><strong>Federal, FICA, state</strong></div>
+      <div class="stat"><span>Pay periods</span><strong>Annual, monthly, weekly</strong></div>
+      <div class="stat"><span>Precision</span><strong>Rounded estimates</strong></div>
+    </div>
+
+    <section class="feature-card">
+      <h2>UK salary after tax methodology</h2>
+      <p>For UK salary examples and calculators, AfterTaxTool starts with gross annual employment income and estimates how the main employee deductions affect take-home pay. The calculation is built around standard PAYE-style salary planning rather than complex personal tax returns.</p>
+      <div class="three">
+        <div class="context-card"><h3>PAYE income tax</h3><p>UK income tax is estimated using the relevant tax-year bands and allowances for a standard employee scenario. Where salary bands interact with allowance tapering, the take-home estimate reflects the effect on taxable income.</p></div>
+        <div class="context-card"><h3>National Insurance</h3><p>Employee National Insurance is estimated separately from income tax. It is shown because it is one of the main reasons gross salary and take-home pay differ.</p></div>
+        <div class="context-card"><h3>Pension and student loans</h3><p>Where a calculator allows pension or student loan inputs, those assumptions are handled as planning adjustments. Static salary pages may use standard baseline assumptions unless stated otherwise.</p></div>
+      </div>
+      <div class="callout"><strong>Important:</strong> Scotland, Wales, benefits, tax code changes, salary sacrifice, taxable benefits and student loan plan details can change the final payslip. The estimate is intended to be useful, not personally exhaustive.</div>
+    </section>
+
+    <section class="feature-card">
+      <h2>US salary after tax methodology</h2>
+      <p>For US salary examples, AfterTaxTool estimates take-home pay from gross wages after the major employee tax components: federal income tax, Social Security, Medicare and, where a state page is used, state income tax. The goal is to make federal and state differences understandable without pretending every filing situation is identical.</p>
+      <div class="three">
+        <div class="context-card"><h3>Federal income tax</h3><p>Federal tax is estimated using a standard employee wage approach and broad filing assumptions. The estimate is intended for salary comparison, not full tax-return preparation.</p></div>
+        <div class="context-card"><h3>FICA</h3><p>FICA refers to Social Security and Medicare payroll taxes. These deductions are treated separately from federal income tax because they affect most employee paychecks.</p></div>
+        <div class="context-card"><h3>State income tax</h3><p>State pages apply state-specific income tax logic where relevant. States without income tax still need affordability context because housing, insurance and local costs can affect the lived value of take-home pay.</p></div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div class="panel">
+        <h2>Pay-period conversions</h2>
+        <p>Annual salary is the starting point. Monthly and weekly estimates are derived from the annual take-home result so users can plan around the pay cycle that matters most to them.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>View</th><th>How it is used</th></tr></thead>
+            <tbody>
+              <tr><td>Annual</td><td>Best for comparing headline salary, tax burden and total deductions.</td></tr>
+              <tr><td>Monthly</td><td>Best for rent, mortgage, bills, savings and recurring household costs.</td></tr>
+              <tr><td>Weekly</td><td>Best for weekly budgeting, shift-work planning and pay-cycle interpretation.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Rounding and presentation</h2>
+        <p>Figures are rounded to keep salary pages readable. Rounding can create small differences between annual totals and monthly or weekly equivalents, especially when values are shown as whole pounds or dollars.</p>
+        <p>When comparing pages, focus on the broad take-home pattern rather than treating every displayed number as a payroll-grade exact figure.</p>
+      </div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Why estimates can differ from payslips</h2>
+      <p>Your actual payslip may differ because payroll systems know details that a public calculator usually does not: your exact tax code, pay date, pension setup, salary sacrifice arrangement, benefit deductions, student loan plan, local taxes, health premiums, 401(k) contribution, bonus timing or filing details.</p>
+      <p>That does not make the estimate useless. It means the estimate should be used as a planning baseline. If a decision depends on exact tax treatment, check the payslip, payroll department, HMRC, the IRS, state tax guidance or a qualified adviser.</p>
+    </section>
+
+    <section class="feature-card">
+      <h2>Related trust pages</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/tax-assumptions.html"><strong>Tax assumptions</strong><span>Read the default assumptions and situations that need extra care.</span></a>
+        <a class="link-card" href="/editorial-standards.html"><strong>Editorial standards</strong><span>How AfterTaxTool maintains calculation pages and guides.</span></a>
+        <a class="link-card" href="/about.html"><strong>About AfterTaxTool</strong><span>What the platform is built to help users understand.</span></a>
+        <a class="link-card" href="/"><strong>Salary calculator homepage</strong><span>Start with a broad UK or US take-home pay estimate.</span></a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p><a href="/">AfterTaxTool</a> publishes salary after tax calculators and practical take-home pay guides.</p>
+    <div class="footer-links"><a href="/methodology.html">Methodology</a><a href="/tax-assumptions.html">Tax assumptions</a><a href="/editorial-standards.html">Editorial standards</a><a href="/about.html">About</a></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tax Assumptions | AfterTaxTool Salary Estimate Notes</title>
+  <meta name="description" content="Tax assumptions used by AfterTaxTool for UK and US salary after tax estimates, including PAYE, pensions, student loans, filing status, FICA and state tax caveats.">
+  <link rel="canonical" href="https://aftertaxtool.com/tax-assumptions.html">
+  <meta name="robots" content="index,follow">
+  <style>
+    :root{--bg:#f4f7fb;--paper:#fff;--ink:#172033;--muted:#5c687a;--line:#dfe7f1;--soft:#edf7f4;--soft2:#eef3fb;--accent:#176b5b;--accent2:#274b8f;--gold:#fbf3df;--nav:#102033;--shadow:0 10px 24px rgba(22,34,51,.055)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.62}a{color:#174f96;text-decoration:none}a:hover{text-decoration:underline}.site-header{background:var(--nav);color:#fff}.nav{max-width:1180px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:800;color:#fff}.nav-links{display:flex;flex-wrap:wrap;gap:14px}.nav-links a{color:#dce8ff;font-size:14px;font-weight:700}main{max-width:1180px;margin:0 auto;padding:30px 20px 54px}.hero{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(300px,.9fr);gap:22px;align-items:start}.panel,.answer-card,.feature-card,.context-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:var(--shadow)}.answer-card{background:var(--soft);border-color:#bbd9d2}.eyebrow{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 16px}h2{font-size:26px;line-height:1.22;margin:0 0 12px}h3{font-size:19px;margin:0 0 8px}p{margin:0 0 14px}.lead{font-size:18px;color:#28364b}.answer-main{font-size:clamp(28px,4vw,42px);font-weight:850;color:var(--accent);margin:8px 0}.muted{color:var(--muted)}section{margin-top:24px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.context-card{box-shadow:none}.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}.link-card{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:0 6px 16px rgba(22,34,51,.035)}.link-card strong{display:block;color:#174f96}.link-card span{display:block;color:#5c687a;font-size:14px;margin-top:5px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eef3f8}tr:last-child td{border-bottom:0}.callout{background:#f9fbfe;border-left:4px solid var(--accent2);padding:18px;border-radius:8px;margin-top:16px}footer{background:var(--nav);color:#dce8ff;text-align:center;padding:24px 20px}footer a{color:#fff}.footer-links{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}@media(max-width:900px){.hero,.two,.three{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}}@media(max-width:560px){main{padding:22px 14px 42px}th,td{padding:10px}.panel,.answer-card,.feature-card,.context-card{padding:20px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="/">AfterTaxTool</a><div class="nav-links"><a href="/methodology.html">Methodology</a><a href="/tax-assumptions.html">Tax assumptions</a><a href="/editorial-standards.html">Editorial standards</a><a href="/about.html">About</a></div></nav></header>
+  <main>
+    <section class="hero">
+      <div class="panel">
+        <p class="eyebrow">Estimate assumptions</p>
+        <h1>Tax Assumptions Used Across AfterTaxTool</h1>
+        <p class="lead">Salary after tax estimates depend on assumptions. This page explains the baseline used across AfterTaxTool so users can understand when a result is a good planning guide and when personal tax details need a closer review.</p>
+        <p>Most pages are designed for standard employee salary comparisons. They are not intended for self-employed accounts, contractor tax planning, multi-income households, complex investment income, unusual allowances or formal tax filing.</p>
+      </div>
+      <aside class="answer-card">
+        <h2>The default case</h2>
+        <div class="answer-main">Employee salary</div>
+        <p>The site is most useful for comparing gross employment income with estimated take-home pay after the main employee deductions.</p>
+      </aside>
+    </section>
+
+    <section class="feature-card">
+      <h2>Assumption summary</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Area</th><th>Typical assumption</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>UK tax code</td><td>Standard employee-style PAYE assumptions unless the page or calculator input says otherwise.</td><td>Tax code changes can materially affect the final payslip.</td></tr>
+            <tr><td>UK pension</td><td>Static pages may use a baseline with no personalised pension deduction; calculators may allow user inputs.</td><td>Pension contributions can reduce taxable income or take-home pay depending on setup.</td></tr>
+            <tr><td>UK student loans</td><td>Included only where the user chooses a plan or where a page explicitly models it.</td><td>Loan plan, threshold and income level can change monthly net pay.</td></tr>
+            <tr><td>US filing status</td><td>Standard simplified assumptions for salary comparison unless an input allows a different filing status.</td><td>Filing status and dependants can change federal tax.</td></tr>
+            <tr><td>US state tax</td><td>State pages estimate state income tax where applicable, but may not capture every local payroll rule.</td><td>State and local rules can change take-home pay by location.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="two">
+      <div class="panel">
+        <h2>UK assumptions</h2>
+        <p>UK estimates are based around employment income and the main deductions most users expect to see: Income Tax and employee National Insurance. Where pension, student loan, bonus or overtime inputs are available, they should be treated as planning inputs rather than a full payroll reconstruction.</p>
+        <p>Static salary pages are best read as standard baseline examples. A user with a non-standard tax code, salary sacrifice, taxable benefits, Scottish tax bands, student loan deductions or irregular pay should expect differences from the public estimate.</p>
+      </div>
+      <div class="panel">
+        <h2>US assumptions</h2>
+        <p>US estimates are based around employee wages, federal income tax, FICA and state income tax where relevant. A calculator may use simplified filing assumptions or standard deduction logic to keep the result useful and understandable.</p>
+        <p>Actual take-home pay can vary because of filing status, dependants, pre-tax benefits, 401(k), HSA, health premiums, local taxes, additional withholding and employer payroll setup.</p>
+      </div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Bonus, overtime and variable pay caveats</h2>
+      <p>Bonus and overtime income can be treated differently by payroll systems, even when it is ultimately part of taxable income. Timing matters: a bonus paid in one month may make that payslip look unusually high or unusually heavily withheld compared with normal salary.</p>
+      <p>AfterTaxTool can help estimate the direction and rough scale of the impact, but variable pay is one of the areas where actual payroll treatment may differ most from a simple annualised estimate.</p>
+    </section>
+
+    <section class="feature-card">
+      <h2>Employee estimates vs complex tax situations</h2>
+      <div class="three">
+        <div class="context-card"><h3>Standard employee salary</h3><p>Best fit for the site: one gross salary, regular payroll, main employee deductions and practical take-home comparison.</p></div>
+        <div class="context-card"><h3>Contractors and self-employed users</h3><p>Less suitable for exact results. Business expenses, corporation tax, VAT, self-employment tax, quarterly payments and retirement setup can change the answer.</p></div>
+        <div class="context-card"><h3>Complex households</h3><p>Multiple jobs, investment income, benefits, allowances, dependants or cross-border tax issues need more detailed review than a public salary estimate can provide.</p></div>
+      </div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Why assumptions matter</h2>
+      <p>The same gross salary can create different take-home pay for two people. One may contribute heavily to a pension, one may repay a student loan, one may live in a higher-tax state, and one may have pre-tax health or retirement deductions. Assumptions make the calculation transparent, but they also mark the boundary of the estimate.</p>
+      <div class="callout"><strong>Practical rule:</strong> use AfterTaxTool to compare salary levels and plan cash flow. Use payroll records, official tax guidance or professional advice when an exact personal answer matters.</div>
+    </section>
+
+    <section class="feature-card">
+      <h2>Related pages</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/methodology.html"><strong>Methodology</strong><span>How the salary after tax calculations are produced.</span></a>
+        <a class="link-card" href="/editorial-standards.html"><strong>Editorial standards</strong><span>How the site is maintained and reviewed.</span></a>
+        <a class="link-card" href="/salary-tax-calculator-uk.html"><strong>UK salary tax calculator</strong><span>Estimate PAYE take-home pay with UK salary inputs.</span></a>
+        <a class="link-card" href="/salary-after-tax-us.html"><strong>US salary after tax</strong><span>Browse federal, FICA and state-aware salary examples.</span></a>
+      </div>
+    </section>
+  </main>
+  <footer><p><a href="/">AfterTaxTool</a> publishes practical salary, tax and take-home pay guides.</p><div class="footer-links"><a href="/methodology.html">Methodology</a><a href="/tax-assumptions.html">Tax assumptions</a><a href="/editorial-standards.html">Editorial standards</a><a href="/about.html">About</a></div></footer>
+</body>
+</html>
