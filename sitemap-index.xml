@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-clean.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-core.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-authority.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tools.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-uk.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-us-hubs.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier2.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier3.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier4.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier5.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier6.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier7.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier8.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier9.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://aftertaxtool.com/sitemap-tier10.xml</loc>
   </sitemap>
 </sitemapindex>

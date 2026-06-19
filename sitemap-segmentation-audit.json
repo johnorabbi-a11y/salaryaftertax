@@ -1,0 +1,45 @@
+{
+  "childCounts": {
+    "sitemap-core.xml": 11,
+    "sitemap-authority.xml": 60,
+    "sitemap-tools.xml": 1258,
+    "sitemap-uk.xml": 512,
+    "sitemap-us-hubs.xml": 62,
+    "sitemap-tier1.xml": 2220,
+    "sitemap-tier2.xml": 2355,
+    "sitemap-tier3.xml": 2475,
+    "sitemap-tier4.xml": 2115,
+    "sitemap-tier5.xml": 2115,
+    "sitemap-tier6.xml": 2175,
+    "sitemap-tier7.xml": 2355,
+    "sitemap-tier8.xml": 2415,
+    "sitemap-tier9.xml": 2415,
+    "sitemap-tier10.xml": 2415
+  },
+  "totalSitemapUrls": 24958,
+  "uniqueSitemapUrls": 24958,
+  "localHtmlCount": 24959,
+  "localIndexableHtmlCount": 24958,
+  "excludedFiles": [
+    {
+      "file": "google045f4d6b341942cf.html",
+      "reason": "technical or verification HTML"
+    }
+  ],
+  "childReferenceFailures": [],
+  "unexpectedIndexRefs": [],
+  "duplicates": [],
+  "missingFiles": [],
+  "caseMismatches": [],
+  "malformed": [],
+  "missingFromSitemaps": [],
+  "extraInSitemaps": [],
+  "missingMajor": [],
+  "robotsSitemaps": [
+    "https://aftertaxtool.com/sitemap.xml"
+  ],
+  "robotsOk": true,
+  "sitemapXmlIsIndex": true,
+  "sitemapCleanStatus": "mirrors sitemap.xml sitemap index",
+  "sitemapIndexStatus": "matches sitemap.xml sitemap index"
+}

@@ -1,0 +1,100 @@
+{
+  "totalHtml": 24959,
+  "indexable": 24958,
+  "excluded": [
+    {
+      "file": "google045f4d6b341942cf.html",
+      "reason": "technical or verification HTML"
+    }
+  ],
+  "canonicalIssues": [],
+  "counts": {
+    "sitemap-core.xml": 11,
+    "sitemap-authority.xml": 60,
+    "sitemap-tools.xml": 1258,
+    "sitemap-uk.xml": 512,
+    "sitemap-us-hubs.xml": 62,
+    "sitemap-tier1.xml": 2220,
+    "sitemap-tier2.xml": 2355,
+    "sitemap-tier3.xml": 2475,
+    "sitemap-tier4.xml": 2115,
+    "sitemap-tier5.xml": 2115,
+    "sitemap-tier6.xml": 2175,
+    "sitemap-tier7.xml": 2355,
+    "sitemap-tier8.xml": 2415,
+    "sitemap-tier9.xml": 2415,
+    "sitemap-tier10.xml": 2415
+  },
+  "tierGroups": {
+    "sitemap-tier1.xml": [
+      "california",
+      "texas",
+      "new-york",
+      "florida",
+      "illinois"
+    ],
+    "sitemap-tier2.xml": [
+      "pennsylvania",
+      "ohio",
+      "georgia",
+      "north-carolina",
+      "michigan"
+    ],
+    "sitemap-tier3.xml": [
+      "new-jersey",
+      "virginia",
+      "washington",
+      "arizona",
+      "massachusetts"
+    ],
+    "sitemap-tier4.xml": [
+      "tennessee",
+      "indiana",
+      "missouri",
+      "maryland",
+      "wisconsin"
+    ],
+    "sitemap-tier5.xml": [
+      "colorado",
+      "minnesota",
+      "south-carolina",
+      "alabama",
+      "louisiana"
+    ],
+    "sitemap-tier6.xml": [
+      "kentucky",
+      "oregon",
+      "oklahoma",
+      "connecticut",
+      "utah"
+    ],
+    "sitemap-tier7.xml": [
+      "iowa",
+      "nevada",
+      "arkansas",
+      "mississippi",
+      "kansas"
+    ],
+    "sitemap-tier8.xml": [
+      "new-mexico",
+      "nebraska",
+      "idaho",
+      "west-virginia",
+      "hawaii"
+    ],
+    "sitemap-tier9.xml": [
+      "new-hampshire",
+      "maine",
+      "rhode-island",
+      "montana",
+      "delaware"
+    ],
+    "sitemap-tier10.xml": [
+      "south-dakota",
+      "north-dakota",
+      "alaska",
+      "vermont",
+      "wyoming"
+    ]
+  }
+}

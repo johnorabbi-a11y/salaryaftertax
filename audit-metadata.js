@@ -13,7 +13,7 @@ function walk(dir, files = []) {
       if (!SKIP_DIRS.has(entry.name)) walk(path.join(dir, entry.name), files);
       continue;
     }
-    if (entry.isFile() && entry.name.endsWith(".html")) files.push(path.join(dir, entry.name));
+    if (entry.isFile() && entry.name.endsWith(".html") && !/^google[\w-]*\.html$/i.test(entry.name)) files.push(path.join(dir, entry.name));
   }
   return files;
 }
@@ -24,6 +24,7 @@ function rel(file) {
 
 function pageUrl(file) {
   const relative = rel(file);
+  if (relative === "index.html") return `${SITE}/`;
   return `${SITE}/${relative}`;
 }
 
@@ -145,3 +146,4 @@ if (failures.length) {
 } else {
   console.log("\nPASS: metadata is complete, canonicalized, and unique.");
 }
+
