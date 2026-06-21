@@ -1,0 +1,1912 @@
+{
+  "unreachableCount": 395,
+  "unreachableByCategory": {
+    "ukHourlyTakeHome": 12,
+    "monthly": 125,
+    "weekly": 125,
+    "annualSalary": 125,
+    "uk": 7,
+    "other": 1
+  },
+  "unreachableSample": [
+    {
+      "file": "101000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 0,
+      "outbound": 9
+    },
+    {
+      "file": "102000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1,
+      "outbound": 9
+    },
+    {
+      "file": "103000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1,
+      "outbound": 11
+    },
+    {
+      "file": "104000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1,
+      "outbound": 11
+    },
+    {
+      "file": "105000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2,
+      "outbound": 11
+    },
+    {
+      "file": "110000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1,
+      "outbound": 11
+    },
+    {
+      "file": "115000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "inbound": 0,
+      "outbound": 8
+    },
+    {
+      "file": "176000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 8,
+      "outbound": 18
+    },
+    {
+      "file": "176000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 8,
+      "outbound": 19
+    },
+    {
+      "file": "176000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 8,
+      "outbound": 19
+    },
+    {
+      "file": "176000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 8,
+      "outbound": 19
+    },
+    {
+      "file": "176000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 8,
+      "outbound": 19
+    },
+    {
+      "file": "176000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 8,
+      "outbound": 19
+    },
+    {
+      "file": "177000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 9,
+      "outbound": 18
+    },
+    {
+      "file": "177000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 9,
+      "outbound": 19
+    },
+    {
+      "file": "177000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 9,
+      "outbound": 19
+    },
+    {
+      "file": "177000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 9,
+      "outbound": 19
+    },
+    {
+      "file": "177000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 9,
+      "outbound": 19
+    },
+    {
+      "file": "177000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 9,
+      "outbound": 19
+    },
+    {
+      "file": "178000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "178000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "178000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "178000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "178000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "178000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "179000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "179000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "179000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "179000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "179000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "179000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "180000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "180000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "180000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "180000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "180000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "180000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "181000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "181000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "181000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "181000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "181000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "181000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "182000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-weekly-new-york.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-after-tax-weekly-texas.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "182000-salary-after-tax-california.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "182000-salary-after-tax-florida.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "182000-salary-after-tax-illinois.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "182000-salary-after-tax-new-york.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "182000-salary-after-tax-texas.html",
+      "cat": "annualSalary",
+      "inbound": 10,
+      "outbound": 19
+    },
+    {
+      "file": "183000-after-tax-monthly-california.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-monthly-new-york.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-monthly-texas.html",
+      "cat": "monthly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-weekly-california.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    },
+    {
+      "file": "183000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "inbound": 10,
+      "outbound": 18
+    }
+  ],
+  "zeroInboundCount": 13,
+  "zeroInbound": [
+    {
+      "file": "101000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 9
+    },
+    {
+      "file": "115000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 8
+    },
+    {
+      "file": "52000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 9
+    },
+    {
+      "file": "53000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 8
+    },
+    {
+      "file": "54000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 8
+    },
+    {
+      "file": "average-salary-uk-by-age.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 10
+    },
+    {
+      "file": "average-salary-uk-by-region.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 11
+    },
+    {
+      "file": "average-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "outbound": 18
+    },
+    {
+      "file": "is-90000-a-good-salary-california.html",
+      "cat": "other",
+      "depth": null,
+      "outbound": 19
+    },
+    {
+      "file": "uk-salary-after-tax.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 21
+    },
+    {
+      "file": "uk-take-home-pay-explained.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 9
+    },
+    {
+      "file": "uk-tax-bands-explained.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 9
+    },
+    {
+      "file": "uk-tax-bands.html",
+      "cat": "uk",
+      "depth": null,
+      "outbound": 9
+    }
+  ],
+  "weakInboundCount": 102,
+  "weakInboundSample": [
+    {
+      "file": "101000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "102000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "103000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "104000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "105000-after-tax-monthly-florida.html",
+      "cat": "monthly",
+      "depth": 9,
+      "inbound": 2
+    },
+    {
+      "file": "105000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "depth": 8,
+      "inbound": 2
+    },
+    {
+      "file": "105000-after-tax-weekly-florida.html",
+      "cat": "weekly",
+      "depth": 9,
+      "inbound": 2
+    },
+    {
+      "file": "105000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "depth": 8,
+      "inbound": 2
+    },
+    {
+      "file": "105000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 2
+    },
+    {
+      "file": "106000-after-tax-monthly-illinois.html",
+      "cat": "monthly",
+      "depth": 7,
+      "inbound": 2
+    },
+    {
+      "file": "106000-after-tax-weekly-illinois.html",
+      "cat": "weekly",
+      "depth": 7,
+      "inbound": 2
+    },
+    {
+      "file": "110000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "115000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "12-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "120000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 23,
+      "inbound": 2
+    },
+    {
+      "file": "125000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 24,
+      "inbound": 1
+    },
+    {
+      "file": "13-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "14-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "16-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "17-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "18-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "19-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "21-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "22-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "23-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "24-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "26-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "27-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "28-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "29-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "30-an-hour-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "30000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 26,
+      "inbound": 1
+    },
+    {
+      "file": "35000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 25,
+      "inbound": 2
+    },
+    {
+      "file": "40000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 24,
+      "inbound": 2
+    },
+    {
+      "file": "45000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 23,
+      "inbound": 2
+    },
+    {
+      "file": "50000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 22,
+      "inbound": 2
+    },
+    {
+      "file": "52000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "53000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "54000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "55000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 21,
+      "inbound": 2
+    },
+    {
+      "file": "56000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 20,
+      "inbound": 1
+    },
+    {
+      "file": "61000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 17,
+      "inbound": 2
+    },
+    {
+      "file": "62000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 16,
+      "inbound": 2
+    },
+    {
+      "file": "63000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 15,
+      "inbound": 2
+    },
+    {
+      "file": "64000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 14,
+      "inbound": 2
+    },
+    {
+      "file": "65000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 13,
+      "inbound": 2
+    },
+    {
+      "file": "66000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 12,
+      "inbound": 2
+    },
+    {
+      "file": "67000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 11,
+      "inbound": 2
+    },
+    {
+      "file": "68000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 10,
+      "inbound": 2
+    },
+    {
+      "file": "69000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 9,
+      "inbound": 2
+    },
+    {
+      "file": "70000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 8,
+      "inbound": 2
+    },
+    {
+      "file": "71000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 7,
+      "inbound": 2
+    },
+    {
+      "file": "72000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 6,
+      "inbound": 2
+    },
+    {
+      "file": "73000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 5,
+      "inbound": 2
+    },
+    {
+      "file": "82000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 4,
+      "inbound": 2
+    },
+    {
+      "file": "83000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 5,
+      "inbound": 2
+    },
+    {
+      "file": "84000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 6,
+      "inbound": 2
+    },
+    {
+      "file": "85000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 7,
+      "inbound": 2
+    },
+    {
+      "file": "86000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 8,
+      "inbound": 2
+    },
+    {
+      "file": "87000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 9,
+      "inbound": 2
+    },
+    {
+      "file": "88000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 10,
+      "inbound": 2
+    },
+    {
+      "file": "89000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 11,
+      "inbound": 2
+    },
+    {
+      "file": "91000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 13,
+      "inbound": 2
+    },
+    {
+      "file": "92000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 14,
+      "inbound": 2
+    },
+    {
+      "file": "93000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 15,
+      "inbound": 2
+    },
+    {
+      "file": "94000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 16,
+      "inbound": 2
+    },
+    {
+      "file": "95000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 17,
+      "inbound": 2
+    },
+    {
+      "file": "96000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 18,
+      "inbound": 2
+    },
+    {
+      "file": "97000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 19,
+      "inbound": 2
+    },
+    {
+      "file": "98000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 20,
+      "inbound": 2
+    },
+    {
+      "file": "99000-take-home-pay-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 21,
+      "inbound": 1
+    },
+    {
+      "file": "average-salary-uk-by-age.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "average-salary-uk-by-region.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "average-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "best-states-for-take-home-pay.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "child-benefit-tax-charge-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "company-car-tax-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "emergency-tax-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "is-120000-a-good-salary-us.html",
+      "cat": "other",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "is-25000-a-good-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": 6,
+      "inbound": 2
+    },
+    {
+      "file": "is-50000-a-good-salary-us.html",
+      "cat": "other",
+      "depth": 3,
+      "inbound": 1
+    },
+    {
+      "file": "is-60000-a-good-salary-us.html",
+      "cat": "other",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "is-70000-a-good-salary-us.html",
+      "cat": "other",
+      "depth": 3,
+      "inbound": 2
+    },
+    {
+      "file": "is-90000-a-good-salary-california.html",
+      "cat": "other",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "marriage-allowance-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "median-salary-uk.html",
+      "cat": "ukHourlyTakeHome",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "salary-after-tax-30000-40000-uk.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "salary-after-tax-30000-50000-uk.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "salary-after-tax-40000-50000-uk.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "salary-after-tax-50000-80000-uk.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "salary-after-tax-80000-100000-uk.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "student-loan-repayments-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "taxable-benefits-explained.html",
+      "cat": "other",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "uk-bonus-tax-explained.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 2
+    },
+    {
+      "file": "uk-national-insurance-explained.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "uk-net-vs-gross-salary.html",
+      "cat": "uk",
+      "depth": 2,
+      "inbound": 1
+    },
+    {
+      "file": "uk-salary-after-tax.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "uk-take-home-pay-explained.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "uk-tax-bands-explained.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "uk-tax-bands.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 0
+    },
+    {
+      "file": "what-is-a-good-salary-in-the-uk.html",
+      "cat": "uk",
+      "depth": null,
+      "inbound": 1
+    },
+    {
+      "file": "why-your-tax-code-changes.html",
+      "cat": "uk",
+      "depth": 3,
+      "inbound": 2
+    }
+  ],
+  "highDepthCount": 704,
+  "highDepthSample": [
+    {
+      "file": "30000-take-home-pay-uk.html",
+      "depth": 26,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1
+    },
+    {
+      "file": "35000-take-home-pay-uk.html",
+      "depth": 25,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "125000-take-home-pay-uk.html",
+      "depth": 24,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1
+    },
+    {
+      "file": "40000-take-home-pay-uk.html",
+      "depth": 24,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "120000-take-home-pay-uk.html",
+      "depth": 23,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "45000-take-home-pay-uk.html",
+      "depth": 23,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "100000-take-home-pay-uk.html",
+      "depth": 22,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 3
+    },
+    {
+      "file": "50000-take-home-pay-uk.html",
+      "depth": 22,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "55000-take-home-pay-uk.html",
+      "depth": 21,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "99000-take-home-pay-uk.html",
+      "depth": 21,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1
+    },
+    {
+      "file": "56000-take-home-pay-uk.html",
+      "depth": 20,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 1
+    },
+    {
+      "file": "98000-take-home-pay-uk.html",
+      "depth": 20,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "57000-take-home-pay-uk.html",
+      "depth": 19,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 3
+    },
+    {
+      "file": "97000-take-home-pay-uk.html",
+      "depth": 19,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "60000-take-home-pay-uk.html",
+      "depth": 18,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 3
+    },
+    {
+      "file": "96000-take-home-pay-uk.html",
+      "depth": 18,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "61000-take-home-pay-uk.html",
+      "depth": 17,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "95000-take-home-pay-uk.html",
+      "depth": 17,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "151000-salary-after-tax-california.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 8
+    },
+    {
+      "file": "151000-salary-after-tax-florida.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 8
+    },
+    {
+      "file": "151000-salary-after-tax-texas.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 8
+    },
+    {
+      "file": "152000-salary-after-tax-california.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 9
+    },
+    {
+      "file": "152000-salary-after-tax-florida.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 9
+    },
+    {
+      "file": "152000-salary-after-tax-texas.html",
+      "depth": 16,
+      "cat": "annualSalary",
+      "inbound": 9
+    },
+    {
+      "file": "62000-take-home-pay-uk.html",
+      "depth": 16,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "94000-take-home-pay-uk.html",
+      "depth": 16,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "151000-after-tax-monthly-california.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-monthly-florida.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-monthly-illinois.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-monthly-texas.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-weekly-california.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-weekly-florida.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-weekly-new-york.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-weekly-texas.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-salary-after-tax-illinois.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 8
+    },
+    {
+      "file": "151000-salary-after-tax-new-york.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 8
+    },
+    {
+      "file": "152000-after-tax-monthly-california.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-monthly-florida.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-monthly-illinois.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-monthly-texas.html",
+      "depth": 15,
+      "cat": "monthly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-weekly-california.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-weekly-florida.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-weekly-new-york.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-weekly-texas.html",
+      "depth": 15,
+      "cat": "weekly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-salary-after-tax-illinois.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 9
+    },
+    {
+      "file": "152000-salary-after-tax-new-york.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 9
+    },
+    {
+      "file": "153000-salary-after-tax-california.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "153000-salary-after-tax-florida.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "153000-salary-after-tax-texas.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "154000-salary-after-tax-california.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "154000-salary-after-tax-florida.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "154000-salary-after-tax-texas.html",
+      "depth": 15,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "63000-take-home-pay-uk.html",
+      "depth": 15,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "93000-take-home-pay-uk.html",
+      "depth": 15,
+      "cat": "ukHourlyTakeHome",
+      "inbound": 2
+    },
+    {
+      "file": "1000000-after-tax-monthly.html",
+      "depth": 14,
+      "cat": "other",
+      "inbound": 3
+    },
+    {
+      "file": "1000000-salary-after-tax-uk.html",
+      "depth": 14,
+      "cat": "ukSalary",
+      "inbound": 4
+    },
+    {
+      "file": "131000-after-tax-monthly-florida.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 6
+    },
+    {
+      "file": "131000-after-tax-monthly-illinois.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 6
+    },
+    {
+      "file": "131000-after-tax-monthly-new-york.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 6
+    },
+    {
+      "file": "131000-after-tax-weekly-florida.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 6
+    },
+    {
+      "file": "131000-after-tax-weekly-illinois.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 6
+    },
+    {
+      "file": "131000-after-tax-weekly-new-york.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 6
+    },
+    {
+      "file": "151000-after-tax-monthly-new-york.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 8
+    },
+    {
+      "file": "151000-after-tax-weekly-illinois.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 8
+    },
+    {
+      "file": "152000-after-tax-monthly-new-york.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 9
+    },
+    {
+      "file": "152000-after-tax-weekly-illinois.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 9
+    },
+    {
+      "file": "153000-after-tax-monthly-california.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-monthly-florida.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-monthly-illinois.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-monthly-texas.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-weekly-california.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-weekly-florida.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-weekly-new-york.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-after-tax-weekly-texas.html",
+      "depth": 14,
+      "cat": "weekly",
+      "inbound": 10
+    },
+    {
+      "file": "153000-salary-after-tax-illinois.html",
+      "depth": 14,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "153000-salary-after-tax-new-york.html",
+      "depth": 14,
+      "cat": "annualSalary",
+      "inbound": 10
+    },
+    {
+      "file": "154000-after-tax-monthly-california.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "154000-after-tax-monthly-florida.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "154000-after-tax-monthly-illinois.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    },
+    {
+      "file": "154000-after-tax-monthly-texas.html",
+      "depth": 14,
+      "cat": "monthly",
+      "inbound": 10
+    }
+  ]
+}
