@@ -2,7 +2,7 @@
   "childCounts": {
     "sitemap-core.xml": 11,
     "sitemap-authority.xml": 60,
-    "sitemap-tools.xml": 1342,
+    "sitemap-tools.xml": 1343,
     "sitemap-uk.xml": 512,
     "sitemap-us-hubs.xml": 62,
     "sitemap-tier1.xml": 2220,
@@ -16,10 +16,10 @@
     "sitemap-tier9.xml": 2415,
     "sitemap-tier10.xml": 2415
   },
-  "totalSitemapUrls": 25042,
-  "uniqueSitemapUrls": 25042,
-  "localHtmlCount": 25043,
-  "localIndexableHtmlCount": 25042,
+  "totalSitemapUrls": 25043,
+  "uniqueSitemapUrls": 25043,
+  "localHtmlCount": 25044,
+  "localIndexableHtmlCount": 25043,
   "excludedFiles": [
     {
       "file": "google045f4d6b341942cf.html",
