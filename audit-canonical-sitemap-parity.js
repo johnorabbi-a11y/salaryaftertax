@@ -4,6 +4,9 @@ const path = require('path');
 const ROOT = __dirname;
 const SITE = 'https://aftertaxtool.com/';
 const EXCLUDED_HTML = new Set(['google045f4d6b341942cf.html']);
+const LEGACY_CANONICALS = new Map([
+  ['hourly-to-salary-UK-Us.html', SITE + 'hourly-to-salary.html'],
+]);
 
 function read(file) {
   return fs.readFileSync(path.join(ROOT, file), 'utf8');
@@ -51,14 +54,15 @@ const canonicalGroups = new Map();
 for (const file of htmlFiles) {
   const html = read(file);
   const canonical = canonicalFor(file, html);
-  const expected = file === 'index.html' ? SITE : SITE + file;
+  const legacyCanonical = LEGACY_CANONICALS.get(file);
+  const expected = legacyCanonical || (file === 'index.html' ? SITE : SITE + file);
   if (!canonical) issues.push({ file, issue: 'missing canonical' });
   if (canonical && canonical !== expected) issues.push({ file, issue: 'canonical does not match expected URL', canonical, expected });
   if (canonical && !sitemapSet.has(canonical)) issues.push({ file, issue: 'canonical URL missing from sitemap inventory', canonical });
   if (canonical && /^http:\/\//i.test(canonical)) issues.push({ file, issue: 'canonical uses http', canonical });
   if (canonical && /^https:\/\/www\./i.test(canonical)) issues.push({ file, issue: 'canonical uses www', canonical });
   if (canonical === SITE && file !== 'index.html') issues.push({ file, issue: 'non-homepage canonical points to root' });
-  if (canonical) {
+  if (canonical && !legacyCanonical) {
     const list = canonicalGroups.get(canonical) || [];
     list.push(file);
     canonicalGroups.set(canonical, list);
@@ -74,6 +78,7 @@ const missingLocalFiles = sitemapUrls
   .filter(({ file }) => !file || !fs.existsSync(path.join(ROOT, file)));
 
 const missingFromSitemap = htmlFiles
+  .filter((file) => !LEGACY_CANONICALS.has(file))
   .map((file) => (file === 'index.html' ? SITE : SITE + file))
   .filter((url) => !sitemapSet.has(url));
 

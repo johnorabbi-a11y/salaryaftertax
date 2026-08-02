@@ -3,6 +3,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const EXCLUDED_HTML = new Set(['google045f4d6b341942cf.html']);
+const LEGACY_CANONICAL_FILES = new Set(['hourly-to-salary-UK-Us.html']);
 
 function strip(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -58,7 +59,7 @@ const result = {
   htmlFilesChecked: files.length,
   duplicateTitles: grouped(rows.map((r) => [r.file, r.title])),
   duplicateDescriptions: grouped(rows.map((r) => [r.file, r.description])),
-  duplicateCanonicals: grouped(rows.map((r) => [r.file, r.canonical])),
+  duplicateCanonicals: grouped(rows.filter((r) => !LEGACY_CANONICAL_FILES.has(r.file)).map((r) => [r.file, r.canonical])),
   duplicateH1s: grouped(rows.map((r) => [r.file, r.h1])),
 };
 

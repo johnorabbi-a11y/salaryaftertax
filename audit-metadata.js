@@ -6,6 +6,9 @@ const path = require("path");
 const ROOT = process.cwd();
 const SITE = process.env.SITE_ORIGIN || "https://aftertaxtool.com";
 const SKIP_DIRS = new Set([".git", "node_modules", ".next", "dist", "build"]);
+const LEGACY_CANONICALS = new Map([
+  ["hourly-to-salary-UK-Us.html", `${SITE}/hourly-to-salary.html`],
+]);
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -53,7 +56,8 @@ for (const file of htmlFiles) {
     || getTag(html, /<meta\s+content=["']([^"']*)["']\s+name=["']description["'][^>]*>/i);
   const canonical = getTag(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']*)["'][^>]*>/i)
     || getTag(html, /<link\s+href=["']([^"']*)["']\s+rel=["']canonical["'][^>]*>/i);
-  const expectedCanonical = pageUrl(file);
+  const relative = rel(file);
+  const expectedCanonical = LEGACY_CANONICALS.get(relative) || pageUrl(file);
   const issues = [];
 
   if (!title) issues.push("missing title");

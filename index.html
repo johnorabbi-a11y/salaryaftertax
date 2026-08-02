@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Salary After Tax Calculator | Take-Home Pay</title>
-  <meta name="description" content="Use AfterTaxTool to estimate salary after tax, take-home pay, net income, monthly pay and weekly pay for UK and US salaries, including state salary routes and planning guides.">
+  <title>Salary After Tax Calculator UK &amp; US | Take-Home Pay</title>
+  <meta name="description" content="Estimate salary after tax and take-home pay for UK and US salaries, with monthly and weekly pay routes plus practical net income planning guides.">
   <link rel="canonical" href="https://aftertaxtool.com/">
   <meta name="robots" content="index,follow">
   <meta name="google-site-verification" content="4ojPcXMHSUnpeT5srJiPg2RJ2V-i1fzlBaAw5FLDLYo">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AfterTaxTool">
+  <meta property="og:title" content="Salary After Tax Calculator UK &amp; US | Take-Home Pay">
+  <meta property="og:description" content="Estimate salary after tax and take-home pay for UK and US salaries, with monthly and weekly pay routes plus practical net income planning guides.">
+  <meta property="og:url" content="https://aftertaxtool.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Salary After Tax Calculator UK &amp; US | Take-Home Pay">
+  <meta name="twitter:description" content="Estimate salary after tax and take-home pay for UK and US salaries, with monthly and weekly pay routes plus practical net income planning guides.">
   <style>
     :root{--bg:#f4f7fb;--paper:#fff;--ink:#172033;--muted:#5c687a;--line:#dfe7f1;--soft:#edf7f4;--soft2:#eef3fb;--accent:#176b5b;--accent2:#274b8f;--gold:#fbf3df;--rose:#fbf0ee;--nav:#102033;--shadow:0 10px 24px rgba(22,34,51,.055)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.62}a{color:#174f96;text-decoration:none}a:hover{text-decoration:underline}
@@ -805,15 +813,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://aftertaxtool.com/#organization",
+      "name": "AfterTaxTool",
+      "url": "https://aftertaxtool.com/",
+      "description": "AfterTaxTool publishes salary after tax calculators, take-home pay guides and income planning resources for UK and US salary earners."
+    },
+    {
       "@type": "WebSite",
       "@id": "https://aftertaxtool.com/#website",
       "url": "https://aftertaxtool.com/",
       "name": "AfterTaxTool",
       "description": "Salary after tax calculators and take-home pay guides for UK and US income planning.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://aftertaxtool.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+      "publisher": {
+        "@id": "https://aftertaxtool.com/#organization"
       }
     },
     {
