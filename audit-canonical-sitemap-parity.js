@@ -29,20 +29,28 @@ function fileForUrl(url) {
 }
 
 const sitemapIndex = read('sitemap.xml');
-const childSitemaps = locs(sitemapIndex).map(fileForUrl).filter(Boolean);
+const sitemapIsIndex = /<sitemapindex\b/i.test(sitemapIndex);
+const sitemapIsUrlset = /<urlset\b/i.test(sitemapIndex);
+const childSitemaps = sitemapIsIndex ? locs(sitemapIndex).map(fileForUrl).filter(Boolean) : [];
 const sitemapUrls = [];
 const childIssues = [];
 
-for (const child of childSitemaps) {
-  if (!fs.existsSync(path.join(ROOT, child))) {
-    childIssues.push({ child, issue: 'referenced child sitemap missing locally' });
-    continue;
+if (sitemapIsUrlset) {
+  sitemapUrls.push(...locs(sitemapIndex));
+} else if (sitemapIsIndex) {
+  for (const child of childSitemaps) {
+    if (!fs.existsSync(path.join(ROOT, child))) {
+      childIssues.push({ child, issue: 'referenced child sitemap missing locally' });
+      continue;
+    }
+    const xml = read(child);
+    const childLocs = locs(xml);
+    const childSitemapRefs = childLocs.filter((url) => /sitemap.*\.xml$/i.test(url));
+    if (childSitemapRefs.length) childIssues.push({ child, issue: 'child sitemap references another sitemap', refs: childSitemapRefs });
+    sitemapUrls.push(...childLocs);
   }
-  const xml = read(child);
-  const childLocs = locs(xml);
-  const childSitemapRefs = childLocs.filter((url) => /sitemap.*\.xml$/i.test(url));
-  if (childSitemapRefs.length) childIssues.push({ child, issue: 'child sitemap references another sitemap', refs: childSitemapRefs });
-  sitemapUrls.push(...childLocs);
+} else {
+  childIssues.push({ child: 'sitemap.xml', issue: 'sitemap.xml is neither sitemapindex nor urlset' });
 }
 
 const duplicates = [...new Set(sitemapUrls.filter((url, i) => sitemapUrls.indexOf(url) !== i))];
@@ -83,6 +91,7 @@ const missingFromSitemap = htmlFiles
   .filter((url) => !sitemapSet.has(url));
 
 const result = {
+  sitemapMode: sitemapIsUrlset ? 'classic-urlset' : (sitemapIsIndex ? 'sitemap-index' : 'unknown'),
   childSitemaps,
   childIssues,
   sitemapUrlCount: sitemapUrls.length,
