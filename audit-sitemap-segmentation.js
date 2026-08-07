@@ -2,7 +2,21 @@
 const path = require('path');
 const ROOT = process.cwd();
 const HOST = 'https://aftertaxtool.com/';
-const CHILDREN = ['sitemap-core.xml','sitemap-authority.xml','sitemap-tools.xml','sitemap-uk.xml','sitemap-us-hubs.xml',...Array.from({length:10},(_,i)=>`sitemap-tier${i+1}.xml`)];
+const CHILDREN = [
+  'sitemap-core.xml',
+  'sitemap-authority.xml',
+  'sitemap-calculators.xml',
+  'sitemap-uk-annual.xml',
+  'sitemap-uk-monthly.xml',
+  'sitemap-uk-weekly.xml',
+  'sitemap-uk-utilities.xml',
+  'sitemap-us-national.xml',
+  'sitemap-us-state-hubs.xml',
+  'sitemap-us-state-annual.xml',
+  'sitemap-us-state-monthly.xml',
+  'sitemap-us-state-weekly.xml',
+  'sitemap-compensation-payroll.xml'
+];
 function locs(xml){return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);}
 function canonicalOf(html){return html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1] || html.match(/<link\s+href=["']([^"']+)["']\s+rel=["']canonical["']/i)?.[1] || null;}
 function fileForUrl(url){if(!url.startsWith(HOST)) return null; const p = new URL(url).pathname; return p==='/' ? 'index.html' : decodeURIComponent(p.replace(/^\//,''));}
@@ -74,8 +88,10 @@ for(const s of stateSlugs) requiredMajor.push(`${HOST}salary-after-tax-${s}.html
 const missingMajor = requiredMajor.filter(u=>!sitemapSet.has(u));
 const robots = fs.existsSync(path.join(ROOT,'robots.txt')) ? fs.readFileSync(path.join(ROOT,'robots.txt'),'utf8') : '';
 const robotsSitemaps = [...robots.matchAll(/^Sitemap:\s*(\S+)/gmi)].map(m=>m[1]);
-const cleanXml = fs.existsSync(path.join(ROOT,'sitemap-clean.xml')) ? fs.readFileSync(path.join(ROOT,'sitemap-clean.xml'),'utf8') : '';
-const indexXml = fs.existsSync(path.join(ROOT,'sitemap-index.xml')) ? fs.readFileSync(path.join(ROOT,'sitemap-index.xml'),'utf8') : '';
+const retiredSitemapFiles = fs.readdirSync(ROOT)
+  .filter(f => /^sitemap.*\.xml$/i.test(f))
+  .filter(f => f !== 'sitemap.xml' && !CHILDREN.includes(f))
+  .sort();
 const result = {
   childCounts,
   totalSitemapUrls: allUrls.length,
@@ -95,10 +111,9 @@ const result = {
   robotsSitemaps,
   robotsOk: robotsSitemaps.length === 1 && robotsSitemaps[0] === HOST + 'sitemap.xml',
   sitemapXmlIsIndex: /<sitemapindex\b/.test(sitemapIndex),
-  sitemapCleanStatus: cleanXml === sitemapIndex ? 'mirrors sitemap.xml sitemap index' : 'differs from sitemap.xml',
-  sitemapIndexStatus: indexXml ? (indexXml === sitemapIndex ? 'matches sitemap.xml sitemap index' : 'differs from sitemap.xml') : 'not present'
+  retiredSitemapFiles
 };
 fs.writeFileSync(path.join(ROOT,'sitemap-segmentation-audit.json'), JSON.stringify(result,null,2), 'utf8');
 console.log(JSON.stringify(result, null, 2));
-if(childReferenceFailures.length || unexpectedIndexRefs.length || duplicates.length || missingFiles.length || caseMismatches.length || malformed.length || missingFromSitemaps.length || extraInSitemaps.length || missingMajor.length || !result.robotsOk || !result.sitemapXmlIsIndex || result.sitemapCleanStatus !== 'mirrors sitemap.xml sitemap index') process.exitCode = 1;
+if(childReferenceFailures.length || unexpectedIndexRefs.length || duplicates.length || missingFiles.length || caseMismatches.length || malformed.length || missingFromSitemaps.length || extraInSitemaps.length || missingMajor.length || !result.robotsOk || !result.sitemapXmlIsIndex || retiredSitemapFiles.length) process.exitCode = 1;
 

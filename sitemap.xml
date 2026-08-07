@@ -7,42 +7,36 @@
     <loc>https://aftertaxtool.com/sitemap-authority.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tools.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-calculators.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-uk.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-uk-annual.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-us-hubs.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-uk-monthly.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier1.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-uk-weekly.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier2.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-uk-utilities.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier3.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-us-national.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier4.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-us-state-hubs.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier5.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-us-state-annual.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier6.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-us-state-monthly.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier7.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-us-state-weekly.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier8.xml</loc>
-  </sitemap>
-  <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier9.xml</loc>
-  </sitemap>
-  <sitemap>
-    <loc>https://aftertaxtool.com/sitemap-tier10.xml</loc>
+    <loc>https://aftertaxtool.com/sitemap-compensation-payroll.xml</loc>
   </sitemap>
 </sitemapindex>
