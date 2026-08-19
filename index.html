@@ -423,10 +423,10 @@
 <section class="feature-card" id="credit-applications-preparation">
       <p class="eyebrow">Related tools</p>
       <h2>More Practical Finance Tools</h2>
-      <p>AfterTaxTool helps you understand income and take-home pay. CreditRoadmap helps UK users understand credit readiness, CCJs, defaults, credit utilisation and application preparation.</p>
+      <p>AfterTaxTool helps you understand income and take-home pay. WorthMyTime helps UK workers understand what work is worth after hours, commuting and work costs. CreditRoadmap helps UK users understand credit readiness, CCJs, defaults, credit utilisation and application preparation.</p>
       <div class="link-grid">
         <a class="link-card" href="https://creditroadmap.co.uk/roadmap.html"><strong>Generate a Credit Roadmap</strong><span>Review practical credit-readiness steps before applications.</span></a>
-        <a class="link-card" href="https://creditroadmap.co.uk/"><strong>Visit CreditRoadmap</strong><span>Explore UK credit-readiness guides and planning tools.</span></a>
+        <a class="link-card" href="https://creditroadmap.co.uk/"><strong>Visit CreditRoadmap</strong><span>Explore UK credit-readiness guides and planning tools.</span></a><a class="link-card" href="https://worthmytime.co.uk/tools/true-hourly-rate/"><strong>Check your true hourly rate</strong><span>Use WorthMyTime to compare salary with hours, commuting, overtime and work costs.</span></a>
       </div>
     </section>
 
@@ -475,7 +475,7 @@
 </section>
 <!-- PAYROLL_DEDUCTIONS_ECOSYSTEM_END -->
 </main>
-  <footer><p><strong>AfterTaxTool</strong> publishes practical salary after tax, take-home pay and net pay guides for UK and US income planning.</p><p><a href="/methodology.html">Methodology</a> | <a href="/tax-assumptions.html">Tax Assumptions</a> | <a href="/editorial-standards.html">Editorial Standards</a> | <a href="/about.html">About</a></p></footer>
+  <footer><p><strong>AfterTaxTool</strong> publishes practical salary after tax, take-home pay and net pay guides for UK and US income planning.</p><p><a href="/methodology.html">Methodology</a> | <a href="/tax-assumptions.html">Tax Assumptions</a> | <a href="/editorial-standards.html">Editorial Standards</a> | <a href="/about.html">About</a> | <a href="https://worthmytime.co.uk/">WorthMyTime</a> | <a href="https://creditroadmap.co.uk/">CreditRoadmap</a></p></footer>
 <script>
     const UK_STUDENT_LOAN = {
       plan1: { threshold: 26065, rate: 0.09 },
@@ -527,8 +527,8 @@
     }
 
     function fmtMoney(n, ccy) {
-      if (!isNum(n)) return "—";
-      const sym = ccy === "GBP" ? "£" : ccy === "USD" ? "$" : "";
+      if (!isNum(n)) return "???";
+      const sym = ccy === "GBP" ? "??" : ccy === "USD" ? "$" : "";
       return sym + Math.round(n).toLocaleString();
     }
 
@@ -718,9 +718,9 @@
       const ccy = pickCurrency(country, el("currency").value);
 
       if (!isNum(totalGross) || totalGross <= 0) {
-        el("netYear").textContent = "—";
-        el("netMonth").textContent = "—";
-        el("taxYear").textContent = "—";
+        el("netYear").textContent = "???";
+        el("netMonth").textContent = "???";
+        el("taxYear").textContent = "???";
         el("breakdown").textContent = "Please enter a positive annual salary.";
         el("assumptions").textContent = "";
         el("comparison").style.display = "none";
@@ -790,8 +790,8 @@
           Standard deduction (assumed): ${fmtMoney(r.standardDeduction, ccy)}<br>
           Federal income tax (estimated): ${fmtMoney(r.incomeTax, ccy)}<br>
           FICA (estimated): ${fmtMoney(r.fica, ccy)}<br>
-          State tax (estimated – ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
-          <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} · Medicare: ${fmtMoney(r.medicare, ccy)} · Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
+          State tax (estimated ??? ${stateName}): ${fmtMoney(r.stateTax, ccy)}<br>
+          <span class="tiny">Social Security: ${fmtMoney(r.ss, ccy)} ?? Medicare: ${fmtMoney(r.medicare, ccy)} ?? Additional Medicare: ${fmtMoney(r.addMedicare, ccy)}</span><br>
           <b>Estimated take-home:</b> ${fmtMoney(r.net, ccy)} per year (${fmtMoney(r.net / 12, ccy)} per month)`;
 
         el("assumptions").innerHTML =
@@ -951,3 +951,4 @@
 }</script>
 </body>
 </html>
+
