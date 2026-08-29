@@ -1,0 +1,20 @@
+{
+  "cohortSize": 152,
+  "cohortAvgInboundBefore": 329.2894736842105,
+  "cohortAvgInboundAfter": 330.4013157894737,
+  "newCohortInboundLinks": 169,
+  "reachableRoutes": 25042,
+  "unreachableRoutes": 2,
+  "zeroInboundRoutes": 2,
+  "weakInboundRoutes": 28,
+  "p95Depth": 5,
+  "maxDepth": 8,
+  "unreachableSample": [
+    "/google045f4d6b341942cf.html",
+    "/hourly-to-salary-UK-Us.html"
+  ],
+  "zeroInboundSample": [
+    "/google045f4d6b341942cf.html",
+    "/hourly-to-salary-UK-Us.html"
+  ]
+}
