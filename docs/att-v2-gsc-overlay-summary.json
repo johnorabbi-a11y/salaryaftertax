@@ -1,0 +1,70 @@
+{
+  "gsc_export": "aftertaxtool.com-Performance-on-Search-2026-09-02.zip",
+  "gsc_pages_visible": 8,
+  "gsc_clicked_pages": 6,
+  "gsc_clicked_deep_urls": [
+    {
+      "gsc_url": "https://aftertaxtool.com/60000-after-tax-weekly-illinois.html",
+      "normalized_url": "https://aftertaxtool.com/60000-after-tax-weekly-illinois.html",
+      "current_path": "60000-after-tax-weekly-illinois.html",
+      "clicks": 11,
+      "impressions": 157,
+      "ctr": "7.01%",
+      "position": 2.03,
+      "mandatory_human_review": "YES"
+    },
+    {
+      "gsc_url": "https://aftertaxtool.com/40000-salary-after-tax-new-york.html",
+      "normalized_url": "https://aftertaxtool.com/40000-salary-after-tax-new-york.html",
+      "current_path": "40000-salary-after-tax-new-york.html",
+      "clicks": 10,
+      "impressions": 213,
+      "ctr": "4.69%",
+      "position": 4.54,
+      "mandatory_human_review": "YES"
+    },
+    {
+      "gsc_url": "https://aftertaxtool.com/95000-after-tax-monthly-california.html",
+      "normalized_url": "https://aftertaxtool.com/95000-after-tax-monthly-california.html",
+      "current_path": "95000-after-tax-monthly-california.html",
+      "clicks": 8,
+      "impressions": 213,
+      "ctr": "3.76%",
+      "position": 3.56,
+      "mandatory_human_review": "YES"
+    },
+    {
+      "gsc_url": "https://www.aftertaxtool.com/120000-after-tax-monthly.html",
+      "normalized_url": "https://aftertaxtool.com/120000-after-tax-monthly.html",
+      "current_path": "120000-after-tax-monthly.html",
+      "clicks": 7,
+      "impressions": 199,
+      "ctr": "3.52%",
+      "position": 3.65,
+      "mandatory_human_review": "YES"
+    },
+    {
+      "gsc_url": "https://aftertaxtool.com/20000-salary-after-tax-texas.html",
+      "normalized_url": "https://aftertaxtool.com/20000-salary-after-tax-texas.html",
+      "current_path": "20000-salary-after-tax-texas.html",
+      "clicks": 3,
+      "impressions": 55,
+      "ctr": "5.45%",
+      "position": 4.36,
+      "mandatory_human_review": "YES"
+    }
+  ],
+  "revised_proposed_v2_canonical_count": 123,
+  "launch_calculator_count": 46,
+  "supporting_url_count": 77,
+  "rejected_from_previous_inventory": 93,
+  "disposition_counts_after_overlay": {
+    "KEEP": 74,
+    "REMOVE": 24766,
+    "REDIRECT": 22,
+    "CONSOLIDATE": 179,
+    "REPURPOSE": 1
+  },
+  "redirect_count": 22,
+  "removal_count": 24766
+}
