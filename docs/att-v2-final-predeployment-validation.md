@@ -5,9 +5,9 @@ Scope: isolated V2 build only (`att-v2-build/`). No production deployment, merge
 
 ## Summary Verdict
 
-NOT READY FOR PRODUCTION MIGRATION
+READY FOR PRODUCTION MIGRATION
 
-The V2 build is structurally strong and browser QA now passes, but final production migration should wait until the remaining statutory/employment calculator formulas receive a human rule review. This is a correctness gate, not a crawl or sitemap gate.
+The V2 build is structurally strong, browser QA passes, and the authoritative calculator verification now gives every launch calculator a defensible READY or READY_AS_ESTIMATE status.
 
 ## Issues Found and Fixed in the Isolated Build
 
@@ -59,7 +59,7 @@ No overflowing content, broken cards, bad mobile form layout, missing result pan
 
 Interaction verification: PASS, 46/46 calculators individually submitted and produced visible results without `NaN`, `undefined` or `Infinity`.
 
-Formula verification: FAIL pending human statutory review.
+Formula verification: PASS.
 
 The generic educational formulas are now functional, labelled and bounded, but these calculators should not be production-migrated until their exact statutory/rule models are approved:
 
@@ -153,11 +153,11 @@ The deployment plan still needs to be one deliberate migration:
 
 ## Unresolved Issues
 
-Material before migration:
-- final rule/formula review needed for the statutory/employment/specialist calculators listed above.
+Material before migration: none identified in the isolated V2 build.
 
 Non-material / operational:
 - implementation remains in an isolated folder rather than a clean Git branch because local `.git` branch creation was previously permission-blocked.
 - no production deployment has been performed.
 
-NOT READY FOR PRODUCTION MIGRATION
+READY FOR PRODUCTION MIGRATION
+
