@@ -1,0 +1,8 @@
+source_page_type,destination_site,destination_page_type,user_reason,recommended_anchor_context
+ATT pay/tax calculator result,SalaryDecoded,salary intelligence page or hub,User wants deeper salary context after a take-home estimate,Compare this salary in more detail
+ATT mortgage payment calculator,CreditRoadmap,mortgage-readiness-guide.html,User has payment estimate and needs credit-readiness preparation,Mortgage readiness guide
+ATT debt-to-income calculator,CreditRoadmap,roadmap.html,User sees affordability pressure and wants credit readiness next steps,Build a credit roadmap
+ATT commute/job-change calculator,WorthMyTime,job-value or commute decision page,User wants time and work-life trade-offs beyond money,Compare the time cost
+CreditRoadmap affordability pages,AfterTaxTool,loan or mortgage repayment calculator,User needs payment arithmetic before readiness planning,Estimate repayments
+WorthMyTime salary/time pages,AfterTaxTool,overtime-tax-calculator or take-home-pay-calculator,User needs tax-adjusted income arithmetic,Estimate take-home pay
+SalaryDecoded salary pages,AfterTaxTool,take-home-pay-calculator,User wants a custom calculator rather than a prebuilt salary page,Use the calculator

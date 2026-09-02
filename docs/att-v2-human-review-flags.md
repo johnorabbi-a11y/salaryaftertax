@@ -1,0 +1,133 @@
+# AfterTaxTool V2 Human Review Flags
+
+These decisions should be reviewed before implementation.
+
+## High-Risk Groups
+
+- Removing the old salary lattice is the central strategic decision.
+- State hubs should not be blindly redirected until replacement intent is confirmed.
+- Existing calculators with V2 equivalents can redirect only where the replacement is substantial.
+- URLs with known links, impressions, clicks or conversions should be manually overridden.
+
+## Representative URL Flags
+
+- `index.html`: KEEP -> `/`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `emergency-fund-calculator.html`: REDIRECT -> `/saving/emergency-fund-calculator/`. Legacy calculator has a materially equivalent V2 calculator destination.
+- `rent-affordability-calculator.html`: REDIRECT -> `/household-money/rent-affordability-calculator/`. Legacy calculator has a materially equivalent V2 calculator destination.
+- `salary-after-tax-alabama.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-alaska.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-arizona.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-arkansas.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-by-state.html`: REPURPOSE -> `/salary-after-tax-by-state.html`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `salary-after-tax-california.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-colorado.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-connecticut.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-delaware.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-florida.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-georgia.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-hawaii.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-idaho.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-illinois.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-indiana.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-iowa.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-kansas.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-kentucky.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-louisiana.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-maine.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-maryland.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-massachusetts.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-michigan.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-minnesota.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-mississippi.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-missouri.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-montana.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-monthly-us.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-after-tax-nebraska.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-nevada.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-new-hampshire.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-new-jersey.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-new-mexico.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-new-york.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-north-carolina.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-north-dakota.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-ohio.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-oklahoma.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-oregon.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-pennsylvania.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-rhode-island.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-south-carolina.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-south-dakota.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-tennessee.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-texas.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-uk.html`: KEEP -> `/salary-after-tax-uk.html`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `salary-after-tax-us-anchor.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-after-tax-us.html`: KEEP -> `/salary-after-tax-us.html`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `salary-after-tax-utah.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-vermont.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-virginia.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-washington.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-weekly-us.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-after-tax-west-virginia.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-wisconsin.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax-wyoming.html`: CONSOLIDATE -> `/salary-after-tax-by-state.html`. State comparison intent survives in compact V2 form, but hub redirects require human review.
+- `salary-after-tax.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-and-house-price-affordability.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-change-affordability-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-change-budget-planning-guide.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-change-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-change-planning.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-comparison-calculators.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-decision-guides.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-increase-after-tax.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-increase-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-increase-cost-of-living-guide.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-increase-vs-bonus.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-needed-to-buy-a-house.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-and-pay-rises.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-benefits-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-impact-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-tax-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-vs-higher-pay.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-sacrifice-vs-normal-pay.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-tax-calculator-uk.html`: KEEP -> `/salary-tax-calculator-uk.html`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `salary-tax-traps-uk.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-to-hourly.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-vs-benefits.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-vs-cost-of-living-by-state.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-vs-cost-of-living.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-vs-pension-contribution-example.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `salary-vs-work-life-balance.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `savings-rate-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `should-i-take-a-higher-paying-job.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `should-i-take-lower-salary-for-better-benefits.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `six-figure-salary-after-tax.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `six-figure-salary-planning-guide.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `stamp-duty-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `stamp-duty-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `stock-options-vs-cash-bonus.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `stock-options-vs-salary.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `student-loan-deductions-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `student-loan-impact-on-take-home-pay.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `student-loan-repayments-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `take-home-pay-after-housing-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `take-home-pay-after-housing-costs.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `take-home-pay-deductions.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `take-home-pay-difference-between-two-salaries.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `take-home-pay-uk.html`: KEEP -> `/take-home-pay-uk.html`. Existing URL survives V2 as a core page, calculator, guide, trust page or selected example.
+- `take-home-pay-us.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `tax-efficient-salary-planning.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `taxable-benefits-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `taxable-benefits-vs-cash-compensation.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `total-compensation-calculator.html`: CONSOLIDATE -> `/planning-calculators.html`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `total-compensation-guides.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `total-compensation-vs-base-salary.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-bonus-tax-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-higher-rate-tax-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-income-tax-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-national-insurance-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-net-vs-gross-salary.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-payrise-tax-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-pension-tax-relief-explained.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-salary-after-tax.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
+- `uk-salary-examples.html`: CONSOLIDATE -> `/guides/`. Potentially useful non-lattice content should be reviewed and incorporated or retired.
