@@ -1,0 +1,222 @@
+[
+  {
+    "current_url": "https://aftertaxtool.com/affordability-calculator.html",
+    "current_path": "affordability-calculator.html",
+    "destination_url": "/household-money/rent-affordability-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/benefits-vs-salary-calculator.html",
+    "current_path": "benefits-vs-salary-calculator.html",
+    "destination_url": "/higher-salary-vs-better-benefits.html",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to retained V2 URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/bonus-tax-impact-calculator.html",
+    "current_path": "bonus-tax-impact-calculator.html",
+    "destination_url": "/pay-tax/bonus-tax-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/bonus-vs-salary-increase-calculator.html",
+    "current_path": "bonus-vs-salary-increase-calculator.html",
+    "destination_url": "/bonus-vs-pay-rise.html",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/debt-to-income-calculator.html",
+    "current_path": "debt-to-income-calculator.html",
+    "destination_url": "/borrowing-debt/loan-repayment-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Medium with WorthMyTime/CreditRoadmap",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/emergency-fund-calculator.html",
+    "current_path": "emergency-fund-calculator.html",
+    "destination_url": "/saving/emergency-fund-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/employer-pension-value-calculator.html",
+    "current_path": "employer-pension-value-calculator.html",
+    "destination_url": "/pay-tax/pension-contribution-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/job-offer-after-tax-calculator.html",
+    "current_path": "job-offer-after-tax-calculator.html",
+    "destination_url": "/work-money/job-change-break-even-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Medium with WorthMyTime/CreditRoadmap",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/job-offer-calculator.html",
+    "current_path": "job-offer-calculator.html",
+    "destination_url": "/work-money/job-change-break-even-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Medium with WorthMyTime/CreditRoadmap",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/mortgage-affordability-calculator.html",
+    "current_path": "mortgage-affordability-calculator.html",
+    "destination_url": "/borrowing-debt/mortgage-payment-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Medium with WorthMyTime/CreditRoadmap",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/pay-rise-calculator.html",
+    "current_path": "pay-rise-calculator.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/paycheck-deductions-calculator.html",
+    "current_path": "paycheck-deductions-calculator.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/payroll-deduction-calculator.html",
+    "current_path": "payroll-deduction-calculator.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/pension-vs-salary-calculator.html",
+    "current_path": "pension-vs-salary-calculator.html",
+    "destination_url": "/pay-tax/pension-contribution-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/raise-after-tax-calculator.html",
+    "current_path": "raise-after-tax-calculator.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Removed as a standalone V2 URL; legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/rent-affordability-calculator.html",
+    "current_path": "rent-affordability-calculator.html",
+    "destination_url": "/household-money/rent-affordability-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/salary-change-affordability-calculator.html",
+    "current_path": "salary-change-affordability-calculator.html",
+    "destination_url": "/work-money/job-change-break-even-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/salary-change-calculator.html",
+    "current_path": "salary-change-calculator.html",
+    "destination_url": "/work-money/job-change-break-even-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/salary-increase-after-tax.html",
+    "current_path": "salary-increase-after-tax.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "High with SalaryDecoded",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/salary-increase-calculator.html",
+    "current_path": "salary-increase-calculator.html",
+    "destination_url": "/pay-tax/take-home-pay-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to existing V2 canonical URL."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/salary-sacrifice-impact-calculator.html",
+    "current_path": "salary-sacrifice-impact-calculator.html",
+    "destination_url": "/pay-tax/salary-sacrifice-calculator/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Phase 0 planning classification. Human review required before implementation."
+  },
+  {
+    "current_url": "https://aftertaxtool.com/total-compensation-calculator.html",
+    "current_path": "total-compensation-calculator.html",
+    "destination_url": "/work-money/",
+    "destination_status": "substantial-equivalent",
+    "reason": "Legacy calculator has a materially equivalent V2 destination.",
+    "historical_value_risk": "Medium",
+    "portfolio_overlap": "Low",
+    "notes": "Migration validation corrected destination to retained V2 work-money hub; no exact calculator survives final inventory."
+  }
+]

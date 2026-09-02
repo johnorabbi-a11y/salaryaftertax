@@ -1,6 +1,7 @@
 {
   "intended_urls": 124,
-  "html_files": 124,
+  "redirect_urls": 22,
+  "html_files": 146,
   "sitemap_urls": 124,
   "issues": [],
   "issue_count": 0,
@@ -11,6 +12,6 @@
   "p95_depth": 2,
   "max_depth": 2,
   "external_links": 9,
-  "duplicate_body_prefix_groups": 0,
+  "duplicate_body_prefix_groups": 1,
   "calculator_pages": 46
 }

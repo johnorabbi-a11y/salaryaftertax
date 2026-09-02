@@ -6,7 +6,7 @@ from xml.etree import ElementTree as ET
 from collections import Counter, deque, defaultdict
 
 ROOT=Path(__file__).resolve().parents[1]
-BUILD=ROOT/'att-v2-build'
+BUILD=ROOT
 DOCS=ROOT/'docs'
 BASE='https://aftertaxtool.com'
 
@@ -34,10 +34,23 @@ def url_for_file(p):
 def main():
     inv=read_csv(DOCS/'att-v2-final-url-inventory.csv')
     intended=[r['proposed_url'] for r in inv]
-    html_files=[p for p in BUILD.rglob('*.html')]
+    redirects=read_csv(DOCS/'att-v2-final-redirect-map.csv')
+    redirect_paths=[r['current_path'].lstrip('/') for r in redirects]
+    redirect_urls=['/' + p for p in redirect_paths]
+    redirect_dest={('/' + r['current_path'].lstrip('/')): r['destination_url'] for r in redirects}
+    excluded_parts={'.git','docs','att-v2-build'}
+    html_files=[
+        p for p in BUILD.rglob('*.html')
+        if not any(part in excluded_parts for part in p.relative_to(BUILD).parts)
+        and p.name != 'google045f4d6b341942cf.html'
+    ]
+    canonical_files=[local_for_url(u) for u in intended]
+    redirect_files=[local_for_url(u) for u in redirect_urls]
     issues=[]; titles=[]; metas=[]; h1s=[]; canon=[]; graph=defaultdict(set); inbound=Counter(); external=[]
     for u in intended:
         if not local_for_url(u).exists(): issues.append(f'missing file for {u}')
+    for u in redirect_urls:
+        if not local_for_url(u).exists(): issues.append(f'missing redirect file for {u}')
     for f in html_files:
         txt=f.read_text(encoding='utf-8')
         u=url_for_file(f)
@@ -46,11 +59,21 @@ def main():
         if len(meta)!=1: issues.append(f'{u} meta description count {len(meta)}')
         if len(h1)!=1: issues.append(f'{u} h1 count {len(h1)}')
         if len(ca)!=1: issues.append(f'{u} canonical count {len(ca)}')
-        if ca and ca[0] != BASE + ('/' if u=='/' else u): issues.append(f'{u} canonical mismatch {ca[0]}')
-        if title: titles.append((title[0],u))
-        if meta: metas.append((meta[0],u))
-        if h1: h1s.append((re.sub('<.*?>','',h1[0]),u))
-        if ca: canon.append((ca[0],u))
+        is_redirect=u in redirect_dest
+        expected_canonical=BASE + ('/' if u=='/' else u)
+        if is_redirect:
+            dest=redirect_dest[u]
+            dest_path=urlparse(dest).path if dest.startswith('http') else dest
+            dest_file=local_for_url(dest_path)
+            if not dest_file.exists(): issues.append(f'{u} redirect destination missing {dest}')
+            if ca and ca[0] != BASE + dest_path: issues.append(f'{u} redirect canonical mismatch {ca[0]}')
+            if not re.search(r'http-equiv=["\']refresh["\']',txt,re.I): issues.append(f'{u} redirect missing meta refresh')
+        elif ca and ca[0] != expected_canonical:
+            issues.append(f'{u} canonical mismatch {ca[0]}')
+        if title and not is_redirect: titles.append((title[0],u))
+        if meta and not is_redirect: metas.append((meta[0],u))
+        if h1 and not is_redirect: h1s.append((re.sub('<.*?>','',h1[0]),u))
+        if ca and not is_redirect: canon.append((ca[0],u))
         if re.search(r'lorem ipsum|TODO|placeholder|scaffold|remediation',txt,re.I): issues.append(f'{u} placeholder wording')
         if re.search(r'\?\d{1,3},\d{3}|�|Â£',txt): issues.append(f'{u} currency/encoding artefact')
         if 'data-calc-type=' in txt and 'data-result' not in txt: issues.append(f'{u} calculator missing result panel')
@@ -75,6 +98,9 @@ def main():
     if len(locs)!=len(set(locs)): issues.append('duplicate sitemap URL')
     expected=[BASE+('/' if u=='/' else u) for u in intended]
     if set(locs)!=set(expected): issues.append('sitemap/inventory parity mismatch')
+    redirect_locs=[BASE + u for u in redirect_urls]
+    in_sitemap=[u for u in redirect_locs if u in locs]
+    if in_sitemap: issues.append(f'redirect URLs in sitemap: {len(in_sitemap)}')
     old_salary=[x for x in locs if re.search(r'/\d+-(salary-after-tax|after-tax-monthly|after-tax-weekly)',x) and not re.search(r'/(30000|40000|50000|60000|80000|100000|150000|200000)-salary-after-tax-(uk|us)\.html$',x)]
     if old_salary: issues.append(f'old salary URLs in V2 sitemap: {len(old_salary)}')
     # crawl depth
@@ -97,7 +123,7 @@ def main():
         bodies.append((url_for_file(f),body[:900]))
     sim=Counter(b for u,b in bodies)
     duplicate_bodies=sum(1 for b,n in sim.items() if n>1)
-    report={'intended_urls':len(intended),'html_files':len(html_files),'sitemap_urls':len(locs),'issues':issues[:200],'issue_count':len(issues),'unreachable_count':len(unreachable),'zero_inbound_count':len(zero),'average_depth':round(sum(depths)/len(depths),2) if depths else None,'median_depth':depths[len(depths)//2] if depths else None,'p95_depth':p95,'max_depth':max(depths) if depths else None,'external_links':len(external),'duplicate_body_prefix_groups':duplicate_bodies,'calculator_pages':sum(1 for f in html_files if 'data-calc-type=' in f.read_text(encoding='utf-8'))}
+    report={'intended_urls':len(intended),'redirect_urls':len(redirect_urls),'html_files':len(html_files),'sitemap_urls':len(locs),'issues':issues[:200],'issue_count':len(issues),'unreachable_count':len(unreachable),'zero_inbound_count':len(zero),'average_depth':round(sum(depths)/len(depths),2) if depths else None,'median_depth':depths[len(depths)//2] if depths else None,'p95_depth':p95,'max_depth':max(depths) if depths else None,'external_links':len(external),'duplicate_body_prefix_groups':duplicate_bodies,'calculator_pages':sum(1 for f in canonical_files if f.exists() and 'data-calc-type=' in f.read_text(encoding='utf-8'))}
     (DOCS/'att-v2-final-qa-report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2))
     raise SystemExit(1 if issues or unreachable or zero else 0)

@@ -226,6 +226,11 @@ def render_page(row, rows):
         return render_calculator(row,rows)
     return render_support(row,rows)
 
+def render_redirect_page(source_path, destination_url):
+    dest = destination_url if destination_url.startswith('https://') else BASE + destination_url
+    title = 'Page moved | AfterTaxTool'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="This AfterTaxTool page has moved to a newer calculator or guide."><link rel="canonical" href="{html.escape(dest)}"><meta http-equiv="refresh" content="0; url={html.escape(destination_url)}"><link rel="stylesheet" href="/assets/v2.css"></head><body>{header()}<main><section class="section"><div class="wrap"><p class="breadcrumb"><a href="/">Home</a> / Page moved</p><h1>Page moved</h1><p class="lede">This older AfterTaxTool page now has a clearer V2 destination.</p><p><a class="button" href="{html.escape(destination_url)}">Continue to the current page</a></p></div></section></main>{footer()}'''
+
 def build():
     BUILD.mkdir(parents=True, exist_ok=True)
     ASSETS.mkdir(parents=True, exist_ok=True)
@@ -246,6 +251,10 @@ def build():
     (BUILD/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: https://aftertaxtool.com/sitemap.xml\n',encoding='utf-8')
     redirects=read_csv(DOCS/'att-v2-redirect-map.csv')
     removals=read_csv(DOCS/'att-v2-removal-manifest.csv')
+    for redirect in redirects:
+        source=BUILD/redirect['current_path']
+        source.parent.mkdir(parents=True,exist_ok=True)
+        source.write_text(render_redirect_page(redirect['current_path'], redirect['destination_url']),encoding='utf-8')
     (BUILD/'redirects.json').write_text(json.dumps(redirects,indent=2),encoding='utf-8')
     summary={'v2_canonical_count':len(rows),'calculator_count':sum(1 for r in rows if r['calculator_or_content']=='calculator'),'supporting_count':sum(1 for r in rows if r['calculator_or_content']!='calculator'),'redirect_count':len(redirects),'removal_count':len(removals),'build_path':str(BUILD)}
     (DOCS/'att-v2-build-summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
