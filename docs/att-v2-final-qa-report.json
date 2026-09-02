@@ -1,0 +1,16 @@
+{
+  "intended_urls": 124,
+  "html_files": 124,
+  "sitemap_urls": 124,
+  "issues": [],
+  "issue_count": 0,
+  "unreachable_count": 0,
+  "zero_inbound_count": 0,
+  "average_depth": 1.81,
+  "median_depth": 2,
+  "p95_depth": 2,
+  "max_depth": 2,
+  "external_links": 9,
+  "duplicate_body_prefix_groups": 0,
+  "calculator_pages": 46
+}
